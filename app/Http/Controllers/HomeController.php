@@ -48,6 +48,38 @@ class HomeController extends Controller
 
     }
 
+    public function findPhysician()
+    {
+
+        return view('findPhysician',[ 
+            
+
+        ]);
+
+    }
+
+
+    public function beforeAfter()
+    {
+
+        return view('beforeAfter',[ 
+            
+
+        ]);
+
+    }
+
+
+    public function about()
+    {
+
+        return view('about',[ 
+            
+
+        ]);
+
+    }
+
 
 
 }

@@ -43,34 +43,34 @@ $keywords = "";
         <!-- /.navbar-header -->
         <div class="navbar-collapse collapse justify-content-between align-items-center">
           <ul class="navbar-nav plain mx-auto text-center">
-            <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
          
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#">Articles</a>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/articles">Articles</a>
               <ul class="dropdown-menu">
+                <li class="nav-item"><a class="dropdown-item" href="/articles">Category</a></li>
+                <!-- <li class="nav-item dropdown"><a class="dropdown-item dropdown-toggle" href="/articles">Category with dropdown</a>
+                  <ul class="dropdown-menu">
+                    <li class="nav-item"><a class="dropdown-item" href="#">Category</a></li>
+                    <li class="nav-item"><a class="dropdown-item" href="#">Category</a></li>
+                  </ul>
+                </li> -->
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="find-physician">Find a physician</a></li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="before-after">Before &amp; After</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item"><a class="dropdown-item" href="#">Category</a></li>
                 <li class="nav-item"><a class="dropdown-item" href="#">Category</a></li>
                 <li class="nav-item dropdown"><a class="dropdown-item dropdown-toggle" href="#">Category with dropdown</a>
                   <ul class="dropdown-menu">
+                    <li class="nav-item"><a class="dropdown-item" href="#">Category</a></li>
                     <li class="nav-item"><a class="dropdown-item" href="#">Category</a></li>
                     <li class="nav-item"><a class="dropdown-item" href="#">Category</a></li>
                   </ul>
                 </li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="find-physician.php">Find a physician</a></li>
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="before-after.php">Before &amp; After</a>
-              <ul class="dropdown-menu">
-                <li class="nav-item"><a class="dropdown-item" href="#">Category</a></li>
-                <li class="nav-item"><a class="dropdown-item" href="#">Category</a></li>
-                <li class="nav-item dropdown"><a class="dropdown-item dropdown-toggle" href="#">Category with dropdown</a>
-                  <ul class="dropdown-menu">
-                    <li class="nav-item"><a class="dropdown-item" href="#">Category</a></li>
-                    <li class="nav-item"><a class="dropdown-item" href="#">Category</a></li>
-                    <li class="nav-item"><a class="dropdown-item" href="#">Category</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
             
             <li class="nav-item"><a class="nav-link  text-uppercase" href="#">Login</a>
                 <ul class="dropdown-menu mega-menu boxed list-view text-left">

@@ -42,6 +42,16 @@ class ArticleController extends Voyager\VoyagerController
 
     }
 
+    public function articles()
+    {
+
+        return view('articles',[ 
+
+
+        ]);
+
+    }
+
 
 
 }

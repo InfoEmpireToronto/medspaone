@@ -22,5 +22,9 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 Route::get('/', 'HomeController@index')->name('home');
-// Route::get('/article', 'ArticleController@viewArticle')->name('viewArticle');
 Route::get('/article/{id}', 'ArticleController@viewArticle')->name('viewArticle');
+
+Route::get('/articles', 'ArticleController@articles')->name('articles');
+Route::get('/find-physician', 'HomeController@findPhysician')->name('find-physician');
+Route::get('/before-after', 'HomeController@beforeAfter')->name('before-after');
+Route::get('/about', 'HomeController@about')->name('about');
