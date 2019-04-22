@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Article;
+use App\Location;
 
 use Carbon\Carbon;
 use Jenssegers\Agent\Agent;
@@ -50,9 +51,10 @@ class HomeController extends Controller
 
     public function findPhysician()
     {
+        $locations = Location::all();
 
         return view('findPhysician',[ 
-            
+            'locations' => $locations
 
         ]);
 

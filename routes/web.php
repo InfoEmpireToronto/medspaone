@@ -28,3 +28,6 @@ Route::get('/articles', 'ArticleController@articles')->name('articles');
 Route::get('/find-physician', 'HomeController@findPhysician')->name('find-physician');
 Route::get('/before-after', 'HomeController@beforeAfter')->name('before-after');
 Route::get('/about', 'HomeController@about')->name('about');
+
+
+Route::POST('/admin/location/save', 'AdminController@saveLocation')->name('saveLocation');

@@ -20,7 +20,7 @@
             <?php $__currentLoopData = $articles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $article): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
               <div class="box bg-white shadow p-30">
-                <figure class="main mb-20 overlay overlay1 rounded"><a href="article/<?php echo e($article->id); ?>"><img src="style/images/art/ge<?php echo rand(1,15); ?>.jpg" alt="" /></a>
+                <figure class="main mb-20 overlay overlay1 rounded"><a href="article/<?php echo e($article->id); ?>"><img src="style/images/art/ge<?php echo rand(1,14); ?>.jpg" alt="" /></a>
                   <figcaption>
                     <h5 class="text-uppercase from-top mb-0">Read more</h5>
                       <p></p>
