@@ -50,13 +50,13 @@ class AdminController extends Voyager\VoyagerController
 
     }
 
-    public function saveLocation($data)
+    public function startChat()
     {
-        dd($data);
-        // return view('admin.locations',[ 
+        // dd($data);
+        return view('admin.chat',[ 
 
 
-        // ]);
+        ]);
 
 
     }

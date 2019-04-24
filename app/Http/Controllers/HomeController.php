@@ -60,11 +60,31 @@ class HomeController extends Controller
 
     }
 
+    public function startChat()
+    {
+        // dd($data);
+        return view('chat',[ 
+
+
+        ]);
+
+
+    }
+
 
     public function beforeAfter()
     {
 
         return view('beforeAfter',[ 
+            
+
+        ]);
+
+    }
+    public function profile()
+    {
+
+        return view('profile',[ 
             
 
         ]);
