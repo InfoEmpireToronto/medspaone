@@ -29,6 +29,9 @@ Route::get('/find-physician', 'HomeController@findPhysician')->name('find-physic
 Route::get('/before-after', 'HomeController@beforeAfter')->name('before-after');
 Route::get('/profile', 'HomeController@profile')->name('profile');
 Route::get('/videos', 'HomeController@videos')->name('videos');
+Route::get('/login', 'HomeController@login')->name('login');
+Route::get('/membership', 'HomeController@membership')->name('membership');
+Route::get('/gift-rewards-program', 'HomeController@giftReward')->name('giftReward');
 Route::get('/about', 'HomeController@about')->name('about');
 
 

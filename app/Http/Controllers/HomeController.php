@@ -81,10 +81,54 @@ class HomeController extends Controller
         ]);
 
     }
+
     public function profile()
     {
 
         return view('profile',[ 
+            
+
+        ]);
+
+    }
+
+    public function membership()
+    {
+
+        return view('membership',[ 
+            
+
+        ]);
+
+    }
+
+
+    public function giftReward()
+    {
+
+        return view('giftReward',[ 
+            
+
+        ]);
+
+    }
+
+
+    public function videos()
+    {
+
+        return view('videos',[ 
+            
+
+        ]);
+
+    }
+
+
+    public function login()
+    {
+
+        return view('login',[ 
             
 
         ]);

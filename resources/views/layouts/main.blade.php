@@ -34,46 +34,58 @@ $keywords = "";
       <div class="container-fluid flex-row justify-content-center">
         <div class="navbar-header">
           <div class="navbar-brand">
-              <a href="index.php" class="d-none d-sm-block"><img src="#" srcset="/style/images/logo2.png 1x, /style/images/logo2@2x.png 2x" alt="" /></a>
-              <a href="index.php" class="d-block d-sm-none"><img src="#" srcset="/style/images/logo-small.png 1x, /style/images/logo-small@2x.png 2x" alt="" /></a>
-            
-            </div>
+        <a href="index.php" class="d-none d-sm-block"><img src="#" srcset="style/images/logo2.png 1x, style/images/logo2@2x.png 2x" alt="" /></a>
+        <a href="index.php" class="d-block d-sm-none"><img src="#" srcset="style/images/logo-small.png 1x, style/images/logo-small@2x.png 2x" alt="" /></a>
+      
+      </div>
           <div class="navbar-hamburger ml-auto d-lg-none d-xl-none"><button class="hamburger animate" data-toggle="collapse" data-target=".navbar-collapse"><span></span></button></div>
         </div>
         <!-- /.navbar-header -->
         <div class="navbar-collapse collapse justify-content-between align-items-center">
           <ul class="navbar-nav plain mx-auto text-center">
             <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-         
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/articles">Articles</a>
+         <li class="nav-item dropdown"><a class="nav-link dropdown-item dropdown-toggle" href="#">Publications</a>
               <ul class="dropdown-menu">
-                <li class="nav-item"><a class="dropdown-item" href="/articles">Category</a></li>
-                <!-- <li class="nav-item dropdown"><a class="dropdown-item dropdown-toggle" href="/articles">Category with dropdown</a>
+                 <li class="nav-item dropdown"><a class="dropdown-item dropdown-toggle" href="/articles">Articles</a>
                   <ul class="dropdown-menu">
-                    <li class="nav-item"><a class="dropdown-item" href="#">Category</a></li>
-                    <li class="nav-item"><a class="dropdown-item" href="#">Category</a></li>
+                    <li class="nav-item"><a class="dropdown-item" href="/articles">Category</a></li>
+                    <li class="nav-item"><a class="dropdown-item" href="/articles">Category</a></li>
                   </ul>
-                </li> -->
+                </li>
+          <li class="nav-item"><a class="dropdown-item" href="/before-after">Before &amp; after</a></li>
+          <li class="nav-item"><a class="dropdown-item" href="/videos">Videos</a></li>
+          <li class="nav-item"><a class="dropdown-item" href="/faq">FAQ</a></li>
+
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="find-physician">Find a physician</a></li>
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="before-after">Before &amp; After</a>
+      <li class="nav-item"><a class="nav-link" href="/find-physician">Find a physician</a></li>
+           
+           
+<!--
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="before-after.php">Before &amp; After</a>
               <ul class="dropdown-menu">
-                <li class="nav-item"><a class="dropdown-item" href="#">Category</a></li>
-                <li class="nav-item"><a class="dropdown-item" href="#">Category</a></li>
+                <li class="nav-item"><a class="dropdown-item" href="before-after.php">Category</a></li>
+                <li class="nav-item"><a class="dropdown-item" href="before-after.php">Category</a></li>
                 <li class="nav-item dropdown"><a class="dropdown-item dropdown-toggle" href="#">Category with dropdown</a>
                   <ul class="dropdown-menu">
-                    <li class="nav-item"><a class="dropdown-item" href="#">Category</a></li>
-                    <li class="nav-item"><a class="dropdown-item" href="#">Category</a></li>
-                    <li class="nav-item"><a class="dropdown-item" href="#">Category</a></li>
+                    <li class="nav-item"><a class="dropdown-item" href="before-after.php">Category</a></li>
+                    <li class="nav-item"><a class="dropdown-item" href="before-after.php">Category</a></li>
+                    <li class="nav-item"><a class="dropdown-item" href="before-after.php">Category</a></li>
                   </ul>
                 </li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+-->
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/about">About</a>
+        <ul class="dropdown-menu">
+                <li class="nav-item"><a class="dropdown-item" href="/about">About us</a></li>
+                <li class="nav-item"><a class="dropdown-item" href="/membership">Membership</a></li>
+               <li class="nav-item"><a class="dropdown-item" href="/gift-rewards-program">Gifts &amp; Rewards Program</a></li>
+              </ul>
+        </li>
             
             <li class="nav-item"><a class="nav-link  text-uppercase" href="#">Login</a>
-                <ul class="dropdown-menu mega-menu boxed list-view text-left">
+        <ul class="dropdown-menu mega-menu boxed list-view text-left">
                 <li class="mega-menu-content">
                   <div class="image-block-wrapper">
                     <div class="image-block col-lg-4 col-xl-5">
@@ -85,7 +97,7 @@ $keywords = "";
                         <div class="col-lg-8 offset-lg-4 col-xl-7 offset-xl-5">
                           <div class="box">
                             <div class="row">
-                              <div class="col-lg-6">
+                              <div class="col-md-6">
                                  <form>
               <div class="form-group">
                 <input type="text" class="form-control" id="exampleInputName1" placeholder="Login">
@@ -94,14 +106,15 @@ $keywords = "";
               <div class="form-group">
                 <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Password">
               </div>
-           
-              <button type="submit" class="btn btn-red btn-block mb-30">Login</button>
+            <div class="form-group mb-0">
+              <button type="submit" class="btn btn-red btn-block mb-30 mx-0">Login</button>
+      </div>
             </form>
                               </div>
                               <!--/column -->
-                              <div class="col-lg-6">
-                                <p><a href="#" class="btn btn-pastel-aqua">Join our community</a></p>
-                                <p><a href="#" class="btn btn-pastel-blue">Physicians apply here</a></p>
+                              <div class="col-md-6">
+                                <p><a href="/login" class="btn btn-pastel-aqua">Join our community</a></p>
+                                <p><a href="/login" class="btn btn-pastel-blue">Physicians apply here</a></p>
                               </div>
                               <!--/column -->
                         
@@ -125,7 +138,7 @@ $keywords = "";
             </li>
           </ul>
         </div>
-          <div id="search">
+      <div id="search">
               <form class="search-form">
                 <div class="form-group">
                   <input type="text" class="form-control" placeholder="Search...">
