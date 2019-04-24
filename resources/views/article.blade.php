@@ -9,13 +9,16 @@
             <div class="blog classic-view">
               <div class="post text-center">
                 <figure class="rounded"><div class="light-gallery">
-                    <figure class="overlay overlay3 rounded"><a href="/style/images/art/about.jpg"><img src="/style/images/art/about.jpg" alt="" /></a></figure>
+                    <figure class="overlay overlay3 rounded">
+                      <a href="/storage/{{$article->image}}">
+                        <img src="/storage/{{$article->image}}" alt="" /></a>
+                      </figure>
                   </div></figure>
 				  
                 <div class="space40"></div>
                 <div class="post-content text-left">
                   <h1 class="post-title">{{$article->title}}</h1>
-                  <div class="meta"><span class="date">April 12, 2019</span><span class="author">By <a href="#">MedSpa.One</a></span><span class="comments"><a href="#">2</a> </span><span><a href="#"><i class="fa fa-thumbs-up"></i> 10 </a></span><span class="category"><a href="#">Skin</a></span>
+                  <div class="meta"><span class="date">April 12, 2019</span><span class="author">By <a href="/profile/{{$article->user()->id}}">{{$article->user()->company}}</a></span><span class="comments"><a href="#">2</a> </span><span><a href="#"><i class="fa fa-thumbs-up"></i> 10 </a></span><span class="category"><a href="#">Skin</a></span>
 <!--
 					 <span class="social-color social-s">
 						<span>Share</span>
@@ -27,7 +30,7 @@
 					</div>
 					
 					
-                  {!! $article->content !!}
+                  {!! $article->body !!}
 
                   <div class="space10"></div>
                  

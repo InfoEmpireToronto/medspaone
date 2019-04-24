@@ -148,7 +148,7 @@
                         <div class="panel-body">
                             @php
                                 $dataTypeRows = $dataType->{(isset($dataTypeContent->id) ? 'editRows' : 'addRows' )};
-                                $exclude = ['title', 'body', 'excerpt', 'slug', 'status', 'category_id', 'author_id', 'featured', 'image', 'meta_description', 'meta_keywords', 'seo_title'];
+                                $exclude = ['title', 'body', 'excerpt', 'slug', 'status', 'category_id', 'featured', 'meta_description', 'meta_keywords', 'seo_title'];
                             @endphp
 
                             @foreach($dataTypeRows as $row)
@@ -163,7 +163,15 @@
                                             {{ $row->slugify }}
                                             <label for="name">{{ $row->display_name }}</label>
                                             @include('voyager::multilingual.input-hidden-bread-edit-add')
-                                            @if($row->type == 'relationship')
+                                            @if($row->display_name == 'Author')
+                                                <div>
+                                                    <select name="author_id">
+                                                        @foreach(App\User::all() as $user)
+                                                            <option value="{{$user->id}}" {{$user->id == $dataTypeContent->{$row->field} ? "selected='selected'" : '' }}>{{$user->name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            @elseif($row->type == 'relationship')
                                                 @include('voyager::formfields.relationship', ['options' => $row->details])
                                             @else
                                                 {!! app('voyager')->formField($row, $dataType, $dataTypeContent) !!}

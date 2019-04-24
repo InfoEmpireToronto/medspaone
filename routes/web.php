@@ -28,6 +28,7 @@ Route::get('/articles', 'ArticleController@articles')->name('articles');
 Route::get('/find-physician', 'HomeController@findPhysician')->name('find-physician');
 Route::get('/before-after', 'HomeController@beforeAfter')->name('before-after');
 Route::get('/profile', 'HomeController@profile')->name('profile');
+Route::get('/profile/{id}', 'HomeController@profile')->name('profile');
 Route::get('/videos', 'HomeController@videos')->name('videos');
 Route::get('/login', 'HomeController@login')->name('login');
 Route::get('/membership', 'HomeController@membership')->name('membership');

@@ -4,9 +4,9 @@
 @section('content')
 	<!-- data-image-src="insert doctor cover photo" -->
 
-<div class="wrapper image-wrapper bg-image inverse-text" data-image-src="/style/images/art/bg1.jpg">
+<div class="wrapper image-wrapper bg-image inverse-text" data-image-src="style/images/art/bg1.jpg">
       <div class="container inner pt-120 pb-120 pt-sm-20 pb-sm-20">
-        <h2 class="section-title mb-40 text-center">{{ $user->company }}</h2>
+        <h2 class="section-title mb-40 text-center">Sarah Johnson, MD</h2>
 		  <div class="row text-center">
           <div class="col-sm-4">
 			  <p class="icon fs-48 mb-10"><i class="si-ecommerce_shop-location"></i></p> 
@@ -31,7 +31,7 @@
       <div class="container inner pt-60 pt-sm-20">
         <div class="row">
           <div class="col-md-8">
-			  <h3>Meet <strong class="color-default">{{ $user->name }}</strong></h3>
+			  <h3>Meet <strong class="color-default">Sarah Johnson, MD</strong></h3>
             <div class="tabs-wrapper bg-white shadow mb-30">
               <ul class="nav nav-tabs">
                 <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#tab1-1">Overview</a> </li>
@@ -44,15 +44,15 @@
                 <div class="tab-pane fade show active" id="tab1-1">
                 <div class="image-block-wrapper mb-20">
                   <div class="image-block col-lg-6 mb-30">
-                    <div class="image-block-bg bg-image rounded" data-image-src="/style/images/art/t2.jpg"></div>
+                    <div class="image-block-bg bg-image rounded" data-image-src="style/images/art/t2.jpg"></div>
                   </div>
                   <!--/.image-block -->
                   <div class="container-fluid">
                     <div class="row">
                       <div class="col-lg-6 offset-lg-6 pr-m-0 pl-m-0">
                         <div class="p-10">
-                          <h4 class="mb-5">{{ $user->name }}</h4>
-                          {!! $user->overview !!}
+                          <h4 class="mb-5">Sarah Johnson, MD</h4>
+                           <p>Carolyn I. Jacob, M.D. is a Board-Certified Dermatologist, Harvard-Trained Cosmetic and Laser Surgeon, and an Associate Clinical Instructor at Northwestern’s Feinberg School of Medicine. She is the Founder and Medical Director of Chicago Cosmetic Surgery and Dermatology in Chicago’s River North neighborhood.</p>
                           
                         </div>
                         <!-- /.box -->
@@ -67,7 +67,9 @@
 					
                 </div>
                 <div class="tab-pane fade" id="tab1-2">
-                  {!! $user->bio !!}
+                  <p>Carolyn I. Jacob, M.D. is a Board-Certified Dermatologist, Harvard-Trained Cosmetic and Laser Surgeon, and an Associate Clinical Instructor at Northwestern’s Feinberg School of Medicine. She is the Founder and Medical Director of Chicago Cosmetic Surgery and Dermatology in Chicago’s River North neighborhood.</p>
+					<p>Dr. Jacob is a High Honors graduate of Indiana University with a B.S. In Biology, and attended the University of Illinois College of Medicine where she was in the top 10 of her class. After completing an internship in internal medicine at Northwestern’s Evanston Hospital, she was Chief Resident of Dermatology at University of Wisconsin Hospitals and Clinics, and completed a prestigious Cosmetic and Laser Surgery Fellowship at Harvard Medical School.</p>
+					<p>Dr. Jacob is a well-known expert on all cosmetic and laser skin therapies. She trains other Dermatologists and Dermatology residents on injectable cosmetic aesthetics. She has performed research on excessive sweat reduction with MiraDry technology, cellulite treatments, and body shaping with High Frequency Electromagnetic Energy (HIFEM) Emsculpt treatments.  She is the author of over 25 peer reviewed journal articles and 12 book chapters on cosmetic and laser surgery. She lectures nationally and internationally on the latest devices and treatments in cosmetic dermatology. Her expertise has been featured on Dr. Oz, Good Day Chicago, Windy City Live, NewBeauty Magazine and Online media including CBS, USA Today, ABC, FOX News, Chicago Tribune, Esquire, Allure, Forbes, and Self Magazine.</p>
                 </div>
                 <div class="tab-pane fade" id="tab1-3">
                   <h3>Branded Procedures</h3>
@@ -162,7 +164,7 @@
 				 <div class="items row isotope boxed grid-view">
             <div class="item grid-sizer col-md-6">
               <div class="box bg-white shadow p-20">
-                <figure class="main mb-20 overlay overlay1 rounded"><a href="/article"><img src="/style/images/art/ge1.jpg" alt="" /></a>
+                <figure class="main mb-20 overlay overlay1 rounded"><a href="/article"><img src="style/images/art/ge1.jpg" alt="" /></a>
                   <figcaption>
                     <h5 class="text-uppercase from-top mb-0">Read more</h5>
 					  <p></p>
@@ -177,7 +179,7 @@
             </div>
 					 <div class="item grid-sizer col-md-6">
               <div class="box bg-white shadow p-20">
-                <figure class="main mb-20 overlay overlay1 rounded"><a href="/article"><img src="/style/images/art/ge3.jpg" alt="" /></a>
+                <figure class="main mb-20 overlay overlay1 rounded"><a href="/article"><img src="style/images/art/ge3.jpg" alt="" /></a>
                   <figcaption>
                     <h5 class="text-uppercase from-top mb-0">Read more</h5>
 					  <p></p>
@@ -244,7 +246,7 @@
 			
           <div class="cbp-item text-center bodycontouring dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="style/images/before-after.jpg" title="Body sculpting"><img src="/style/images/before-after.jpg" alt="" /></a>
+				<a href="style/images/before-after.jpg" title="Body sculpting"><img src="style/images/before-after.jpg" alt="" /></a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">
@@ -262,7 +264,7 @@
 			
 			<div class="cbp-item text-center botox dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="style/images/art/about11.jpg" title="Botox"><img src="/style/images/art/about11.jpg" alt="" /></a>
+				<a href="style/images/art/about11.jpg" title="Botox"><img src="style/images/art/about11.jpg" alt="" /></a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">
@@ -280,7 +282,7 @@
 			
 		  <div class="cbp-item text-center peels dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="style/images/art/au6.jpg" title="Peels"><img src="/style/images/art/au6.jpg" alt="" /></a>
+				<a href="style/images/art/au6.jpg" title="Peels"><img src="style/images/art/au6.jpg" alt="" /></a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">
@@ -298,7 +300,7 @@
 			
 			<div class="cbp-item text-center juvederm dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="style/images/art/au3.jpg" title="Juvederm"><img src="/style/images/art/au3.jpg" alt="" /></a>
+				<a href="style/images/art/au3.jpg" title="Juvederm"><img src="style/images/art/au3.jpg" alt="" /></a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">
@@ -321,7 +323,7 @@
 			
 			 <div class="cbp-item text-center bodycontouring dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="style/images/art/b15.jpg" title="Body sculpting"><img src="/style/images/art/b15.jpg" alt="" /></a>
+				<a href="style/images/art/b15.jpg" title="Body sculpting"><img src="style/images/art/b15.jpg" alt="" /></a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">
@@ -339,7 +341,7 @@
 			
 			<div class="cbp-item text-center botox dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="style/images/art/b23.jpg" title="Botox"><img src="/style/images/art/b23.jpg" alt="" /></a>
+				<a href="style/images/art/b23.jpg" title="Botox"><img src="style/images/art/b23.jpg" alt="" /></a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">
@@ -357,7 +359,7 @@
 			
 		  <div class="cbp-item text-center peels dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="style/images/art/bodisculpting-3.jpg" title="Peels"><img src="/style/images/art/bodisculpting-3.jpg" alt="" /></a>
+				<a href="style/images/art/bodisculpting-3.jpg" title="Peels"><img src="style/images/art/bodisculpting-3.jpg" alt="" /></a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">
@@ -375,7 +377,7 @@
 			
 			<div class="cbp-item text-center juvederm dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="style/images/art/co8.jpg" title="Juvederm"><img src="/style/images/art/co8.jpg" alt="" /></a>
+				<a href="style/images/art/co8.jpg" title="Juvederm"><img src="style/images/art/co8.jpg" alt="" /></a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">

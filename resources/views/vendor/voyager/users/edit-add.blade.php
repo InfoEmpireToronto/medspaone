@@ -113,8 +113,50 @@
                         </div>
                     </div>
                 </div>
+
             </div>
 
+<div class="panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">{{ __('voyager::post.additional_fields') }}</h3>
+                            <div class="panel-actions">
+                                <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            @php
+                                $dataTypeRows = $dataType->{(isset($dataTypeContent->id) ? 'editRows' : 'addRows' )};
+                                $exclude = ['email', 'name', 'password', 'avatar', 'role_id', 'roles', 'email_verified_at', 'user_belongstomany_role_relationship[]', 'meta_keywords', 'seo_title'];
+                            @endphp
+
+                            @foreach($dataTypeRows as $row)
+                                @if(!in_array($row->field, $exclude))
+                                    @php
+                                        $display_options = $row->details->display ?? NULL;
+                                    @endphp
+                                    @if (isset($row->details->formfields_custom))
+                                        @include('voyager::formfields.custom.' . $row->details->formfields_custom)
+                                    @else
+                                        <div class="form-group @if($row->type == 'hidden') hidden @endif @if(isset($display_options->width)){{ 'col-md-' . $display_options->width }}@endif" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
+                                            {{ $row->slugify }}
+                                            <label for="name">{{ $row->display_name }}</label>
+                                            @include('voyager::multilingual.input-hidden-bread-edit-add')
+                                            
+                                            @if($row->type == 'relationship')
+                                                @include('voyager::formfields.relationship', ['options' => $row->details])
+                                            @else
+                                                {!! app('voyager')->formField($row, $dataType, $dataTypeContent) !!}
+                                            @endif
+
+                                            @foreach (app('voyager')->afterFormFields($row, $dataType, $dataTypeContent) as $after)
+                                                {!! $after->handle($row, $dataType, $dataTypeContent) !!}
+                                            @endforeach
+                                        </div>
+                                    @endif
+                                @endif
+                            @endforeach
+                        </div>
+                    </div>
 
             <button type="submit" class="btn btn-primary pull-right save">
                 {{ __('voyager::generic.save') }}

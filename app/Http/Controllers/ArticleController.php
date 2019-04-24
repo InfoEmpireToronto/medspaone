@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Article;
+use App\Post;
+// use TCG\Voyager\Models\Post;
 
 use Carbon\Carbon;
 use Jenssegers\Agent\Agent;
@@ -36,7 +37,7 @@ class ArticleController extends Voyager\VoyagerController
     {
 
         return view('article',[ 
-            'article' => Article::find($id)
+            'article' => Post::find($id)
 
         ]);
 

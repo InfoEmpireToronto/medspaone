@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Article;
+use TCG\Voyager\Models\Post;
 use App\Location;
+use App\User;
 
 use Carbon\Carbon;
 use Jenssegers\Agent\Agent;
@@ -31,7 +33,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $articles = Article::where('id', '>', 1)->where('status', 1)->get();
+        $articles = Post::all();//Article::where('id', '>', 1)->where('status', 1)->get();
 
         return view('welcome',[ 
             'articles' => $articles
@@ -82,11 +84,12 @@ class HomeController extends Controller
 
     }
 
-    public function profile()
+    public function profile($id = false)
     {
+        if(!$id) return view('profile-tmpl');
 
         return view('profile',[ 
-            
+            'user'=>User::find($id)
 
         ]);
 
