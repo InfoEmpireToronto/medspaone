@@ -34,8 +34,8 @@ $keywords = "";
       <div class="container-fluid flex-row justify-content-center">
         <div class="navbar-header">
           <div class="navbar-brand">
-        <a href="index.php" class="d-none d-sm-block"><img src="#" srcset="style/images/logo2.png 1x, style/images/logo2@2x.png 2x" alt="" /></a>
-        <a href="index.php" class="d-block d-sm-none"><img src="#" srcset="style/images/logo-small.png 1x, style/images/logo-small@2x.png 2x" alt="" /></a>
+        <a href="/" class="d-none d-sm-block"><img src="#" srcset="style/images/logo2.png 1x, style/images/logo2@2x.png 2x" alt="" /></a>
+        <a href="/" class="d-block d-sm-none"><img src="#" srcset="style/images/logo-small.png 1x, style/images/logo-small@2x.png 2x" alt="" /></a>
       
       </div>
           <div class="navbar-hamburger ml-auto d-lg-none d-xl-none"><button class="hamburger animate" data-toggle="collapse" data-target=".navbar-collapse"><span></span></button></div>
