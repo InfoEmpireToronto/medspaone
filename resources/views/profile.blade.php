@@ -110,7 +110,7 @@
 				  
 				  <div class="tab-pane fade" id="tab1-4">
                   <div class="form-container">
-              <form action="contact/vanilla-form.php" method="post" class="vanilla vanilla-form" novalidate>
+              <form action="#contact/vanilla-form" method="post" class="vanilla vanilla-form" novalidate>
                 <div class="row text-center">
                   <div class="col-md-6">
                     <div class="form-group">
@@ -164,7 +164,7 @@
 				 <div class="items row isotope boxed grid-view">
             <div class="item grid-sizer col-md-6">
               <div class="box bg-white shadow p-20">
-                <figure class="main mb-20 overlay overlay1 rounded"><a href="article.php"><img src="style/images/art/ge1.jpg" alt="" /></a>
+                <figure class="main mb-20 overlay overlay1 rounded"><a href="/article"><img src="style/images/art/ge1.jpg" alt="" /></a>
                   <figcaption>
                     <h5 class="text-uppercase from-top mb-0">Read more</h5>
 					  <p></p>
@@ -174,12 +174,12 @@
 				  
                 <h6 class="mb-10">Tone Muscles and Burn Fat with Zero Downtime</h6>
 				  <p class="mb-5">Short blurb...</p>
-				  <div class="arrow-link"><a href="article.php" class="text-muted">Read article <i class="mi-arrow-right"></i></a> </div>
+				  <div class="arrow-link"><a href="/article" class="text-muted">Read article <i class="mi-arrow-right"></i></a> </div>
               </div>
             </div>
 					 <div class="item grid-sizer col-md-6">
               <div class="box bg-white shadow p-20">
-                <figure class="main mb-20 overlay overlay1 rounded"><a href="article.php"><img src="style/images/art/ge3.jpg" alt="" /></a>
+                <figure class="main mb-20 overlay overlay1 rounded"><a href="/article"><img src="style/images/art/ge3.jpg" alt="" /></a>
                   <figcaption>
                     <h5 class="text-uppercase from-top mb-0">Read more</h5>
 					  <p></p>
@@ -189,11 +189,11 @@
 				  
                 <h6 class="mb-10">Tone Muscles and Burn Fat with Zero Downtime</h6>
 				   <p class="mb-5">Short blurb...</p>
-				  <div class="arrow-link"><a href="article.php" class="text-muted">Read article <i class="mi-arrow-right"></i></a> </div>
+				  <div class="arrow-link"><a href="/article" class="text-muted">Read article <i class="mi-arrow-right"></i></a> </div>
               </div>
             </div>
            </div> <div class="col-lg-12 text-center"><div class="space20"></div>
-					  <a href="articles.php" class="btn">Read more <i class="fa fa-caret-right"></i></a>
+					  <a href="/articles" class="btn">Read more <i class="fa fa-caret-right"></i></a>
 					  </div>
           </div>
 				 
@@ -217,7 +217,7 @@
           </div>  
 					  <div class="col-lg-12 text-center">
 					  <div class="space20 d-none d-sm-block"></div>
-					  <a href="videos.php" class="btn">Watch more <i class="fa fa-play-circle"></i></a>
+					  <a href="/videos" class="btn">Watch more <i class="fa fa-play-circle"></i></a>
 					  </div>
           <!-- /column -->
         </div>
@@ -400,7 +400,7 @@
 				
 				<div class="col-lg-12 text-center">
 					  <div class="space20 d-none d-sm-block"></div>
-					  <a href="before-after.php" class="btn">View more <i class="fa fa-photo"></i></a>
+					  <a href="/before-after" class="btn">View more <i class="fa fa-photo"></i></a>
 					  </div>
       </div>	   
 				   

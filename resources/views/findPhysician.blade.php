@@ -75,11 +75,11 @@
                 <li>
                   <div class="row">
                     <div class="col-sm-8 mb-0">
-                          <figure class="rounded"><a href="profile.php"><img src="style/images/art/a5.jpg" alt="" /></a></figure>
+                          <figure class="rounded"><a href="/profile"><img src="style/images/art/a5.jpg" alt="" /></a></figure>
                           <div class="post-content">
-                            <h6 class="post-title"> <a href="profile.php">{{$l['title']}}</a> </h6>
+                            <h6 class="post-title"> <a href="/profile">{{$l['title']}}</a> </h6>
                     <p>{{$l['address']}}</p>
-                            <div class="meta"><span><a href="profile.php"><i class="fa fa-map-marker"></i> &#8249; 3 km </a></span><span><a href="#" class="hover has-tooltip" title="<strong>Toronto</strong><br>5000 Dufferin St, Toronto, ON M3H&nbsp;5T5<hr><strong>Mississauga</strong><br>Ponytrail Dr, Mississauga, ON L4WN&nbsp;2Y1" data-html="true" data-placement="right"><i class="fa fa-building-o"></i> 2 locations </a></span></div>
+                            <div class="meta"><span><a href="/profile"><i class="fa fa-map-marker"></i> &#8249; 3 km </a></span><span><a href="#" class="hover has-tooltip" title="<strong>Toronto</strong><br>5000 Dufferin St, Toronto, ON M3H&nbsp;5T5<hr><strong>Mississauga</strong><br>Ponytrail Dr, Mississauga, ON L4WN&nbsp;2Y1" data-html="true" data-placement="right"><i class="fa fa-building-o"></i> 2 locations </a></span></div>
                           </div>
                     </div>
                     <div class="col-sm-4">
