@@ -177,7 +177,7 @@
 				  
                 <h6 class="mb-10">{{$article->title}}</h6>
 				  <p class="mb-5">{!! substr(strip_tags($article->body),0,200) !!}</p>
-				  <div class="arrow-link"><a href="/article" class="text-muted">Read article <i class="mi-arrow-right"></i></a> </div>
+				  <div class="arrow-link"><a href="/article/{{$article->id}}" class="text-muted">Read article <i class="mi-arrow-right"></i></a> </div>
               </div>
             </div>
 @endforeach
