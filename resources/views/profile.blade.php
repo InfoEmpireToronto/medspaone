@@ -160,6 +160,9 @@
 			  <div class="bg-white shadow mb-30 rounded">
 				  <div class="container-fluid p-4">
 				 <div class="items row isotope boxed grid-view">
+
+
+@foreach($user->articles(2) as $article)
             <div class="item grid-sizer col-md-6">
               <div class="box bg-white shadow p-20">
                 <figure class="main mb-20 overlay overlay1 rounded"><a href="/article"><img src="/style/images/art/ge1.jpg" alt="" /></a>
@@ -167,15 +170,19 @@
                     <h5 class="text-uppercase from-top mb-0">Read more</h5>
 					  <p></p>
                   </figcaption>
-					<div class="category">Body contouring</div>
+					
+
+          <div class="category">Body contouring</div>
                 </figure>
 				  
-                <h6 class="mb-10">Tone Muscles and Burn Fat with Zero Downtime</h6>
-				  <p class="mb-5">Short blurb...</p>
+                <h6 class="mb-10">{{$article->title}}</h6>
+				  <p class="mb-5">{!! substr(strip_tags($article->body),0,200) !!}</p>
 				  <div class="arrow-link"><a href="/article" class="text-muted">Read article <i class="mi-arrow-right"></i></a> </div>
               </div>
             </div>
-					 <div class="item grid-sizer col-md-6">
+@endforeach
+
+					<!--  <div class="item grid-sizer col-md-6">
               <div class="box bg-white shadow p-20">
                 <figure class="main mb-20 overlay overlay1 rounded"><a href="/article"><img src="/style/images/art/ge3.jpg" alt="" /></a>
                   <figcaption>
@@ -189,7 +196,7 @@
 				   <p class="mb-5">Short blurb...</p>
 				  <div class="arrow-link"><a href="/article" class="text-muted">Read article <i class="mi-arrow-right"></i></a> </div>
               </div>
-            </div>
+            </div> -->
            </div> <div class="col-lg-12 text-center"><div class="space20"></div>
 					  <a href="/articles" class="btn">Read more <i class="fa fa-caret-right"></i></a>
 					  </div>
@@ -434,6 +441,8 @@
           <aside class="col-md-4">
               <h3>Locations</h3>
               <div id="accordion1" class="accordion-wrapper">
+              
+            @foreach($user->locations() as $location)
               <div class="card bg-white shadow">
                 <div class="card-header">
                   <h3> <a data-toggle="collapse" data-parent="#accordion1" href="#collapse1-1">Toronto, ON</a> </h3>
@@ -442,38 +451,27 @@
                 <!-- /.card-header -->
                 <div id="collapse1-1" class="collapse show">
                   <div class="card-block">
-                    <p class="more text-uppercase color-dark"><i class="fa fa-map-marker"></i> 5000 Dufferin St, Toronto, ON M3H&nbsp;5T5 </a><br>
-<i class="fa fa-phone"></i> <a href="tel:416-322-6000" class="color-dark">416-322-6000 </a><br>
-<i class="fa fa-fax"></i> <a href="fax:416-322-6000" class="color-dark">416-322-6000 </a><br>
-<i class="fa fa-envelope-o"></i> <a href="mailto:client@mail.com" target="_blank" class="color-dark">client@mail.com</a></p>
+                    <p class="more text-uppercase color-dark"><i class="fa fa-map-marker"></i>{{$location->address}}</a><br>
+@if($location->phone)   
+<i class="fa fa-phone"></i> <a href="tel:{{$location->phone}}" class="color-dark">{{$location->phone}}</a><br>
+@endif
+@if($location->fax)
+<i class="fa fa-fax"></i> <a href="fax:{{$location->fax}}" class="color-dark">{{$location->fax}}</a><br>
+@endif
+<i class="fa fa-envelope-o"></i> <a href="mailto:{{$user->email}}" target="_blank" class="color-dark">{{$user->email}}</a></p>
 				  <div class="rounded">
-					  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5761.109462578503!2d-79.471203!3d43.782101!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5b844e921b65acf5!2sInfoEmpire!5e0!3m2!1sen!2sca!4v1555101204228!5m2!1sen!2sca" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen ></iframe>
+            <div class="map" data-lat='{{$location->lat}}' data-lon='{{$location->lon}}' data-title='{{$location->title}}' ></div>
+					  <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5761.109462578503!2d-79.471203!3d43.782101!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5b844e921b65acf5!2sInfoEmpire!5e0!3m2!1sen!2sca!4v1555101204228!5m2!1sen!2sca" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen ></iframe> -->
 				  </div>
                   </div>
                   <!-- /.card-block -->
                 </div>
                 <!-- /.collapse -->
               </div>
+
+              @endforeach
               <!-- /.card -->
-              <div class="card bg-white shadow">
-                <div class="card-header">
-                  <h3> <a class="collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse1-2">Mississauga, ON</a> </h3>
-                </div>
-                <!-- /.card-header -->
-                <div id="collapse1-2" class="collapse">
-                 <div class="card-block">
-                    <p class="more text-uppercase color-dark"><i class="fa fa-map-marker"></i> 410 Ponytail Dr, Mississauga, ON L4W 2Y1 </a><br>
-<i class="fa fa-phone"></i> <a href="tel:416-322-6000" class="color-dark">416-322-6000 </a><br>
-<i class="fa fa-fax"></i> <a href="fax:416-322-6000" class="color-dark">416-322-6000 </a><br>
-<i class="fa fa-envelope-o"></i> <a href="mailto:client@mail.com" target="_blank" class="color-dark">client@mail.com</a></p>
-					  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.6531028242!2d-79.59677504964284!3d43.63457856155135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b386f5eb7b583%3A0x133e0b821cd6ec6f!2sMississauga%2C+ON+L4W+2Y1!5e0!3m2!1sen!2sca!4v1555447863185!5m2!1sen!2sca" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-                  </div>
-                  <!-- /.card-block -->
-                </div>
-                <!-- /.collapse -->
-              </div>
-              <!-- /.card -->
-            </div>
+           </div>
         
            
           </aside>
@@ -484,4 +482,27 @@
       <!-- /.container -->
     </div>
     <!-- /.wrapper -->
-@endsection
+@stop
+
+
+@section('js')
+  <script type="text/javascript">
+
+  $(document).ready(function(){
+
+    $('.map').each(function(){
+
+      var map = new google.maps.Map(this, {
+          zoom: 10,
+          center: myLatlng
+        });
+      var marker = new google.maps.Marker({
+                  position: new google.maps.LatLng(location.lat,location.lon),
+                  title:location.title
+              });
+              marker.setMap(map);
+    });
+  });
+
+  </script>
+@stop

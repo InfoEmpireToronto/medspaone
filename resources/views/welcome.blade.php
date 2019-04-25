@@ -22,7 +22,7 @@
             @foreach($articles as $article)
             <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
               <div class="box bg-white shadow p-30">
-                <figure class="main mb-20 overlay overlay1 rounded"><a href="/article/{{$article->id}}">
+                <figure class="main mb-20 overlay overlay1 rounded"><a href="/profile/{{$article->author_id}}">
                   <img src="/storage/{{$article->image}}" alt="" /></a>
                   <figcaption>
                     <h5 class="text-uppercase from-top mb-0">Read more</h5>

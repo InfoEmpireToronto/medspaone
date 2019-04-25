@@ -6,6 +6,9 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use App\Location;
+use App\Post;
+
 class User extends \TCG\Voyager\Models\User
 {
     use Notifiable;
@@ -36,4 +39,19 @@ class User extends \TCG\Voyager\Models\User
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function articles($limit = false)
+    {
+        $ret = Post::where('author_id', $this->id);
+        if($limit)
+            $ret->limit($limit);
+
+        return $ret->get();
+    }
+
+    public function locations()
+    {
+        return Location::where('user_id', $this->id)->get();
+
+    }
 }

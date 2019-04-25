@@ -21,7 +21,7 @@
           <div class="image-block-bg bg-image" data-image-src="/style/images/logo-large.png">
       
       <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5761.109462578503!2d-79.471203!3d43.782101!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5b844e921b65acf5!2sInfoEmpire!5e0!3m2!1sen!2sca!4v1555101204228!5m2!1sen!2sca" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe> -->
-        <div id="map"></div>
+        <div id="map"></div> 
       </div>
         </div>
         <!--/.image-block -->
@@ -79,7 +79,14 @@
                           <div class="post-content">
                             <h6 class="post-title"> <a href="/profile/{{$l['user_id']}}">{{$l['title']}}</a> </h6>
                     <p>{{$l['address']}}</p>
-                            <div class="meta"><span><a href="/profile/{{$l['user_id']}}"><i class="fa fa-map-marker"></i> &#8249; 3 km </a></span><span><a href="#" class="hover has-tooltip" title="<strong>Toronto</strong><br>5000 Dufferin St, Toronto, ON M3H&nbsp;5T5<hr><strong>Mississauga</strong><br>Ponytrail Dr, Mississauga, ON L4WN&nbsp;2Y1" data-html="true" data-placement="right"><i class="fa fa-building-o"></i> 2 locations </a></span></div>
+                            <div class="meta">
+                              <span>
+                                <a href="/profile/{{$l['user_id']}}">
+                                  <i class="fa fa-map-marker"></i> &#8249; 3 km 
+                                </a>
+                              </span>
+                              <span><a href="#" class="hover has-tooltip" title="<strong>Toronto</strong><br>{{$l['address']}}" data-html="true" data-placement="right"><i class="fa fa-building-o"></i> 1 location </a></span>
+                            </div>
                           </div>
                     </div>
                     <div class="col-sm-4">
