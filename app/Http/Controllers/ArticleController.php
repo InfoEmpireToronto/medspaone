@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Post;
+use App\User;
 // use TCG\Voyager\Models\Post;
 
 use Carbon\Carbon;
@@ -43,11 +44,22 @@ class ArticleController extends Voyager\VoyagerController
 
     }
 
-    public function articles()
+    public function articles($name = false)
     {
+        if($name)
+        {
+            $user = User::where('slug', $name)->first();
+            if($user)
+                return view('articles',[ 
+                    'articles' => Post::where('author_id', $user->id)->get(),
+                    'user' => $user
+
+                ]);
+        }
 
         return view('articles',[ 
-
+            'articles' => Post::all(),
+            'user' => false
 
         ]);
 

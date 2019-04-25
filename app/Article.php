@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use TCG\Voyager\Models\Category;
+
 
 class Article extends Model
 {
@@ -14,4 +16,7 @@ class Article extends Model
 
     const CREATED_AT = 'date_created';
 	const UPDATED_AT = 'date_modified';
+
+
+	
 }

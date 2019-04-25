@@ -27,6 +27,8 @@ $keywords = "";
         <link rel="stylesheet" type="text/css" href="/style.css">
         <link rel="stylesheet" type="text/css" href="/style/css/color/blue.css">
         @yield('css')
+        <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5cb87a601e8a61001214aca8&product=inline-share-buttons' async='async'></script>
+  
     </head>
     <body>
         <div class="content-wrapper">
@@ -34,8 +36,8 @@ $keywords = "";
       <div class="container-fluid flex-row justify-content-center">
         <div class="navbar-header">
           <div class="navbar-brand">
-        <a href="/" class="d-none d-sm-block"><img src="#" srcset="style/images/logo2.png 1x, style/images/logo2@2x.png 2x" alt="" /></a>
-        <a href="/" class="d-block d-sm-none"><img src="#" srcset="style/images/logo-small.png 1x, style/images/logo-small@2x.png 2x" alt="" /></a>
+        <a href="/" class="d-none d-sm-block"><img src="#" srcset="/style/images/logo2.png 1x, /style/images/logo2@2x.png 2x" alt="" /></a>
+        <a href="/" class="d-block d-sm-none"><img src="#" srcset="/style/images/logo-small.png 1x, /style/images/logo-small@2x.png 2x" alt="" /></a>
       
       </div>
           <div class="navbar-hamburger ml-auto d-lg-none d-xl-none"><button class="hamburger animate" data-toggle="collapse" data-target=".navbar-collapse"><span></span></button></div>
@@ -47,10 +49,10 @@ $keywords = "";
          <li class="nav-item dropdown"><a class="nav-link dropdown-item dropdown-toggle" href="#">Publications</a>
               <ul class="dropdown-menu">
                  <li class="nav-item dropdown"><a class="dropdown-item dropdown-toggle" href="/articles">Articles</a>
-                  <ul class="dropdown-menu">
+                  <!-- <ul class="dropdown-menu">
                     <li class="nav-item"><a class="dropdown-item" href="/articles">Category</a></li>
                     <li class="nav-item"><a class="dropdown-item" href="/articles">Category</a></li>
-                  </ul>
+                  </ul> -->
                 </li>
           <li class="nav-item"><a class="dropdown-item" href="/before-after">Before &amp; after</a></li>
           <li class="nav-item"><a class="dropdown-item" href="/videos">Videos</a></li>

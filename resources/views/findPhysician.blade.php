@@ -75,7 +75,7 @@
                 <li>
                   <div class="row">
                     <div class="col-sm-8 mb-0">
-                          <figure class="rounded"><a href="/profile/{{$l['user_id']}}"><img src="/style/images/art/a5.jpg" alt="" /></a></figure>
+                          <figure class="rounded"><a href="/profile/{{$l['user_id']}}"><img src="{{ $l->user()->logo ? '/storage/'.$l->user()->logo : '/style/images/art/a5.jpg'}}" alt="" /></a></figure>
                           <div class="post-content">
                             <h6 class="post-title"> <a href="/profile/{{$l['user_id']}}">{{$l['title']}}</a> </h6>
                     <p>{{$l['address']}}</p>

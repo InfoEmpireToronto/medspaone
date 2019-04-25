@@ -148,7 +148,7 @@
                         <div class="panel-body">
                             @php
                                 $dataTypeRows = $dataType->{(isset($dataTypeContent->id) ? 'editRows' : 'addRows' )};
-                                $exclude = ['title', 'body', 'excerpt', 'slug', 'status', 'category_id', 'featured', 'meta_description', 'meta_keywords', 'seo_title'];
+                                $exclude = ['title', 'body', 'excerpt', 'slug', 'status', 'featured', 'category_id', 'meta_description', 'meta_keywords', 'seo_title'];
                             @endphp
 
                             @foreach($dataTypeRows as $row)
@@ -163,6 +163,7 @@
                                             {{ $row->slugify }}
                                             <label for="name">{{ $row->display_name }}</label>
                                             @include('voyager::multilingual.input-hidden-bread-edit-add')
+                                            
                                             @if($row->display_name == 'Author')
                                                 <div>
                                                     <select name="author_id">

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Article;
-use TCG\Voyager\Models\Post;
+use App\Post;
 use App\Location;
 use App\User;
 

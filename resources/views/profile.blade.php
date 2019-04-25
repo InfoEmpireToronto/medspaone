@@ -1,28 +1,37 @@
 @extends('layouts.main')
 
+@section('css')
+<style type="text/css">
+  .map {
+    height: 200px;
+  }
+</style>
+@stop
 
 @section('content')
 	<!-- data-image-src="insert doctor cover photo" -->
 
-<div class="wrapper image-wrapper bg-image inverse-text" data-image-src="/style/images/art/bg1.jpg">
+<div class="wrapper image-wrapper bg-image inverse-text" data-image-src="{{ $user->backImage ? '/storage/'.$user->backImage : '/style/images/art/bg1.jpg' }}">
       <div class="container inner pt-120 pb-120 pt-sm-20 pb-sm-20">
         <h2 class="section-title mb-40 text-center">{{ $user->company }}</h2>
 		  <div class="row text-center">
           <div class="col-sm-4">
 			  <p class="icon fs-48 mb-10"><i class="si-ecommerce_shop-location"></i></p> 
-			  <p>5000 Dufferin St, Toronto, ON M3H 5T5</p>
+        @foreach($user->locations() as $location)
+			   <p>{{$location->address}}</p>
+         @endforeach
 			  </div>
 			  <div class="col-sm-4">
 			  <p class="icon fs-48 mb-10"><i class="si-phone_iphone"></i></p>
-				  <p><a href="tel:416-322-6000" class="color-white lead">416-322-6000</a></p>
+				  <p><a href="tel:{{$user->phone}}" class="color-white lead">{{$user->phone}}</a></p>
 			  </div>
 			  <div class="col-sm-4">
 			  <p class="icon fs-48 mb-10"><i class="si-hardware_computer-phone-connection"></i></p>
-				  <p><a href="www.infoempire.com" target="_blank" class="color-white">www.infoempire.com</a></p>
+				  <p><a href="http://{{$user->website}}" target="_blank" class="color-white">{{$user->website}}</a></p>
      		 </div>
 		  </div>
 		   <div class="row text-center">
-			   <div class="col-sm-12"><a href="" target="_blank" class="btn btn-red">Start video chat with an expert <i class="fa fa-video-camera"></i></a></div>
+			   <div class="col-sm-12"><a href="#/chat" target="_blank" class="btn btn-red">Start video chat with an expert <i class="fa fa-video-camera"></i></a></div>
 		  </div>
     </div>
 </div>
@@ -44,7 +53,7 @@
                 <div class="tab-pane fade show active" id="tab1-1">
                 <div class="image-block-wrapper mb-20">
                   <div class="image-block col-lg-6 mb-30">
-                    <div class="image-block-bg bg-image rounded" data-image-src="/style/images/art/t2.jpg"></div>
+                    <div class="image-block-bg bg-image rounded" data-image-src="/storage/{{$user->logo}}"></div>
                   </div>
                   <!--/.image-block -->
                   <div class="container-fluid">
@@ -71,38 +80,14 @@
                 </div>
                 <div class="tab-pane fade" id="tab1-3">
                   <h3>Branded Procedures</h3>
-
-                                        <ul class="unordered-list list-default">
-										<li>Excel V</li>
-                                        <li>ThermiVa</li>
-                                        <li>ThermiTight</li>
-                                        <li>Thermage</li>
-                                        <li>CoolSculpting</li>
-                                        <li>Kybella</li>
-                                        <li>CoolSculpt Mini</li>
-                                        <li>ALASTIN Skincare&#174; Regenerating Skin Nectar</li>
-                                        <li>ALASTIN Skincare&#174; Restorative Neck Complex</li>
-
-                                        <li>ALASTIN Skincare&#174;</li>
-
-                                        <li>BOTOX Cosmetic</li>
-
-                                        <li>THERMIsmooth</li>
-
-                                        <li>Juvederm Ultra </li>
-
-                                        <li>Sculptra</li>
-
-                                        <li> Radiesse</li>
-
-                                        <li>Volbella </li>
-
-                                        <li>Dysport</li>
-
-                                        <li>Restylane</li>
-
-                                        <li>Fraxel </li>
-</ul>
+<ul class="unordered-list list-default">
+    <li><a href="#laser-treatments.php">Laser Treatments</a></li>
+    <li><a href="#laser-hair-removal.php">Laser Hair Removal</a></li>
+    <li><a href="#injectables.php">Injectables</a></li>
+    <li><a href="#relaxation-facials.php">Relaxation Facials</a></li>
+    <li><a href="#custom-medical-facials.php">Custom Medical Facials</a></li>
+    <li><a href="#medical-device-facials.php">Medical Device Facials</a></li>
+  </ul>
                 </div>
              
 				  
@@ -156,7 +141,8 @@
               <!-- /.tab-content -->
             </div>
 			  
-			  <h3>Articles</h3>
+        <a id="Articles" ></a>
+        <h3>Articles</h3>
 			  <div class="bg-white shadow mb-30 rounded">
 				  <div class="container-fluid p-4">
 				 <div class="items row isotope boxed grid-view">
@@ -165,7 +151,8 @@
 @foreach($user->articles(2) as $article)
             <div class="item grid-sizer col-md-6">
               <div class="box bg-white shadow p-20">
-                <figure class="main mb-20 overlay overlay1 rounded"><a href="/article"><img src="/style/images/art/ge1.jpg" alt="" /></a>
+                <figure class="main mb-20 overlay overlay1 rounded"><a href="/article/{{$article->id}}">
+                  <img src="/storage/{{$article->image}}" alt="" /></a>
                   <figcaption>
                     <h5 class="text-uppercase from-top mb-0">Read more</h5>
 					  <p></p>
@@ -175,7 +162,7 @@
           <div class="category">Body contouring</div>
                 </figure>
 				  
-                <h6 class="mb-10">{{$article->title}}</h6>
+                <h6 class="mb-10">{{ucwords(strtolower($article->title))}}</h6>
 				  <p class="mb-5">{!! substr(strip_tags($article->body),0,200) !!}</p>
 				  <div class="arrow-link"><a href="/article/{{$article->id}}" class="text-muted">Read article <i class="mi-arrow-right"></i></a> </div>
               </div>
@@ -198,7 +185,7 @@
               </div>
             </div> -->
            </div> <div class="col-lg-12 text-center"><div class="space20"></div>
-					  <a href="/articles" class="btn">Read more <i class="fa fa-caret-right"></i></a>
+					  <a href="/articles/{{$user->slug}}" class="btn">All Articles <i class="fa fa-caret-right"></i></a>
 					  </div>
           </div>
 				 
@@ -222,7 +209,7 @@
           </div>  
 					  <div class="col-lg-12 text-center">
 					  <div class="space20 d-none d-sm-block"></div>
-					  <a href="/videos" class="btn">Watch more <i class="fa fa-play-circle"></i></a>
+					  <a href="/videos" class="btn">All Videos <i class="fa fa-play-circle"></i></a>
 					  </div>
           <!-- /column -->
         </div>
@@ -251,7 +238,7 @@
 			
           <div class="cbp-item text-center bodycontouring dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="style/images/before-after.jpg" title="Body sculpting"><img src="/style/images/before-after.jpg" alt="" /></a>
+				<a href="/style/images/before-after.jpg" title="Body sculpting"><img src="/style/images/before-after.jpg" alt="" /></a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">
@@ -269,7 +256,7 @@
 			
 			<div class="cbp-item text-center botox dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="style/images/art/about11.jpg" title="Botox"><img src="/style/images/art/about11.jpg" alt="" /></a>
+				<a href="/style/images/art/about11.jpg" title="Botox"><img src="/style/images/art/about11.jpg" alt="" /></a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">
@@ -287,7 +274,7 @@
 			
 		  <div class="cbp-item text-center peels dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="style/images/art/au6.jpg" title="Peels"><img src="/style/images/art/au6.jpg" alt="" /></a>
+				<a href="/style/images/art/au6.jpg" title="Peels"><img src="/style/images/art/au6.jpg" alt="" /></a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">
@@ -305,7 +292,7 @@
 			
 			<div class="cbp-item text-center juvederm dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="style/images/art/au3.jpg" title="Juvederm"><img src="/style/images/art/au3.jpg" alt="" /></a>
+				<a href="/style/images/art/au3.jpg" title="Juvederm"><img src="/style/images/art/au3.jpg" alt="" /></a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">
@@ -328,7 +315,7 @@
 			
 			 <div class="cbp-item text-center bodycontouring dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="style/images/art/b15.jpg" title="Body sculpting"><img src="/style/images/art/b15.jpg" alt="" /></a>
+				<a href="/style/images/art/b15.jpg" title="Body sculpting"><img src="/style/images/art/b15.jpg" alt="" /></a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">
@@ -346,7 +333,7 @@
 			
 			<div class="cbp-item text-center botox dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="style/images/art/b23.jpg" title="Botox"><img src="/style/images/art/b23.jpg" alt="" /></a>
+				<a href="/style/images/art/b23.jpg" title="Botox"><img src="/style/images/art/b23.jpg" alt="" /></a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">
@@ -364,7 +351,7 @@
 			
 		  <div class="cbp-item text-center peels dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="style/images/art/bodisculpting-3.jpg" title="Peels"><img src="/style/images/art/bodisculpting-3.jpg" alt="" /></a>
+				<a href="/style/images/art/bodisculpting-3.jpg" title="Peels"><img src="/style/images/art/bodisculpting-3.jpg" alt="" /></a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">
@@ -382,7 +369,7 @@
 			
 			<div class="cbp-item text-center juvederm dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="style/images/art/co8.jpg" title="Juvederm"><img src="/style/images/art/co8.jpg" alt="" /></a>
+				<a href="/style/images/art/co8.jpg" title="Juvederm"><img src="/style/images/art/co8.jpg" alt="" /></a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">
@@ -405,7 +392,7 @@
 				
 				<div class="col-lg-12 text-center">
 					  <div class="space20 d-none d-sm-block"></div>
-					  <a href="/before-after" class="btn">View more <i class="fa fa-photo"></i></a>
+					  <a href="/before-after" class="btn">All Before & After <i class="fa fa-photo"></i></a>
 					  </div>
       </div>	   
 				   
@@ -420,7 +407,7 @@
           <div id="instafeed" class="items row"></div>
         </div>
         <div class="space40"></div>
-        <div class="text-center"><a href="#" class="btn">View more <i class="fa fa-instagram"></i></a></div>
+        <div class="text-center"><a href="#" class="btn">Visit Instagram Page <i class="fa fa-instagram"></i></a></div>
       </div>
     </div>
 			  
@@ -486,21 +473,30 @@
 
 
 @section('js')
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnKC3LbIqv3N657fP7u3H8mTLzOa3V8_w"></script>
+
   <script type="text/javascript">
 
   $(document).ready(function(){
 
     $('.map').each(function(){
 
+      lat = $(this).attr('data-lat');
+      lon = $(this).attr('data-lon');
+      title = $(this).attr('data-title');
+
+      var myLatlng = new google.maps.LatLng(lat,lon);
+      console.log(myLatlng);
+
       var map = new google.maps.Map(this, {
-          zoom: 10,
+          zoom: 15,
           center: myLatlng
         });
       var marker = new google.maps.Marker({
-                  position: new google.maps.LatLng(location.lat,location.lon),
-                  title:location.title
+                  position: new google.maps.LatLng(lat,lon),
+                  title:title
               });
-              marker.setMap(map);
+      marker.setMap(map);
     });
   });
 

@@ -14,7 +14,7 @@
 				  
                 <div class="space40"></div>
                 <div class="post-content text-left">
-                  <h1 class="post-title"><?php echo e($article->title); ?></h1>
+                  <h1 class="post-title"><?php echo e(ucwords(strtolower($article->title))); ?></h1>
                   <div class="meta"><span class="date">April 12, 2019</span><span class="author">By <a href="/profile/<?php echo e($article->user()->id); ?>"><?php echo e($article->user()->company); ?></a></span><span class="comments"><a href="#">2</a> </span><span><a href="#"><i class="fa fa-thumbs-up"></i> 10 </a></span><span class="category"><a href="#">Skin</a></span>
 <!--
 					 <span class="social-color social-s">
@@ -32,13 +32,15 @@
 
                   <div class="space10"></div>
                  
-               <h4 class="text-uppercase text-center">Share this story</h4>
+                 <div class="sharethis-inline-share-buttons"></div>
+
+               <!-- <h4 class="text-uppercase text-center">Share this story</h4>
                   <ul class="social social-color social-s text-center">
                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                     <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
                     <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                  </ul>
+                  </ul> -->
                   <!-- /.social -->
                 </div>
                 <!-- /.post-content -->
@@ -144,8 +146,9 @@
           <aside class="col-md-4 sidebar">
             <div class="sidebox widget">
               <h3 class="widget-title">About author</h3>
-              <figure class="rounded mb-20"><img src="/style/images/logo-large.png" alt="" /></figure>
-              <p>YouTube has emerged as a go-to source for solid information by people interested in cosmetic procedures. People may search on YouTube for the procedure they are considering and trustingly absorb informative videos that purpose to relay important information about the procedure.</p>
+              <figure class="rounded mb-20"><img src="/storage/<?php echo e($article->user()->logo); ?>" alt="" /></figure>
+              <?php echo $article->user()->overview; ?>
+
               <div class="clearfix"></div>
             </div>
             <!-- /.widget -->

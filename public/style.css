@@ -3105,8 +3105,9 @@ figure.overlay img {
     left: 0px;
     width: 100%;
     height: 100%;
-    background-size: cover !important;
+    background-size: contain !important;
     background-position: center center !important;
+    background-repeat: no-repeat;
 }
 /*-----------------------------------------------------------------------------------*/
 /*	23. BLOCK
@@ -3226,7 +3227,7 @@ figure.overlay img {
     margin-bottom: 0
 }
 .accordion-wrapper .card-block {
-    padding: 0 25px 5px 25px;
+    padding: 0 25px 25px 25px;
 }
 .accordion-wrapper .card-header {
     margin-bottom: 0;
