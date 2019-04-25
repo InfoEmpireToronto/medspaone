@@ -202,7 +202,7 @@ $(document).ready(function() {
 	$cubeinline6.cubeportfolio({
         filters: '#cube-inline-6-filter',
         layoutMode: 'grid',
-        mediaQueries: [{width: 1680, cols: 3}, {width: 1440, cols: 3}, {width: 1000, cols: 3}, {width: 740, cols: 2}, {width: 575, cols: 1}, {width: 480, cols: 1}],
+        mediaQueries: [{width: 1680, cols: 5}, {width: 1440, cols: 4}, {width: 1000, cols: 3}, {width: 740, cols: 2}, {width: 575, cols: 2}, {width: 480, cols: 1}],
         defaultFilter: '*',
         animationType: 'quicksand',
         gapHorizontal: 10,
