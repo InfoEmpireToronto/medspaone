@@ -170,8 +170,8 @@ console.log(data);
           console.log(location.distance);
           if(location.distance > 20)
           {
-            $('#location-'+location.id).parent().hide();
-            console.log('skipping:'+location.title);
+            // $('#location-'+location.id).parent().hide();
+            // console.log('skipping:'+location.title);
             // return;
           }
 
