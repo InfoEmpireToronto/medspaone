@@ -22,7 +22,7 @@
 			
           <div class="cbp-item text-center bodycontouring dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="style/images/before-after.jpg" title="Body sculpting"><img src="style/images/before-after.jpg" alt="" /></a>
+				<a href="/style/images/before-after.jpg" title="Body sculpting"><img src="/style/images/before-after.jpg" alt="" /></a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">
@@ -40,7 +40,7 @@
 			
 			<div class="cbp-item text-center botox dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="style/images/art/about11.jpg" title="Botox"><img src="style/images/art/about11.jpg" alt="" /></a>
+				<a href="/style/images/art/about11.jpg" title="Botox"><img src="/style/images/art/about11.jpg" alt="" /></a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">
@@ -58,7 +58,7 @@
 			
 		  <div class="cbp-item text-center peels dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="style/images/art/au6.jpg" title="Peels"><img src="style/images/art/au6.jpg" alt="" /></a>
+				<a href="/style/images/art/au6.jpg" title="Peels"><img src="/style/images/art/au6.jpg" alt="" /></a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">
@@ -76,7 +76,7 @@
 			
 			<div class="cbp-item text-center juvederm dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="style/images/art/au3.jpg" title="Juvederm"><img src="style/images/art/au3.jpg" alt="" /></a>
+				<a href="/style/images/art/au3.jpg" title="Juvederm"><img src="/style/images/art/au3.jpg" alt="" /></a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">
@@ -99,7 +99,7 @@
 			
 			 <div class="cbp-item text-center bodycontouring dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="style/images/art/b15.jpg" title="Body sculpting"><img src="style/images/art/b15.jpg" alt="" /></a>
+				<a href="/style/images/art/b15.jpg" title="Body sculpting"><img src="/style/images/art/b15.jpg" alt="" /></a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">
@@ -117,7 +117,7 @@
 			
 			<div class="cbp-item text-center botox dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="style/images/art/b23.jpg" title="Botox"><img src="style/images/art/b23.jpg" alt="" /></a>
+				<a href="/style/images/art/b23.jpg" title="Botox"><img src="/style/images/art/b23.jpg" alt="" /></a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">
@@ -135,7 +135,7 @@
 			
 		  <div class="cbp-item text-center peels dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="style/images/art/bodisculpting-3.jpg" title="Peels"><img src="style/images/art/bodisculpting-3.jpg" alt="" /></a>
+				<a href="/style/images/art/bodisculpting-3.jpg" title="Peels"><img src="/style/images/art/bodisculpting-3.jpg" alt="" /></a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">
@@ -153,7 +153,7 @@
 			
 			<div class="cbp-item text-center juvederm dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="style/images/art/co8.jpg" title="Juvederm"><img src="style/images/art/co8.jpg" alt="" /></a>
+				<a href="/style/images/art/co8.jpg" title="Juvederm"><img src="/style/images/art/co8.jpg" alt="" /></a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">
