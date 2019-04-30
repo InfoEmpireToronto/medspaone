@@ -82,7 +82,7 @@
                             <div class="meta">
                               <span>
                                 <a href="/profile/{{$l['user_id']}}">
-                                  <i class="fa fa-map-marker"></i> &#8249; <span class="distance">3</span> km 
+                                  <i class="fa fa-map-marker"></i> &#8249; <span class="distance">-</span> km 
                                 </a>
                               </span>
                               <span><a href="#" class="hover has-tooltip" title="<strong>Toronto</strong><br>{{$l['address']}}" data-html="true" data-placement="right"><i class="fa fa-building-o"></i> 1 location </a></span>
