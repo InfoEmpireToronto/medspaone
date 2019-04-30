@@ -392,7 +392,7 @@
 				
 				<div class="col-lg-12 text-center">
 					  <div class="space20 d-none d-sm-block"></div>
-					  <a href="/before-after" class="btn">All Before & After <i class="fa fa-photo"></i></a>
+					  <a href="/before-after/{{$user->slug}}" class="btn">All Before & After <i class="fa fa-photo"></i></a>
 					  </div>
       </div>	   
 				   

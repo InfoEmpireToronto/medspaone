@@ -74,11 +74,22 @@ class HomeController extends Controller
     }
 
 
-    public function beforeAfter()
+    public function beforeAfter($name = false)
     {
 
+        if($name)
+        {
+            $user = User::where('slug', $name)->first();
+            if($user)
+                return view('beforeAfter',[ 
+                    //'articles' => Post::where('author_id', $user->id)->get(),
+                    'user' => $user
+
+                ]);
+        }
+
         return view('beforeAfter',[ 
-            
+            'user' => false
 
         ]);
 

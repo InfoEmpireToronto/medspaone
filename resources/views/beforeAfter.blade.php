@@ -4,7 +4,7 @@
 @section('content')
 	<div class="wrapper light-wrapper">
       <div class="container-fluid inner pt-70 pt-sm-20">
-        <h2 class="heading text-center">Before and after provided by DOCTOR</h2>
+        <h2 class="heading text-center">Before and after {{$user ? 'provided by '.$user->name : '' }}</h2>
         <div class="space20"></div>
          
 			   <div id="cube-inline-6-filter" class="cbp-filter-container text-center">

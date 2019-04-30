@@ -29,6 +29,7 @@ Route::get('/articles', 'ArticleController@articles')->name('articles');
 Route::get('/articles/{name}', 'ArticleController@articles')->name('articles');
 Route::get('/find-physician', 'HomeController@findPhysician')->name('find-physician');
 Route::get('/before-after', 'HomeController@beforeAfter')->name('before-after');
+Route::get('/before-after/{name}', 'HomeController@beforeAfter')->name('before-after');
 Route::get('/profile', 'HomeController@profile')->name('profile');
 Route::get('/profile/{id}', 'HomeController@profile')->name('profile');
 Route::get('/videos', 'HomeController@videos')->name('videos');
