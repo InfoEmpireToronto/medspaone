@@ -73,7 +73,7 @@
               @foreach($locations as $l)
           
                 <li>
-                  <div class="row">
+                  <div class="row" id="location-{{$l->id}}">
                     <div class="col-sm-8 mb-0">
                           <figure class="rounded"><a href="/profile/{{$l['user_id']}}"><img src="{{ $l->user()->logo ? '/storage/'.$l->user()->logo : '/style/images/art/a5.jpg'}}" alt="" /></a></figure>
                           <div class="post-content">
@@ -82,7 +82,7 @@
                             <div class="meta">
                               <span>
                                 <a href="/profile/{{$l['user_id']}}">
-                                  <i class="fa fa-map-marker"></i> &#8249; 3 km 
+                                  <i class="fa fa-map-marker"></i> &#8249; <span class="distance">3</span> km 
                                 </a>
                               </span>
                               <span><a href="#" class="hover has-tooltip" title="<strong>Toronto</strong><br>{{$l['address']}}" data-html="true" data-placement="right"><i class="fa fa-building-o"></i> 1 location </a></span>
@@ -129,9 +129,11 @@
       <?php forEach($locations as $l)
       {
         echo "{ 
-                    title: '{$l['title']}', 
+                    title: '{$l['title']}',
+                    id: '{$l['id']}',
                     lat: {$l['lat']}, 
-                    lon: {$l['lon']}
+                    lon: {$l['lon']},
+                    distance: 0
                   },";
       }
                 
@@ -150,17 +152,31 @@
         }
         map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
+        $(data).each(function(k, v){
+          // console.log(v,k);
+          data[k].distance = distanceBetweenPoints(currentLat, currentLon, v.lat, v.lon);
+        });
         
-
         updateMap(data);
         
       }
 
       function updateMap(data)
       {
-        data.forEach(function(location)
+console.log(data);
+
+        $(data).each(function(k,location)
         {
-          console.log(location);
+          console.log(location.distance);
+          if(location.distance > 20)
+          {
+            $('#location-'+location.id).parent().hide();
+            console.log('skipping:'+location.title);
+            return;
+          }
+
+          $('#location-'+location.id+' .distance').html(Math.ceil(location.distance));
+
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(location.lat,location.lon),
                 title:location.title
@@ -171,6 +187,24 @@
        
 
       }
+
+      function distanceBetweenPoints(lat1, lng1, lat2, lng2) 
+      {
+        var RADIUS_EARTH = 6371;            // Radius of the earth in kilometers.
+        var DEG_TO_RAD = Math.PI / 180;     // To convert degrees to radians.
+
+        var dLat = (lat2 - lat1) * DEG_TO_RAD;
+        var dLng = (lng2 - lng1) * DEG_TO_RAD;
+        lat1 = lat1 * DEG_TO_RAD;
+        lat2 = lat2 * DEG_TO_RAD;
+
+        var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.sin(dLng / 2) * Math.sin(dLng / 2) *
+                Math.cos(lat1) * Math.cos(lat2);
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+        return RADIUS_EARTH * c;
+      };
     </script>
 
 @endsection

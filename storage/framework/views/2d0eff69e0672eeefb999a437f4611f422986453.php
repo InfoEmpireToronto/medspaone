@@ -60,7 +60,7 @@ $keywords = "";
 
               </ul>
             </li>
-      <li class="nav-item"><a class="nav-link" href="/find-physician">Find a physician</a></li>
+      <li class="nav-item"><a class="nav-link" href="/find-physician">Find an expert</a></li>
            
            
 <!--
@@ -86,7 +86,9 @@ $keywords = "";
               </ul>
         </li>
             
-            <li class="nav-item"><a class="nav-link  text-uppercase" href="#">Login</a>
+            <li class="nav-item">
+
+              <a class="nav-link  text-uppercase" href="#">Login</a>
         <ul class="dropdown-menu mega-menu boxed list-view text-left">
                 <li class="mega-menu-content">
                   <div class="image-block-wrapper">
@@ -100,13 +102,14 @@ $keywords = "";
                           <div class="box">
                             <div class="row">
                               <div class="col-md-6">
-                                 <form>
+<form method="POST" action="<?php echo e(route('login')); ?>">
+                        <?php echo csrf_field(); ?>
               <div class="form-group">
-                <input type="text" class="form-control" id="exampleInputName1" placeholder="Login">
+                <input type="text" class="form-control" id="exampleInputName1" placeholder="Login" name="email">
               </div>
               <!-- /.form-group -->
               <div class="form-group">
-                <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Password">
+                <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Password" name="password">
               </div>
             <div class="form-group mb-0">
               <button type="submit" class="btn btn-red btn-block mb-30 mx-0">Login</button>
@@ -167,13 +170,13 @@ $keywords = "";
     <?php echo $__env->yieldContent('content'); ?>
 
      <footer class="dark-wrapper inverse-text">
-      <div class="container inner">
+      <div class="container inner pt-sm-20">
         <div class="row d-md-flex align-items-md-center">
           <div class="col-md-4 text-center text-md-left">
             <p class="mb-0"> 2019 MedSpa.One © All rights reserved.</p>
           </div>
           <!--/column -->
-          <div class="col-md-4 text-center">
+          <div class="col-md-4 text-center d-none d-sm-block">
             <img src="#" srcset="/style/images/logo-light.png 1x, /style/images/logo-light@2x.png 2x" alt="" />
           </div>
           <!--/column -->
@@ -200,6 +203,7 @@ $keywords = "";
 
   <script src="/style/revolution/js/jquery.themepunch.tools.min.js"></script>
   <script src="/style/revolution/js/jquery.themepunch.revolution.min.js"></script>
+
 
   <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems! The following part can be removed on Server for On Demand Loading) -->
   <!--<script src="/style/revolution/js/extensions/revolution.extension.actions.min.js"></script>

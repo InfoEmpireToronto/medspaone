@@ -84,6 +84,16 @@ class HomeController extends Controller
 
     }
 
+    public function faq()
+    {
+
+        return view('faq',[ 
+            
+
+        ]);
+
+    }
+
     public function profile($id = false)
     {
         if(!$id) return view('profile-tmpl');
@@ -128,8 +138,15 @@ class HomeController extends Controller
     }
 
 
-    public function login()
+    public function login(Request $request)
     {
+
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            // Authentication passed...
+            return redirect()->intended('/admin');
+        }
 
         return view('login',[ 
             

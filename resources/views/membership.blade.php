@@ -14,7 +14,7 @@
                 <h4 class="panel-title">5-Star Plan</h4>
                 <div class="price color-dark"> <span class="price-currency">$</span><span class="price-value">99</span> <span class="price-duration">month</span></div>
               </div>
-              <div class="panel-body">
+              <!-- <div class="panel-body">
                 <table class="table">
                   <tr>
                     <td><strong>Item</strong> 1 </td>
@@ -35,7 +35,7 @@
                     <td><strong>Item</strong> 6 </td>
                   </tr>
                 </table>
-              </div>
+              </div> -->
               <div class="panel-footer"> <a href="https://www.paypal.me/InfoempireLLC/" class="btn btn-white mb-10" role="button" target="">Buy membership</a></div>
             </div>
           </div>
@@ -46,7 +46,7 @@
                 <h4 class="panel-title">Gold Member Plan</h4>
                 <div class="price color-dark"> <span class="price-currency">$</span><span class="price-value">299</span> <span class="price-duration">month</span></div>
               </div>
-              <div class="panel-body">
+              <!-- <div class="panel-body">
                 <table class="table">
                   <tr>
                     <td><strong>Item</strong> 1 </td>
@@ -67,7 +67,7 @@
                     <td><strong>Item</strong> 6 </td>
                   </tr>
                 </table>
-              </div>
+              </div> -->
               <div class="panel-footer"> <a href="https://www.paypal.me/InfoempireLLC/" class="btn btn-white mb-10" role="button" target="">Buy membership</a></div>
             </div>
           </div>
@@ -78,7 +78,7 @@
                 <h4 class="panel-title">VIP Sponsor Plan</h4>
                 <div class="price color-dark"> <span class="price-currency">$</span><span class="price-value">599</span> <span class="price-duration">month</span></div>
               </div>
-              <div class="panel-body">
+              <!-- <div class="panel-body">
                 <table class="table">
                   <tr>
                     <td><strong>Item</strong> 1 </td>
@@ -99,7 +99,7 @@
                     <td><strong>Item</strong> 6 </td>
                   </tr>
                 </table>
-              </div>
+              </div> -->
               <div class="panel-footer"> <a href="https://www.paypal.me/InfoempireLLC/" class="btn btn-white mb-10" role="button" target="">Buy membership</a></div>
             </div>
           </div>

@@ -9,9 +9,9 @@
 
 <?php $__env->startSection('content'); ?>
     <div class="wrapper light-wrapper">
-      <div class="container-fluid inner pt-70">
+      <div class="container-fluid inner pt-20">
         <h1 class="heading text-center">Latest Med Spa publications</h1>
-        <div class="space50"></div>
+
 
         <div class="tiles grid">
           <div class="items row isotope boxed grid-view">

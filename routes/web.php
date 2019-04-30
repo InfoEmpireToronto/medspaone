@@ -20,6 +20,7 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+// Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/article/{id}', 'ArticleController@viewArticle')->name('viewArticle');
@@ -35,10 +36,13 @@ Route::get('/login', 'HomeController@login')->name('login');
 Route::get('/membership', 'HomeController@membership')->name('membership');
 Route::get('/gift-rewards-program', 'HomeController@giftReward')->name('giftReward');
 Route::get('/about', 'HomeController@about')->name('about');
+Route::get('/faq', 'HomeController@faq')->name('faq');
 
 
 Route::POST('/admin/location/save', 'AdminController@saveLocation')->name('saveLocation');
 Route::GET('/admin/chat', 'AdminController@startChat')->name('startChat');
 Route::GET('/chat', 'HomeController@startChat')->name('Chat');
+
+Route::POST('/login', 'HomeController@login')->name('Chat');
 
 
