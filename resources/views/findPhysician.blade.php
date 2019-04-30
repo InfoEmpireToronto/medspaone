@@ -172,7 +172,7 @@ console.log(data);
           {
             $('#location-'+location.id).parent().hide();
             console.log('skipping:'+location.title);
-            return;
+            // return;
           }
 
           $('#location-'+location.id+' .distance').html(Math.ceil(location.distance));
