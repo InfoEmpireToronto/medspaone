@@ -36,10 +36,10 @@
                     <h5 class="text-uppercase from-top mb-0">Read more</h5>
                       <p></p>
                   </figcaption>
-                    <div class="category">{{$article->getCategories()[0]->name}}</div>
+                    <div class="category"><a href="/profile/{{$article->author_id}}#Articles">{{$article->getCategories()[0]->name}}</a></div>
                 </figure>
                   
-                <h6 class="mb-0">{{ucwords(strtolower($article->title))}}</h6>
+                <h6 class="mb-0"><a href="/profile/{{$article->author_id}}#Articles">{{ucwords(strtolower($article->title))}}</a></h6>
 
               </div>
               <!-- /.box -->
