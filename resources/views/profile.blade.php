@@ -80,15 +80,7 @@
                 </div>
                 <div class="tab-pane fade" id="tab1-3">
                   {!! $user->services !!}
-                  <!-- <h3>Branded Procedures</h3>
-<ul class="unordered-list list-default">
-    <li><a href="#laser-treatments.php">Laser Treatments</a></li>
-    <li><a href="#laser-hair-removal.php">Laser Hair Removal</a></li>
-    <li><a href="#injectables.php">Injectables</a></li>
-    <li><a href="#relaxation-facials.php">Relaxation Facials</a></li>
-    <li><a href="#custom-medical-facials.php">Custom Medical Facials</a></li>
-    <li><a href="#medical-device-facials.php">Medical Device Facials</a></li>
-  </ul> -->
+                 
                 </div>
              
 				  
@@ -160,7 +152,7 @@
                   </figcaption>
 					
 
-          <div class="category">Body contouring</div>
+          <div class="category">{{$article->getCategories()[0]->name}}</div>
                 </figure>
 				  
                 <h6 class="mb-10">{{ucwords(strtolower($article->title))}}</h6>
