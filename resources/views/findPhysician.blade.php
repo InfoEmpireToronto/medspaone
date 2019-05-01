@@ -154,7 +154,7 @@
 
         $(data).each(function(k, v){
           // console.log(v,k);
-          data[k].distance = distanceBetweenPoints(currentLat, currentLon, v.lat, v.lon);
+          // data[k].distance = distanceBetweenPoints(currentLat, currentLon, v.lat, v.lon);
         });
         
         updateMap(data);
