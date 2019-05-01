@@ -383,7 +383,7 @@
 				   
 </div>
 			  
-			  
+			  @if($user->instagram)
 			  <h3>Instagram Feed?</h3>
 			  
 			   <div class="bg-white shadow mb-30 rounded">
@@ -395,7 +395,7 @@
         <div class="text-center"><a href="#" class="btn">Visit Instagram Page <i class="fa fa-instagram"></i></a></div>
       </div>
     </div>
-			  
+			  @endif
 			  
 			  
 			  
@@ -483,8 +483,9 @@
               });
       marker.setMap(map);
     });
-
-    startMyInstagram('instafeed', 1215763826);
+    @if($user->instagram)
+      startMyInstagram('instafeed', {{$user->instagram}});
+    @endif
 
   });
 
