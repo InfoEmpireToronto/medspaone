@@ -175,7 +175,7 @@ console.log(data);
             // return;
           }
 
-          $('#location-'+location.id+' .distance').html(Math.ceil(location.distance));
+          // $('#location-'+location.id+' .distance').html(Math.ceil(location.distance));
 
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(location.lat,location.lon),
