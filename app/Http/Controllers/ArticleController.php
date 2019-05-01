@@ -67,7 +67,7 @@ class ArticleController extends Voyager\VoyagerController
 
 
 
-    public function videos($name)
+    public function videos($name = false)
     {
         if($name)
         {

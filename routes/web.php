@@ -28,6 +28,7 @@ Route::get('/article/{id}', 'ArticleController@viewArticle')->name('viewArticle'
 Route::get('/articles', 'ArticleController@articles')->name('articles');
 Route::get('/articles/{name}', 'ArticleController@articles')->name('articles');
 Route::get('/videos', 'ArticleController@videos')->name('videos');
+Route::get('/videos/{name}', 'ArticleController@videos')->name('videos');
 
 Route::get('/find-physician', 'HomeController@findPhysician')->name('find-physician');
 Route::get('/before-after', 'HomeController@beforeAfter')->name('before-after');
