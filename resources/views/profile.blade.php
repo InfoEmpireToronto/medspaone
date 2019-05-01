@@ -192,7 +192,7 @@
 @endforeach
 				  <div class="col-lg-12 text-center">
   				  <div class="space20 d-none d-sm-block"></div>
-  				  <a href="/videos" class="btn">All Videos <i class="fa fa-play-circle"></i></a>
+  				  <a href="/videos/{{$user->slug}}" class="btn">All Videos <i class="fa fa-play-circle"></i></a>
 				  </div>
           <!-- /column -->
         </div>
