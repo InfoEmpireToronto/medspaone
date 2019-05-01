@@ -12,21 +12,7 @@
         
         
         @foreach($articles as $article)
-          <!--  <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
-              <div class="box bg-white shadow p-20">
-                <figure class="main mb-20 overlay overlay1 rounded"><a href="article/40"><img src="style/images/art/ge1.jpg" alt="" /></a>
-                  <figcaption>
-                    <h5 class="text-uppercase from-top mb-0">Read more</h5>
-            <p></p>
-                  </figcaption>
-          <div class="category">Body contouring</div>
-                </figure>
           
-                <h6 class="mb-10">Tone Muscles and Burn Fat with Zero Downtime</h6>
-          <p class="mb-5">Short blurb...</p>
-          <div class="arrow-link"><a href="article/40" class="text-muted">Read article <i class="mi-arrow-right"></i></a> </div>
-              </div>
-            </div> -->
 
             <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
               <div class="box bg-white shadow p-20">

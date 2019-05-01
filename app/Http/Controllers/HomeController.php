@@ -138,15 +138,6 @@ class HomeController extends Controller
     }
 
 
-    public function videos()
-    {
-
-        return view('videos',[ 
-            
-
-        ]);
-
-    }
 
 
     public function login(Request $request)

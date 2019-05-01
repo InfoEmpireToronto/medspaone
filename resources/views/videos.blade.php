@@ -4,22 +4,24 @@
 @section('content')
 	<div class="wrapper light-wrapper">
       <div class="container-fluid inner pt-70 pt-sm-20">
-        <h2 class="heading text-center">Latest videos</h2>
+        <h2 class="heading text-center">Latest Videos {{ $user ? 'For '.$user->name : '' }}</h2>
         <div class="space20"></div>
          
 		<div class="row">
+@foreach($videos as $video)
           <div class="col-lg-6">
 			  <div class="wrapper dark-wrapper inverse-text shadow rounded">
-            <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="0Z8J3axc0oY"></div>
-			  <h6 class="mb-10 p-2 px-3">Video title</h6>
+            <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="{{$video->link}}"></div>
+			  <h6 class="mb-10 p-2 px-3">{{ucwords(strtolower($video->title))}}</h6>
 			  </div>
           </div>
-			<div class="col-lg-6">
+@endforeach 
+			<!-- <div class="col-lg-6">
 			<div class="wrapper dark-wrapper inverse-text shadow rounded">
             <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="VSqkL31w69k"></div>
 			<h6 class="mb-10 p-2 px-3">Video title</h6>
 			</div>
-          </div>  
+          </div>  --> 
 					  <div class="col-lg-12">
 					  <div class="pagination bg text-center">
 						  <div class="space50"></div>

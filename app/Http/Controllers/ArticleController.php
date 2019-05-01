@@ -67,4 +67,25 @@ class ArticleController extends Voyager\VoyagerController
 
 
 
+    public function videos($name)
+    {
+        if($name)
+        {
+            $user = User::where('slug', $name)->first();
+            if($user)
+                return view('articles',[ 
+                    'articles' => Post::where('author_id', $user->id)->where('type','video')->get(),
+                    'user' => $user
+
+                ]);
+        }
+
+        return view('videos',[ 
+            'videos' => Post::where('type','video')->get(),
+            'user' => false
+
+        ]);
+
+    }
+
 }
