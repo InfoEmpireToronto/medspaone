@@ -134,12 +134,12 @@
               <!-- /.tab-content -->
             </div>
 			  
+@if($user->articles(2))
         <a id="Articles" ></a>
         <h3>Articles</h3>
-			  <div class="bg-white shadow mb-30 rounded">
-				  <div class="container-fluid p-4">
-				 <div class="items row isotope boxed grid-view">
-
+        <div class="bg-white shadow mb-30 rounded">
+          <div class="container-fluid p-4">
+         <div class="items row isotope boxed grid-view">
 
 @foreach($user->articles(2) as $article)
             <div class="item grid-sizer col-md-6">
@@ -161,61 +161,52 @@
               </div>
             </div>
 @endforeach
-
-					<!--  <div class="item grid-sizer col-md-6">
-              <div class="box bg-white shadow p-20">
-                <figure class="main mb-20 overlay overlay1 rounded"><a href="/article"><img src="/style/images/art/ge3.jpg" alt="" /></a>
-                  <figcaption>
-                    <h5 class="text-uppercase from-top mb-0">Read more</h5>
-					  <p></p>
-                  </figcaption>
-					<div class="category">Body contouring</div>
-                </figure>
-				  
-                <h6 class="mb-10">Tone Muscles and Burn Fat with Zero Downtime</h6>
-				   <p class="mb-5">Short blurb...</p>
-				  <div class="arrow-link"><a href="/article" class="text-muted">Read article <i class="mi-arrow-right"></i></a> </div>
-              </div>
-            </div> -->
            </div> <div class="col-lg-12 text-center"><div class="space20"></div>
-					  <a href="/articles/{{$user->slug}}" class="btn">All Articles <i class="fa fa-caret-right"></i></a>
-					  </div>
+            <a href="/articles/{{$user->slug}}" class="btn">All Articles <i class="fa fa-caret-right"></i></a>
+            </div>
           </div>
-				 
-			  </div>
-			  
+         
+        </div>
+@endif
+
+@if($user->videos(2))
+
         <a id="Videos" ></a>
-			  <h3>Videos</h3>
-			  <div class="bg-white shadow mb-30 rounded">
-				  <div class="container-fluid p-4">
-				  <div class="row">
+        <h3>Videos</h3>
+        <div class="bg-white shadow mb-30 rounded">
+          <div class="container-fluid p-4">
+          <div class="row">
+@foreach($user->videos(2) as $video)
           <div class="col-lg-6">
-			  <div class="wrapper dark-wrapper inverse-text shadow rounded">
-            <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="0Z8J3axc0oY"></div>
-			  <h6 class="mb-10 p-2 px-3">Video title</h6>
-			  </div>
+    			  <div class="wrapper dark-wrapper inverse-text shadow rounded">
+                <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="0Z8J3axc0oY"></div>
+    			  <h6 class="mb-10 p-2 px-3">Video title</h6>
+    			  </div>
           </div>
-			<div class="col-lg-6">
-			<div class="wrapper dark-wrapper inverse-text shadow rounded">
-            <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="VSqkL31w69k"></div>
-			<h6 class="mb-10 p-2 px-3">Video title</h6>
-			</div>
-          </div>  
-					  <div class="col-lg-12 text-center">
-					  <div class="space20 d-none d-sm-block"></div>
-					  <a href="/videos" class="btn">All Videos <i class="fa fa-play-circle"></i></a>
-					  </div>
+    			<!-- <div class="col-lg-6">
+            <div class="wrapper dark-wrapper inverse-text shadow rounded">
+              <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="VSqkL31w69k"></div>
+              <h6 class="mb-10 p-2 px-3">Video title</h6>
+            </div>
+          </div>   -->
+@endforeach
+				  <div class="col-lg-12 text-center">
+  				  <div class="space20 d-none d-sm-block"></div>
+  				  <a href="/videos" class="btn">All Videos <i class="fa fa-play-circle"></i></a>
+				  </div>
           <!-- /column -->
         </div>
         <!-- /.row -->
 				  </div>
 			  </div>
+@endif
 			  
-			  
-			  <h3>Before and after photos</h3>
-			  
+
+
+        <h3>Before and after photos</h3>
+        
 <div class="bg-white shadow mb-30 rounded">
-			<div class="container-fluid p-4">
+      <div class="container-fluid p-4">
          
 			   <div id="cube-inline-6-filter" class="cbp-filter-container text-center">
             <div data-filter="*" class="cbp-filter-item-active cbp-filter-item">All treatments</div>
@@ -393,7 +384,7 @@
 </div>
 			  
 			  
-			  <h3>Instagram Feed</h3>
+			  <h3>Instagram Feed?</h3>
 			  
 			   <div class="bg-white shadow mb-30 rounded">
       <div class="container-fluid p-4">
@@ -480,7 +471,7 @@
       title = $(this).attr('data-title');
 
       var myLatlng = new google.maps.LatLng(lat,lon);
-      console.log(myLatlng);
+      // console.log(myLatlng);
 
       var map = new google.maps.Map(this, {
           zoom: 15,
@@ -492,6 +483,9 @@
               });
       marker.setMap(map);
     });
+
+    startMyInstagram('instafeed', 1215763826);
+
   });
 
   </script>

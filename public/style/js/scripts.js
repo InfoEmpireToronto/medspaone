@@ -25,7 +25,7 @@ $(document).ready(function() {
 	
 	if (window.innerWidth < 991) {
      $('.navbar').addClass('fixed-bottom')
-}
+    }
 	
     /*-----------------------------------------------------------------------------------*/
     /*	HAMBURGER MENU ICON
@@ -1223,126 +1223,113 @@ $(document).ready(function() {
     /*-----------------------------------------------------------------------------------*/
     /*	INSTAGRAM
     /*-----------------------------------------------------------------------------------*/
-    var instagramFeed = new Instafeed({
-        target: 'instafeed',
-        get: 'user',
-        limit: 6,
-        userId: 1215763826,
-        accessToken: '1215763826.f1627ea.512d3a9b334a4c91ac2e83d4f4d9b291',
-        resolution: 'low_resolution',
-        template: '<div class="item col-6 col-sm-4 col-md-2"><figure class="overlay overlay4 rounded"><a href="{{link}}" target="_blank"><img src="{{image}}" /><figcaption class="d-flex"><div class="align-self-center mx-auto"><i class="fa fa-instagram"></i></div></figcaption></figure></div>',
-        after: function() {
-            $('#instafeed figure.overlay a').prepend('<span class="bg"></span>');
-        }
-    });
-    $('#instafeed').each(function() {
-        instagramFeed.run();
-    });
-    var instagramFeed2 = new Instafeed({
-        target: 'instafeed2',
-        get: 'user',
-        limit: 8,
-        userId: 1215763826,
-        accessToken: '1215763826.f1627ea.512d3a9b334a4c91ac2e83d4f4d9b291',
-        resolution: 'low_resolution',
-        template: '<div class="item col-6 col-md-3"><figure class="overlay overlay4 rounded"><a href="{{link}}" target="_blank"><img src="{{image}}" /><figcaption class="d-flex"><div class="align-self-center mx-auto"><i class="fa fa-instagram"></i></div></figcaption></figure></div>',
-        after: function() {
-            $('#instafeed2 figure.overlay a').prepend('<span class="bg"></span>');
-        }
-    });
-    $('#instafeed2').each(function() {
-        instagramFeed2.run();
-    });
-    var instagramFeed3 = new Instafeed({
-        target: 'instafeed-widget',
-        get: 'user',
-        limit: 6,
-        userId: 1215763826,
-        accessToken: '1215763826.f1627ea.512d3a9b334a4c91ac2e83d4f4d9b291',
-        resolution: 'low_resolution',
-        template: '<div class="item col-6 col-md-6 col-lg-4"><figure class="overlay overlay4 rounded"><a href="{{link}}" target="_blank"><img src="{{image}}" /><figcaption class="d-flex"><div class="align-self-center mx-auto"><i class="fa fa-instagram"></i></div></figcaption></figure></div>',
-        after: function() {
-            $('#instafeed-widget figure.overlay a').prepend('<span class="bg"></span>');
-        }
-    });
-    $('#instafeed-widget').each(function() {
-        instagramFeed3.run();
-    });
-    var instagramFeed4 = new Instafeed({
-        target: 'instafeed-wedding',
-        get: 'user',
-        limit: 6,
-        userId: 8496407961,
-        accessToken: '8496407961.17f53f4.5e0a8ef3ccd84de5ace5caca71882827',
-        resolution: 'low_resolution',
-        template: '<div class="item col-6 col-sm-4 col-md-2"><figure class="overlay overlay4 rounded"><a href="{{link}}" target="_blank"><img src="{{image}}" /><figcaption class="d-flex"><div class="align-self-center mx-auto"><i class="fa fa-instagram"></i></div></figcaption></figure></div>',
-        after: function() {
-            $('#instafeed-wedding figure.overlay a').prepend('<span class="bg"></span>');
-        }
-    });
-    $('#instafeed-wedding').each(function() {
-        instagramFeed4.run();
-    });
-    var instagramFeed5 = new Instafeed({
-        target: 'instafeed-portrait',
-        get: 'user',
-        limit: 6,
-        userId: 8499296840,
-        accessToken: '8499296840.a5f34eb.fac290a263ac482189f8b74db310ac33',
-        resolution: 'low_resolution',
-        template: '<div class="item col-6 col-sm-4 col-md-2"><figure class="overlay overlay4 rounded"><a href="{{link}}" target="_blank"><img src="{{image}}" /><figcaption class="d-flex"><div class="align-self-center mx-auto"><i class="fa fa-instagram"></i></div></figcaption></figure></div>',
-        after: function() {
-            $('#instafeed-portrait figure.overlay a').prepend('<span class="bg"></span>');
-        }
-    });
-    $('#instafeed-portrait').each(function() {
-        instagramFeed5.run();
-    });
-    var instagramFeed6 = new Instafeed({
-        target: 'instafeed-minimal',
-        get: 'user',
-        limit: 6,
-        userId: 8567158531,
-        accessToken: '8567158531.e3842d2.e29434544808474eb57688333240c08d',
-        resolution: 'low_resolution',
-        template: '<div class="item col-6 col-sm-4 col-md-2"><figure class="overlay overlay4 rounded"><a href="{{link}}" target="_blank"><img src="{{image}}" /><figcaption class="d-flex"><div class="align-self-center mx-auto"><i class="fa fa-instagram"></i></div></figcaption></figure></div>',
-        after: function() {
-            $('#instafeed-minimal figure.overlay a').prepend('<span class="bg"></span>');
-        }
-    });
-    $('#instafeed-minimal').each(function() {
-        instagramFeed6.run();
-    });
-    var instagramFeed7 = new Instafeed({
-        target: 'instafeed-widget-wedding',
-        get: 'user',
-        limit: 6,
-        userId: 8496407961,
-        accessToken: '8496407961.17f53f4.5e0a8ef3ccd84de5ace5caca71882827',
-        resolution: 'low_resolution',
-        template: '<div class="item col-6 col-md-6 col-lg-4"><figure class="overlay overlay4 rounded"><a href="{{link}}" target="_blank"><img src="{{image}}" /><figcaption class="d-flex"><div class="align-self-center mx-auto"><i class="fa fa-instagram"></i></div></figcaption></figure></div>',
-        after: function() {
-            $('#instafeed-widget-wedding figure.overlay a').prepend('<span class="bg"></span>');
-        }
-    });
-    $('#instafeed-widget-wedding').each(function() {
-        instagramFeed7.run();
-    });
-    var instagramFeed8 = new Instafeed({
-        target: 'instafeed-wedding-2',
-        get: 'user',
-        limit: 8,
-        userId: 8496407961,
-        accessToken: '8496407961.17f53f4.5e0a8ef3ccd84de5ace5caca71882827',
-        resolution: 'low_resolution',
-        template: '<div class="item col-6 col-md-3"><figure class="overlay overlay4 rounded"><a href="{{link}}" target="_blank"><img src="{{image}}" /><figcaption class="d-flex"><div class="align-self-center mx-auto"><i class="fa fa-instagram"></i></div></figcaption></figure></div>',
-        after: function() {
-            $('#instafeed-wedding-2 figure.overlay a').prepend('<span class="bg"></span>');
-        }
-    });
-    $('#instafeed-wedding-2').each(function() {
-        instagramFeed8.run();
-    });
+
+    
+    // var instagramFeed2 = new Instafeed({
+    //     target: 'instafeed2',
+    //     get: 'user',
+    //     limit: 8,
+    //     userId: 1215763826,
+    //     accessToken: '1215763826.f1627ea.512d3a9b334a4c91ac2e83d4f4d9b291',
+    //     resolution: 'low_resolution',
+    //     template: '<div class="item col-6 col-md-3"><figure class="overlay overlay4 rounded"><a href="{{link}}" target="_blank"><img src="{{image}}" /><figcaption class="d-flex"><div class="align-self-center mx-auto"><i class="fa fa-instagram"></i></div></figcaption></figure></div>',
+    //     after: function() {
+    //         $('#instafeed2 figure.overlay a').prepend('<span class="bg"></span>');
+    //     }
+    // });
+    // $('#instafeed2').each(function() {
+    //     instagramFeed2.run();
+    // });
+    // var instagramFeed3 = new Instafeed({
+    //     target: 'instafeed-widget',
+    //     get: 'user',
+    //     limit: 6,
+    //     userId: 1215763826,
+    //     accessToken: '1215763826.f1627ea.512d3a9b334a4c91ac2e83d4f4d9b291',
+    //     resolution: 'low_resolution',
+    //     template: '<div class="item col-6 col-md-6 col-lg-4"><figure class="overlay overlay4 rounded"><a href="{{link}}" target="_blank"><img src="{{image}}" /><figcaption class="d-flex"><div class="align-self-center mx-auto"><i class="fa fa-instagram"></i></div></figcaption></figure></div>',
+    //     after: function() {
+    //         $('#instafeed-widget figure.overlay a').prepend('<span class="bg"></span>');
+    //     }
+    // });
+    // $('#instafeed-widget').each(function() {
+    //     instagramFeed3.run();
+    // });
+    // var instagramFeed4 = new Instafeed({
+    //     target: 'instafeed-wedding',
+    //     get: 'user',
+    //     limit: 6,
+    //     userId: 8496407961,
+    //     accessToken: '8496407961.17f53f4.5e0a8ef3ccd84de5ace5caca71882827',
+    //     resolution: 'low_resolution',
+    //     template: '<div class="item col-6 col-sm-4 col-md-2"><figure class="overlay overlay4 rounded"><a href="{{link}}" target="_blank"><img src="{{image}}" /><figcaption class="d-flex"><div class="align-self-center mx-auto"><i class="fa fa-instagram"></i></div></figcaption></figure></div>',
+    //     after: function() {
+    //         $('#instafeed-wedding figure.overlay a').prepend('<span class="bg"></span>');
+    //     }
+    // });
+    // $('#instafeed-wedding').each(function() {
+    //     instagramFeed4.run();
+    // });
+    // var instagramFeed5 = new Instafeed({
+    //     target: 'instafeed-portrait',
+    //     get: 'user',
+    //     limit: 6,
+    //     userId: 8499296840,
+    //     accessToken: '8499296840.a5f34eb.fac290a263ac482189f8b74db310ac33',
+    //     resolution: 'low_resolution',
+    //     template: '<div class="item col-6 col-sm-4 col-md-2"><figure class="overlay overlay4 rounded"><a href="{{link}}" target="_blank"><img src="{{image}}" /><figcaption class="d-flex"><div class="align-self-center mx-auto"><i class="fa fa-instagram"></i></div></figcaption></figure></div>',
+    //     after: function() {
+    //         $('#instafeed-portrait figure.overlay a').prepend('<span class="bg"></span>');
+    //     }
+    // });
+    // $('#instafeed-portrait').each(function() {
+    //     instagramFeed5.run();
+    // });
+    // var instagramFeed6 = new Instafeed({
+    //     target: 'instafeed-minimal',
+    //     get: 'user',
+    //     limit: 6,
+    //     userId: 8567158531,
+    //     accessToken: '8567158531.e3842d2.e29434544808474eb57688333240c08d',
+    //     resolution: 'low_resolution',
+    //     template: '<div class="item col-6 col-sm-4 col-md-2"><figure class="overlay overlay4 rounded"><a href="{{link}}" target="_blank"><img src="{{image}}" /><figcaption class="d-flex"><div class="align-self-center mx-auto"><i class="fa fa-instagram"></i></div></figcaption></figure></div>',
+    //     after: function() {
+    //         $('#instafeed-minimal figure.overlay a').prepend('<span class="bg"></span>');
+    //     }
+    // });
+    // $('#instafeed-minimal').each(function() {
+    //     instagramFeed6.run();
+    // });
+    // var instagramFeed7 = new Instafeed({
+    //     target: 'instafeed-widget-wedding',
+    //     get: 'user',
+    //     limit: 6,
+    //     userId: 8496407961,
+    //     accessToken: '8496407961.17f53f4.5e0a8ef3ccd84de5ace5caca71882827',
+    //     resolution: 'low_resolution',
+    //     template: '<div class="item col-6 col-md-6 col-lg-4"><figure class="overlay overlay4 rounded"><a href="{{link}}" target="_blank"><img src="{{image}}" /><figcaption class="d-flex"><div class="align-self-center mx-auto"><i class="fa fa-instagram"></i></div></figcaption></figure></div>',
+    //     after: function() {
+    //         $('#instafeed-widget-wedding figure.overlay a').prepend('<span class="bg"></span>');
+    //     }
+    // });
+    // $('#instafeed-widget-wedding').each(function() {
+    //     instagramFeed7.run();
+    // });
+    // var instagramFeed8 = new Instafeed({
+    //     target: 'instafeed-wedding-2',
+    //     get: 'user',
+    //     limit: 8,
+    //     userId: 8496407961,
+    //     accessToken: '8496407961.17f53f4.5e0a8ef3ccd84de5ace5caca71882827',
+    //     resolution: 'low_resolution',
+    //     template: '<div class="item col-6 col-md-3"><figure class="overlay overlay4 rounded"><a href="{{link}}" target="_blank"><img src="{{image}}" /><figcaption class="d-flex"><div class="align-self-center mx-auto"><i class="fa fa-instagram"></i></div></figcaption></figure></div>',
+    //     after: function() {
+    //         $('#instafeed-wedding-2 figure.overlay a').prepend('<span class="bg"></span>');
+    //     }
+    // });
+    // $('#instafeed-wedding-2').each(function() {
+    //     instagramFeed8.run();
+    // });
     /*-----------------------------------------------------------------------------------*/
     /*	PAGE LOADING
     /*-----------------------------------------------------------------------------------*/
@@ -1405,3 +1392,23 @@ $(document).ready(function() {
 	  }
 	});
 });
+
+function startMyInstagram(target, userID)
+    {
+        //user: 1215763826
+        var instagramFeed = new Instafeed({
+            target: target,
+            get: 'user',
+            limit: 6,
+            userId: userID,
+            accessToken: '1215763826.f1627ea.512d3a9b334a4c91ac2e83d4f4d9b291',
+            resolution: 'low_resolution',
+            template: '<div class="item col-6 col-sm-4 col-md-2"><figure class="overlay overlay4 rounded"><a href="{{link}}" target="_blank"><img src="{{image}}" /><figcaption class="d-flex"><div class="align-self-center mx-auto"><i class="fa fa-instagram"></i></div></figcaption></figure></div>',
+            after: function() {
+                $('#'+target+' figure.overlay a').prepend('<span class="bg"></span>');
+            }
+        });
+        $('#'+target).each(function() {
+            instagramFeed.run();
+        });
+    }

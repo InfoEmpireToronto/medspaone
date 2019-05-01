@@ -42,11 +42,26 @@ class User extends \TCG\Voyager\Models\User
 
     public function articles($limit = false)
     {
-        $ret = Post::where('author_id', $this->id);
+        $ret = Post::where('author_id', $this->id)->where('type', 'article');
         if($limit)
             $ret->limit($limit);
 
-        return $ret->get();
+        if($ret->exists())
+            return $ret->get();
+        else
+            return false;
+    }
+
+    public function videos($limit = false)
+    {
+        $ret = Post::where('author_id', $this->id)->where('type', 'video');
+        if($limit)
+            $ret->limit($limit);
+
+        if($ret->exists())
+            return $ret->get();
+        else
+            return false;
     }
 
     public function locations()
