@@ -75,13 +75,13 @@
                 <li>
                   <div class="row" id="location-{{$l->id}}">
                     <div class="col-sm-8 mb-0">
-                          <figure class="rounded"><a href="/profile/{{$l['user_id']}}"><img src="{{ $l->user()->logo ? '/storage/'.$l->user()->logo : '/style/images/art/a5.jpg'}}" alt="" /></a></figure>
+                          <figure class="rounded"><a href="/profile/{{$l->user()->slug}}"><img src="{{ $l->user()->logo ? '/storage/'.$l->user()->logo : '/style/images/art/a5.jpg'}}" alt="" /></a></figure>
                           <div class="post-content">
-                            <h6 class="post-title"> <a href="/profile/{{$l['user_id']}}">{{$l['title']}}</a> </h6>
+                            <h6 class="post-title"> <a href="/profile/{{$l->user()->slug}}">{{$l['title']}}</a> </h6>
                     <p>{{$l['address']}}</p>
                             <div class="meta">
                               <span>
-                                <a href="/profile/{{$l['user_id']}}">
+                                <a href="/profile/{{$l->user()->slug}}">
                                   <i class="fa fa-map-marker"></i> &#8249; <span class="distance">-</span> km 
                                 </a>
                               </span>
@@ -90,7 +90,7 @@
                           </div>
                     </div>
                     <div class="col-sm-4">
-                      <a href="profile/{{$l['user_id']}}" class="btn btn-s btn-aqua float-right mb-0">View profile</a>
+                      <a href="profile/{{$l->user()->slug}}" class="btn btn-s btn-aqua float-right mb-0">View profile</a>
                     </div>
                   </div>
                 </li>

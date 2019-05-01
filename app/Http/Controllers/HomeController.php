@@ -105,12 +105,12 @@ class HomeController extends Controller
 
     }
 
-    public function profile($id = false)
+    public function profile($slug = false)
     {
-        if(!$id) return view('profile-tmpl');
+        if(!$slug) return view('profile-tmpl');
 
         return view('profile',[ 
-            'user'=>User::find($id)
+            'user'=>User::where('slug', $slug)->first()
 
         ]);
 

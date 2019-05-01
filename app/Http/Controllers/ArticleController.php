@@ -48,10 +48,10 @@ class ArticleController extends Voyager\VoyagerController
     {
         if($name)
         {
-            $user = User::where('slug', $name)->where('type','article')->first();
+            $user = User::where('slug', $name)->first();
             if($user)
                 return view('articles',[ 
-                    'articles' => Post::where('author_id', $user->id)->get(),
+                    'articles' => Post::where('author_id', $user->id)->where('type','article')->get(),
                     'user' => $user
 
                 ]);

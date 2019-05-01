@@ -18,5 +18,9 @@ class Article extends Model
 	const UPDATED_AT = 'date_modified';
 
 
+	public function user()
+	{
+		return User::find($this->author_id);
+	}
 	
 }
