@@ -423,11 +423,12 @@
                 <!-- /.card-header -->
                 <div id="collapse1-1" class="collapse show">
                   <div class="card-block">
-                    <p class="more text-uppercase color-dark"><i class="fa fa-map-marker"></i>{{$location->address}}</a><br>
-				  <div class="rounded">
-            <div class="map" data-lat='{{$location->lat}}' data-lon='{{$location->lon}}' data-title='{{$location->title}}' ></div>
-					  <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5761.109462578503!2d-79.471203!3d43.782101!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5b844e921b65acf5!2sInfoEmpire!5e0!3m2!1sen!2sca!4v1555101204228!5m2!1sen!2sca" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen ></iframe> -->
-				  </div>
+                    <p class="more text-uppercase color-dark">
+            				  <div class="rounded">
+                        <div class="map" data-lat='{{$location->lat}}' data-lon='{{$location->lon}}' data-title='{{$location->title}}' ></div>
+                        <br><i class="fa fa-map-marker"></i>{{$location->address}}</a>
+            					  <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5761.109462578503!2d-79.471203!3d43.782101!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5b844e921b65acf5!2sInfoEmpire!5e0!3m2!1sen!2sca!4v1555101204228!5m2!1sen!2sca" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen ></iframe> -->
+            				  </div>
 @if($location->phone)   
 <i class="fa fa-phone"></i> <a href="tel:{{$location->phone}}" class="color-dark">{{$location->phone}}</a><br>
 @endif
