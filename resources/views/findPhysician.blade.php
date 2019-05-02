@@ -30,7 +30,7 @@
             <div class="col-lg-6 ">
               <div class="pt-20">
           <div class="row">
-          <div class="col"><h2 class="section-title">Find an expert</h2></div> <div class="col"><div class="form-group custom-select-wrapper">
+          <div class="col-sm-8"><h2 class="section-title">Find an expert</h2></div> <div class="col-sm-4"><div class="form-group custom-select-wrapper">
               <select class="custom-select">
           <option selected>Sort by...</option>
                 <option value="rel">Sort by relevance</option>
@@ -41,13 +41,30 @@
                
       
             <form>
+				
+				<div class="row">
+          <div class="col-sm-8">
+			  <div class="input-group mb-20 mr-sm-2">
+              <input type="text" class="form-control mr-sm-2 bg-white shadow" id="inlineFormInputName2" placeholder="Your location">
+          
+                <input type="text" class="form-control bg-white shadow" id="inlineFormInputGroupUsername2" placeholder="Search by name...">
+          
+              </div>
+            </div>
+          
+          <div class="col-sm-4">
+              <button type="submit" class="btn mb-20 btn-pastel-meander ml-md-0  shadow float-none float-md-right">Search &nbsp; &nbsp; &nbsp;<i class="fa fa-search"></i></button>
+          </div>
+        </div>
         
+<!--
                 <div class="input-group mb-20 mr-sm-2">
               <input type="text" class="form-control mr-sm-2 bg-white shadow" id="inlineFormInputName2" placeholder="Your location">
           
                 <input type="text" class="form-control bg-white shadow" id="inlineFormInputGroupUsername2" placeholder="Search by name...">
           
               </div>
+
         <div class="row">
           <div class="col-sm-8">
         
@@ -63,7 +80,7 @@
           <div class="col-sm-4">
               <button type="submit" class="btn mb-20  ml-md-0 btn-block shadow ">Search <i class="fa fa-search"></i></button>
           </div>
-        </div>
+        </div>-->
             </form>
           <hr class="mb-20 p-0">
               </div>
@@ -90,7 +107,7 @@
                           </div>
                     </div>
                     <div class="col-sm-4 text-center">
-                      <a href="profile/{{$l->user()->slug}}" class="btn  btn-s btn-{{ $l->featured ? 'red' : 'blue' }} float-none float-md-right mb-0 mt-sm-20">View profile</a>
+                      <a href="profile/{{$l->user()->slug}}" class="btn  btn-s btn-{{ $l->featured ? 'red' : 'blue' }} float-none float-md-right mb-0 mt-sm-2">View profile</a>
                     </div>
                   </div>
                 </li>
