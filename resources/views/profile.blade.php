@@ -314,7 +314,7 @@
 @if($location->fax)
 <i class="fa fa-fax"></i> <a href="fax:{{$location->fax}}" class="color-dark">{{$location->fax}}</a><br>
 @endif
-<i class="fa fa-envelope-o"></i> <a href="#" onclick="$('[href=\"#tab1-4\"]').trigger('click')" target="_blank" class="color-dark">Contact Us</a></p>
+<i class="fa fa-envelope-o"></i> <button onclick="$('[href=\"#tab1-4\"]').trigger('click')" target="_blank" class="color-dark">Contact Us</button></p>
                   </div>
                   <!-- /.card-block -->
                 </div>
