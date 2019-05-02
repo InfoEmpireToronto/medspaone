@@ -35,7 +35,7 @@
 		  </div>
     </div>
 </div>
-
+<a id="Contact" ></a>
     <div class="wrapper light-wrapper card">
       <div class="container inner pt-60 pt-sm-20">
         <div class="row">
@@ -314,7 +314,7 @@
 @if($location->fax)
 <i class="fa fa-fax"></i> <a href="fax:{{$location->fax}}" class="color-dark">{{$location->fax}}</a><br>
 @endif
-<i class="fa fa-envelope-o"></i> <a href='#no' onclick="$('#contactTab').trigger('click')" class="color-dark">Contact Us</a></p>
+<i class="fa fa-envelope-o"></i> <a href='#Contact' onclick="$('#contactTab').trigger('click')" class="color-dark">Contact Us</a></p>
                   </div>
                   <!-- /.card-block -->
                 </div>
