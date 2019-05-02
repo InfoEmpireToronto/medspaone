@@ -21,7 +21,7 @@
             @foreach($articles as $article)
             @if($article->type == 'ba')
             <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
-              <div class="box bg-white shadow p-20">
+              <div class="box box-ba bg-white shadow p-20">
                 <figure class="main mb-20 overlay overlay1 rounded"><a href="/profile/{{$article->user()->slug}}#BeforeAfter">
                   <img src="https://img.youtube.com/vi/{{$article->link}}/0.jpg" alt="" /></a>
                   <figcaption>
@@ -38,12 +38,11 @@
             </div>
             @elseif($article->type == 'video')
             <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
-              <div class="box bg-white shadow p-20">
+              <div class="box box-video bg-white shadow p-20">
                 <figure class="main mb-20 overlay overlay1 rounded"><a href="/profile/{{$article->user()->slug}}#Videos">
                   <img src="https://img.youtube.com/vi/{{$article->link}}/0.jpg" alt="" /></a>
                   <figcaption>
-                    <h5 class="text-uppercase from-top mb-0"><a href="/profile/{{$article->user()->slug}}#Videos">Read more</a></h5>
-                      <p></p>
+                    <h5 class="text-uppercase from-top mb-0"><a href="/profile/{{$article->user()->slug}}#Videos"><i class="fa fa-play-circle-o"></i></a></h5>
                   </figcaption>
                     <div class="category"><a href="/profile/{{$article->user()->slug}}#Videos">{{$article->getCategories()[0]->name}}</a></div>
                 </figure>
