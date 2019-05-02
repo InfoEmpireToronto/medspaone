@@ -46,7 +46,7 @@
                 <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#tab1-1">Overview</a> </li>
                 <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#tab1-2">Bio</a> </li>
                 <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#tab1-3">Services</a> </li>
-                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#tab1-4">Contact</a></li>
+                <li class="nav-item"> <a class="nav-link" id="contactTab" data-toggle="tab" href="#tab1-4">Contact</a></li>
               </ul>
               <!-- /.nav-tabs -->
               <div class="tab-content">
@@ -314,7 +314,7 @@
 @if($location->fax)
 <i class="fa fa-fax"></i> <a href="fax:{{$location->fax}}" class="color-dark">{{$location->fax}}</a><br>
 @endif
-<i class="fa fa-envelope-o"></i> <button onclick="$('[href=\"#tab1-4\"]').trigger('click')" target="_blank" class="color-dark">Contact Us</button></p>
+<i class="fa fa-envelope-o"></i> <button onclick="$('#contactTab').trigger('click')" target="_blank" class="color-dark">Contact Us</button></p>
                   </div>
                   <!-- /.card-block -->
                 </div>
