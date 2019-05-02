@@ -12,7 +12,7 @@
 	<!-- data-image-src="insert doctor cover photo" -->
 
 <div class="wrapper image-wrapper bg-image inverse-text" data-image-src="{{ $user->backImage ? '/storage/'.$user->backImage : '/style/images/art/bg1.jpg' }}">
-      <div class="container inner pt-120 pb-120 pt-sm-20 pb-sm-20">
+      <div class="container inner pt-60 pb-60 pt-sm-20 pb-sm-20">
         <h2 class="section-title mb-40 text-center">{{ $user->company }}</h2>
 		  <div class="row text-center">
           <div class="col-sm-4">
