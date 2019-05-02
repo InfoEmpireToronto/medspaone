@@ -9,48 +9,41 @@
         <div class="row">
           <div class="col-lg-8 offset-lg-2">
             <div id="accordion1" class="accordion-wrapper">
+<?php 
+  $currentHeader = '';
+
+  ?>
+
+@foreach($faqs as $faq)
+
+<?php
+  if($faq->category != $currentHeader)
+  {
+    echo "<h2>{$faq->category}</h2>";
+    $currentHeader = $faq->category;
+  }
+
+?>
               <div class="card bg-white shadow">
                 <div class="card-header">
-                  <h3> <a data-toggle="collapse" data-parent="#accordion1" href="#collapse1-1">Question 1</a> </h3>
+                  <h3> 
+                    <a data-toggle="collapse" data-parent="#accordion1" href="#collapse1-{{$faq->id}}">
+                      {{$faq->question}}
+                    </a> 
+                  </h3>
                 </div>
                 <!-- /.card-header -->
-                <div id="collapse1-1" class="collapse show">
+                <div id="collapse1-{{$faq->id}}" class="collapse">
                   <div class="card-block">
-                    <p>Answer 1</p>
+                    <p>{!! str_replace('\\', '', $faq->answer) !!}</p>
                   </div>
                   <!-- /.card-block -->
                 </div>
                 <!-- /.collapse -->
               </div>
               <!-- /.card -->
-              <div class="card bg-white shadow">
-                <div class="card-header">
-                  <h3> <a class="collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse1-2">Question 2</a> </h3>
-                </div>
-                <!-- /.card-header -->
-                <div id="collapse1-2" class="collapse">
-                  <div class="card-block">
-                    <p>Answer 2</p>
-                  </div>
-                  <!-- /.card-block -->
-                </div>
-                <!-- /.collapse -->
-              </div>
-              <!-- /.card -->
-              <div class="card bg-white shadow">
-                <div class="card-header">
-                  <h3> <a class="collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapse1-3">Question 3</a></h3>
-                </div>
-                <!-- /.card-header -->
-                <div id="collapse1-3" class="collapse">
-                  <div class="card-block">
-                    <p>Answer 3</p>
-                  </div>
-                  <!-- /.card-block -->
-                </div>
-                <!-- /.collapse -->
-              </div>
-              <!-- /.card -->
+@endforeach
+
             </div>
             <!-- /.accordion-wrapper -->
         

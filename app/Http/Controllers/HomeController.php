@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Article;
 use App\Post;
 use App\Location;
+use App\Faq;
 use App\User;
 
 use Carbon\Carbon;
@@ -97,9 +98,14 @@ class HomeController extends Controller
 
     public function faq()
     {
+        $faqs = Faq::where('id', '>', 0)
+                ->orderBy('category', 'desc')
+                ->orderBy('date_display', 'desc')
+                ->get();
+        // dump($faqs);
 
         return view('faq',[ 
-            
+            'faqs' => $faqs
 
         ]);
 
