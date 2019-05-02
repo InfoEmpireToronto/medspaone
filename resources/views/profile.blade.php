@@ -203,7 +203,7 @@
 			  
 
 @if($user->beforeAfters(2))
-
+        <a id="BeforeAfter" ></a>
         <h3>Before and after photos</h3>
         
 <div class="bg-white shadow mb-30 rounded">

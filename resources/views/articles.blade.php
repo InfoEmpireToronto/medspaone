@@ -14,23 +14,24 @@
         @foreach($articles as $article)
           
 
-            <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
+           <div class="item grid-sizer col-md-3">
               <div class="box bg-white shadow p-20">
-                <figure class="main mb-20 overlay overlay1 rounded"><a href="/profile/{{$article->user()->slug}}#Articles">
+                <figure class="main mb-20 overlay overlay1 rounded"><a href="/article/{{$article->id}}">
                   <img src="/storage/{{$article->image}}" alt="" /></a>
                   <figcaption>
                     <h5 class="text-uppercase from-top mb-0">Read more</h5>
-                      <p></p>
+            <p></p>
                   </figcaption>
-                    <div class="category"><a href="/profile/{{$article->user()->slug}}#Articles">{{$article->getCategories()[0]->name}}</a></div>
-                </figure>
-                  
-                <h6 class="mb-0"><a href="/profile/{{$article->user()->slug}}#Articles">{{ucwords(strtolower($article->title))}}</a></h6>
+          
 
+          <div class="category">{{$article->getCategories()[0]->name}}</div>
+                </figure>
+          
+                <h6 class="mb-10">{{ucwords(strtolower($article->title))}}</h6>
+          <p class="mb-5">{!! substr(strip_tags($article->body),0,200) !!}</p>
+          <div class="arrow-link"><a href="/article/{{$article->id}}" class="text-muted">Read article <i class="mi-arrow-right"></i></a> </div>
               </div>
-              <!-- /.box -->
             </div>
-        
         @endforeach 
       
            
