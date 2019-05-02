@@ -132,7 +132,8 @@
                     id: '{$l['id']}',
                     lat: {$l['lat']}, 
                     lon: {$l['lon']},
-                    distance: 0
+                    distance: 0,
+                    featured: {$l['featured']}
                   },";
       }
                 
@@ -180,11 +181,18 @@ console.log(data);
           }
 
           $('#location-'+location.id+' .distance').html(Math.ceil(location.distance));
-
-            var marker = new google.maps.Marker({
+            var d = {
                 position: new google.maps.LatLng(location.lat,location.lon),
-                title:location.title
-            });
+                title:location.title,
+                
+            };
+            if(location.featured)
+            {
+              d.icon = {
+                  url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                }
+            }
+            var marker = new google.maps.Marker(d);
             marker.setMap(map);
         });
         
