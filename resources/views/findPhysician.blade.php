@@ -120,7 +120,6 @@
     <script>
       // In the following example, markers appear when the user clicks on the map.
       // Each marker is labeled with a single alphabetical character.
-      navigator.geolocation.getCurrentPosition(showPosition);
       var currentLat = 0;
       var currentLon = 0;
       var map = null;
@@ -140,11 +139,16 @@
       ?>
         ];
 
+      $(document).ready(function(){
+        showPosition(false);
+        // navigator.geolocation.getCurrentPosition(showPosition);
+      });
+
 
       function showPosition(position) 
       {
-        currentLat = position.coords.latitude;
-        currentLon = position.coords.longitude;
+        currentLat = 43.6532;//position.coords.latitude;
+        currentLon = -79.3832;//position.coords.longitude;
         var myLatlng = new google.maps.LatLng(currentLat,currentLon);
         var mapOptions = {
           zoom: 10,
@@ -154,7 +158,7 @@
 
         $(data).each(function(k, v){
           // console.log(v,k);
-          // data[k].distance = distanceBetweenPoints(currentLat, currentLon, v.lat, v.lon);
+          data[k].distance = distanceBetweenPoints(currentLat, currentLon, v.lat, v.lon);
         });
         
         updateMap(data);
@@ -175,7 +179,7 @@ console.log(data);
             // return;
           }
 
-          // $('#location-'+location.id+' .distance').html(Math.ceil(location.distance));
+          $('#location-'+location.id+' .distance').html(Math.ceil(location.distance));
 
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(location.lat,location.lon),

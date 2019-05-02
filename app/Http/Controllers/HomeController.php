@@ -99,7 +99,7 @@ class HomeController extends Controller
     public function faq()
     {
         $faqs = Faq::where('id', '>', 0)
-                ->orderBy('category', 'desc')
+                ->orderBy('category', 'asc')
                 ->orderBy('date_display', 'desc')
                 ->get();
         // dump($faqs);
