@@ -54,7 +54,7 @@ class HomeController extends Controller
 
     public function findPhysician()
     {
-        $locations = Location::all();
+        $locations = Location::where('id', '>', 0)->orderBy('featured')->get();
 
         return view('findPhysician',[ 
             'locations' => $locations
@@ -99,6 +99,7 @@ class HomeController extends Controller
     public function faq()
     {
         $faqs = Faq::where('id', '>', 0)
+                ->where('category', '!=', '')
                 ->orderBy('category', 'asc')
                 ->orderBy('date_display', 'desc')
                 ->get();
