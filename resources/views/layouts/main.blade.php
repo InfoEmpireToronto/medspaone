@@ -60,7 +60,7 @@ $keywords = "";
 
               </ul>
             </li>
-      <li class="nav-item"><a class="nav-link" href="/find-physician">Find an expert</a></li>
+      <li class="nav-item"><a class="nav-link" href="/find-expert">Find an expert</a></li>
            
            
 <!--
