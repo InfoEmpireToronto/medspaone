@@ -36,8 +36,14 @@ class HomeController extends Controller
     {
         $articles = Post::all();//Article::where('id', '>', 1)->where('status', 1)->get();
 
+        $faqs = Faq::select('*')
+        ->inRandomOrder()
+        ->limit(5) // here is yours limit
+        ->get();
+
         return view('welcome',[ 
-            'articles' => $articles
+            'articles' => $articles,
+            'faqs' => $faqs
 
         ]);
     }
