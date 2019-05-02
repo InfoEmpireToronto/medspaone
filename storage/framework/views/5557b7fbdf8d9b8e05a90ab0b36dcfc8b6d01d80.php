@@ -96,9 +96,9 @@
                   <h3> <a data-toggle="collapse" data-parent="#accordion1" href="#collapse1-<?php echo e($faq->id); ?>"><?php echo e(str_replace('\\', '', $faq->question)); ?></a> </h3>
                 </div>
                 <!-- /.card-header -->
-                <div id="collapse1-<?php echo e($faq->id); ?>" class="collapse ">
+                <div id="collapse1-<?php echo e($faq->id); ?>" class="collapse <?php echo e($loop->index == 0 ? 'show' : ''); ?>">
                   <div class="card-block">
-                    <p><?php echo str_replace('\\', '', $faq->answer); ?><?php echo e($loop->index); ?></p>
+                    <p><?php echo str_replace('\\', '', $faq->answer); ?></p>
                   </div>
                   <!-- /.card-block -->
                 </div>
