@@ -7,7 +7,7 @@
       <div class="container-fluid inner pt-20 pt-sm-20">
         <h1 class="heading text-center">All Articles {{ $user ? 'For '.$user->name : '' }}</h1>
         
-        <div class="tiles grid">
+        <div class="tiles tiles-posts grid">
           <div class="items row isotope boxed grid-view">
         
         

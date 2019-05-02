@@ -15,7 +15,7 @@
         <h1 class="heading text-center">Latest Med Spa publications</h1>
 
 
-        <div class="tiles grid">
+        <div class="tiles tiles-posts grid">
           <div class="items row isotope boxed grid-view">
 
             @foreach($articles as $article)

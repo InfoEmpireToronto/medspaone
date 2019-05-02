@@ -30,7 +30,7 @@
             <div class="col-lg-6 ">
               <div class="pt-20">
           <div class="row">
-          <div class="col"><h2 class="section-title">Find a physician</h2></div> <div class="col"><div class="form-group custom-select-wrapper">
+          <div class="col"><h2 class="section-title">Find an expert</h2></div> <div class="col"><div class="form-group custom-select-wrapper">
               <select class="custom-select">
           <option selected>Sort by...</option>
                 <option value="rel">Sort by relevance</option>
