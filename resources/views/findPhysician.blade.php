@@ -72,7 +72,7 @@
               <ul class="image-list">
               @foreach($locations as $l)
           
-                <li {{ $l->featured ? "class='bg-pastel-orange'" : '' }}>
+                <li class="{{ $l->featured ? 'bg-pastel-orange' : '' }}" >
                   <div class="row" id="location-{{$l->id}}">
                     <div class="col-sm-8 mb-0">
                           <figure class="rounded"><a href="/profile/{{$l->user()->slug}}"><img src="{{ $l->user()->logo ? '/storage/'.$l->user()->logo : '/style/images/art/a5.jpg'}}" alt="" /></a></figure>
