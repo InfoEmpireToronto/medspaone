@@ -225,7 +225,9 @@
 
           <div class="cbp-item text-center bodycontouring dark-wrapper inverse-text shadow rounded">
             <figure class="overlay overlay4 rounded">
-				<a href="/style/images/before-after.jpg" title="Body sculpting"><img src="/style/images/before-after.jpg" alt="" /></a>
+				      <a href="/style/images/before-after.jpg" title="Body sculpting">
+                <img src="/storage/{{$beforeAfter->before}}" alt="" />
+              </a>
 
               <figcaption class="d-flex">
                 <div class="align-self-center mx-auto">
@@ -234,7 +236,7 @@
               </figcaption>
             </figure>
 			  <div class="px-3">
-			  <h5 class="m-0 mt-3 text-uppercase">Body sculpting</h5>
+			  <h5 class="m-0 mt-3 text-uppercase">{{ucwords(strtolower($article->title))}}</h5>
 			  <p class="m-0">Short description</p>
 			  <div class="meta mb-3 text-capitalize"><span class="date">April 12, 2019</span> <span class="author">By MedSpa.One</span> <span><i class="fa fa-thumbs-up"></i> 10</span> <span class="category">Body</span>
 					</div>

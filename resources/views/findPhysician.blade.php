@@ -78,7 +78,7 @@
                           <figure class="rounded"><a href="/profile/{{$l->user()->slug}}"><img src="{{ $l->user()->logo ? '/storage/'.$l->user()->logo : '/style/images/art/a5.jpg'}}" alt="" /></a></figure>
                           <div class="post-content">
                             <h6 class="post-title"> <a href="/profile/{{$l->user()->slug}}">{{$l['title']}}</a> </h6>
-                    <p>{{$l['address']}}</p>
+                            <p>{{$l['address']}}</p>
                             <div class="meta">
                               <span>
                                 <a href="/profile/{{$l->user()->slug}}">
