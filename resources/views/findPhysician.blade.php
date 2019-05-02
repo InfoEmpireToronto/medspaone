@@ -189,8 +189,12 @@ console.log(data);
             if(location.featured)
             {
               d.icon = {
+                  url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                };
+            }else{
+              d.icon = {
                   url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
-                }
+                };
             }
             var marker = new google.maps.Marker(d);
             marker.setMap(map);
