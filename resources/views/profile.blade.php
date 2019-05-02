@@ -236,7 +236,7 @@
               </figcaption>
             </figure>
 			  <div class="px-3">
-			  <h5 class="m-0 mt-3 text-uppercase">{{ucwords(strtolower($article->title))}}</h5>
+			  <h5 class="m-0 mt-3 text-uppercase">{{ucwords(strtolower($beforeAfter->title))}}</h5>
 			  <p class="m-0">Short description</p>
 			  <div class="meta mb-3 text-capitalize"><span class="date">April 12, 2019</span> <span class="author">By MedSpa.One</span> <span><i class="fa fa-thumbs-up"></i> 10</span> <span class="category">Body</span>
 					</div>
