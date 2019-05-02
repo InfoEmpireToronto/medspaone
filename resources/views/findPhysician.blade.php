@@ -89,7 +89,7 @@
                             </div>
                           </div>
                     </div>
-                    <div class="col-sm-4 text-sm-center">
+                    <div class="col-sm-4 text-center">
                       <a href="profile/{{$l->user()->slug}}" class="btn  btn-s btn-{{ $l->featured ? 'red' : 'blue' }} float-none float-md-right mb-0 mt-sm-20">View profile</a>
                     </div>
                   </div>
