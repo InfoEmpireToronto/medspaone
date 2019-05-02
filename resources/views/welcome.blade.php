@@ -98,7 +98,7 @@
                   <h3> <a data-toggle="collapse" data-parent="#accordion1" href="#collapse1-{{$faq->id}}">{{str_replace('\\', '', $faq->question)}}</a> </h3>
                 </div>
                 <!-- /.card-header -->
-                <div id="collapse1-{{$faq->id}}" class="collapse">
+                <div id="collapse1-{{$faq->id}}" class="collapse {{ $loop->index == 0 ? 'show' : '' }}">
                   <div class="card-block">
                     <p>{!! str_replace('\\', '', $faq->answer) !!}</p>
                   </div>
@@ -113,7 +113,7 @@
             </div>
             <!-- /.accordion-wrapper -->
 			  
-			  <p class="text-center"><a href="#" class="btn">Read more <i class="mi-arrow-right"></i></a> </p>
+			  <p class="text-center"><a href="/faq" class="btn">Read more <i class="mi-arrow-right"></i></a> </p>
           </div>
           <!-- /column -->
         </div>
