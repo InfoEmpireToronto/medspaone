@@ -17,6 +17,7 @@ class Post extends \TCG\Voyager\Models\Post
 	public function getCategories()
 	{
 		$cats = PostCategory::where('post_id', $this->id)->get();
+		$ret = [];
 		foreach($cats as $cat)
 		{
 			$ret[] = Category::find($cat->category_id);
