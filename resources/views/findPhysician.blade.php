@@ -53,7 +53,7 @@
             </div>
           
           <div class="col-sm-4">
-              <button type="submit" class="btn mb-20 btn-pastel-meander ml-md-0  shadow float-none float-md-right">Search &nbsp; &nbsp; &nbsp;<i class="fa fa-search"></i></button>
+              <button type="submit" class="btn mb-20 btn-purple ml-md-0  shadow float-none float-md-right">Search &nbsp; &nbsp; &nbsp;<i class="fa fa-search"></i></button>
           </div>
         </div>
         
@@ -107,7 +107,7 @@
                           </div>
                     </div>
                     <div class="col-sm-4 text-center">
-                      <a href="profile/{{$l->user()->slug}}" class="btn  btn-s btn-{{ $l->featured ? 'red' : 'blue' }} float-none float-md-right mb-0 mt-sm-2">View profile</a>
+                      <a href="profile/{{$l->user()->slug}}" class="btn  btn-s btn-{{ $l->featured ? 'red' : 'blue' }} float-none float-md-right mb-0 mt-sm-5">View profile</a>
                     </div>
                   </div>
                 </li>

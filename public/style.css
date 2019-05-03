@@ -5359,7 +5359,7 @@ pre {
 	
 	#search {position:absolute; top:12px;}
 	.navbar.fixed {}
-	
+	.mt-sm-5 {margin-top:5px!important;}
 	.pt-sm-20 {padding-top:20px!important;}
 	.pb-sm-20 {padding-bottom:20px!important;}
 	
@@ -5738,15 +5738,15 @@ pre {
 
 
 .item .box.box-video .overlay1 figcaption *, .item .box.box-video  .overlay1 .figcaption * {
-    -webkit-transform: translateY(-30%) translate3d(0px, 0px, 0px);
-    -ms-transform: translateY(-30%) translate3d(0px, 0px, 0px);
-    transform: translateY(-30%) translate3d(0px, 0px, 0px);
+    -webkit-transform: translateY(-15%) translate3d(0px, 0px, 0px);
+    -ms-transform: translateY(-15%) translate3d(0px, 0px, 0px);
+    transform: translateY(-15%) translate3d(0px, 0px, 0px);
 }
 
 .item .box.box-video .overlay1:hover figcaption *, .item .box.box-video  .overlay1:hover .figcaption * {
-    -webkit-transform: translateY(-25%) translate3d(0px, 0px, 0px);
-    -ms-transform: translateY(-25%) translate3d(0px, 0px, 0px);
-    transform: translateY(-25%) translate3d(0px, 0px, 0px);
+    -webkit-transform: translateY(-20%) translate3d(0px, 0px, 0px);
+    -ms-transform: translateY(-20%) translate3d(0px, 0px, 0px);
+    transform: translateY(-20%) translate3d(0px, 0px, 0px);
 }
 
 .item .box.box-video .overlay i[class*="fa"] {background: rgba(0,0,0,0.5);
@@ -5771,6 +5771,7 @@ pre {
 
 
 .item .box.box-video .overlay1:hover figcaption a i, .item .box.box-video  .overlay1:hover .figcaption a i {opacity:1;}
+
 
 
 
