@@ -1412,3 +1412,11 @@ function startMyInstagram(target, userID)
             instagramFeed.run();
         });
     }
+
+
+$(".post-content * [style]").removeAttr("style");
+$(".tabs-wrapper * [style]").removeAttr("style");
+$(".sidebox * [style]").removeAttr("style");
+
+
+
