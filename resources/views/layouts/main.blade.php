@@ -17,6 +17,8 @@ $keywords = "";
         <meta name="description" content="<?=$description?>" />
         <meta name="author" content="416-769-5250, www.infoempire.com" />
         <meta name="copyright" content="&copy;<?=date('Y');?>, MedSpa.us" />
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
         <title><?=$title?></title>
         <link rel="stylesheet" type="text/css" href="/style/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/style/css/plugins.css">
