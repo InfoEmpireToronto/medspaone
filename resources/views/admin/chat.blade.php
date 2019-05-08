@@ -6,12 +6,12 @@
   
   
 </div>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-		<script src="http://localhost:8080/socket.io/socket.io.js"></script>
+		<script src="<?php echo env('APP_URL', 'http://localhost'); ?>:8080/socket.io/socket.io.js"></script>
         <script>
             /** CONFIG **/
-            var SIGNALING_SERVER = "http://localhost:8080";
+            var SIGNALING_SERVER = "<?php echo env('APP_URL', 'http://localhost'); ?>:8080";
             var USE_AUDIO = true;
             var USE_VIDEO = true;
             var DEFAULT_CHANNEL = 'some-global-channel-name';
