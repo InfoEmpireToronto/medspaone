@@ -2,19 +2,27 @@
 /*** CONFIG ***/
 /**************/
 var PORT = 8080;
+var fs = require('fs');
 
+    // key: fs.readFileSync('/etc/ssl/private/server.firecrosser.com.key'),
+    // cert: fs.readFileSync('/etc/ssl/certs/server.firecrosser.com.crt'),
+    // ca: fs.readFileSync('/etc/ssl/certs/ca-bundle.crt')
 
+var options = {
+    key: fs.readFileSync('/home/medspaone/ssl/keys/afb58_d6047_8719c35aaff27f0cb73118c494184d53.key'),
+    cert: fs.readFileSync('/home/medspaone/ssl/certs/medspa_one_afb58_d6047_1562975999_630da7605476219fd9e294c7f7cabd2f.crt'),
+    ca: fs.readFileSync('/etc/ssl/certs/ca-bundle.crt')
+};
 /*************/
 /*** SETUP ***/
 /*************/
 var express = require('express');
-var http = require('http');
-var bodyParser = require('body-parser')
+var http = require('https');
 var main = express()
-var server = http.createServer(main)
-var io  = require('socket.io').listen(server);
-//io.set('log level', 2);
+var server = http.createServer(options, main)//.listen(PORT)
 
+var io  = require('socket.io').listen(server);
+// io.set('log level', 1);
 server.listen(PORT, null, function() {
     console.log("Listening on port " + PORT);
 });
@@ -24,6 +32,7 @@ server.listen(PORT, null, function() {
 // main.get('/index.html', function(req, res){ res.sendfile('newclient.html'); });
 // main.get('/client.html', function(req, res){ res.sendfile('newclient.html'); });
 
+var bodyParser = require('body-parser')
 
 
 /*************************/
