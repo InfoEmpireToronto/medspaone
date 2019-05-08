@@ -155,6 +155,16 @@ var $isogrid = window.myisogrid;
     var items = $(data).find('div.item');
     window.myisogrid.append(items);
     window.myisogrid.isotope('appended', items);
+    // window.myisogrid.isotope('layout');
+    // $(window).delay(500).trigger('resize');
+    setTimeout(function(){
+
+    window.myisogrid.isotope({
+            masonry: {
+                columnWidth: window.myisogrid.width() / 12
+            }
+        });
+  }, 800);
 
 
     numPosts += 10;
