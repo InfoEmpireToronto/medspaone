@@ -31,7 +31,7 @@
      		 </div>
 		  </div>
 		   <div class="row text-center">
-			   <div class="col-sm-12"><a href="#/chat" target="_blank" class="btn btn-red">Start video chat with an expert <i class="fa fa-video-camera"></i></a></div>
+			   <div class="col-sm-12"><a href="/chat" target="_blank" class="btn btn-red">Start video chat with an expert <i class="fa fa-video-camera"></i></a></div>
 		  </div>
     </div>
 </div>
