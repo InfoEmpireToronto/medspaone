@@ -11,7 +11,7 @@
 @section('js')
         <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
 
-		<script src="199.103.57.167:8080/socket.io/socket.io.js"></script>
+		<script src="http://199.103.57.167:8080/socket.io/socket.io.js"></script>
         <script>
             /** CONFIG **/
             var SIGNALING_SERVER = "medspa.one:8080";
