@@ -35,7 +35,6 @@ Route::get('/before-after/{name}', 'ArticleController@beforeAfter')->name('befor
 Route::get('/find-expert', 'HomeController@findPhysician')->name('find-physician');
 Route::get('/profile', 'HomeController@profile')->name('profile');
 Route::get('/profile/{name}', 'HomeController@profile')->name('profile');
-Route::get('/login', 'HomeController@login')->name('login');
 Route::get('/membership', 'HomeController@membership')->name('membership');
 Route::get('/gift-rewards-program', 'HomeController@giftReward')->name('giftReward');
 Route::get('/about', 'HomeController@about')->name('about');
@@ -44,8 +43,14 @@ Route::get('/faq', 'HomeController@faq')->name('faq');
 
 Route::POST('/admin/location/save', 'AdminController@saveLocation')->name('saveLocation');
 Route::GET('/admin/chat', 'AdminController@startChat')->name('startChat');
+Route::GET('/phys/chat', 'HomeController@physChat')->name('Phys-Chat');
 Route::GET('/chat', 'HomeController@startChat')->name('Chat');
 
-Route::POST('/login', 'HomeController@login')->name('Chat');
+Route::GET('/login', 'HomeController@login')->name('login');
+Route::POST('/login', 'HomeController@login')->name('Login');
+
+Route::POST('/ajax/getHomepageItems', 'AjaxController@getHomepageItems')->name('getHomepageItems');
+// Route::POST('/ajax/saveContact', 'AjaxController@saveContact')->name('saveContact');
+Route::GET('/ajax/saveContact', 'AjaxController@saveContact')->name('saveContact');
 
 

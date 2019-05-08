@@ -34,7 +34,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $articles = Post::all();//Article::where('id', '>', 1)->where('status', 1)->get();
+        $articles = Post::where('status', 'PUBLISHED')->orderBy('created_at', 'desc')->limit(10)->get();
+        //Article::where('id', '>', 1)->where('status', 1)->get();
 
         $faqs = Faq::select('*')
         ->inRandomOrder()
@@ -66,6 +67,17 @@ class HomeController extends Controller
             'locations' => $locations
 
         ]);
+
+    }
+
+    public function physChat()
+    {
+        // dd($data);
+        return view('physchat',[ 
+
+
+        ]);
+
 
     }
 

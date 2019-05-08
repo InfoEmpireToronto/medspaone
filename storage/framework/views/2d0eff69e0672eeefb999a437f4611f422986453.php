@@ -17,6 +17,9 @@ $keywords = "";
         <meta name="description" content="<?=$description?>" />
         <meta name="author" content="416-769-5250, www.infoempire.com" />
         <meta name="copyright" content="&copy;<?=date('Y');?>, MedSpa.us" />
+        <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>" />
+        <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+
         <title><?=$title?></title>
         <link rel="stylesheet" type="text/css" href="/style/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/style/css/plugins.css">
@@ -217,6 +220,9 @@ $keywords = "";
 <script src="/style/revolution/js/extensions/revolution.extension.video.min.js"></script>-->
   <script src="/style/js/plugins.js"></script>
   <script src="/style/js/scripts.js"></script>
+  <script type="text/javascript">
+        $.ajaxSetup({ headers: { 'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content') } });
+  </script>
 
     <?php echo $__env->yieldContent('js'); ?>
 

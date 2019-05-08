@@ -20,7 +20,8 @@ class Article extends Model
 
 	public function user()
 	{
-		return User::find($this->author_id);
+		$user = User::find($this->author_id);
+		return $user ? $user : User::find(1);
 	}
 	
 }

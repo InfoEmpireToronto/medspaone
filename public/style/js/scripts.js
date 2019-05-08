@@ -1184,6 +1184,8 @@ $(document).ready(function() {
     $isogrid.imagesLoaded(function() {
         $isogrid.isotope('layout');
     });
+
+    window.myisogrid = $isogrid;
     /*-----------------------------------------------------------------------------------*/
     /*	BACKGROUND IMAGE
     /*-----------------------------------------------------------------------------------*/

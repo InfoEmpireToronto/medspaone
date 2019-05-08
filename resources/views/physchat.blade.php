@@ -3,15 +3,9 @@
 
 @section('content')
 
-    <div class="infoBox">
-        <p>Please tell us a little about yourself:</p>
-        <div class="col"><input type="text" name="name" placeholder="Name" id="name"></div>
-        <div class="col"><input type="text" name="name" placeholder="Phone Number" id="phone"></div>
-        <div class="col"><input type="submit" value="Connect Me!" id="connectMe" ></div>
-    </div>
+   
 
 	<div class="page-content wrapper light-wrapper">
-        <!-- <div class="connectingText">Connecting you to an expert...</div> -->
     </div>
 
 @stop
@@ -36,26 +30,8 @@
         ];
     
         $(document).ready(function(){
-            $('.page-content').hide();
-            $('#connectMe').click(function(){
-
-                $.ajax({
-                    url: "{{ route('saveContact') }}",
-                    type: 'GET',
-                    data: {
-                        name: $('#name').val(),
-                        phone: $('#phone').val()
-                    },
-                    success: function(result) { 
-                        $("#h11").html(result); 
-                    }
-                }); 
-                
-                $('.page-content').show();
-                $('.infoBox').hide();
-                init();
-            });
-        	// init();
+            
+        	init();
         });
             var signaling_socket = null;   /* our socket.io connection to our webserver */
             var local_media_stream = null; /* our own microphone / webcam */
