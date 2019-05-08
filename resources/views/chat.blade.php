@@ -14,7 +14,7 @@
 		<script src="https://medspa.one/js/socket.io.js"></script>
         <script>
             /** CONFIG **/
-            var SIGNALING_SERVER = "medspa.one:8080";
+            var SIGNALING_SERVER = "199.103.57.167:8080";
             var USE_AUDIO = true;
             var USE_VIDEO = true;
             var DEFAULT_CHANNEL = 'some-global-channel-name';
