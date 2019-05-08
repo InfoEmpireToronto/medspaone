@@ -112,6 +112,61 @@
                   </div>
                 </li>
               @endforeach
+				  
+				  
+<!--
+				   <li class="bg-pastel-orange">
+					<div class="row">
+						<div class="col-sm-8 mb-0">
+                  <figure class="rounded"><a href="profile.php"><img src="style/images/art/a1.jpg" alt="" /></a></figure>
+                  <div class="post-content">
+                    <h6 class="post-title"> <a href="profile.php">Sarah Johnson, MD</a>&nbsp;<span class="badge badge-pill bg-pastel-red float-right mb-2 mr-3"><i class="si-badges_ribbon-2"></i> Trusted</span> </h6>
+					  <p>5000 Dufferin St, Toronto, ON M3H 5T5 </p>
+                    <div class="meta"><span><a href="profile.php"><i class="fa fa-map-marker"></i> &#8249; 3 km </a></span><span><a href="#" class="hover has-tooltip" title="<strong>Toronto</strong><br>5000 Dufferin St, Toronto, ON M3H&nbsp;5T5<hr><strong>Mississauga</strong><br>Ponytrail Dr, Mississauga, ON L4WN&nbsp;2Y1" data-html="true" data-placement="right"><i class="fa fa-building-o"></i> 2 locations </a></span></div>
+                  </div>
+						</div>
+						<div class="col-sm-4">
+				<a href="profile.php" class="btn btn-s btn-aqua float-right mb-0">View profile</a>
+						</div>
+						</div>
+                </li>
+				  
+				 
+				  
+				  <li class="bg-pastel-pink">
+					<div class="row">
+						<div class="col-sm-8 mb-0">
+                  <figure class="rounded"><a href="profile.php"><img src="style/images/art/a5.jpg" alt="" /></a></figure>
+                  <div class="post-content">
+                    <h6 class="post-title"> <a href="profile.php">Leila Black, MD</a>&nbsp;<span class="badge badge-pill bg-pastel-violet float-right mb-2 mr-3"><i class="si-badges_ribbon-3"></i> Sponsored</span></h6>
+					  <p>5000 Dufferin St, Toronto, ON M3H 5T5 </p>
+                    <div class="meta"><span><a href="profile.php"><i class="fa fa-map-marker"></i> &#8249; 3 km </a></span><span><a href="#" class="hover has-tooltip" title="<strong>Toronto</strong><br>5000 Dufferin St, Toronto, ON M3H&nbsp;5T5<hr><strong>Mississauga</strong><br>Ponytrail Dr, Mississauga, ON L4WN&nbsp;2Y1" data-html="true" data-placement="right"><i class="fa fa-building-o"></i> 2 locations </a></span></div>
+                  </div>
+						</div>
+						<div class="col-sm-4">
+				<a href="profile.php" class="btn btn-s btn-aqua float-right mb-0">View profile</a>
+						</div>
+						</div>
+                </li>
+				  
+				   <li class="bg-pastel-green">
+					<div class="row">
+						<div class="col-sm-8 mb-0">
+                  <figure class="rounded"><a href="profile.php"><img src="style/images/art/a5.jpg" alt="" /></a></figure>
+                  <div class="post-content">
+                    <h6 class="post-title"> <a href="profile.php">Leila Black, MD</a>&nbsp;<span class="badge badge-pill bg-pastel-teal float-right mb-2 mr-3"><i class="si-ecommerce_star-favorites"></i> Favourite</span></h6>
+					  <p>5000 Dufferin St, Toronto, ON M3H 5T5 </p>
+                    <div class="meta"><span><a href="profile.php"><i class="fa fa-map-marker"></i> &#8249; 3 km </a></span><span><a href="#" class="hover has-tooltip" title="<strong>Toronto</strong><br>5000 Dufferin St, Toronto, ON M3H&nbsp;5T5<hr><strong>Mississauga</strong><br>Ponytrail Dr, Mississauga, ON L4WN&nbsp;2Y1" data-html="true" data-placement="right"><i class="fa fa-building-o"></i> 2 locations </a></span></div>
+                  </div>
+						</div>
+						<div class="col-sm-4">
+				<a href="profile.php" class="btn btn-s btn-aqua float-right mb-0">View profile</a>
+						</div>
+						</div>
+                </li>
+-->
+				  
+				  
               </ul>
               <!-- /.image-list -->
           
