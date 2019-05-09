@@ -274,6 +274,8 @@
                        navigator.mozGetUserMedia ||
                        navigator.msGetUserMedia);
 
+                if(!navigator.getUserMedia) { navigator.getUserMedia = navigator.mediaDevices.getUserMedia; }
+
                 attachMediaStream = function(element, stream) {
                     console.log('DEPRECATED, attachMediaStream will soon be removed.');
                     element.srcObject = stream;
