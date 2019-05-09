@@ -17,7 +17,7 @@
 	</div>
 	</div>
 
-	<div class="page-content wrapper light-wrapper">
+	<div class="page-content text-center embed-responsive embed-responsive-4by3">
         <!-- <div class="connectingText">Connecting you to an expert...</div> -->
     </div>
 </div>
@@ -45,6 +45,8 @@
     
         $(document).ready(function(){
             $('.page-content').hide();
+			
+			$('video').addClass('embed-responsive-item');			
             $('#connectMe').click(function(){
 
                 $.ajax({
@@ -60,6 +62,7 @@
                 }); 
                 
                 $('.page-content').show();
+				$('.wrapper, body').addClass('dark-wrapper');
                 $('.infoBox').hide();
                 init();
             });
