@@ -2,18 +2,26 @@
 
 
 @section('content')
-
-    <div class="infoBox box shadow">
-        <p>Please tell us a little about yourself:</p>
-        <div class="col"><input type="text" name="name" placeholder="Name" id="name" class="form-control"></div>
-        <div class="col"><input type="text" name="name" placeholder="Phone Number" id="phone"class="form-control"></div>
-        <div class="col"><input type="submit" value="Connect Me!" id="connectMe" class="btn btn-red btn-l"></div>
+<div class="wrapper light-wrapper">
+      <div class="container inner pt-70 pt-sm-20">
+		  <div class="row">
+			  <div class="col-md-6 offset-md-3 text-center">
+    <div class="infoBox box bg-light shadow">
+		<div class="icon fs-50 color-dark mb-20"><i class="fa fa-video-camera"></i></div>
+		<h3>Start video chat with an expert</h3>
+        <p>Please provide your name and phone number to launch a conversation</p>
+        <div class="form-group"><input type="text" name="name" placeholder="Name" id="name" class="form-control"></div>
+        <div class="form-group"><input type="text" name="name" placeholder="Phone Number" id="phone"class="form-control"></div>
+        <div class="form-group"><input type="submit" value="Connect Me" id="connectMe" class="btn btn-red btn-l"></div>
     </div>
+	</div>
+	</div>
 
 	<div class="page-content wrapper light-wrapper">
         <!-- <div class="connectingText">Connecting you to an expert...</div> -->
     </div>
-
+</div>
+</div>
 @stop
 
 @section('js')
