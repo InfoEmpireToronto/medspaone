@@ -3,11 +3,11 @@
 
 @section('content')
 
-    <div class="infoBox">
+    <div class="infoBox box shadow">
         <p>Please tell us a little about yourself:</p>
-        <div class="col"><input type="text" name="name" placeholder="Name" id="name"></div>
-        <div class="col"><input type="text" name="name" placeholder="Phone Number" id="phone"></div>
-        <div class="col"><input type="submit" value="Connect Me!" id="connectMe" ></div>
+        <div class="col"><input type="text" name="name" placeholder="Name" id="name" class="form-control"></div>
+        <div class="col"><input type="text" name="name" placeholder="Phone Number" id="phone"class="form-control"></div>
+        <div class="col"><input type="submit" value="Connect Me!" id="connectMe" class="btn btn-red btn-l"></div>
     </div>
 
 	<div class="page-content wrapper light-wrapper">
