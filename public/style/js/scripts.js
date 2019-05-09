@@ -1196,16 +1196,16 @@ $(document).ready(function() {
     /*-----------------------------------------------------------------------------------*/
     /*	TOOLTIP
     /*-----------------------------------------------------------------------------------*/
-    $('.has-tooltip').tooltip();
-    $('.image-tooltip').tooltip({
-	    html: true,
-	    container: 'body',
-	    trigger: 'hover',
-	    template: '<div class="image-tooltip" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
-    });
-    $('.has-popover').popover({
-        trigger: 'focus',
-    });
+    // $('.has-tooltip').tooltip();
+    // $('.image-tooltip').tooltip({
+	   //  html: true,
+	   //  container: 'body',
+	   //  trigger: 'hover',
+	   //  template: '<div class="image-tooltip" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
+    // });
+    // $('.has-popover').popover({
+    //     trigger: 'focus',
+    // });
     /*-----------------------------------------------------------------------------------*/
     /*	VIDEO WRAPPER
     /*-----------------------------------------------------------------------------------*/

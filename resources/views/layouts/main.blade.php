@@ -200,9 +200,10 @@ $keywords = "";
     </footer>
   </div>
   <!-- /.content-wrapper -->
+  <script src="{{ asset('js/app.js') }}"></script>
   <script src="/style/js/jquery.min.js"></script>
-  <script src="/style/js/popper.min.js"></script>
-  <script src="/style/js/bootstrap.min.js"></script>
+  <!-- <script src="/style/js/popper.min.js"></script> -->
+  <!-- <script src="/style/js/bootstrap.min.js"></script> -->
 
   <script src="/style/revolution/js/jquery.themepunch.tools.min.js"></script>
   <script src="/style/revolution/js/jquery.themepunch.revolution.min.js"></script>
@@ -218,7 +219,6 @@ $keywords = "";
 <script src="/style/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
 <script src="/style/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
 <script src="/style/revolution/js/extensions/revolution.extension.video.min.js"></script>-->
-  <script src="{{ asset('js/app.js') }}"></script>
 
   <script src="/style/js/plugins.js"></script>
   <script src="/style/js/scripts.js"></script>
