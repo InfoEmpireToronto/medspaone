@@ -173,8 +173,8 @@ width: 50px;
                         }
                         remote_media.attr("controls", "");
                         peer_media_elements[peer_id] = remote_media;
-                        var rm = $('<div class="embed-responsive embed-responsive-4by3 mb-20"></div>').append(remote_media);
-						var rm2 = $('<div class="col-md-6"></div>').append(rm);
+                        var rm = $('<div class="embed-responsive embed-responsive-4by3 mb-20">!</div>').append(remote_media);
+						var rm2 = $('<div class="col-md-6">?</div>').append(rm);
                         console.log(rm2);
                         $('.page-content').append(rm2);
                         attachMediaStream(remote_media[0], event.stream);
