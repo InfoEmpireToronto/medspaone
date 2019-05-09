@@ -2,6 +2,23 @@
 
 
 @section('content')
+<style>
+	.close-btn {border-radius:50%; background:red; color:#fff; -moz-transform: rotate(45deg);
+-webkit-transform: rotate(45deg);
+-o-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg); 
+width: 50px;
+    height: 50px;
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+    font-size: 30px;
+    margin: 10px auto;
+	}
+
+</style>
+
 <div class="wrapper light-wrapper">
       <div class="container inner pt-70 pt-sm-20">
 		  <div class="row">
@@ -13,13 +30,19 @@
         <div class="form-group"><input type="text" name="name" placeholder="Name" id="name" class="form-control"></div>
         <div class="form-group"><input type="text" name="name" placeholder="Phone Number" id="phone"class="form-control"></div>
         <div class="form-group"><input type="submit" value="Connect Me" id="connectMe" class="btn btn-red btn-l"></div>
-    </div>
+    </div></div>
 	</div>
+		  
+		  <div class="row">
+			<div class="page-content col-md-6">
+        <!-- <div class="connectingText">Connecting you to an expert...</div> -->
+				
+				
+    </div>	  
+			<a href="" class="close-btn"><i class="si-education_plus"></i></a>	  
 	</div>
 
-	<div class="page-content text-center embed-responsive embed-responsive-4by3">
-        <!-- <div class="connectingText">Connecting you to an expert...</div> -->
-    </div>
+	
 </div>
 </div>
 @stop
@@ -61,7 +84,7 @@
                     }
                 }); 
                 
-                $('.page-content').show();
+                $('.page-content').show();				
 				$('.wrapper, body').addClass('dark-wrapper');
                 $('.infoBox').hide();
                 init();
@@ -150,7 +173,8 @@
                         }
                         remote_media.attr("controls", "");
                         peer_media_elements[peer_id] = remote_media;
-                        $('.page-content').append(remote_media);
+						var rm = $('<div class="embed-responsive embed-responsive-4by3 mb-20"></div>').append(remote_media);
+                        $('.page-content').append(rm);
                         attachMediaStream(remote_media[0], event.stream);
                     }
 
@@ -300,7 +324,8 @@
                         local_media.attr("autoplay", "autoplay");
                         local_media.attr("muted", "true"); /* always mute ourselves by default */
                         local_media.attr("controls", "");
-                        $('.page-content ').append(local_media);
+                        var rm = $('<div class="embed-responsive embed-responsive-4by3 mb-20"></div>').append(local_media);
+                        $('.page-content').append(rm);
                         attachMediaStream(local_media[0], stream);
 
                         if (callback) callback();
