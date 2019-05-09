@@ -42,7 +42,7 @@ class ArticleController extends Voyager\VoyagerController
             if($article)
             {
                 
-                return view('articles',[ 
+                return view('article',[ 
                     'article' => $article
 
                 ]);

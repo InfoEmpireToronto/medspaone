@@ -51,7 +51,7 @@ class AjaxController extends Voyager\VoyagerController
             'email' => $request['email']
         ]);
 
-        \Mail::to('tganyuk86@gmail.com')->send(new \App\Mail\newContact('mssssgggggg!!!!!!'));
+        // \Mail::to('tganyuk86@gmail.com')->send(new \App\Mail\newContact('mssssgggggg!!!!!!'));
 
         // dd($out);
 

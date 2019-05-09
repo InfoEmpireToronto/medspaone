@@ -16,7 +16,7 @@
 
            <div class="item grid-sizer col-md-3">
               <div class="box bg-white shadow p-20">
-                <figure class="main mb-20 overlay overlay1 rounded"><a href="/article/{{$article->id}}">
+                <figure class="main mb-20 overlay overlay1 rounded"><a href="/article/{{$article->slug}}">
                   <img src="/storage/{{$article->image}}" alt="" /></a>
                   <figcaption>
                     <h5 class="text-uppercase from-top mb-0">Read more</h5>
@@ -29,7 +29,7 @@
           
                 <h6 class="mb-10">{{ucwords(strtolower($article->title))}}</h6>
           <p class="mb-5">{!! substr(strip_tags($article->body),0,200) !!}</p>
-          <div class="arrow-link"><a href="/article/{{$article->id}}" class="text-muted">Read article <i class="mi-arrow-right"></i></a> </div>
+          <div class="arrow-link"><a href="/article/{{$article->slug}}" class="text-muted">Read article <i class="mi-arrow-right"></i></a> </div>
               </div>
             </div>
         @endforeach 

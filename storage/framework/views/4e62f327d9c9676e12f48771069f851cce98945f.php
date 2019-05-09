@@ -263,18 +263,18 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('js'); ?>
-<script src="https://www.google.com/recaptcha/api.js?render=6LeIt6IUAAAAAFkCT3x8hFqtO0TmKhy7FayXNL7m"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=<?php echo e(env('RECAPTCHA_SITE_KEY')); ?>"></script>
 
   <script type="text/javascript">
     $(document).ready(function(){
 
       grecaptcha.ready(function() {
-          grecaptcha.execute('6LeIt6IUAAAAAFkCT3x8hFqtO0TmKhy7FayXNL7m', {action: 'homepage'}).then(function(token) {
+          grecaptcha.execute('<?php echo e(env('RECAPTCHA_SITE_KEY')); ?>', {action: 'homepage'}).then(function(token) {
             console.log('captcha', token);
           });
       });
 
-
+ 
       $('.submitContact').click(function(){
 
         $.ajax({
