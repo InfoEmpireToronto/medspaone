@@ -34,7 +34,7 @@ width: 50px;
 	</div>
 		  
 		  <div class="row">
-			<div class="page-content">
+			<div class="page-content col-md-6">
         <!-- <div class="connectingText">Connecting you to an expert...</div> -->
 				
 				
