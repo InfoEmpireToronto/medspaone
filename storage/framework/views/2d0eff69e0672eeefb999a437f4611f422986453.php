@@ -206,8 +206,8 @@ $keywords = "";
   <!-- /.content-wrapper -->
   <script src="<?php echo e(asset('js/app.js')); ?>"></script>
   <script src="/style/js/jquery.min.js"></script>
-  <!-- <script src="/style/js/popper.min.js"></script> -->
-  <!-- <script src="/style/js/bootstrap.min.js"></script> -->
+  <script src="/style/js/popper.min.js"></script>
+  <script src="/style/js/bootstrap.min.js"></script>
 
   <script src="/style/revolution/js/jquery.themepunch.tools.min.js"></script>
   <script src="/style/revolution/js/jquery.themepunch.revolution.min.js"></script>
