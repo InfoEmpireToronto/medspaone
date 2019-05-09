@@ -50,15 +50,22 @@ class ArticleController extends Voyager\VoyagerController
         {
             $user = User::where('slug', $name)->first();
             if($user)
+            {
+                $articles = Post::where('author_id', $user->id)
+                                ->where('type','article')
+                                ->orderBy('created_at', 'desc')
+                                ->get();
                 return view('articles',[ 
-                    'articles' => Post::where('author_id', $user->id)->where('type','article')->get(),
+                    'articles' => $articles,
                     'user' => $user
 
                 ]);
+                
+            }
         }
 
         return view('articles',[ 
-            'articles' => Post::where('type','article')->get(),
+            'articles' => Post::where('type','article')->orderBy('created_at', 'desc')->get(),
             'user' => false
 
         ]);
@@ -98,14 +105,14 @@ class ArticleController extends Voyager\VoyagerController
             $user = User::where('slug', $name)->first();
             if($user)
                 return view('beforeAfter',[ 
-                    'beforeAfters' => Post::where('author_id', $user->id)->where('type','ba')->get(),
+                    'beforeAfters' => Post::where('author_id', $user->id)->where('type','ba')->orderBy('created_at', 'desc')->get(),
                     'user' => $user
 
                 ]);
         }
 
         return view('beforeAfter',[ 
-            'beforeAfters' => Post::where('type','ba')->get(),
+            'beforeAfters' => Post::where('type','ba')->orderBy('created_at', 'desc')->get(),
             'user' => false
 
         ]);
