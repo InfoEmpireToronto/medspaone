@@ -72,7 +72,7 @@
                     </div>
                   </div>
                   <div class="col-12">
-                   
+                    
                     <button type="submit" class="btn submitContact" data-error="Fix errors" data-processing="Sending..." data-success="Thank you!">Submit</button>
                     <footer class="notification-box hidden"></footer>
                   </div>
@@ -263,8 +263,18 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('js'); ?>
+<script src="https://www.google.com/recaptcha/api.js?render=6LeIt6IUAAAAAFkCT3x8hFqtO0TmKhy7FayXNL7m"></script>
+
   <script type="text/javascript">
     $(document).ready(function(){
+
+      grecaptcha.ready(function() {
+          grecaptcha.execute('6LeIt6IUAAAAAFkCT3x8hFqtO0TmKhy7FayXNL7m', {action: 'homepage'}).then(function(token) {
+            console.log('captcha', token);
+          });
+      });
+
+
       $('.submitContact').click(function(){
 
         $.ajax({

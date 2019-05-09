@@ -74,7 +74,7 @@
                     </div>
                   </div>
                   <div class="col-12">
-                   
+                    
                     <button type="submit" class="btn submitContact" data-error="Fix errors" data-processing="Sending..." data-success="Thank you!">Submit</button>
                     <footer class="notification-box hidden"></footer>
                   </div>
@@ -264,8 +264,18 @@
 @endsection
 
 @section('js')
+<script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
+
   <script type="text/javascript">
     $(document).ready(function(){
+
+      grecaptcha.ready(function() {
+          grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', {action: 'homepage'}).then(function(token) {
+            console.log('captcha', token);
+          });
+      });
+
+
       $('.submitContact').click(function(){
 
         $.ajax({
