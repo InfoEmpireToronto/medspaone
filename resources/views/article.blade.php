@@ -18,7 +18,7 @@
                 <div class="space40"></div>
                 <div class="post-content text-left">
                   <h1 class="post-title">{{ucwords(strtolower($article->title))}}</h1>
-                  <div class="meta"><span class="date">April 12, 2019</span><span class="author">By <a href="/profile/{{$article->user()->id}}">{{$article->user()->company}}</a></span><span class="comments"><a href="#">2</a> </span><span><a href="#"><i class="fa fa-thumbs-up"></i> 10 </a></span><span class="category"><a href="#">Skin</a></span>
+                  <div class="meta"><span class="date">{{$article->created_at->diffForHumans()}}</span><span class="author">By <a href="/profile/{{$article->user()->id}}">{{$article->user()->company}}</a></span><span class="comments"><a href="#">2</a> </span><span><a href="#"><i class="fa fa-thumbs-up"></i> 10 </a></span><span class="category"><a href="#">Skin</a></span>
 <!--
 					 <span class="social-color social-s">
 						<span>Share</span>
@@ -54,7 +54,7 @@
 				  <div class="space50"></div>
 				  <div class="form-container bg-pastel-meander box">
 					  <div class="icon fs-50 color-dark mb-20"><i class="si-mail_read-mail"></i></div>
-					   <h3>Contact an expert</h3>
+					   <h3>Ask the expert</h3>
 					   <div class="space20"></div>
               <!-- <form action="{{ route('saveContact') }}" method="post" class="vanilla vanilla-form contactForm" > -->
                 <div class="row text-center">
