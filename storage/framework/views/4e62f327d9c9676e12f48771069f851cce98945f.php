@@ -33,6 +33,8 @@
                   <div class="space10"></div>
                  
                  <div class="sharethis-inline-share-buttons"></div>
+					
+				
 
                <!-- <h4 class="text-uppercase text-center">Share this story</h4>
                   <ul class="social social-color social-s text-center">
@@ -44,6 +46,41 @@
                   <!-- /.social -->
                 </div>
                 <!-- /.post-content -->
+				  
+				  	<!-- CTA FORM -->
+				  
+				  <div class="space50"></div>
+				  <div class="form-container bg-pastel-meander box">
+					  <div class="icon fs-50 color-dark mb-20"><i class="si-mail_read-mail"></i></div>
+					   <h3>Contact an expert</h3>
+					   <div class="space20"></div>
+              <!-- <form action="<?php echo e(route('saveContact')); ?>" method="post" class="vanilla vanilla-form contactForm" > -->
+                <div class="row text-center">
+                  <div class="col-lg-4">
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="name" placeholder="Your name" required="required">
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="form-group">
+                      <input type="email" class="form-control" name="email" placeholder="Your e-mail" required="required">
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="form-group">
+                      <input type="tel" class="form-control" name="tel" placeholder="Phone">
+                    </div>
+                  </div>
+                  <div class="col-12">
+                   
+                    <button type="submit" class="btn submitContact" data-error="Fix errors" data-processing="Sending..." data-success="Thank you!">Submit</button>
+                    <footer class="notification-box hidden"></footer>
+                  </div>
+                </div>
+              <!-- </form> -->
+            </div>
+				  
+				  <!-- CTA FORM  END-->
               </div>
               <!-- /.post -->
            
@@ -220,5 +257,31 @@
       <!-- /.container -->
     </div>
     <!-- /.wrapper -->
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('js'); ?>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.submitContact').click(function(){
+
+        $.ajax({
+            url: "<?php echo e(route('saveContact')); ?>",
+            type: 'GET',
+            data: {
+                name: $('#name').val(),
+                email: $('#email').val(),
+                phone: $('#phone').val()
+            },
+            success: function(result) { 
+                console.log(result);
+            }
+        });
+
+
+      });
+    });
+
+
+  </script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/tganyuk/git/medspa.us/resources/views/article.blade.php ENDPATH**/ ?>

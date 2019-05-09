@@ -47,7 +47,7 @@
                         phone: $('#phone').val()
                     },
                     success: function(result) { 
-                        $("#h11").html(result); 
+                        // $("#h11").html(result); 
                     }
                 }); 
                 

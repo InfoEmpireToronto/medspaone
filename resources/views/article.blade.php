@@ -56,7 +56,7 @@
 					  <div class="icon fs-50 color-dark mb-20"><i class="si-mail_read-mail"></i></div>
 					   <h3>Contact an expert</h3>
 					   <div class="space20"></div>
-              <form action="contact/vanilla-form.php" method="post" class="vanilla vanilla-form" novalidate>
+              <!-- <form action="{{ route('saveContact') }}" method="post" class="vanilla vanilla-form contactForm" > -->
                 <div class="row text-center">
                   <div class="col-lg-4">
                     <div class="form-group">
@@ -75,11 +75,11 @@
                   </div>
                   <div class="col-12">
                    
-                    <button type="submit" class="btn" data-error="Fix errors" data-processing="Sending..." data-success="Thank you!">Submit</button>
+                    <button type="submit" class="btn submitContact" data-error="Fix errors" data-processing="Sending..." data-success="Thank you!">Submit</button>
                     <footer class="notification-box hidden"></footer>
                   </div>
                 </div>
-              </form>
+              <!-- </form> -->
             </div>
 				  
 				  <!-- CTA FORM  END-->
@@ -259,3 +259,29 @@
     </div>
     <!-- /.wrapper -->
 @endsection
+
+@section('js')
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.submitContact').click(function(){
+
+        $.ajax({
+            url: "{{ route('saveContact') }}",
+            type: 'GET',
+            data: {
+                name: $('#name').val(),
+                email: $('#email').val(),
+                phone: $('#phone').val()
+            },
+            success: function(result) { 
+                console.log(result);
+            }
+        });
+
+
+      });
+    });
+
+
+  </script>
+@stop

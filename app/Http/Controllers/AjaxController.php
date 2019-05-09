@@ -45,13 +45,20 @@ class AjaxController extends Voyager\VoyagerController
     
 
 
-        // FormData::create([
-        //     'name' => $request['name'],
-        //     'phone' => $request['phone']
-        // ]);
+        FormData::create([
+            'name' => $request['name'],
+            'phone' => $request['phone'],
+            'email' => $request['email']
+        ]);
+
+        // $out = mail('tganyuk86@gmail.com', 'test subj', 'test msg');
+
+        \Mail::to('tganyuk86@gmail.com')->send(new \App\Mail\newContact('mssssgggggg!!!!!!'));
+
+        // dd($out);
 
 
-        Sms::sendSMS('14169907119', 'wow test');
+        // Sms::sendSMS('14169907119', 'wow test');
 
         return response()->json(['status'=>'success']);
 
