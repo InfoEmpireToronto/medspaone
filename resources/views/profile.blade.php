@@ -181,7 +181,7 @@
 @foreach($user->videos(2) as $video)
           <div class="col-lg-6">
     			  <div class="wrapper dark-wrapper inverse-text shadow rounded">
-                <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="0Z8J3axc0oY"></div>
+                <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="{{$video->link}}"></div>
     			  <h6 class="mb-10 p-2 px-3">Video title</h6>
     			  </div>
           </div>
