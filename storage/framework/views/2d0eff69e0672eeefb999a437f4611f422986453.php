@@ -144,10 +144,15 @@ $keywords = "";
                   </div>
                   <!--/.image-block-wrapper -->
                 </li>
+    </li>
                 <!--/.mega-menu-content-->
               </ul>
 
             </li>
+<li class="nav-item" style="margin-top: 10px;">
+                <div class=" text-center">
+         <a href="/chat" target="_blank" class="btn btn-red">Start video chat with an expert <i class="fa fa-video-camera"></i></a>
+      </div>
           </ul>
         </div>
       <div id="search">
