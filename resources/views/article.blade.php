@@ -275,7 +275,7 @@
           });
       });
 
-
+ 
       $('.submitContact').click(function(){
 
         $.ajax({

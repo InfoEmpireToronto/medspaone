@@ -24,7 +24,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/article/{id}', 'ArticleController@viewArticle')->name('viewArticle');
+Route::get('/article/{name}', 'ArticleController@viewArticle')->name('viewArticle');
 Route::get('/articles', 'ArticleController@articles')->name('articles');
 Route::get('/articles/{name}', 'ArticleController@articles')->name('articles');
 Route::get('/videos', 'ArticleController@videos')->name('videos');

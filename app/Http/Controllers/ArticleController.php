@@ -34,8 +34,21 @@ class ArticleController extends Voyager\VoyagerController
         
     // }
 
-    public function viewArticle($id)
+    public function viewArticle($name)
     {
+        if($name)
+        {
+            $article = Post::where('slug', $name)->first();
+            if($article)
+            {
+                
+                return view('articles',[ 
+                    'article' => $article
+
+                ]);
+                
+            }
+        }
 
         return view('article',[ 
             'article' => Post::find($id)
