@@ -34,6 +34,10 @@ $keywords = "";
   
     </head>
     <body>
+      <div id="fb-root"></div>
+<script  crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3&appId=127647780672409&autoLogAppEvents=1"></script>
+
+
         <div class="content-wrapper">
      <nav class="navbar wide bg-light navbar-expand-lg">
       <div class="container-fluid flex-row justify-content-center">

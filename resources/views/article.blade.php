@@ -85,11 +85,13 @@
 				  <!-- CTA FORM  END-->
               </div>
               <!-- /.post -->
-           
-              <!--/.row -->
               <div class="divider-icon"><i class="si-photo_aperture"></i></div>
+
+
+              <!--/.row -->
               <div id="comments">
-                <h4>4 Comments on "What Is a Nonsurgical Facelift?"</h4>
+<div class="fb-comments" data-href="{{ url()->current() }}" data-width="750" data-numposts="5"></div>
+                <!-- <h4>4 Comments on "What Is a Nonsurgical Facelift?"</h4>
                 <ol id="singlecomments" class="commentlist">
                   <li>
                     <div class="message">
@@ -156,7 +158,8 @@
                     </div>
                   </li>
                 </ol>
-              </div>
+              </div> -->
+            </div>
               <!-- /#comments -->
               <div class="divider-icon"><i class="si-photo_aperture"></i></div>
               <h4>Would you like to share your thoughts?</h4>

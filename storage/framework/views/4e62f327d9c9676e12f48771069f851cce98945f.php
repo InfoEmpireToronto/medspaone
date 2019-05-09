@@ -15,7 +15,7 @@
                 <div class="space40"></div>
                 <div class="post-content text-left">
                   <h1 class="post-title"><?php echo e(ucwords(strtolower($article->title))); ?></h1>
-                  <div class="meta"><span class="date">April 12, 2019</span><span class="author">By <a href="/profile/<?php echo e($article->user()->id); ?>"><?php echo e($article->user()->company); ?></a></span><span class="comments"><a href="#">2</a> </span><span><a href="#"><i class="fa fa-thumbs-up"></i> 10 </a></span><span class="category"><a href="#">Skin</a></span>
+                  <div class="meta"><span class="date"><?php echo e($article->created_at->diffForHumans()); ?></span><span class="author">By <a href="/profile/<?php echo e($article->user()->id); ?>"><?php echo e($article->user()->company); ?></a></span><span class="comments"><a href="#">2</a> </span><span><a href="#"><i class="fa fa-thumbs-up"></i> 10 </a></span><span class="category"><a href="#">Skin</a></span>
 <!--
 					 <span class="social-color social-s">
 						<span>Share</span>
@@ -52,7 +52,7 @@
 				  <div class="space50"></div>
 				  <div class="form-container bg-pastel-meander box">
 					  <div class="icon fs-50 color-dark mb-20"><i class="si-mail_read-mail"></i></div>
-					   <h3>Contact an expert</h3>
+					   <h3>Ask the expert</h3>
 					   <div class="space20"></div>
               <!-- <form action="<?php echo e(route('saveContact')); ?>" method="post" class="vanilla vanilla-form contactForm" > -->
                 <div class="row text-center">
@@ -83,11 +83,13 @@
 				  <!-- CTA FORM  END-->
               </div>
               <!-- /.post -->
-           
-              <!--/.row -->
               <div class="divider-icon"><i class="si-photo_aperture"></i></div>
+
+
+              <!--/.row -->
               <div id="comments">
-                <h4>4 Comments on "What Is a Nonsurgical Facelift?"</h4>
+<div class="fb-comments" data-href="<?php echo e(url()->current()); ?>" data-width="750" data-numposts="5"></div>
+                <!-- <h4>4 Comments on "What Is a Nonsurgical Facelift?"</h4>
                 <ol id="singlecomments" class="commentlist">
                   <li>
                     <div class="message">
@@ -154,7 +156,8 @@
                     </div>
                   </li>
                 </ol>
-              </div>
+              </div> -->
+            </div>
               <!-- /#comments -->
               <div class="divider-icon"><i class="si-photo_aperture"></i></div>
               <h4>Would you like to share your thoughts?</h4>
