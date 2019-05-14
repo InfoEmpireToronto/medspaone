@@ -149,10 +149,9 @@ $keywords = "";
               </ul>
 
             </li>
-<li class="nav-item" style="margin-top: 10px;">
-                <div class=" text-center">
-         <a href="/chat" target="_blank" class="btn btn-red">Start video chat with an expert <i class="fa fa-video-camera"></i></a>
-      </div>
+<li class="nav-item mt-12 text-center text-sm-left">
+         <a href="/chat" target="_blank" class="btn btn-s bg-meander">Video chat <i class="fa fa-video-camera"></i></a>
+		  </li>
           </ul>
         </div>
       <div id="search">

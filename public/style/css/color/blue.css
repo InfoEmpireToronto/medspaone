@@ -42,7 +42,7 @@ blockquote.icon-top:before {
     color: #5ca7db;
 }
 .btn {
-    background: #5ca7db;
+/*    background: #5ca7db;*/
 }
 .btn:not([class*="btn-"]):hover,
 .btn:not([class*="btn-"]):focus,
