@@ -56,7 +56,7 @@ class AjaxController extends Voyager\VoyagerController
         // dd($out);
 
 
-        // Sms::sendSMS('14169907119', 'wow test');
+        Sms::sendSMS('14169907119', $request['name'].' has a question, to start the conversation go to https://medspa.one/phys/chat');
 
         return response()->json(['status'=>'success']);
 

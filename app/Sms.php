@@ -24,7 +24,7 @@ class Sms extends Model
 
 		// \ClickSend\Model\SmsMessageCollection | SmsMessageCollection model
 		$sms_messages = new \ClickSend\Model\SmsMessageCollection(); 
-		$sms_messages->setMessages([$message]);
+		$sms_messages->setMessages([$msg]);
 
 		try {
 		    $result = $apiInstance->smsSendPost($sms_messages);
