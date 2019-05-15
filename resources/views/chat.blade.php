@@ -472,7 +472,7 @@ width: 50px;
 @section('js')
 <script type="text/javascript">
     $(document).ready(function(){
-            // $('.page-content').hide();
+            $('.close-btn').hide();
             
             $('video').addClass('embed-responsive-item');           
             $('#connectMe').click(function(){
@@ -489,7 +489,7 @@ width: 50px;
                     }
                 }); 
                 
-                $('.page-content').show();              
+                $('.page-content, .close-btn').show();              
                 $('.wrapper, body').addClass('dark-wrapper');
                 $('.wrapper').hide();
                 init();
