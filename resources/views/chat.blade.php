@@ -2,342 +2,420 @@
 
 
 @section('content')
-<style>
-	.close-btn {border-radius:50%; background:red; color:#fff; -moz-transform: rotate(45deg);
--webkit-transform: rotate(45deg);
--o-transform: rotate(45deg);
--ms-transform: rotate(45deg);
-transform: rotate(45deg); 
-width: 50px;
-    height: 50px;
-    padding: 10px;
-    display: inline-block;
-    text-align: center;
-    font-size: 30px;
-    margin: 10px auto;
-	}
+<!DOCTYPE html>
+<html lang="en">
 
-</style>
-
-<div class="wrapper light-wrapper">
-      <div class="container inner pt-70 pt-sm-20">
-		  <div class="row">
-			  <div class="col-md-6 offset-md-3 text-center">
-    <div class="infoBox box bg-light shadow">
-		<div class="icon fs-50 color-dark mb-20"><i class="fa fa-video-camera"></i></div>
-		<h3>Start video chat with an expert</h3>
-        <p>Please provide your name and phone number to launch a conversation</p>
-        <div class="form-group"><input type="text" name="name" placeholder="Name" id="name" class="form-control"></div>
-        <div class="form-group"><input type="text" name="name" placeholder="Phone Number" id="phone"class="form-control"></div>
-        <div class="form-group"><input type="submit" value="Connect Me" id="connectMe" class="btn btn-red btn-l"></div>
-    </div></div>
-	</div>
-		  
-		  <div class="row">
-			<div class="page-content col-md-6">
-        <!-- <div class="connectingText">Connecting you to an expert...</div> -->
-				
-				
-    </div>	  
-			<a href="" class="close-btn"><i class="si-education_plus"></i></a>	  
-	</div>
-
-	
-</div>
-</div>
-@stop
-
-@section('js')
-        <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
-            <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
-		<script src="https://medspa.one:8080/socket.io/socket.io.js"></script>
-        <script>
-
-        /** CONFIG **/
-        var SIGNALING_SERVER = "https://medspa.one:8080";
-        var USE_AUDIO = true;
-        var USE_VIDEO = true;
-        var DEFAULT_CHANNEL = 'some-global-channel-name';
-        var MUTE_AUDIO_BY_DEFAULT = false;
-
-        /** You should probably use a different stun server doing commercial stuff **/
-        /** Also see: https://gist.github.com/zziuni/3741933 **/
-        var ICE_SERVERS = [
-            {url:"stun:stun.l.google.com:19302"}
-        ];
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     
-        $(document).ready(function(){
-            $('.page-content').hide();
-			
-			$('video').addClass('embed-responsive-item');			
-            $('#connectMe').click(function(){
+    <meta name="theme-color" content="#000000">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="icon.png" type="image/png" />
+    <link rel="icon" href="icon.svg" sizes="any" type="image/svg+xml" />
+    <style>
+        *{outline: none;}
+        html, body { margin: 0px; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;line-height: 1.5;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;background: #000;}
+        video {width:100%;height:auto;height:100%;object-fit: cover;}
+        video:fullscreen {object-fit: contain }
+        .video {float: left; width: 25vw;height: 50vh;overflow: hidden;position: relative;}
+        .video.one{width: 100vw;height: 100vh;}
+        .video.two{width: 50vw;height: 100vh;}
+        .video.three{width: 33.33vw;height: 100vh;}
+        .video.four{width: 50vw;height: 50vh;}
+        .video.six{width: 33.33vw;height: 50vh;}
+        #selfVideo.mirror {transform: rotateY(180deg);-webkit-transform:rotateY(180deg);-moz-transform:rotateY(180deg);}
+        #btnWrap{position: absolute;bottom:0px;left:0px;right:0px;text-align:center;z-index: 999;background: rgba(50,50,50,0.6);}
+        #mutebtn{padding:10px;margin:0px 10px;width:64px;font-size:2em;cursor: pointer;background: none;border:none;color:#fff;}
+        #videomutebtn, #screensharebtn{padding:10px;margin:0px 10px;width:64px;font-size:2em;cursor: pointer;background: none;border:none;color:#fff;}
+        #screensharebtn:disabled{color:#ccc;opacity: 0.5;cursor: not-allowed;}
+        .fa-microphone-slash, .fa-video-slash{color:#e74c3c!important;}
+        .video .fullscreenbtn{position: absolute;bottom:0px;right:0px;text-align:center;z-index: 999;padding:10px;width:64px;font-size:2em;cursor: pointer;background: none;border:none;color:#fff;}
+        #closebtn{float: right;color:#333;text-decoration: none;font-size: 125%;line-height: 1.2;}
+        #roomurl{display:inline-block;border-radius: 5px;border:1px solid #dcdcdc;background: #efefef;font-size: 80%;padding: 5px;margin-top: 5px;}
+        .message{width: 300px; position: fixed; bottom: 10px; right:10px;box-sizing: border-box; padding:10px;background: #fff; border-radius: 5px;z-index: 1000;}
+        #tooManyParticipants{background: #c0392b;color: #fff;display: none;}
+        @media only screen and (max-width: 960px) {
+            .video {float: left; width: 50vw;height: 25vh;overflow: hidden;}
+            .video.two{width: 100vw;height: 50vh;}
+            .video.three{width: 100vw;height: 33.33vh;}
+            .video.six{width: 50vw;height: 33.33vh;}
+        }
+    </style>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous" />
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+    const appURL = () => {
+        const protocol = 'http' + ((location.hostname == 'localhost') ? '' : 's') + '://';
+        return protocol + location.hostname + ((location.hostname == 'localhost') ? ':8080' : '');
+    }
+    const getRoomName = () => {
+        let roomName = location.pathname.substring(1);
+        if (roomName == '') {
+            const randomName = () => Math.random().toString(36).substr(2, 6);
+            roomName = randomName();
+            const newurl = appURL() + '/' + roomName;
+            window.history.pushState({ url: newurl }, roomName, newurl);
+        }
+        return roomName;
+    }
+    var SIGNALING_SERVER = appURL();
+    var USE_AUDIO = true;
+    var USE_VIDEO = true;
+    var IS_SCREEN_STREAMING = false;
+    var ROOM_ID = getRoomName();
 
-                $.ajax({
-                    url: "{{ route('saveContact') }}",
-                    type: 'GET',
-                    data: {
-                        name: $('#name').val(),
-                        phone: $('#phone').val()
-                    },
-                    success: function(result) { 
-                        // $("#h11").html(result); 
-                    }
-                }); 
-                
-                $('.page-content').show();				
-				$('.wrapper, body').addClass('dark-wrapper');
-                $('.infoBox').hide();
-                init();
+    var ICE_SERVERS = [
+        { 'urls': 'stun:stun.l.google.com:19302' },
+        { 'urls': 'stun:stun.stunprotocol.org:3478' },
+        { 'urls': 'stun:stun.sipnet.net:3478' },
+        { 'urls': 'stun:stun.ideasip.com:3478' },
+        { 'urls': 'stun:stun.iptel.org:3478' }
+    ];
+
+    </script>
+    <script type="text/javascript">
+    var signaling_socket = null; /* our socket.io connection to our webserver */
+    var local_media_stream = null; /* our own microphone / webcam */
+    var peers = {}; /* keep track of our peer connections, indexed by peer_id (aka socket.io id) */
+    var peer_media_elements = {}; /* keep track of our <video>/<audio> tags, indexed by peer_id */
+
+    function init() {
+        // console.log("Connecting to signaling server");
+        signaling_socket = io(SIGNALING_SERVER);
+        signaling_socket = io();
+
+        signaling_socket.on('connect', function() {
+            // console.log("Connected to signaling server");
+            if (local_media_stream) join_chat_channel(ROOM_ID, {});
+            else setup_local_media(function() {
+                /* once the user has given us access to their
+                 * microphone/camcorder, join the channel and start peering up */
+                join_chat_channel(ROOM_ID, {});
             });
-        	// init();
         });
-            var signaling_socket = null;   /* our socket.io connection to our webserver */
-            var local_media_stream = null; /* our own microphone / webcam */
-            var peers = {};                /* keep track of our peer connections, indexed by peer_id (aka socket.io id) */
-            var peer_media_elements = {};  /* keep track of our <video>/<audio> tags, indexed by peer_id */
+        signaling_socket.on('disconnect', function() {
+            // console.log("Disconnected from signaling server");
+            /* Tear down all of our peer connections and remove all the
+             * media divs when we disconnect */
+            for (peer_id in peer_media_elements) {
+                document.body.removeChild(peer_media_elements[peer_id].parentNode);
+                resizeVideos();
+            }
+            for (peer_id in peers) {
+                peers[peer_id].close();
+            }
 
-            function init() {
-                console.log("Connecting to signaling server: "+SIGNALING_SERVER);
-                signaling_socket = io(SIGNALING_SERVER);
-                // signaling_socket = io();
+            peers = {};
+            peer_media_elements = {};
+        });
 
-                signaling_socket.on('connect', function() {
-                    console.log("Connected to signaling server");
-                    setup_local_media(function() {
-                        /* once the user has given us access to their
-                         * microphone/camcorder, join the channel and start peering up */
-                        join_chat_channel(DEFAULT_CHANNEL, {'whatever-you-want-here': 'stuff'});
+        function join_chat_channel(channel, userdata) {
+            signaling_socket.emit('join', { "channel": channel, "userdata": userdata });
+        }
+
+        function part_chat_channel(channel) {
+            signaling_socket.emit('part', channel);
+        }
+
+
+        /** 
+         * When we join a group, our signaling server will send out 'addPeer' events to each pair
+         * of users in the group (creating a fully-connected graph of users, ie if there are 6 people
+         * in the channel you will connect directly to the other 5, so there will be a total of 15 
+         * connections in the network). 
+         */
+        signaling_socket.on('addPeer', function(config) {
+            // console.log('Signaling server said to add peer:', config);
+            var peer_id = config.peer_id;
+            if (peer_id in peers) {
+                /* This could happen if the user joins multiple channels where the other peer is also in. */
+                // console.log("Already connected to peer ", peer_id);
+                return;
+            }
+            var peer_connection = new RTCPeerConnection({ "iceServers": ICE_SERVERS }, { "optional": [{ "DtlsSrtpKeyAgreement": true }] } // this will no longer be needed by chrome eventually (supposedly), but is necessary for now to get firefox to talk to chrome
+            );
+            peers[peer_id] = peer_connection;
+
+            peer_connection.onicecandidate = function(event) {
+                if (event.candidate) {
+                    signaling_socket.emit('relayICECandidate', {
+                        'peer_id': peer_id,
+                        'ice_candidate': {
+                            'sdpMLineIndex': event.candidate.sdpMLineIndex,
+                            'candidate': event.candidate.candidate
+                        }
                     });
-                });
-                signaling_socket.on('disconnect', function() {
-                    console.log("Disconnected from signaling server");
-                    /* Tear down all of our peer connections and remove all the
-                     * media divs when we disconnect */
-                    for (peer_id in peer_media_elements) {
-                        peer_media_elements[peer_id].remove();
-                    }
-                    for (peer_id in peers) {
-                        peers[peer_id].close();
-                    }
-
-                    peers = {};
-                    peer_media_elements = {};
-                });
-                function join_chat_channel(channel, userdata) {
-                    signaling_socket.emit('join', {"channel": channel, "userdata": userdata});
                 }
-                function part_chat_channel(channel) {
-                    signaling_socket.emit('part', channel);
+            }
+            peer_connection.onaddstream = function(event) {
+                // console.log("onAddStream", event);
+                const videoWrap = document.createElement('div');
+                videoWrap.className = 'video';
+                const remote_media = document.createElement('video');
+                videoWrap.appendChild(remote_media);
+                remote_media.setAttribute('playsinline', true);
+                remote_media.mediaGroup = 'remotevideo';
+                remote_media.autoplay = true;
+                remote_media.controls = false;
+                peer_media_elements[peer_id] = remote_media;
+                document.body.appendChild(videoWrap);
+
+                if (remote_media.requestFullscreen) {
+                    const fullScreenBtn = document.createElement('button');
+                    fullScreenBtn.className = 'fullscreenbtn fas fa-expand';
+                    fullScreenBtn.addEventListener('click', (e) => {
+                        remote_media.requestFullscreen();
+                    });
+                    videoWrap.appendChild(fullScreenBtn);
                 }
 
+                attachMediaStream(remote_media, event.stream);
+                resizeVideos();
+                checkParticipantsCount();
+            }
 
-                /** 
-                * When we join a group, our signaling server will send out 'addPeer' events to each pair
-                * of users in the group (creating a fully-connected graph of users, ie if there are 6 people
-                * in the channel you will connect directly to the other 5, so there will be a total of 15 
-                * connections in the network). 
-                */
-                signaling_socket.on('addPeer', function(config) {
-                    console.log('Signaling server said to add peer:', config);
-                    var peer_id = config.peer_id;
-                    if (peer_id in peers) {
-                        /* This could happen if the user joins multiple channels where the other peer is also in. */
-                        console.log("Already connected to peer ", peer_id);
-                        return;
-                    }
-                    var peer_connection = new RTCPeerConnection(
-                        {"iceServers": ICE_SERVERS},
-                        {"optional": [{"DtlsSrtpKeyAgreement": true}]} /* this will no longer be needed by chrome
-                                                                        * eventually (supposedly), but is necessary 
-                                                                        * for now to get firefox to talk to chrome */
-                    );
-                    peers[peer_id] = peer_connection;
+            /* Add our local stream */
+            peer_connection.addStream(local_media_stream);
 
-                    peer_connection.onicecandidate = function(event) {
-                        if (event.candidate) {
-                            signaling_socket.emit('relayICECandidate', {
-                                'peer_id': peer_id, 
-                                'ice_candidate': {
-                                    'sdpMLineIndex': event.candidate.sdpMLineIndex,
-                                    'candidate': event.candidate.candidate
-                                }
-                            });
-                        }
-                    }
-                    peer_connection.onaddstream = function(event) {
-                        console.log("onAddStream", event);
-                        var remote_media = USE_VIDEO ? $("<video>") : $("<audio>");
-                        remote_media.attr("autoplay", "autoplay");
-                        if (MUTE_AUDIO_BY_DEFAULT) {
-                            remote_media.attr("muted", "true");
-                        }
-                        remote_media.attr("controls", "");
-                        peer_media_elements[peer_id] = remote_media;
-                        var rm = $('<div class="embed-responsive embed-responsive-4by3 mb-20"></div>').append(remote_media);
-						var rm2 = $('<div class="col-md-6"></div>').append(rm);
-                        console.log(rm2);
-                        $('.page-content').append(rm2);
-                        attachMediaStream(remote_media[0], event.stream);
-                    }
+            /* Only one side of the peer connection should create the
+             * offer, the signaling server picks one to be the offerer. 
+             * The other user will get a 'sessionDescription' event and will
+             * create an offer, then send back an answer 'sessionDescription' to us
+             */
+            if (config.should_create_offer) {
+                // console.log("Creating RTC offer to ", peer_id);
+                peer_connection.createOffer(
+                    function(local_description) {
+                        // console.log("Local offer description is: ", local_description);
+                        peer_connection.setLocalDescription(local_description,
+                            function() {
+                                signaling_socket.emit('relaySessionDescription', { 'peer_id': peer_id, 'session_description': local_description });
+                                // console.log("Offer setLocalDescription succeeded"); 
+                            },
+                            function() { alert("Offer setLocalDescription failed!"); }
+                        );
+                    },
+                    function(error) {
+                        console.log("Error sending offer: ", error);
+                    });
+            }
+        });
 
-                    /* Add our local stream */
-                    peer_connection.addStream(local_media_stream);
 
-                    /* Only one side of the peer connection should create the
-                     * offer, the signaling server picks one to be the offerer. 
-                     * The other user will get a 'sessionDescription' event and will
-                     * create an offer, then send back an answer 'sessionDescription' to us
-                     */
-                    if (config.should_create_offer) {
-                        console.log("Creating RTC offer to ", peer_id);
-                        peer_connection.createOffer(
-                            function (local_description) { 
-                                console.log("Local offer description is: ", local_description);
-                                peer_connection.setLocalDescription(local_description,
-                                    function() { 
-                                        signaling_socket.emit('relaySessionDescription', 
-                                            {'peer_id': peer_id, 'session_description': local_description});
-                                        console.log("Offer setLocalDescription succeeded"); 
+        /** 
+         * Peers exchange session descriptions which contains information
+         * about their audio / video settings and that sort of stuff. First
+         * the 'offerer' sends a description to the 'answerer' (with type
+         * "offer"), then the answerer sends one back (with type "answer").  
+         */
+        signaling_socket.on('sessionDescription', function(config) {
+            // console.log('Remote description received: ', config);
+            var peer_id = config.peer_id;
+            var peer = peers[peer_id];
+            var remote_description = config.session_description;
+            // console.log(config.session_description);
+
+            var desc = new RTCSessionDescription(remote_description);
+            var stuff = peer.setRemoteDescription(desc,
+                function() {
+                    // console.log("setRemoteDescription succeeded");
+                    if (remote_description.type == "offer") {
+                        // console.log("Creating answer");
+                        peer.createAnswer(
+                            function(local_description) {
+                                // console.log("Answer description is: ", local_description);
+                                peer.setLocalDescription(local_description,
+                                    function() {
+                                        signaling_socket.emit('relaySessionDescription', { 'peer_id': peer_id, 'session_description': local_description });
+                                        // console.log("Answer setLocalDescription succeeded");
                                     },
-                                    function() { Alert("Offer setLocalDescription failed!"); }
+                                    function() { Alert("Answer setLocalDescription failed!"); }
                                 );
                             },
-                            function (error) {
-                                console.log("Error sending offer: ", error);
+                            function(error) {
+                                console.log("Error creating answer: ", error);
+                                // console.log(peer);
                             });
                     }
-                });
-
-
-                /** 
-                 * Peers exchange session descriptions which contains information
-                 * about their audio / video settings and that sort of stuff. First
-                 * the 'offerer' sends a description to the 'answerer' (with type
-                 * "offer"), then the answerer sends one back (with type "answer").  
-                 */
-                signaling_socket.on('sessionDescription', function(config) {
-                    console.log('Remote description received: ', config);
-                    var peer_id = config.peer_id;
-                    var peer = peers[peer_id];
-                    var remote_description = config.session_description;
-                    console.log(config.session_description);
-
-                    var desc = new RTCSessionDescription(remote_description);
-                    var stuff = peer.setRemoteDescription(desc, 
-                        function() {
-                            console.log("setRemoteDescription succeeded");
-                            if (remote_description.type == "offer") {
-                                console.log("Creating answer");
-                                peer.createAnswer(
-                                    function(local_description) {
-                                        console.log("Answer description is: ", local_description);
-                                        peer.setLocalDescription(local_description,
-                                            function() { 
-                                                signaling_socket.emit('relaySessionDescription', 
-                                                    {'peer_id': peer_id, 'session_description': local_description});
-                                                console.log("Answer setLocalDescription succeeded");
-                                            },
-                                            function() { Alert("Answer setLocalDescription failed!"); }
-                                        );
-                                    },
-                                    function(error) {
-                                        console.log("Error creating answer: ", error);
-                                        console.log(peer);
-                                    });
-                            }
-                        },
-                        function(error) {
-                            console.log("setRemoteDescription error: ", error);
-                        }
-                    );
-                    console.log("Description Object: ", desc);
-
-                });
-
-                /**
-                 * The offerer will send a number of ICE Candidate blobs to the answerer so they 
-                 * can begin trying to find the best path to one another on the net.
-                 */
-                signaling_socket.on('iceCandidate', function(config) {
-                    var peer = peers[config.peer_id];
-                    var ice_candidate = config.ice_candidate;
-                    peer.addIceCandidate(new RTCIceCandidate(ice_candidate));
-                });
-
-
-                /**
-                 * When a user leaves a channel (or is disconnected from the
-                 * signaling server) everyone will recieve a 'removePeer' message
-                 * telling them to trash the media channels they have open for those
-                 * that peer. If it was this client that left a channel, they'll also
-                 * receive the removePeers. If this client was disconnected, they
-                 * wont receive removePeers, but rather the
-                 * signaling_socket.on('disconnect') code will kick in and tear down
-                 * all the peer sessions.
-                 */
-                signaling_socket.on('removePeer', function(config) {
-                    console.log('Signaling server said to remove peer:', config);
-                    var peer_id = config.peer_id;
-                    if (peer_id in peer_media_elements) {
-                        peer_media_elements[peer_id].remove();
-                    }
-                    if (peer_id in peers) {
-                        peers[peer_id].close();
-                    }
-
-                    delete peers[peer_id];
-                    delete peer_media_elements[config.peer_id];
-                });
-            }
-
-
-
-
-            /***********************/
-            /** Local media stuff **/
-            /***********************/
-            function setup_local_media(callback, errorback) {
-                if (local_media_stream != null) {  /* ie, if we've already been initialized */
-                    if (callback) callback();
-                    return; 
+                },
+                function(error) {
+                    console.log("setRemoteDescription error: ", error);
                 }
-                /* Ask user for permission to use the computers microphone and/or camera, 
-                 * attach it to an <audio> or <video> tag if they give us access. */
-                console.log("Requesting access to local audio / video inputs");
+            );
+            // console.log("Description Object: ", desc);
+        });
 
+        /**
+         * The offerer will send a number of ICE Candidate blobs to the answerer so they 
+         * can begin trying to find the best path to one another on the net.
+         */
+        signaling_socket.on('iceCandidate', function(config) {
+            var peer = peers[config.peer_id];
+            var ice_candidate = config.ice_candidate;
+            peer.addIceCandidate(new RTCIceCandidate(ice_candidate));
+        });
 
-                navigator.getUserMedia = ( navigator.getUserMedia ||
-                       navigator.webkitGetUserMedia ||
-                       navigator.mozGetUserMedia ||
-                       navigator.msGetUserMedia);
-
-                if(!navigator.getUserMedia) { navigator.getUserMedia = navigator.mediaDevices.getUserMedia; }
-
-                attachMediaStream = function(element, stream) {
-                    console.log('DEPRECATED, attachMediaStream will soon be removed.');
-                    element.srcObject = stream;
-                 };
-
-                navigator.getUserMedia({"audio":USE_AUDIO, "video":USE_VIDEO},
-                    function(stream) { /* user accepted access to a/v */
-                        console.log("Access granted to audio/video");
-                        local_media_stream = stream;
-                        var local_media = USE_VIDEO ? $("<video>") : $("<audio>");
-                        local_media.attr("autoplay", "autoplay");
-                        local_media.attr("muted", "true"); /* always mute ourselves by default */
-                        local_media.attr("controls", "");
-                        var rm = $('<div class="embed-responsive embed-responsive-4by3 mb-20"></div>').append(local_media);
-                        var rm2 = $('<div class="col-md-6"></div>').append(rm);
-                        $('.page-content').append(rm2);
-                        attachMediaStream(local_media[0], stream);
-
-                        if (callback) callback();
-                    },
-                    function() { /* user denied access to a/v */
-                        console.log("Access denied for audio/video");
-                        alert("You chose not to provide access to the camera/microphone, demo will not work.");
-                        if (errorback) errorback();
-                    });
+        /**
+         * When a user leaves a channel (or is disconnected from the
+         * signaling server) everyone will recieve a 'removePeer' message
+         * telling them to trash the media channels they have open for those
+         * that peer. If it was this client that left a channel, they'll also
+         * receive the removePeers. If this client was disconnected, they
+         * wont receive removePeers, but rather the
+         * signaling_socket.on('disconnect') code will kick in and tear down
+         * all the peer sessions.
+         */
+        signaling_socket.on('removePeer', function(config) {
+            // console.log('Signaling server said to remove peer:', config);
+            var peer_id = config.peer_id;
+            if (peer_id in peer_media_elements) {
+                document.body.removeChild(peer_media_elements[peer_id].parentNode);
+                resizeVideos();
             }
-        </script>
+            if (peer_id in peers) {
+                peers[peer_id].close();
+            }
+
+            delete peers[peer_id];
+            delete peer_media_elements[config.peer_id];
+        });
+        document.getElementById('roomurl').textContent = appURL() + '/' + getRoomName();
+        document.getElementById('roomurl').addEventListener('click', event => {
+            let range, selection;
+            selection = window.getSelection();
+            range = document.createRange();
+            range.selectNodeContents(event.target);
+            selection.removeAllRanges();
+            selection.addRange(range);
+        });
+        document.getElementById('closebtn').addEventListener('click', () => {
+            document.getElementById('intro').style.display = 'none';
+        });
+    }
+
+    function setup_local_media(callback, errorback) {
+        if (local_media_stream != null) { /* ie, if we've already been initialized */
+            if (callback) callback();
+            return;
+        }
+        attachMediaStream = function(element, stream) {
+            // console.log('DEPRECATED, attachMediaStream will soon be removed.');
+            element.srcObject = stream;
+        };
+        navigator.mediaDevices.getUserMedia({ "audio": USE_AUDIO, "video": USE_VIDEO }).then((stream) => {
+            local_media_stream = stream;
+            const videoWrap = document.createElement('div');
+            videoWrap.className = 'video';
+            videoWrap.setAttribute('id', 'selfVideoWrap');
+            const btnWrap = document.createElement('div');
+            btnWrap.setAttribute('id', 'btnWrap');
+
+            const muteBtn = document.createElement('button');
+            muteBtn.setAttribute('id', 'mutebtn');
+            muteBtn.className = 'fas fa-microphone';
+            muteBtn.addEventListener('click', (e) => {
+                local_media_stream.getAudioTracks()[0].enabled = !(local_media_stream.getAudioTracks()[0].enabled);
+                e.target.className = 'fas fa-microphone' + (local_media_stream.getAudioTracks()[0].enabled ? '' : '-slash');
+            });
+            btnWrap.appendChild(muteBtn);
+
+            const videoMuteBtn = document.createElement('button');
+            videoMuteBtn.setAttribute('id', 'videomutebtn');
+            videoMuteBtn.className = 'fas fa-video';
+            videoMuteBtn.addEventListener('click', (e) => {
+                local_media_stream.getVideoTracks()[0].enabled = !(local_media_stream.getVideoTracks()[0].enabled);
+                e.target.className = 'fas fa-video' + (local_media_stream.getVideoTracks()[0].enabled ? '' : '-slash');
+            });
+            btnWrap.appendChild(videoMuteBtn);
+
+            const screenShareBtn = document.createElement('button');
+            screenShareBtn.setAttribute('id', 'screensharebtn');
+            screenShareBtn.className = 'fas fa-desktop';
+            if (navigator.getDisplayMedia || navigator.mediaDevices.getDisplayMedia || navigator.userAgent.indexOf("Firefox") >= 0) {
+                screenShareBtn.addEventListener('click', (e) => {
+                    let screenMediaPromise;
+                    if (!IS_SCREEN_STREAMING) {
+                        if (navigator.getDisplayMedia) {
+                            screenMediaPromise = navigator.getDisplayMedia({ video: true });
+                        } else if (navigator.mediaDevices.getDisplayMedia) {
+                            screenMediaPromise = navigator.mediaDevices.getDisplayMedia({ video: true });
+                        } else {
+                            screenMediaPromise = navigator.mediaDevices.getUserMedia({ video: { mediaSource: 'screen' } });
+                        }
+                    } else {
+                        screenMediaPromise = navigator.mediaDevices.getUserMedia({ video: true });
+                    }
+                    screenMediaPromise.then(screenStream => {
+                        if (IS_SCREEN_STREAMING) local_media_stream.getVideoTracks()[0].stop();
+                        local_media_stream.removeTrack(local_media_stream.getVideoTracks()[0]);
+                        local_media_stream.addTrack(screenStream.getVideoTracks()[0]);
+                        IS_SCREEN_STREAMING = !IS_SCREEN_STREAMING;
+                        signaling_socket.disconnect();
+                        init();
+                        document.getElementById('selfVideo').classList.toggle('mirror');
+                    }).catch(e => {
+                        alert('Unable to share screen.');
+                        console.error(e);
+                    });
+
+                });
+            } else {
+                screenShareBtn.setAttribute('disabled', true);
+            }
+            btnWrap.appendChild(screenShareBtn);
+
+            videoWrap.appendChild(btnWrap); // append all buttons to the local video wrap
+
+            const local_media = document.createElement('video');
+            videoWrap.appendChild(local_media);
+            local_media.setAttribute('id', 'selfVideo');
+            local_media.setAttribute('playsinline', true);
+            local_media.className = 'mirror';
+            local_media.autoplay = true;
+            local_media.muted = true;
+            local_media.volume = 0
+            local_media.controls = false;
+            document.body.appendChild(videoWrap);
+            attachMediaStream(local_media, stream);
+            resizeVideos();
+            if (callback) callback();
+        }).catch(() => { /* user denied access to a/v */
+            alert("This site will not work without camera/microphone access.");
+            if (errorback) errorback();
+        });
+    }
+    const resizeVideos = () => {
+        const numToString = ['', 'one', 'two', 'three', 'four', 'five', 'six'];
+        const videos = document.querySelectorAll('.video');
+        document.querySelectorAll('.video').forEach(v => {
+            v.className = 'video ' + numToString[videos.length];
+        });
+    };
+    const checkParticipantsCount = () => {
+        const videos = document.querySelectorAll('.video');
+        if (videos.length > 4) {
+            document.getElementById('tooManyParticipants').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('tooManyParticipants').style.display = 'none';
+            }, 3000);
+        }
+        if (videos.length > 1) {
+            document.getElementById('intro').style.display = 'none';
+        }
+    }
+
+    </script>
+</head>
+
+<body onload='init()'>
+    
+    <div id="tooManyParticipants" class="message">Too many participants will affect the performance of the video call.</div>
+</body>
+
+</html>
+
 @stop
