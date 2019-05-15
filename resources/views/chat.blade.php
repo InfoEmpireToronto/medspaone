@@ -50,7 +50,7 @@
     <script type="text/javascript">
     const appURL = () => {
         const protocol = 'http' + ((location.hostname == 'localhost') ? '' : 's') + '://';
-        return protocol + location.hostname + ((location.hostname == 'localhost') ? ':8080' : '');
+        return protocol + location.hostname + ((location.hostname == 'localhost') ? ':8080' : ':8080');
     }
     const getRoomName = () => {
         let roomName = location.pathname.substring(1);
