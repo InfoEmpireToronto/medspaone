@@ -58,6 +58,7 @@ width: 50px;
     text-align: center;
     font-size: 30px;
     margin: 10px auto;
+    position: absolute;
     }
 
     </style>
@@ -445,15 +446,16 @@ width: 50px;
     </div></div>
     </div>
           
-          <div class="row">
-            <div class="page-content col-md-6">
+          <!-- <div class="row"> -->
+            <!-- <div class="page-content col-md-6"> -->
         <!-- <div class="connectingText">Connecting you to an expert...</div> -->
                 
                 
-    </div>    
-            <a href="" class="close-btn"><i class="si-education_plus"></i></a>    
-    </div>
+    <!-- </div>     -->
+              
+    <!-- </div> -->
 
+<a href="" class="close-btn"><i class="si-education_plus"></i></a>  
     
 </div>
 </div>
