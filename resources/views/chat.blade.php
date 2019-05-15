@@ -63,7 +63,7 @@
         }
         return roomName;
     }
-    var SIGNALING_SERVER = appURL();
+    var SIGNALING_SERVER = appURL()+':8080';
     var USE_AUDIO = true;
     var USE_VIDEO = true;
     var IS_SCREEN_STREAMING = false;
@@ -413,7 +413,7 @@
 </head>
 
 <body onload='init()'>
-    
+    <span id="roomurl"></span>
     <div id="tooManyParticipants" class="message">Too many participants will affect the performance of the video call.</div>
 </body>
 
