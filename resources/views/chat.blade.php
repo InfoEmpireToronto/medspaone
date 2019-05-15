@@ -65,33 +65,9 @@ width: 50px;
     <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
     <script src="https://medspa.one:8080/socket.io/socket.io.js"></script>
     <script type="text/javascript">
-    $(document).ready(function(){
-            $('.page-content').hide();
-            
-            $('video').addClass('embed-responsive-item');           
-            $('#connectMe').click(function(){
-
-                $.ajax({
-                    url: "{{ route('saveContact') }}",
-                    type: 'GET',
-                    data: {
-                        name: $('#name').val(),
-                        phone: $('#phone').val()
-                    },
-                    success: function(result) { 
-                        // $("#h11").html(result); 
-                    }
-                }); 
-                
-                $('.page-content').show();              
-                $('.wrapper, body').addClass('dark-wrapper');
-                $('.infoBox').hide();
-                init();
-            });
-            // init();
-        });
-
     
+
+
     const appURL = () => {
         return location.hostname;
         const protocol = 'http' + ((location.hostname == 'localhost') ? '' : 's') + '://';
@@ -487,4 +463,34 @@ width: 50px;
     <div id="tooManyParticipants" class="message">Too many participants will affect the performance of the video call.</div>
 
 
+@stop
+
+@section('js')
+<script type="text/javascript">
+    $(document).ready(function(){
+            $('.page-content').hide();
+            
+            $('video').addClass('embed-responsive-item');           
+            $('#connectMe').click(function(){
+
+                $.ajax({
+                    url: "{{ route('saveContact') }}",
+                    type: 'GET',
+                    data: {
+                        name: $('#name').val(),
+                        phone: $('#phone').val()
+                    },
+                    success: function(result) { 
+                        // $("#h11").html(result); 
+                    }
+                }); 
+                
+                $('.page-content').show();              
+                $('.wrapper, body').addClass('dark-wrapper');
+                $('.infoBox').hide();
+                init();
+            });
+            // init();
+        });
+</script>
 @stop
