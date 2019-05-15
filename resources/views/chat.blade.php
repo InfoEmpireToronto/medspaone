@@ -34,7 +34,7 @@
         .fa-microphone-slash, .fa-video-slash{color:#e74c3c!important;}
         .video .fullscreenbtn{position: absolute;bottom:0px;right:0px;text-align:center;z-index: 999;padding:10px;width:64px;font-size:2em;cursor: pointer;background: none;border:none;color:#fff;}
         #closebtn{float: right;color:#333;text-decoration: none;font-size: 125%;line-height: 1.2;}
-        #roomurl{display:inline-block;border-radius: 5px;border:1px solid #dcdcdc;background: #efefef;font-size: 80%;padding: 5px;margin-top: 5px;}
+        #roomurl{display:none;border-radius: 5px;border:1px solid #dcdcdc;background: #efefef;font-size: 80%;padding: 5px;margin-top: 5px;}
         .message{width: 300px; position: fixed; bottom: 10px; right:10px;box-sizing: border-box; padding:10px;background: #fff; border-radius: 5px;z-index: 1000;}
         #tooManyParticipants{background: #c0392b;color: #fff;display: none;}
         @media only screen and (max-width: 960px) {
@@ -42,7 +42,24 @@
             .video.two{width: 100vw;height: 50vh;}
             .video.three{width: 100vw;height: 33.33vh;}
             .video.six{width: 50vw;height: 33.33vh;}
+
+
         }
+
+        .close-btn {border-radius:50%; background:red; color:#fff; -moz-transform: rotate(45deg);
+-webkit-transform: rotate(45deg);
+-o-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg); 
+width: 50px;
+    height: 50px;
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+    font-size: 30px;
+    margin: 10px auto;
+    }
+    
     </style>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous" />
     <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
@@ -413,6 +430,34 @@
 </head>
 
 <body onload='init()'>
+    <div class="wrapper light-wrapper">
+      <div class="container inner pt-70 pt-sm-20">
+          <div class="row">
+              <div class="col-md-6 offset-md-3 text-center">
+    <div class="infoBox box bg-light shadow">
+        <div class="icon fs-50 color-dark mb-20"><i class="fa fa-video-camera"></i></div>
+        <h3>Start video chat with an expert</h3>
+        <p>Please provide your name and phone number to launch a conversation</p>
+        <div class="form-group"><input type="text" name="name" placeholder="Name" id="name" class="form-control"></div>
+        <div class="form-group"><input type="text" name="name" placeholder="Phone Number" id="phone"class="form-control"></div>
+        <div class="form-group"><input type="submit" value="Connect Me" id="connectMe" class="btn btn-red btn-l"></div>
+    </div></div>
+    </div>
+          
+          <div class="row">
+            <div class="page-content col-md-6">
+        <!-- <div class="connectingText">Connecting you to an expert...</div> -->
+                
+                
+    </div>    
+            <a href="" class="close-btn"><i class="si-education_plus"></i></a>    
+    </div>
+
+    
+</div>
+</div>
+
+
     <span id="roomurl"></span>
     <div id="tooManyParticipants" class="message">Too many participants will affect the performance of the video call.</div>
 </body>
