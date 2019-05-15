@@ -455,11 +455,11 @@ width: 50px;
               
     <!-- </div> -->
 
-<a href="" class="close-btn"><i class="si-education_plus"></i></a>  
     
 </div>
 </div>
 
+<a href="" class="close-btn"><i class="si-education_plus"></i></a>  
 
     <span id="roomurl"></span>
     <div id="tooManyParticipants" class="message">Too many participants will affect the performance of the video call.</div>
@@ -489,7 +489,7 @@ width: 50px;
                 
                 $('.page-content').show();              
                 $('.wrapper, body').addClass('dark-wrapper');
-                $('.infoBox').hide();
+                $('.wrapper').hide();
                 init();
             });
             // init();
