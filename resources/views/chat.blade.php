@@ -49,7 +49,7 @@ width: 50px;
 
 @section('js')
         <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
-
+            <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
 		<script src="https://medspa.one:8080/socket.io/socket.io.js"></script>
         <script>
 
