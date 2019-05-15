@@ -46,11 +46,12 @@
     </style>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous" />
     <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://medspa.one:8080/socket.io/socket.io.js"></script>
     <script type="text/javascript">
     const appURL = () => {
+        return location.hostname;
         const protocol = 'http' + ((location.hostname == 'localhost') ? '' : 's') + '://';
-        return protocol + location.hostname + ((location.hostname == 'localhost') ? ':8080' : ':8080');
+        return protocol + location.hostname + ((location.hostname == 'localhost') ? ':3000' : '');
     }
     const getRoomName = () => {
         let roomName = location.pathname.substring(1);
