@@ -59,7 +59,7 @@ width: 50px;
     font-size: 30px;
     margin: 10px auto;
     }
-    
+
     </style>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous" />
     <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
@@ -427,9 +427,7 @@ width: 50px;
     }
 
     </script>
-</head>
 
-<body onload='init()'>
     <div class="wrapper light-wrapper">
       <div class="container inner pt-70 pt-sm-20">
           <div class="row">
@@ -460,8 +458,6 @@ width: 50px;
 
     <span id="roomurl"></span>
     <div id="tooManyParticipants" class="message">Too many participants will affect the performance of the video call.</div>
-</body>
 
-</html>
 
 @stop
