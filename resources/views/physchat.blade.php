@@ -42,6 +42,7 @@
         return protocol + location.hostname + ((location.hostname == 'localhost') ? ':3000' : '');
     }
     const getRoomName = () => {
+        return 'chat';
         let roomName = location.pathname.substring(1);
         if (roomName == '') {
             const randomName = () => Math.random().toString(36).substr(2, 6);
