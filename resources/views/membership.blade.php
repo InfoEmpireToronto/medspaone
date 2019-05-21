@@ -333,7 +333,7 @@ Your password must be a minimum of eight (8) characters in length and contain at
 
 <tr>
 	<td colspan="2" align="center">
-		<input class="btn btn-l btn-red" type="submit" name="btn_submit" value="Submit" id="btnSubmit" onclick="return Register_OnSubmit($('#RegisterForm'));">&nbsp;
+		<input class="btn btn-l btn-red" type="submit" name="btn_submit" value="Submit" id="btnSubmit" onclick="">&nbsp;
 		<input class="btn btn-l btn-pastel-meander" type="button" value="Cancel"   onclick="if (confirm('Are you sure you want to cancel registration? ')) location.href = '/index.php';">
 	</td>
 </tr>
