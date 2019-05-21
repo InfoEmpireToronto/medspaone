@@ -52,8 +52,8 @@ $keywords = "";
         <!-- /.navbar-header -->
         <div class="navbar-collapse collapse justify-content-between align-items-center">
           <ul class="navbar-nav plain mx-auto text-center">
-            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-         <li class="nav-item dropdown"><a class="nav-link dropdown-item dropdown-toggle" href="#">Publications</a>
+<!--            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>-->
+         <li class="nav-item dropdown"><a class="nav-link dropdown-item dropdown-toggle" href="/">Publications</a>
               <ul class="dropdown-menu">
                  <li class="nav-item dropdown"><a class="dropdown-item dropdown-toggle" href="/articles">Articles</a>
                   <!-- <ul class="dropdown-menu">
@@ -193,11 +193,10 @@ $keywords = "";
           <!--/column -->
           <div class="col-md-4 text-center text-md-right">
             <ul class="social social-mute social-s mt-10">
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-              <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-              <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+               <li><a href="https://www.facebook.com/infoempire" target="_blank"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="https://twitter.com/InfoEmpire_Inc" target="_blank"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="https://plus.google.com/+InfoempireINC" rel="publisher author" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+				<li><a href="http://www.youtube.com/user/GTAwebmastercom" target="_blank"><i class="fa fa-youtube"></i></a></li>
             </ul>
           </div>
           <!--/column -->

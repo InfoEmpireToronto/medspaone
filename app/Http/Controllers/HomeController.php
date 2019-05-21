@@ -171,6 +171,26 @@ class HomeController extends Controller
 
     }
 
+    public function saveMembership(Request $request)
+    {
+
+        $vars = $request->all();
+
+        foreach ($vars as $key => $value) {
+            if(substr($key, 0, 4) == 'ERR_')
+                unset($vars[$key]);
+        }
+
+        \Mail::to('tganyuk86@gmail.com')->send(new \App\Mail\newMembership($vars));
+        // echo '<pre>';print_r($vars);
+
+        return view('membershipThanks',[ 
+            
+
+        ]);
+
+    }
+
 
 
 }

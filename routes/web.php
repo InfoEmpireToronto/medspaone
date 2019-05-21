@@ -49,6 +49,8 @@ Route::GET('/chat', 'HomeController@startChat')->name('Chat');
 Route::GET('/login', 'HomeController@login')->name('login');
 Route::POST('/login', 'HomeController@login')->name('Login');
 
+Route::POST('/saveMembership', 'HomeController@saveMembership')->name('saveMembership');
+
 Route::POST('/ajax/getHomepageItems', 'AjaxController@getHomepageItems')->name('getHomepageItems');
 // Route::POST('/ajax/saveContact', 'AjaxController@saveContact')->name('saveContact');
 Route::GET('/ajax/saveContact', 'AjaxController@saveContact')->name('saveContact');

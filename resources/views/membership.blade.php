@@ -14,8 +14,8 @@ visibility selector to <span style="font-weight: bold;">Private (not visible in 
 administrator. For a publicly accessible member type, site visitors will be able to view any field whose visibility is set as <span style="font-weight: bold;">Public (Visible to Everyone)</span>. To restrict fields to only registered members set the visibility for the field to<span style="font-weight: bold;"> Member Only (Visible Only to Members).</span><br></p>
    <p class="redalert"><i><span class="redalert">*</span> Required Fields</i><br>
 Your password must be a minimum of eight (8) characters in length and contain at least one number and one non-numeric character (letters, punctuation, etc.)</p>
-<form name="frmRegister" action="#" method="post" id="RegisterForm">
-
+<form name="frmRegister" action="{{ route('saveMembership') }}" method="post" id="RegisterForm">
+@csrf
 <table border="0" cellspacing="0" cellpadding="0" class="table table-borderless">
 	<thead >
    <tr>
@@ -25,7 +25,7 @@ Your password must be a minimum of eight (8) characters in length and contain at
 </tr>
   </thead>
 <tbody>
-<tr>
+<!-- <tr>
 	<td width="30%" align="right"><b>Username</b> <span class="redalert">*</span></td>
 	<td width="69%"><input class="form-control" type="password" name="username" value="" size="20" maxlength="20"></td>
 </tr>
@@ -36,12 +36,12 @@ Your password must be a minimum of eight (8) characters in length and contain at
 <tr>
 	<td align="right"><b>Confirm Password</b> <span class="redalert">*</span></td>
 	<td><input class="form-control" type="password" name="txt_passwordConfirm" value="" size="20" maxlength="20"></td>
-</tr>
+</tr> -->
 <tr>
 	<td align="right"><b>E-Mail Address</b> <span class="redalert">*</span></td>
 	<td>
 		
-			<input class="form-control" type="text" name="txt_email" size="35" maxlength="100" value="">
+			<input class="form-control" type="text" name="Email" size="35" maxlength="100" value="">
 		
 	</td>
 	<input class="form-control" type="hidden" name="ERR_txt_email">
@@ -50,7 +50,7 @@ Your password must be a minimum of eight (8) characters in length and contain at
 	<td align="right"><b>Confirm E-Mail</b> <span class="redalert">*</span></td>
 	<td>
 		
-			<input class="form-control" type="text" name="txt_emailConfirm" value="" size="35" maxlength="100">
+			<input class="form-control" type="text" name="EmailConfirm" value="" size="35" maxlength="100">
 		
 	</td>
 </tr>
@@ -59,7 +59,7 @@ Your password must be a minimum of eight (8) characters in length and contain at
 	<td align="right"><b>Alternate E-Mail</b></td>
 	<td>
 
-		<input class="form-control" type="text" name="txt_emailAlternate" value="" size="20" maxlength="100" id="Text3">
+		<input class="form-control" type="text" name="EmailAlternate" value="" size="20" maxlength="100" id="Text3">
 
 	</td>
 </tr>
@@ -70,7 +70,7 @@ Your password must be a minimum of eight (8) characters in length and contain at
 	<td align="right"><b>Title</b>
 	  </td>
 	<td align="left"><div class="form-group custom-select-wrapper">
-              <select class="custom-select"  name="title" id="title">
+              <select class="custom-select"  name="Title" id="title">
 		<option value="" selected>Choose...</option>
 		<option value="Mr">Mr.</option>
 		<option value="Ms">Ms.</option>
@@ -83,7 +83,7 @@ Your password must be a minimum of eight (8) characters in length and contain at
 
 <tr>
 	<td align="right"><b>Full Name</b> <span class="redalert">*</span></td>
-	<td><input class="form-control" type="text" name="fullName" size="15" maxlength="50">
+	<td><input class="form-control" type="text" name="FullName" size="15" maxlength="50">
 	</td>
 </tr>
 
@@ -101,7 +101,7 @@ Your password must be a minimum of eight (8) characters in length and contain at
 <tr>
 	<td align="right"><b>Organization</b>
 	  <input class="form-control" type="hidden" name="ERR_txt_employName" value="txt_employName|Organization Name|20|1||100"><span class="redalert">*</span></td>
-	<td><input class="form-control" type="text" name="txt_employName" id="txt_employName" size="20" maxlength="100" value=""  autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">	
+	<td><input class="form-control" type="text" name="EmployName" id="txt_employName" size="20" maxlength="100" value=""  autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">	
 	</td>
 </tr>
 
@@ -111,7 +111,7 @@ Your password must be a minimum of eight (8) characters in length and contain at
 	  <input class="form-control" type="hidden" name="ERR_txt_employType" value=""></td>
 	<td>
 		<div class="form-group custom-select-wrapper">
-              <select class="custom-select" name="txt_employType" id="txt_employType">
+              <select class="custom-select" name="EmployType" id="txt_employType">
                 <option selected>Choose...</option>
 
 <option value="Aesthetician">Aesthetician</option>
@@ -177,7 +177,7 @@ Your password must be a minimum of eight (8) characters in length and contain at
 <tr>
 	<td align="right"><b>Website</b></td>
 	
-	<td><input class="form-control" type="text" name="txt_employURL" size="35" maxlength="100" value=""></td>
+	<td><input class="form-control" type="text" name="EmployURL" size="35" maxlength="100" value=""></td>
 </tr>
 
 <tr class="address-row">
@@ -188,23 +188,23 @@ Your password must be a minimum of eight (8) characters in length and contain at
 	<td>
         
         <div class="work-address-1-textbox">
-            <input class="form-control" type="text" name="txt_employAddress1" id="txt_employAddress1" value="" size="35" maxlength="50">
+            <input class="form-control" type="text" name="EmployAddress1" id="txt_employAddress1" value="" size="35" maxlength="50">
         </div>
         
-            <input class="form-control" type="hidden" name="bln_WorkAddressIsPrimary" id="blnWorkAddressIsPrimary" value="1">
+            <input class="form-control" type="hidden" name="WorkAddressIsPrimary" id="blnWorkAddressIsPrimary" value="1">
         
     </td>
 </tr>
 
 <tr class="address-row">
 	<td align="right"><b>Address Cont.</b></td>
-	<td><input class="form-control" type="text" name="txt_employAddress2" id="txt_employAddress2" value="" size="35" maxlength="50"></td>
+	<td><input class="form-control" type="text" name="EmployAddress2" id="txt_employAddress2" value="" size="35" maxlength="50"></td>
 </tr>
 
 <tr class="address-row">
 	<td align="right"><b>City/Town</b>
 	  <input class="form-control" type="hidden" name="ERR_txt_employCity" value=""><span class="redalert">*</span></td>
-	<td><input class="form-control" type="text" name="txt_employCity" id="txt_employCity" value="" size="20" maxlength="50"></td>
+	<td><input class="form-control" type="text" name="EmployCity" id="txt_employCity" value="" size="20" maxlength="50"></td>
 </tr>	
 
 <tr class="address-row">
@@ -213,7 +213,7 @@ Your password must be a minimum of eight (8) characters in length and contain at
 	<td>
 		
 	<div class="form-group custom-select-wrapper">
-              <select class="custom-select"  name="txt_employCountry" id="txt_employCountry">
+              <select class="custom-select"  name="EmployCountry" id="txt_employCountry">
 		<option value="" selected>Choose...</option>
 		<option value="Canada">Canada</option>
 		<option value="United States">United States</option>
@@ -232,7 +232,7 @@ Your password must be a minimum of eight (8) characters in length and contain at
 	<!-- List Block -->
 	<div id="Block_txt_employState">
 		<div class="form-group custom-select-wrapper">
-              <select class="custom-select"  id="txt_employState" name="txt_employState" >
+              <select class="custom-select"  id="txt_employState" name="EmployState" >
 				  <option value="" selected="selected">Choose...</option>
 				  <option value="AB">Alberta</option>
 										<option value="BC">British Columbia</option>
@@ -255,9 +255,9 @@ Your password must be a minimum of eight (8) characters in length and contain at
 </tr>
 
 <tr class="address-row">
-	<td align="right"><b>Postal Code</b>
+	<td align="right"><b>Zip/Postal Code</b>
 	  <input class="form-control" type="hidden" name="ERR_txt_employZip" value=""><span class="redalert">*</span></td>
-	<td><input class="form-control" type="text" name="txt_employZip" id="txt_employZip" value="" size="10" maxlength="12"></td>
+	<td><input class="form-control" type="text" name="EmployZip" id="txt_employZip" value="" size="10" maxlength="12"></td>
 </tr>
 
 <tr class="address-row">
@@ -268,7 +268,7 @@ Your password must be a minimum of eight (8) characters in length and contain at
 	  </td>
 	<td>
 
-	<input class="form-control" type="text" name="txt_employPhone" value="" size="15" maxlength="50">
+	<input class="form-control" type="text" name="EmployPhone" value="" size="15" maxlength="50">
 	
 	</td>
 </tr>
@@ -279,7 +279,7 @@ Your password must be a minimum of eight (8) characters in length and contain at
 	  </td>
 	<td>
 
-	<input class="form-control" type="text" name="txt_employFax" value="" size="15" maxlength="50">
+	<input class="form-control" type="text" name="EmployFax" value="" size="15" maxlength="50">
 	
 	</td>
 </tr>
@@ -287,7 +287,7 @@ Your password must be a minimum of eight (8) characters in length and contain at
 <tr class="">
 <td class="" style="font-weight:bold"  align="right">How long have you been in business?&nbsp;<span class="redalert">*</span></td>
 <td class="" valign="top"><div class="form-group custom-select-wrapper">
-              <select class="custom-select"  name="cdlCustomFieldValueIDYearsInBusiness"><option selected>Choose...</option>
+              <select class="custom-select"  name="YearsInBusiness"><option selected>Choose...</option>
 <option value="Opening in 6 months or less">Opening in 6 months or less</option>
 <option value="Open less than 6 months">Open less than 6 months</option>
 <option value="6 months - 2 years">6 months - 2 years</option>
@@ -300,12 +300,12 @@ Your password must be a minimum of eight (8) characters in length and contain at
 	<tr class="">
 <td class="" style="font-weight:bold"  align="right">How many locations do you have?&nbsp;<span class="redalert">*</span></td>
 <td class="" valign="top"><div class="form-group custom-select-wrapper">
-              <select class="custom-select"  name="cdlCustomFieldValueIDYearsInBusiness">
+              <select class="custom-select"  name="NumberOfLocations">
 				  <option selected>Choose...</option>
 <option value="1">1</option>
 <option value="2-5">2-5</option>
 <option value="5-15">5-15</option>
-<option value="<15">More than 15</option>
+<option value=">15">More than 15</option>
 </select>
 </div><br></td></tr>
 
@@ -326,14 +326,14 @@ Your password must be a minimum of eight (8) characters in length and contain at
 	<td align="right">
 	  <b>More information about you</b>
 	  </td>
-	<td><textarea wrap="VIRTUAL" name="mem_personalComments" cols="35" rows="8"></textarea></td>
+	<td><textarea wrap="VIRTUAL" name="Comments" cols="35" rows="8"></textarea></td>
 </tr>
 
 
 
 <tr>
 	<td colspan="2" align="center">
-		<input class="btn btn-l btn-red" type="submit" name="btn_submit" value="Submit" id="btnSubmit" onclick="">&nbsp;
+		<input class="btn btn-l btn-red" type="submit" name="" value="Submit" id="btnSubmit" onclick="">&nbsp;
 		<input class="btn btn-l btn-pastel-meander" type="button" value="Cancel"   onclick="if (confirm('Are you sure you want to cancel registration? ')) location.href = '/index.php';">
 	</td>
 </tr>
