@@ -44,7 +44,6 @@ class HomeController extends Controller
         ->limit(5) // here is yours limit
         ->get();
 
-        dd($faqs);
 
         return view('welcome',[ 
             'articles' => $articles,
