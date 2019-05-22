@@ -37,7 +37,7 @@
 				  <div class="meta mb-3 text-capitalize">
 				  	<span class="date">{{$beforeAfter->created_at->diffForHumans()}}</span> 
 				  	<span class="author">{{$beforeAfter->user()->company}}</span> 
-				  	<span><i class="fa fa-thumbs-up"></i> 10</span> 
+				  	<!-- <span><i class="fa fa-thumbs-up"></i> 10</span>  -->
 				  	<span class="category">{{$beforeAfter->getCategories()[0]->name}}</span>
 				</div>
 			  </div>
