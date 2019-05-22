@@ -105,7 +105,7 @@
                                   <i class="fa fa-map-marker"></i> &#8249; <span class="distance">-</span> km 
                                 </a>
                               </span>
-                              <span><a href="#" class="hover has-tooltip" title="<strong>Toronto</strong><br>{{$l['address']}}" data-html="true" data-placement="right"><i class="fa fa-building-o"></i> 1 location </a></span>
+                              <!-- <span><a href="#" class="hover has-tooltip" title="<strong>Toronto</strong><br>{{$l['address']}}" data-html="true" data-placement="right"><i class="fa fa-building-o"></i> 1 location </a></span> -->
                             </div>
                           </div>
                     </div>
@@ -128,10 +128,10 @@
                             <div class="meta">
                               <span>
                                 <a href="/profile/{{$l->user()->slug}}">
-                                  <i class="fa fa-map-marker"></i> &#8249; <span class="distance">{{$l['distance']}}</span> km 
+                                  <i class="fa fa-map-marker"></i> &#8249; <span class="distance">-</span> km 
                                 </a>
                               </span>
-                              <span><a href="#" class="hover has-tooltip" title="<strong>Toronto</strong><br>{{$l['address']}}" data-html="true" data-placement="right"><i class="fa fa-building-o"></i> 1 location </a></span>
+                              <!-- <span><a href="#" class="hover has-tooltip" title="<strong>Toronto</strong><br>{{$l['address']}}" data-html="true" data-placement="right"><i class="fa fa-building-o"></i> 1 location </a></span> -->
                             </div>
                           </div>
                     </div>
