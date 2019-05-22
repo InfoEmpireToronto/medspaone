@@ -46,7 +46,7 @@
             <form>
 				
 				<div class="row">
-          <div class="col-sm-8">
+          <div class="col-sm-12">
 			  <div class="input-group mb-20 mr-sm-2">
               <input type="text" class="form-control mr-sm-2 bg-white shadow" id="searchTerm" placeholder="Search By Name Or Location...">
           
@@ -55,9 +55,9 @@
               </div>
             </div>
           
-          <div class="col-sm-4">
+          <!-- <div class="col-sm-4">
               <button type="submit" class="btn mb-20 btn-purple ml-md-0  shadow float-none float-md-right">Search &nbsp; &nbsp; &nbsp;<i class="fa fa-search"></i></button>
-          </div>
+          </div> -->
         </div>
         
 <!--
@@ -89,7 +89,7 @@
               </div>
         
         <div id="search-results">
-              <ul class="image-list">
+              <ul class="image-list" id="locationList">
               @foreach($locations as $l)
           
                 <li class="{{ $l->featured ? 'bg-pastel-orange' : '' }}" >
@@ -217,6 +217,13 @@
 
       $(document).ready(function(){
         showPosition(false);
+
+        $("#searchTerm").on("keyup", function() {
+          var value = $(this).val().toLowerCase();
+          $("#locationList li").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+        });
         // navigator.geolocation.getCurrentPosition(showPosition);
       });
 
@@ -236,7 +243,7 @@
         //   // console.log(v,k);
         //   data[k].distance = distanceBetweenPoints(currentLat, currentLon, v.lat, v.lon);
         // });
-        data = data.sort((a, b) => (a.distance > b.distance) ? 1 : -1);
+        // data = data.sort((a, b) => (a.distance > b.distance) ? 1 : -1);
         updateMap(data);
         
       }

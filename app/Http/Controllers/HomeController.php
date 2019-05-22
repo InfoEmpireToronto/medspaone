@@ -69,7 +69,6 @@ class HomeController extends Controller
             $location->distance = $location->distance($geoLocation['lat'], $geoLocation['lon'], $location['lat'], $location['lon']);
         }
 
-        // $locations = usort($locations, array(new Location,"cmp"));
         $locations = $locations->sort(function ($a, $b) {
             if ($a == $b) {
                 return 0;
@@ -77,7 +76,6 @@ class HomeController extends Controller
             return ($a->distance < $b->distance) ? -1 : 1;
         });
 
-// dump($locations);
         return view('findPhysician',[ 
             'locations' => $locations,
             'geoLocation' => $geoLocation,

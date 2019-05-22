@@ -39,9 +39,4 @@ class Location extends Model
 	  }
 	}
 
-	public function cmp($a, $b)
-	{
-	    return strcmp($a->name, $b->name);
-	}
-
 }
