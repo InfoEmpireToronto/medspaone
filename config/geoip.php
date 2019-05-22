@@ -143,7 +143,7 @@ return [
         'ip' => '127.0.0.0',
         'iso_code' => 'US',
         'country' => 'United States',
-        'city' => 'New Haven',
+        'city' => 'Not Found',
         'state' => 'CT',
         'state_name' => 'Connecticut',
         'postal_code' => '06510',
