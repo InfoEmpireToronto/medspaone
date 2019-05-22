@@ -3,3 +3,5 @@
 [02-May-2019 15:44:21 UTC] PHP Warning:  POST Content-Length of 13132217 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
 [02-May-2019 15:44:24 UTC] PHP Warning:  POST Content-Length of 13132217 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
 [02-May-2019 15:44:36 UTC] PHP Warning:  POST Content-Length of 13132217 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[22-May-2019 16:21:16 UTC] PHP Fatal error:  Trait 'Illuminate\View\Compilers\Concerns\CompilesErrors' not found in /home/medspaone/public_html/vendor/laravel/framework/src/Illuminate/View/Compilers/BladeCompiler.php on line 11
+[22-May-2019 16:21:28 UTC] PHP Fatal error:  Trait 'Illuminate\View\Compilers\Concerns\CompilesErrors' not found in /home/medspaone/public_html/vendor/laravel/framework/src/Illuminate/View/Compilers/BladeCompiler.php on line 11
