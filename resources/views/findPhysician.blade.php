@@ -128,7 +128,7 @@
                             <div class="meta">
                               <span>
                                 <a href="/profile/{{$l->user()->slug}}">
-                                  <i class="fa fa-map-marker"></i> &#8249; <span class="distance">-</span> km 
+                                  <i class="fa fa-map-marker"></i> &#8249; <span class="distance">{{$l['distance']}}</span> km 
                                 </a>
                               </span>
                               <span><a href="#" class="hover has-tooltip" title="<strong>Toronto</strong><br>{{$l['address']}}" data-html="true" data-placement="right"><i class="fa fa-building-o"></i> 1 location </a></span>
@@ -241,6 +241,22 @@
       ?>
         ];
 
+      featuredData = [ 
+      <?php forEach($featuredLocations as $l)
+      {
+        echo "{ 
+                    title: '{$l['title']}',
+                    id: '{$l['id']}',
+                    lat: '{$l['lat']}', 
+                    lon: '{$l['lon']}',
+                    distance: {$l['distance']},
+                    featured: {$l['featured']}
+                  },";
+      }
+                
+      ?>
+        ];
+
       $(document).ready(function(){
         showPosition(false);
 
@@ -271,6 +287,7 @@
         // });
         // data = data.sort((a, b) => (a.distance > b.distance) ? 1 : -1);
         updateMap(data);
+        updateMap(featuredData);
         
       }
 
