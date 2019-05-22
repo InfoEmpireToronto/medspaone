@@ -30,30 +30,14 @@
                   <?php echo $article->body; ?>
 
 
-                  <div class="space10"></div>
-                 
-                 <div class="sharethis-inline-share-buttons"></div>
+            
 					
-				
-
-               <!-- <h4 class="text-uppercase text-center">Share this story</h4>
-                  <ul class="social social-color social-s text-center">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                  </ul> -->
-                  <!-- /.social -->
-                </div>
-                <!-- /.post-content -->
-				  
-				  	<!-- CTA FORM -->
+					
+					<!-- CTA FORM -->
 				  
 				  <div class="space50"></div>
-				  <div class="form-container bg-pastel-meander box">
-					  <div class="icon fs-50 color-dark mb-20"><i class="si-mail_read-mail"></i></div>
+				  <div class="form-container bg-white shadow box">
 					   <h3>Ask the expert</h3>
-					   <div class="space20"></div>
               <!-- <form action="<?php echo e(route('saveContact')); ?>" method="post" class="vanilla vanilla-form contactForm" > -->
                 <div class="row text-center">
                   <div class="col-lg-4">
@@ -73,7 +57,7 @@
                   </div>
                   <div class="col-12">
                     
-                    <button type="submit" class="btn submitContact" data-error="Fix errors" data-processing="Sending..." data-success="Thank you!">Submit</button>
+                    <button type="submit" class="btn btn-red submitContact" data-error="Fix errors" data-processing="Sending..." data-success="Thank you!" style="width:205px;">Submit</button>
                     <footer class="notification-box hidden"></footer>
                   </div>
                 </div>
@@ -81,6 +65,16 @@
             </div>
 				  
 				  <!-- CTA FORM  END-->
+                 
+                 <div class="sharethis-inline-share-buttons"></div>
+					
+				
+
+					
+                </div>
+                <!-- /.post-content -->
+				  
+				  	
               </div>
               <!-- /.post -->
               <div class="divider-icon"><i class="si-photo_aperture"></i></div>
@@ -231,14 +225,17 @@
             </div>
             <!-- /.widget -->
             <div class="sidebox widget">
-              <h3 class="widget-title">Tags</h3>
+              <h3 class="widget-title">Services</h3>
+              <?php echo $article->user()->services; ?>
+
+              <!-- 
               <ul class="list-unstyled tag-list">
                 <li><a href="#" class="btn btn-white shadow">Laser</a></li>
                 <li><a href="#" class="btn btn-white shadow">Beauty</a></li>
                 <li><a href="#" class="btn btn-white shadow">Men</a></li>
                 <li><a href="#" class="btn btn-white shadow">Face</a></li>
                 <li><a href="#" class="btn btn-white shadow">Body</a></li>
-              </ul>
+              </ul> -->
             </div>
            
 <!--

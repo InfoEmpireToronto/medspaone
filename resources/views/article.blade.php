@@ -226,14 +226,16 @@
             </div>
             <!-- /.widget -->
             <div class="sidebox widget">
-              <h3 class="widget-title">Tags</h3>
+              <h3 class="widget-title">Services</h3>
+              {!! $article->user()->services !!}
+              <!-- 
               <ul class="list-unstyled tag-list">
                 <li><a href="#" class="btn btn-white shadow">Laser</a></li>
                 <li><a href="#" class="btn btn-white shadow">Beauty</a></li>
                 <li><a href="#" class="btn btn-white shadow">Men</a></li>
                 <li><a href="#" class="btn btn-white shadow">Face</a></li>
                 <li><a href="#" class="btn btn-white shadow">Body</a></li>
-              </ul>
+              </ul> -->
             </div>
            
 <!--
