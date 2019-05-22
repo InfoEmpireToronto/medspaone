@@ -119,6 +119,7 @@ class HomeController extends Controller
     public function faq()
     {
         $faqs = Faq::where('id', '>', 0)
+                ->whereIn('site_id', [20,73,21,84,2,71,19,82,83,14,79,86,85])
                 ->where('category', '!=', '')
                 ->orderBy('category', 'asc')
                 ->orderBy('date_display', 'desc')
