@@ -69,7 +69,7 @@ class HomeController extends Controller
             $location->distance = $location->distance($geoLocation['lat'], $geoLocation['lon'], $location['lat'], $location['lon']);
         }
 
-dump($locations);
+// dump($locations);
         return view('findPhysician',[ 
             'locations' => $locations,
             'geoLocation' => $geoLocation,

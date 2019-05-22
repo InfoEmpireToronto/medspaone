@@ -223,8 +223,8 @@
 
       function showPosition(position) 
       {
-        currentLat = 43.6532;//position.coords.latitude;
-        currentLon = -79.3832;//position.coords.longitude;
+        currentLat = {{$geoLocation['lat']}};//43.6532;//position.coords.latitude;
+        currentLon = {{$geoLocation['lon']}};//-79.3832;//position.coords.longitude;
         var myLatlng = new google.maps.LatLng(currentLat,currentLon);
         var mapOptions = {
           zoom: 10,
@@ -232,11 +232,11 @@
         }
         map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-        $(data).each(function(k, v){
-          // console.log(v,k);
-          data[k].distance = distanceBetweenPoints(currentLat, currentLon, v.lat, v.lon);
-        });
-        
+        // $(data).each(function(k, v){
+        //   // console.log(v,k);
+        //   data[k].distance = distanceBetweenPoints(currentLat, currentLon, v.lat, v.lon);
+        // });
+        data.sort((a, b) => (a.distance > b.distance) ? 1 : -1);
         updateMap(data);
         
       }
