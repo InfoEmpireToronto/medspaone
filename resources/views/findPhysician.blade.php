@@ -236,7 +236,7 @@
         //   // console.log(v,k);
         //   data[k].distance = distanceBetweenPoints(currentLat, currentLon, v.lat, v.lon);
         // });
-        data.sort((a, b) => (a.distance > b.distance) ? 1 : -1);
+        data = data.sort((a, b) => (a.distance > b.distance) ? 1 : -1);
         updateMap(data);
         
       }
