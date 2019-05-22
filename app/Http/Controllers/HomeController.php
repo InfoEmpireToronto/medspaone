@@ -62,12 +62,17 @@ class HomeController extends Controller
     public function findPhysician()
     {
         $locations = Location::where('id', '>', 0)->orderBy('featured', 'desc')->get();
+        $geoLocation = geoip()->getLocation();
 
-        $geo = geoip()->getLocation();
-        dump($geo);
+        foreach ($locations as $location) 
+        {
+            $location->distance = $location->distance($geoLocation['lat'], $geoLocation['lon'], $location['lat'], $location['lon']);
+        }
 
+dump($locations);
         return view('findPhysician',[ 
-            'locations' => $locations
+            'locations' => $locations,
+            'geoLocation' => $geoLocation,
 
         ]);
 
