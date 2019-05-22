@@ -214,7 +214,7 @@
                     lat = results[0].geometry.location.lat();
                     lon = results[0].geometry.location.lng();
                     add = results[0].formatted_address;
-                    city = results[0].address_components[2].long_name;
+                    city = results[0].address_components[2].long_name+', '+results[0].address_components[4].short_name;
 
                     $('[name="lat"]').val(lat);
                     $('[name="lon"]').val(lon);
