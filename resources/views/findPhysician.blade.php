@@ -207,7 +207,7 @@
                     id: '{$l['id']}',
                     lat: '{$l['lat']}', 
                     lon: '{$l['lon']}',
-                    distance: 0,
+                    distance: {$l['distance']},
                     featured: {$l['featured']}
                   },";
       }
@@ -243,11 +243,11 @@
 
       function updateMap(data)
       {
-console.log(data);
+// console.log(data);
 
         $(data).each(function(k,location)
         {
-          console.log(location.distance);
+          // console.log(location.distance);
           if(location.distance > 20)
           {
             // $('#location-'+location.id).parent().hide();
