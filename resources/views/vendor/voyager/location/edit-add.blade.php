@@ -214,10 +214,12 @@
                     lat = results[0].geometry.location.lat();
                     lon = results[0].geometry.location.lng();
                     add = results[0].formatted_address;
+                    city = results[0].address_components[2].long_name;
 
                     $('[name="lat"]').val(lat);
                     $('[name="lon"]').val(lon);
                     $('[name="address"]').val(add);
+                    $('[name="city"]').val(city);
                   // if (status === 'OK') {
                   //   resultsMap.setCenter(results[0].geometry.location);
                   //   var marker = new google.maps.Marker({
