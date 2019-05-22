@@ -30,13 +30,16 @@
             <div class="col-lg-6 ">
               <div class="pt-20">
           <div class="row">
-          <div class="col-sm-8"><h2 class="section-title">Find an expert</h2></div> <div class="col-sm-4"><div class="form-group custom-select-wrapper">
-              <select class="custom-select">
-          <option selected>Sort by...</option>
-                <option value="rel">Sort by relevance</option>
-                <option value="distance">Sort by distance</option>
-              </select>
-            </div></div>
+            <div class="col-sm-8"><h2 class="section-title">Find an expert</h2></div> 
+           <!--  <div class="col-sm-4">
+              <div class="form-group custom-select-wrapper">
+                <select class="custom-select">
+                  <option selected>Sort by...</option>
+                  <option value="rel">Sort by relevance</option>
+                  <option value="distance">Sort by distance</option>
+                </select>
+              </div>
+            </div> -->
           </div>
                
       
@@ -45,9 +48,9 @@
 				<div class="row">
           <div class="col-sm-8">
 			  <div class="input-group mb-20 mr-sm-2">
-              <input type="text" class="form-control mr-sm-2 bg-white shadow" id="inlineFormInputName2" placeholder="Your location">
+              <input type="text" class="form-control mr-sm-2 bg-white shadow" id="searchTerm" placeholder="Search By Name Or Location...">
           
-                <input type="text" class="form-control bg-white shadow" id="inlineFormInputGroupUsername2" placeholder="Search by name...">
+                <!-- <input type="text" class="form-control bg-white shadow" id="inlineFormInputGroupUsername2" placeholder="Search by name..."> -->
           
               </div>
             </div>
@@ -202,8 +205,8 @@
         echo "{ 
                     title: '{$l['title']}',
                     id: '{$l['id']}',
-                    lat: {$l['lat']}, 
-                    lon: {$l['lon']},
+                    lat: '{$l['lat']}', 
+                    lon: '{$l['lon']}',
                     distance: 0,
                     featured: {$l['featured']}
                   },";
