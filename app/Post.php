@@ -8,10 +8,15 @@ use TCG\Voyager\Models\Category;
 
 class Post extends \TCG\Voyager\Models\Post
 {
+	private $_user = false;
 
 	public function user()
 	{
-		return User::find($this->author_id);
+		if($this->_user && $this->_user->id == $this->author_id)
+			return $this->_user;
+
+		$this->_user = User::find($this->author_id);
+		return $this->_user;
 	}
 
 	public function getCategories()

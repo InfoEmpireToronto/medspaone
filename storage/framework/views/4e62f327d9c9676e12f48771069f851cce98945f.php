@@ -15,7 +15,12 @@
                 <div class="space40"></div>
                 <div class="post-content text-left">
                   <h1 class="post-title"><?php echo e(ucwords(strtolower($article->title))); ?></h1>
-                  <div class="meta"><span class="date"><?php echo e($article->created_at->diffForHumans()); ?></span><span class="author">By <a href="/profile/<?php echo e($article->user()->id); ?>"><?php echo e($article->user()->company); ?></a></span><span class="comments"><a href="#">2</a> </span><span><a href="#"><i class="fa fa-thumbs-up"></i> 10 </a></span><span class="category"><a href="#">Skin</a></span>
+                  <div class="meta">
+                    <span class="date"><?php echo e($article->created_at->diffForHumans()); ?></span>
+                    <span class="author">By <a href="/profile/<?php echo e($article->user()->id); ?>"><?php echo e($article->user()->company); ?></a></span>
+                    <!-- <span class="comments"><a href="#">2</a> </span> -->
+                    <!-- <span><a href="#"><i class="fa fa-thumbs-up"></i> 10 </a></span> -->
+                    <span class="category"><a href="#"><?php echo e($article->getCategories()[0]->name); ?></a></span>
 <!--
 					 <span class="social-color social-s">
 						<span>Share</span>
@@ -39,7 +44,7 @@
 				  <div class="form-container bg-white shadow box">
 					   <h3>Ask the expert</h3>
               <!-- <form action="<?php echo e(route('saveContact')); ?>" method="post" class="vanilla vanilla-form contactForm" > -->
-                <div class="row text-center">
+                <div class="row text-center" id="form-content">
                   <div class="col-lg-4">
                     <div class="form-group">
                       <input type="text" class="form-control" name="name" placeholder="Your name" required="required">
@@ -153,7 +158,7 @@
               </div> -->
             </div>
               <!-- /#comments -->
-              <div class="divider-icon"><i class="si-photo_aperture"></i></div>
+              <!-- <div class="divider-icon"><i class="si-photo_aperture"></i></div>
               <h4>Would you like to share your thoughts?</h4>
               <p>Your email address will not be published. Required fields are marked *</p>
               <div class="space20"></div>
@@ -171,11 +176,11 @@
                   <textarea name="textarea" class="form-control" rows="5" placeholder="Enter your comment here..."></textarea>
                 </div>
                 <button type="submit" class="btn">Submit</button>
-              </form>
-              <!-- /.comment-form -->
+              </form> -->
+              
             </div>
-            <!-- /.blog -->
-          </div>
+            
+          </div> 
           <!--/column -->
           <aside class="col-md-4 sidebar">
             <div class="sidebox widget">
@@ -189,7 +194,21 @@
             <div class="sidebox widget">
               <h3 class="widget-title">Popular Posts</h3>
               <ul class="image-list">
-                <li>
+
+                <?php $__currentLoopData = $article->user()->popularPosts(3); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                  <li>
+                    <figure class="rounded"><a href="/article/<?php echo e($post->slug); ?>"><img src="/storage/<?php echo e($post->image); ?>" alt="" /></a></figure>
+                    <div class="post-content">
+                      <h6 class="post-title"> <a href="/article/<?php echo e($post->slug); ?>"><?php echo e($post->title); ?></a> </h6>
+                      <div class="meta">
+                        <span class="date"><?php echo e($post->created_at->diffForHumans()); ?></span>
+                        <!-- <span class="comments"><a href="#">4</a></span> -->
+                        <!-- <span><a href="#"><i class="fa fa-thumbs-up"></i> 10 </a></span> -->
+                      </div>
+                    </div>
+                  </li>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <!-- <li>
                   <figure class="rounded"><a href="#"><img src="/style/images/art/a1.jpg" alt="" /></a></figure>
                   <div class="post-content">
                     <h6 class="post-title"> <a href="#">Why Cost Shouldn’t Be The First Question</a> </h6>
@@ -209,7 +228,7 @@
                     <h6 class="post-title"> <a href="#">Why Cost Shouldn’t Be The First Question</a> </h6>
                     <div class="meta"><span class="date">Mar 03, 2019</span><span class="comments"><a href="#">4</a></span><span><a href="#"><i class="fa fa-thumbs-up"></i> 10 </a></span></div>
                   </div>
-                </li>
+                </li> -->
               </ul>
               <!-- /.image-list -->
             </div>
@@ -217,10 +236,13 @@
             <div class="sidebox widget">
               <h3 class="widget-title">Categories</h3>
               <ul class="unordered-list">
-                <li><a href="#">Body Contouring (21)</a></li>
+                <?php $__currentLoopData = $article->getCategories(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                  <li><a href="#"><?php echo e($category->name); ?></a></li>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <!-- <li><a href="#">Body Contouring (21)</a></li>
                 <li><a href="#">Facelift (19)</a></li>
                 <li><a href="#">Injectables (16)</a></li>
-                <li><a href="#">Skin rejuvenation (7)</a></li>
+                <li><a href="#">Skin rejuvenation (7)</a></li> -->
               </ul>
             </div>
             <!-- /.widget -->
@@ -283,7 +305,8 @@
                 phone: $('#phone').val()
             },
             success: function(result) { 
-                console.log(result);
+                // console.log(result);
+                $('#form-content').html("Thank you! A representative will contact you shortly...")
             }
         });
 

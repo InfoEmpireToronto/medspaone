@@ -52,6 +52,19 @@ class User extends \TCG\Voyager\Models\User
             return false;
     }
 
+    public function popularPosts($limit = 5)
+    {
+        $ret = Post::where('author_id', $this->id)
+                    ->where('type', 'article')
+                    ->inRandomOrder()
+                    ->limit($limit);
+
+        if($ret->exists())
+            return $ret->get();
+        else
+            return false;
+    }
+
     public function videos($limit = false)
     {
         $ret = Post::where('author_id', $this->id)->where('type', 'video');
