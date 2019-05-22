@@ -69,6 +69,8 @@ class HomeController extends Controller
             $location->distance = $location->distance($geoLocation['lat'], $geoLocation['lon'], $location['lat'], $location['lon']);
         }
 
+        $locations = usort($locations, array(new Location,"cmp"));
+
 // dump($locations);
         return view('findPhysician',[ 
             'locations' => $locations,
