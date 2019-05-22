@@ -38,9 +38,13 @@ class HomeController extends Controller
         //Article::where('id', '>', 1)->where('status', 1)->get();
 
         $faqs = Faq::select('*')
+        ->whereIn('site_id', [20,73,21,84,2,71,19,82,83,14,79,86,85])
+        ->where('status', 1)
         ->inRandomOrder()
         ->limit(5) // here is yours limit
         ->get();
+
+        dd($faqs);
 
         return view('welcome',[ 
             'articles' => $articles,
