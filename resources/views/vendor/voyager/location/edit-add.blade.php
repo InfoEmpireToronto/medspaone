@@ -218,13 +218,14 @@
                     city = '';
                     //results[0].address_components[2].long_name+', '+results[0].address_components[4].short_name;
                     $(results[0].address_components).each(function(){
-                        if(this.types.locality)
+                        console.log(this);
+                        if(this.types.includes('locality'))
                         {
                             city += this.long_name;
                         }
-                        if(this.types.administrative_area_level_1)
+                        if(this.types.includes('administrative_area_level_1'))
                         {
-                            city += this.short_name;
+                            city += ', '+this.short_name;
                         }
                     });
 
