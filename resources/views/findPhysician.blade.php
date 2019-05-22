@@ -90,6 +90,32 @@
         
         <div id="search-results">
               <ul class="image-list" id="locationList">
+                @foreach($featuredLocations as $l)
+          
+                <li class="{{ $l->featured ? 'bg-pastel-orange' : '' }}" >
+                  <div class="row" id="location-{{$l->id}}">
+                    <div class="col-sm-8 mb-0">
+                          <figure class="rounded"><a href="/profile/{{$l->user()->slug}}"><img src="{{ $l->user()->logo ? '/storage/'.$l->user()->logo : '/style/images/art/a5.jpg'}}" alt="" /></a></figure>
+                          <div class="post-content">
+                            <h6 class="post-title"> <a href="/profile/{{$l->user()->slug}}">{{$l['title']}}</a> </h6>
+                            <p>{{$l['address']}}</p>
+                            <div class="meta">
+                              <span>
+                                <a href="/profile/{{$l->user()->slug}}">
+                                  <i class="fa fa-map-marker"></i> &#8249; <span class="distance">-</span> km 
+                                </a>
+                              </span>
+                              <span><a href="#" class="hover has-tooltip" title="<strong>Toronto</strong><br>{{$l['address']}}" data-html="true" data-placement="right"><i class="fa fa-building-o"></i> 1 location </a></span>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-sm-4 text-center">
+                      <a href="profile/{{$l->user()->slug}}" class="btn  btn-s btn-{{ $l->featured ? 'red' : 'blue' }} float-none float-md-right mb-0 mt-sm-5">View profile</a>
+                    </div>
+                  </div>
+                </li>
+              @endforeach
+
               @foreach($locations as $l)
           
                 <li class="{{ $l->featured ? 'bg-pastel-orange' : '' }}" >
