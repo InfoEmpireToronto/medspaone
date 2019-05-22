@@ -167,8 +167,10 @@ class HomeController extends Controller
     public function about()
     {
 
+
         return view('about',[ 
-            
+            'members' => Location::count(),
+            'articles' => Article::count()
 
         ]);
 

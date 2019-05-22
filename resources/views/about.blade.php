@@ -57,7 +57,7 @@ We offer each of our member’s access to the latest information and expertise, 
             <div class="d-flex flex-row justify-content-center">
               <div class="icon fs-58 icon-color color-dark mr-25"><i class="si-files_text-file-2"></i></div>
               <div>
-                <h3 class="value">345</h3>
+                <h3 class="value">{{ $articles }}</h3>
                 <p>Articles</p>
               </div>
             </div>
@@ -67,7 +67,7 @@ We offer each of our member’s access to the latest information and expertise, 
             <div class="d-flex flex-row justify-content-center">
               <div class="icon fs-58 icon-color color-dark mr-25"> <i class="si-ui_share"></i> </div>
               <div>
-                <h3 class="value">947</h3>
+                <h3 class="value">157</h3>
                 <p>Likes</p>
               </div>
             </div>
@@ -77,8 +77,8 @@ We offer each of our member’s access to the latest information and expertise, 
             <div class="d-flex flex-row justify-content-center">
               <div class="icon fs-58 icon-color color-dark mr-25"> <i class="si-ui_users"></i> </div>
               <div>
-                <h3 class="value">452</h3>
-                <p>Subscribers</p>
+                <h3 class="value">{{ $members }}</h3>
+                <p>Members</p>
               </div>
             </div>
           </div>
