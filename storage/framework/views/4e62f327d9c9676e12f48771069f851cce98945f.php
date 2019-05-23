@@ -32,7 +32,17 @@
 					</div>
 					
 					
-                  <?php echo $article->body; ?>
+          <?php if($article->type == 'video'): ?>
+            <div class="col-lg-12">
+              <div class="wrapper dark-wrapper inverse-text shadow rounded">
+                  <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="<?php echo e($article->link); ?>"></div>
+              </div>
+            </div>
+            <br>
+            <br>
+          <?php endif; ?>
+
+          <?php echo $article->body; ?>
 
 
             
@@ -191,11 +201,12 @@
               <div class="clearfix"></div>
             </div>
             <!-- /.widget -->
+            <?php if($popularPosts): ?>
             <div class="sidebox widget">
               <h3 class="widget-title">Popular Posts</h3>
               <ul class="image-list">
 
-                <?php $__currentLoopData = $article->user()->popularPosts(3); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php $__currentLoopData = $popularPosts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                   <li>
                     <figure class="rounded"><a href="/article/<?php echo e($post->slug); ?>"><img src="/storage/<?php echo e($post->image); ?>" alt="" /></a></figure>
                     <div class="post-content">
@@ -232,6 +243,7 @@
               </ul>
               <!-- /.image-list -->
             </div>
+            <?php endif; ?>
             <!-- /.widget -->
             <div class="sidebox widget">
               <h3 class="widget-title">Categories</h3>
@@ -246,6 +258,8 @@
               </ul>
             </div>
             <!-- /.widget -->
+
+            <?php if($article->user()->services): ?>
             <div class="sidebox widget">
               <h3 class="widget-title">Services</h3>
               <?php echo $article->user()->services; ?>
@@ -259,6 +273,7 @@
                 <li><a href="#" class="btn btn-white shadow">Body</a></li>
               </ul> -->
             </div>
+            <?php endif; ?>
            
 <!--
             <div class="sidebox widget">

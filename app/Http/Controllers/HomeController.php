@@ -116,6 +116,32 @@ class HomeController extends Controller
 
     }
 
+    public function search(Request $request)
+    {
+
+        // dump($request);
+
+        $keywords = $request['s'];
+        $results = [];
+
+        // $users = User::where('name', 'LIKE', "%{$keywords}%")
+        //             ->orWhere('email', 'LIKE', "%{$keywords}%")
+        //             ->orWhere('bio', 'LIKE', "%{$keywords}%")
+
+        $results = Post::where('title', 'LIKE', "%{$keywords}%")
+                    ->orWhere('body', 'LIKE', "%{$keywords}%")
+                    ->get();
+
+
+
+        return view('search',[ 
+            'results' => $results
+
+        ]);
+
+
+    }
+
     public function faq()
     {
         $faqs = Faq::where('id', '>', 0)

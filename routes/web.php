@@ -24,7 +24,10 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/ba/{name}', 'ArticleController@viewArticle')->name('viewBeforeAfter');
+Route::get('/video/{name}', 'ArticleController@viewArticle')->name('viewVideo');
 Route::get('/article/{name}', 'ArticleController@viewArticle')->name('viewArticle');
+
 Route::get('/articles', 'ArticleController@articles')->name('articles');
 Route::get('/articles/{name}', 'ArticleController@articles')->name('articles');
 Route::get('/videos', 'ArticleController@videos')->name('videos');
@@ -50,6 +53,9 @@ Route::GET('/login', 'HomeController@login')->name('login');
 Route::POST('/login', 'HomeController@login')->name('Login');
 
 Route::POST('/saveMembership', 'HomeController@saveMembership')->name('saveMembership');
+
+Route::POST('/search', 'HomeController@search')->name('search');
+Route::GET('/search', 'HomeController@search')->name('search');
 
 Route::POST('/ajax/getHomepageItems', 'AjaxController@getHomepageItems')->name('getHomepageItems');
 // Route::POST('/ajax/saveContact', 'AjaxController@saveContact')->name('saveContact');

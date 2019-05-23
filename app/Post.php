@@ -9,6 +9,7 @@ use TCG\Voyager\Models\Category;
 class Post extends \TCG\Voyager\Models\Post
 {
 	private $_user = false;
+	private $_categories = false;
 
 	public function user()
 	{
@@ -21,12 +22,16 @@ class Post extends \TCG\Voyager\Models\Post
 
 	public function getCategories()
 	{
+		if($this->_categories)
+			return $this->_categories;
+
 		$cats = PostCategory::where('post_id', $this->id)->get();
 		$ret = [];
 		foreach($cats as $cat)
 		{
 			$ret[] = Category::find($cat->category_id);
 		}
+		$this->_categories = $ret;
 		return $ret;
 
 	}

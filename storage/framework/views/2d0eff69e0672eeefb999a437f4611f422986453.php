@@ -155,9 +155,10 @@ $keywords = "";
           </ul>
         </div>
       <div id="search">
-              <form class="search-form">
+              <form class="search-form" action="<?php echo e(route('search')); ?>" method="GET">
+
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Search...">
+                  <input type="text" class="form-control" name="s" placeholder="Search...">
                 </div>
                 <!-- /.form-group -->
               </form>

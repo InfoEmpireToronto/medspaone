@@ -41,9 +41,10 @@ class ArticleController extends Voyager\VoyagerController
             $article = Post::where('slug', $name)->first();
             if($article)
             {
-                
+                $pp = $article->user()->popularPosts(3);
                 return view('article',[ 
-                    'article' => $article
+                    'article' => $article,
+                    'popularPosts' => $pp ? $pp : false
 
                 ]);
                 

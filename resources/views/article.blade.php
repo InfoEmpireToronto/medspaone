@@ -35,7 +35,17 @@
 					</div>
 					
 					
-                  {!! $article->body !!}
+          @if($article->type == 'video')
+            <div class="col-lg-12">
+              <div class="wrapper dark-wrapper inverse-text shadow rounded">
+                  <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="{{$article->link}}"></div>
+              </div>
+            </div>
+            <br>
+            <br>
+          @endif
+
+          {!! $article->body !!}
 
             
 					
@@ -192,11 +202,12 @@
               <div class="clearfix"></div>
             </div>
             <!-- /.widget -->
+            @if($popularPosts)
             <div class="sidebox widget">
               <h3 class="widget-title">Popular Posts</h3>
               <ul class="image-list">
 
-                @foreach($article->user()->popularPosts(3) as $post)
+                @foreach($popularPosts as $post)
                   <li>
                     <figure class="rounded"><a href="/article/{{$post->slug}}"><img src="/storage/{{$post->image}}" alt="" /></a></figure>
                     <div class="post-content">
@@ -233,6 +244,7 @@
               </ul>
               <!-- /.image-list -->
             </div>
+            @endif
             <!-- /.widget -->
             <div class="sidebox widget">
               <h3 class="widget-title">Categories</h3>
@@ -247,6 +259,8 @@
               </ul>
             </div>
             <!-- /.widget -->
+
+            @if($article->user()->services)
             <div class="sidebox widget">
               <h3 class="widget-title">Services</h3>
               {!! $article->user()->services !!}
@@ -259,6 +273,7 @@
                 <li><a href="#" class="btn btn-white shadow">Body</a></li>
               </ul> -->
             </div>
+            @endif
            
 <!--
             <div class="sidebox widget">
