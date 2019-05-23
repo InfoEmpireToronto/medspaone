@@ -12,7 +12,8 @@
 
               <div>
                 <h3><a href="/{{$result->type}}/{{$result->slug}}" >{{$result->title}}</a></h3>
-                <p>{!! substr(strip_tags($result->body), 0, 200) !!}</p>
+                <p>{!! substr(strip_tags($result->body), 0, 200) !!}...</p>
+                <a href="/{{$result->type}}/{{$result->slug}}">Read More</a>
               </div>
             @endforeach
          </div>
