@@ -186,16 +186,21 @@ $keywords = "";
           <div class="col-md-4 text-center text-md-left">
             <p class="mb-0"> 2019 MedSpa.One © All rights reserved.</p>
           </div>
-          <!--/column -->
+
           <div class="col-md-4 text-center d-none d-sm-block">
             <img src="#" srcset="/style/images/logo-light.png 1x, /style/images/logo-light@2x.png 2x" alt="" />
           </div>
-          <!--/column -->
-          <div class="col-md-4 text-center text-md-right">
+
+          <div class="col-md-2 text-center d-none d-sm-block">
+            <a href="<?php echo e(route('privacy')); ?>" >Privacy Policy</a><br>
+            <a href="<?php echo e(route('terms')); ?>" >Terms of Service</a>
+          </div>
+
+          <div class="col-md-2 text-center text-md-right">
             <ul class="social social-mute social-s mt-10">
-               <li><a href="https://www.facebook.com/infoempire" target="_blank"><i class="fa fa-facebook"></i></a></li>
-				<li><a href="https://twitter.com/InfoEmpire_Inc" target="_blank"><i class="fa fa-twitter"></i></a></li>
-				<li><a href="http://www.youtube.com/user/GTAwebmastercom" target="_blank"><i class="fa fa-youtube"></i></a></li>
+              <li><a href="https://www.facebook.com/infoempire" target="_blank"><i class="fa fa-facebook"></i></a></li>
+      				<li><a href="https://twitter.com/InfoEmpire_Inc" target="_blank"><i class="fa fa-twitter"></i></a></li>
+      				<li><a href="http://www.youtube.com/user/GTAwebmastercom" target="_blank"><i class="fa fa-youtube"></i></a></li>
             </ul>
           </div>
           <!--/column -->

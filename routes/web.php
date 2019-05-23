@@ -49,6 +49,9 @@ Route::GET('/admin/chat', 'AdminController@startChat')->name('startChat');
 Route::GET('/phys/chat', 'HomeController@physChat')->name('Phys-Chat');
 Route::GET('/chat', 'HomeController@startChat')->name('Chat');
 
+Route::GET('/terms-of-service', 'HomeController@terms')->name('terms');
+Route::GET('/privacy-policy', 'HomeController@privacy')->name('privacy');
+
 Route::GET('/contact-us', 'HomeController@contactus')->name('contactus');
 Route::GET('/ask-the-expert', 'HomeController@askExpert')->name('askExpert');
 Route::POST('/contact-us-thanks', 'HomeController@submitContactus')->name('contactusThanks');
