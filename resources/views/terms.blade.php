@@ -4,7 +4,7 @@
 @section('content')
 	<div class="wrapper gray-wrapper">
       <div class="container inner">
-        <h2 class="heading text-center">FAQs</h2>
+        <h2 class="heading text-center">Terms of Service</h2>
         <div class="space20"></div>
         <div class="row">
 
