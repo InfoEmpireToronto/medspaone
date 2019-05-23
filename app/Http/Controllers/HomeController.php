@@ -233,10 +233,7 @@ class HomeController extends Controller
             return redirect()->intended('/admin');
         }
 
-        return view('welcome',[ 
-            
-
-        ]);
+        return $this->index();
 
     }
 
