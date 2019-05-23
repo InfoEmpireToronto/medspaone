@@ -14,16 +14,7 @@
                 <h3><a href="/{{$result->type}}/{{$result->slug}}" >{{$result->title}}</a></h3>
                 <p>{!! substr(strip_tags($result->body), 0, 200) !!}...&nbsp<a href="/{{$result->type}}/{{$result->slug}}">Read More</a></p>
 
-                <!-- 
-                For Articles
-                <img src="/storage/{{$article->image}}" alt="" />
 
-                For Videos
-                <img src="https://img.youtube.com/vi/{{$article->link}}/0.jpg" alt="" />
-
-                For BA
-                <img src="/storage/{{$article->before}}" alt="" /> 
-              -->
 
               </div>
             @endforeach
@@ -35,3 +26,19 @@
       <!-- /.container -->
     </div>
 @endsection
+
+<?php
+
+
+                // For Articles
+                // <img src="/storage/{{$result->image}}" alt="" />
+
+                // For Videos
+                // <img src="https://img.youtube.com/vi/{{$result->link}}/0.jpg" alt="" />
+
+                // For BA
+                // <img src="/storage/{{$result->before}}" alt="" /> 
+
+
+
+?>
