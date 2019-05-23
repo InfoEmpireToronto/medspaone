@@ -31,8 +31,13 @@ class Post extends \TCG\Voyager\Models\Post
 		{
 			$ret[] = Category::find($cat->category_id);
 		}
+		if(count($ret) == 0)
+		{
+			$ret[] = Category::first();
+		}
 		$this->_categories = $ret;
 		return $ret;
 
 	}
+
 }
