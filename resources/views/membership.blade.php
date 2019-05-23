@@ -264,7 +264,8 @@ Your password must be a minimum of eight (8) characters in length and contain at
 	<td align="right"><b>Phone</b>
 	  
 	  <span class="redalert">*</span>
-  <input class="form-control" type="hidden" name="ERR_txt_employPhone" value=""><input class="form-control" type="hidden" name="ERR_txt_employPhoneAreaCode">
+  <input class="form-control" type="hidden" name="ERR_txt_employPhone" value="">
+  <input class="form-control" type="hidden" name="ERR_txt_employPhoneAreaCode">
 	  </td>
 	<td>
 

@@ -10,6 +10,7 @@ use App\Post;
 use App\Location;
 use App\Faq;
 use App\User;
+use App\FormData;
 
 use Carbon\Carbon;
 use Jenssegers\Agent\Agent;
@@ -194,6 +195,34 @@ class HomeController extends Controller
 
 
 
+    public function contactus(Request $request)
+    {
+        return view('contactus',[ 
+            
+
+        ]);
+    }
+
+    public function submitContactus(Request $request)
+    {
+        $vars = $request->all();
+        FormData::create([
+            'name' => $request['name'],
+            'phone' => $request['phone'],
+            'email' => $request['email'],
+            'data' => json_encode($vars)
+        ]);
+
+        \Mail::to('thomas@infoempire.com')->send(new \App\Mail\newMembership($vars));
+        \Mail::to('ron@infoempire.com')->send(new \App\Mail\newMembership($vars));
+
+        return view('contactusThanks',[ 
+            
+
+        ]);
+    }
+
+
     public function login(Request $request)
     {
 
@@ -204,7 +233,7 @@ class HomeController extends Controller
             return redirect()->intended('/admin');
         }
 
-        return view('login',[ 
+        return view('welcome',[ 
             
 
         ]);
@@ -234,7 +263,16 @@ class HomeController extends Controller
                 unset($vars[$key]);
         }
 
-        \Mail::to('tganyuk86@gmail.com')->send(new \App\Mail\newMembership($vars));
+        FormData::create([
+            'name' => $request['FullName'],
+            'phone' => $request['EmployPhone'],
+            'email' => $request['Email'],
+            'data' => json_encode($vars)
+        ]);
+
+        \Mail::to('thomas@infoempire.com')->send(new \App\Mail\newMembership($vars));
+        \Mail::to('ron@infoempire.com')->send(new \App\Mail\newMembership($vars));
+
         // echo '<pre>';print_r($vars);
 
         return view('membershipThanks',[ 

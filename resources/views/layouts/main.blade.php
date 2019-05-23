@@ -109,7 +109,7 @@ $keywords = "";
                           <div class="box">
                             <div class="row">
                               <div class="col-md-6">
-<form method="POST" action="{{ route('login') }}">
+<form method="POST" action="{{ route('Login') }}">
                         @csrf
               <div class="form-group">
                 <input type="text" class="form-control" id="exampleInputName1" placeholder="Login" name="email">
@@ -125,8 +125,8 @@ $keywords = "";
                               </div>
                               <!--/column -->
                               <div class="col-md-6">
-                                <p><a href="/login" class="btn btn-pastel-aqua">Join our community</a></p>
-                                <p><a href="/login" class="btn btn-pastel-blue">Physicians apply here</a></p>
+                                <p><a href="/membership" class="btn btn-pastel-blue">Physicians apply here</a></p>
+                                <p><a href="{{ route('contactus') }}" class="btn btn-pastel-aqua">Contact Us</a></p>
                               </div>
                               <!--/column -->
                         

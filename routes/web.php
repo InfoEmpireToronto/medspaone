@@ -49,7 +49,8 @@ Route::GET('/admin/chat', 'AdminController@startChat')->name('startChat');
 Route::GET('/phys/chat', 'HomeController@physChat')->name('Phys-Chat');
 Route::GET('/chat', 'HomeController@startChat')->name('Chat');
 
-Route::GET('/login', 'HomeController@login')->name('login');
+Route::GET('/contact-us', 'HomeController@contactus')->name('contactus');
+Route::POST('/contact-us-thanks', 'HomeController@submitContactus')->name('contactusThanks');
 Route::POST('/login', 'HomeController@login')->name('Login');
 
 Route::POST('/saveMembership', 'HomeController@saveMembership')->name('saveMembership');
