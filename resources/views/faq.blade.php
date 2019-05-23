@@ -47,7 +47,7 @@
             </div>
             <!-- /.accordion-wrapper -->
         
-        <p class="text-center"><a href="#" class="btn">Read more <i class="mi-arrow-right"></i></a> </p>
+        <!-- <p class="text-center"><a href="#" class="btn">Read more <i class="mi-arrow-right"></i></a> </p> -->
           </div>
           <!-- /column -->
         </div>
