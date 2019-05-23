@@ -84,7 +84,7 @@
 				  
 				  <div class="tab-pane fade" id="tab1-4">
                   <div class="form-container">
-              <form action="{{ route('saveContactExpert') }}" method="post" class="vanilla vanilla-form" >
+              <form action="{{ route('saveContactExpert') }}" method="post" class="vanilla vanilla-form" novalidate >
                 <input type="hidden" name="profile" value="{{ $user->company }}">
                 @csrf
                 <div class="row text-center">
