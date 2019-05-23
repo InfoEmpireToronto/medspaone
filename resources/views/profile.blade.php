@@ -298,7 +298,7 @@
             @foreach($user->locations() as $location)
               <div class="card bg-white shadow">
                 <div class="card-header">
-                  <h3> <a data-toggle="collapse" data-parent="#accordion1" href="#collapse1-1">Toronto, ON</a> </h3>
+                  <h3> <a data-toggle="collapse" data-parent="#accordion1" href="#collapse1-1">{{$location->city}}</a> </h3>
 					
                 </div>
                 <!-- /.card-header -->
