@@ -144,7 +144,6 @@ $keywords = "";
                   </div>
                   <!--/.image-block-wrapper -->
                 </li>
-    </li>
                 <!--/.mega-menu-content-->
               </ul>
 
@@ -196,7 +195,6 @@ $keywords = "";
             <ul class="social social-mute social-s mt-10">
                <li><a href="https://www.facebook.com/infoempire" target="_blank"><i class="fa fa-facebook"></i></a></li>
 				<li><a href="https://twitter.com/InfoEmpire_Inc" target="_blank"><i class="fa fa-twitter"></i></a></li>
-				<li><a href="https://plus.google.com/+InfoempireINC" rel="publisher author" target="_blank"><i class="fa fa-google-plus"></i></a></li>
 				<li><a href="http://www.youtube.com/user/GTAwebmastercom" target="_blank"><i class="fa fa-youtube"></i></a></li>
             </ul>
           </div>
