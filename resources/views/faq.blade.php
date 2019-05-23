@@ -21,7 +21,7 @@
 
   if($faq->category != $currentHeader)
   {
-    echo "<li class='list-group-item'><a href='#{{str_replace(' ', '_', $faq->category)}}' class='scroll'>{$faq->category}</a></li>";
+    echo "<li class='list-group-item'><a href='#<?=str_replace(' ', '_', $faq->category)?>' class='scroll'>{$faq->category}</a></li>";
     $currentHeader = $faq->category;
   }
 
@@ -40,7 +40,7 @@
 <?php
   if($faq->category != $currentHeader)
   {
-    echo "<h2 data-aos='fade-down'><a id='{{str_replace(' ', '_', $faq->category)}}' >{$faq->category}</a></h2>";
+    echo "<h2 data-aos='fade-down'><a id='<?=str_replace(' ', '_', $faq->category)?>' >{$faq->category}</a></h2>";
     $currentHeader = $faq->category;
   }
 

@@ -41,6 +41,7 @@ class HomeController extends Controller
         $faqs = Faq::select('*')
         ->whereIn('site_id', [20,73,21,84,2,71,19,82,83,14,79,86,85])
         ->where('status', 1)
+        ->where('category', '!=', '')
         ->inRandomOrder()
         ->limit(5) // here is yours limit
         ->get();
