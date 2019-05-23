@@ -17,9 +17,9 @@
 		  <div class="row text-center">
           <div class="col-sm-4">
 			  <p class="icon fs-48 mb-10"><i class="si-ecommerce_shop-location"></i></p> 
-        @foreach($user->locations() as $location)
-			   <p>{{$location->address}}</p>
-         @endforeach
+        <!-- @ foreach($user->locations() as $location) -->
+			   <p>{{$user->locations()[0]->address}}</p>
+         <!-- @ endforeach -->
 			  </div>
 			  <div class="col-sm-4">
 			  <p class="icon fs-48 mb-10"><i class="si-phone_iphone"></i></p>
