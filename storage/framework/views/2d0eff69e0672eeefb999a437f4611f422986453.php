@@ -149,7 +149,7 @@ $keywords = "";
 
             </li>
 <li class="nav-item mt-12 text-center text-sm-left">
-         <a href="<?php echo e(route('askExpert')); ?>" class="btn btn-s bg-meander">Ask The Expert<i class="fa fa-video-camera"></i></a>
+         <a href="<?php echo e(route('askExpert')); ?>" class="btn btn-s bg-meander">Ask The Expert</a>
 		  </li>
           </ul>
         </div>
@@ -183,21 +183,21 @@ $keywords = "";
      <footer class="dark-wrapper inverse-text">
       <div class="container inner pt-sm-20">
         <div class="row d-md-flex align-items-md-center">
+			<div class="col-md-1 d-none d-sm-block">
+            <img src="#" srcset="/style/images/logo-light.png 1x, /style/images/logo-light@2x.png 2x" alt="" />
+          </div>
           <div class="col-md-4 text-center text-md-left">
             <p class="mb-0"> 2019 MedSpa.One © All rights reserved.</p>
           </div>
 
-          <div class="col-md-4 text-center d-none d-sm-block">
-            <img src="#" srcset="/style/images/logo-light.png 1x, /style/images/logo-light@2x.png 2x" alt="" />
-          </div>
 
-          <div class="col-md-2 text-center d-none d-sm-block">
-            <a href="<?php echo e(route('privacy')); ?>" >Privacy Policy</a><br>
-            <a href="<?php echo e(route('terms')); ?>" >Terms of Service</a>
+
+          <div class="col-md-5 text-center text-md-left">
+			 <a href="<?php echo e(route('privacy')); ?>" class="nocolor">Privacy Policy</a> &nbsp; &nbsp; <a href="<?php echo e(route('terms')); ?>" class="nocolor">Terms of Service</a>
           </div>
 
           <div class="col-md-2 text-center text-md-right">
-            <ul class="social social-mute social-s mt-10">
+            <ul class="social social-mute social-s">
               <li><a href="https://www.facebook.com/infoempire" target="_blank"><i class="fa fa-facebook"></i></a></li>
       				<li><a href="https://twitter.com/InfoEmpire_Inc" target="_blank"><i class="fa fa-twitter"></i></a></li>
       				<li><a href="http://www.youtube.com/user/GTAwebmastercom" target="_blank"><i class="fa fa-youtube"></i></a></li>

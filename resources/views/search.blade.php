@@ -14,11 +14,19 @@
 
 
               <li>
-                  <figure class="rounded"><a href="/{{$result->type}}/{{$result->slug}}" ><img src="/storage/{{$result->image}}" alt="{{$result->title}}"></a></figure>
+                  <figure class="rounded">
+                    <a href="/{{$result->type}}/{{$result->slug}}" >
+                      @if($result->type == 'video')
+                        <img src="https://img.youtube.com/vi/{{$result->link}}/0.jpg" alt="" />
+                      @else
+                        <img src="/storage/{{$result->image}}" alt="{{$result->title}}">
+                      @endif
+                    </a>
+                  </figure>
                   <div class="post-content">
                     <h6 class="post-title"> <a href="/{{$result->type}}/{{$result->slug}}" >{{$result->title}}</a></h6>
-                <p>{!! substr(strip_tags($result->body), 0, 200) !!}...&nbsp;<a href="/{{$result->type}}/{{$result->slug}}">Read&nbsp;more <i class="fa fa-angle-right"></i></a></p>
-				  </div>
+                    <p>{!! substr(strip_tags($result->body), 0, 200) !!}...&nbsp;<a href="/{{$result->type}}/{{$result->slug}}">Read&nbsp;more <i class="fa fa-angle-right"></i></a></p>
+				          </div>
                 </li>
             @endforeach
 			  </ul>
