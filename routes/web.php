@@ -50,6 +50,7 @@ Route::GET('/phys/chat', 'HomeController@physChat')->name('Phys-Chat');
 Route::GET('/chat', 'HomeController@startChat')->name('Chat');
 
 Route::GET('/contact-us', 'HomeController@contactus')->name('contactus');
+Route::GET('/ask-the-expert', 'HomeController@askExpert')->name('askExpert');
 Route::POST('/contact-us-thanks', 'HomeController@submitContactus')->name('contactusThanks');
 Route::POST('/login', 'HomeController@login')->name('Login');
 

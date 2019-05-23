@@ -147,10 +147,10 @@ $keywords = "";
                 <!--/.mega-menu-content-->
               </ul>
 
-            </li><!-- 
+            </li>
 <li class="nav-item mt-12 text-center text-sm-left">
-         <a href="/chat" target="_blank" class="btn btn-s bg-meander">Video chat <i class="fa fa-video-camera"></i></a>
-		  </li> -->
+         <a href="<?php echo e(route('askExpert')); ?>" class="btn btn-s bg-meander">Ask The Expert<i class="fa fa-video-camera"></i></a>
+		  </li>
           </ul>
         </div>
       <div id="search">

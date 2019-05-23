@@ -36,7 +36,7 @@ class newMembership extends Mailable
      */
     public function build()
     {
-        return $this->from('thomas@infoempire.com')->view('mail.newMembership')->with([
+        return $this->from('medspatimes@gmail.com')->view('mail.newMembership')->with([
             'data' => $this->data
         ]);
     }

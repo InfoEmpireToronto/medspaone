@@ -249,6 +249,16 @@ class HomeController extends Controller
         ]);
 
     }
+    public function askExpert()
+    {
+
+
+        return view('askExpert',[ 
+            
+
+        ]);
+
+    }
 
     public function saveMembership(Request $request)
     {
