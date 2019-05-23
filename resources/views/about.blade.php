@@ -2,24 +2,25 @@
 
 
 @section('content')
+
+ <!-- /.wrapper -->
+    <div class="wrapper image-wrapper bg-image inverse-text" data-image-src="style/images/art/about-medspa.jpg">
+      <div class="container inner pt-120 pb-120">
+        <h2 class="section-title mb-40 text-center">About MedSpa.One</h2>
+
+       
+      </div>
+     
+    </div>
+  
+
+
 	<div class="wrapper light-wrapper">
       <div class="container inner pt-60 pt-sm-20">
-        <div class="boxed">
-          <div class="bg-white shadow rounded">
-            <div class="image-block-wrapper">
-<!--
-              <div class="image-block col-lg-6">
-                <div class="image-block-bg bg-image" data-image-src="style/images/art/team.jpg"></div>
-              </div>
--->
-              <!--/.image-block -->
-              <div class="container-fluid">
                 <div class="row">
-<!--					<div class="col-lg-6 offset-lg-6">-->
+
                   <div class="col-lg-12">
-                    <div class="box d-flex">
-                      <div class="align-self-center">
-                        <h3 class="mb-20">About MedSpa.One</h3>
+					   
                         <p>The demand for cosmetic services has increased in the last few years. With increased demand, comes an increased number of medical spas that offer cosmetic services. The internet is good for many things; however, it has never been a great source for medical advice. We wanted to create a platform that provides valid resources to save users hours of searching up different sources and digging through false information. Medspa.one is the one place for all of your med spa needs. We have created a community that connects doctors with patients to inform with up to date news, learn about the equipment being used and how it works, and find the right fit for your needs.</p>
 						 <p>When you're searching for any medical spa information or beauty solutions — our goal is to provide you with the most helpful information available. We provide content from industry experts to help you learn informative and accurate information about the med spa industry.</p>
 						  <p>Our platform is made to connect med spa clients with the right med spa. We have made it simple to find best fits users needs and wants. Users get answers quick by communicating through text or video chat with one of our med spa providers to get the answers they need. A simple, informative, and effective way to find the right spa, book an appointment, and even request transportation if necessary. In addition, all payments can be done online making your experience effortless.</p>
@@ -33,22 +34,10 @@ We offer each of our member’s access to the latest information and expertise, 
                        
                       </div>
                     </div>
-                    <!-- /.box -->
-                  </div>
-                  <!--/column -->
-                </div>
-                <!--/.row -->
-              </div>
-              <!--/.container-fluid -->
-            </div>
-            <!--/.image-block-wrapper -->
+              
           </div>
-          <!-- /.bg -->
         </div>
-        <!-- /.boxed -->
-      </div>
-      <!-- /.container -->
-    </div>
+
 
 <div class="wrapper image-wrapper bg-image inverse-text" data-image-src="style/images/art/bg3.jpg">
       <div class="container inner pt-150 pb-150">
