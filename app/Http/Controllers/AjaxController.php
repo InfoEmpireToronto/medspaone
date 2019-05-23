@@ -39,6 +39,8 @@ class AjaxController extends Voyager\VoyagerController
         
 
     }
+
+
     public function saveContact(Request $request)
     {
 
@@ -57,6 +59,34 @@ class AjaxController extends Voyager\VoyagerController
         // dd($out);
 
 
+        // Sms::sendSMS('14163226000', $request['name'].' has a question, to start the conversation go to https://medspa.one/phys/chat');
+
+        return response()->json(['status'=>'success']);
+
+
+
+
+
+    }
+
+   
+    public function saveContactExpert(Request $request)
+    {
+
+        $vars = $request->all();
+
+
+        FormData::create([
+            'name' => $request['name'],
+            'phone' => $request['tel'],
+            'email' => $request['email'],
+            'data' => json_encode($request->all())
+        ]);
+
+        \Mail::to('thomas@infoempire.com')->send(new \App\Mail\newContact($vars));
+        \Mail::to('ron@infoempire.com')->send(new \App\Mail\newContact($vars));
+
+        
         // Sms::sendSMS('14163226000', $request['name'].' has a question, to start the conversation go to https://medspa.one/phys/chat');
 
         return response()->json(['status'=>'success']);

@@ -36,7 +36,7 @@ class newContact extends Mailable
      */
     public function build()
     {
-        return $this->from('thomas@infoempire.com')->view('mail.generic')->with([
+        return $this->from('thomas@infoempire.com')->view('mail.newContact')->with([
             'msg' => $this->msg
         ]);
     }

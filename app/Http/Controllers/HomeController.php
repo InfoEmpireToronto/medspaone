@@ -213,8 +213,8 @@ class HomeController extends Controller
             'data' => json_encode($vars)
         ]);
 
-        \Mail::to('thomas@infoempire.com')->send(new \App\Mail\newMembership($vars));
-        \Mail::to('ron@infoempire.com')->send(new \App\Mail\newMembership($vars));
+        \Mail::to('thomas@infoempire.com')->send(new \App\Mail\newContact($vars));
+        \Mail::to('ron@infoempire.com')->send(new \App\Mail\newContact($vars));
 
         return view('contactusThanks',[ 
             

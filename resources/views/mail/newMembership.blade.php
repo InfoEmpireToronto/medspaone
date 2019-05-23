@@ -1,4 +1,4 @@
 New Membership Submitted
 --------------------------
-<pre>{{print_r($data)}}</pre>
+<pre>{{print_r($data,1)}}</pre>
 --------------------------

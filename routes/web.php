@@ -61,5 +61,6 @@ Route::GET('/search', 'HomeController@search')->name('search');
 Route::POST('/ajax/getHomepageItems', 'AjaxController@getHomepageItems')->name('getHomepageItems');
 // Route::POST('/ajax/saveContact', 'AjaxController@saveContact')->name('saveContact');
 Route::GET('/ajax/saveContact', 'AjaxController@saveContact')->name('saveContact');
+Route::POST('/ajax/saveContactExpert', 'AjaxController@saveContactExpert')->name('saveContactExpert');
 
 
