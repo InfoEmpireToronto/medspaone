@@ -7,19 +7,37 @@
         <h2 class="heading text-center">FAQs</h2>
       <div class="space20"></div>
         <div class="row">
-          <div class="col-lg-8 offset-lg-2">
-            <div id="accordion1" class="accordion-wrapper">
-<?php 
-  $currentHeader = '';
 
-  ?>
+          <div class="col-lg-4 ">
+
+<?php $currentHeader = ''; ?>
+
+@foreach($faqs as $faq)
+
+<?php
+
+  if($faq->category != $currentHeader)
+  {
+    echo "<p><a href='#{$faq->category}' >{$faq->category}</p>";
+    $currentHeader = $faq->category;
+  }
+
+?>
+              
+@endforeach
+
+          </div>
+          <div class="col-lg-8 ">
+            <div id="accordion1" class="accordion-wrapper">
+              
+<?php $currentHeader = ''; ?>
 
 @foreach($faqs as $faq)
 
 <?php
   if($faq->category != $currentHeader)
   {
-    echo "<h2>{$faq->category}</h2>";
+    echo "<h2><a name='{$faq->category}' >{$faq->category}</a></h2>";
     $currentHeader = $faq->category;
   }
 
