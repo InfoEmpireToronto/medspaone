@@ -11,21 +11,24 @@
           <div class="col-lg-4 ">
 
 <?php $currentHeader = ''; ?>
-
+ <ul class="list-group shadow">
 @foreach($faqs as $faq)
+			  
+			 
+            
 
 <?php
 
   if($faq->category != $currentHeader)
   {
-    echo "<p><a href='#{$faq->category}' >{$faq->category}</p>";
+    echo "<li class='list-group-item'><a href='#{{str_replace(' ', '_', $faq->category)}}' class='scroll'>{$faq->category}</a></li>";
     $currentHeader = $faq->category;
   }
 
 ?>
-              
+          
 @endforeach
-
+  </ul>  
           </div>
           <div class="col-lg-8 ">
             <div id="accordion1" class="accordion-wrapper">
@@ -37,12 +40,12 @@
 <?php
   if($faq->category != $currentHeader)
   {
-    echo "<h2><a name='{$faq->category}' >{$faq->category}</a></h2>";
+    echo "<h2 data-aos='fade-down'><a id='{{str_replace(' ', '_', $faq->category)}}' >{$faq->category}</a></h2>";
     $currentHeader = $faq->category;
   }
 
 ?>
-              <div class="card bg-white shadow">
+              <div class="card bg-white shadow" data-aos="fade-up">
                 <div class="card-header">
                   <h3> 
                     <a data-toggle="collapse" data-parent="#accordion1" href="#collapse1-{{$faq->id}}">

@@ -1559,6 +1559,8 @@ ol {
 .list-group-item:hover {
     z-index: auto;
 }
+.list-group-item a {color:#333; display:block; }
+
 /*-----------------------------------------------------------------------------------*/
 /* 	10. IMAGE BACKGROUND WRAPPER
 /*-----------------------------------------------------------------------------------*/
@@ -5268,7 +5270,7 @@ pre {
         padding-bottom: 25px;
     }
     .navbar.wide.fixed .navbar-nav .nav-link {
-        padding-top: 15px;
+        padding-top: 25px;
         padding-bottom: 15px;
     }
     .navbar.center .navbar-brand {
