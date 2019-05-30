@@ -273,9 +273,11 @@
       <div class="container-fluid p-4">
         <div class="tiles tiles-s">
           <div id="instafeed" class="items row"></div>
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-2d5e8e9d-8d11-4d3a-8fc7-daad352101a7"></div>
         </div>
         <div class="space40"></div>
-        <div class="text-center"><a href="#" class="btn">Visit Instagram Page <i class="fa fa-instagram"></i></a></div>
+<!--        <div class="text-center"><a href="#" class="btn">Visit Instagram Page <i class="fa fa-instagram"></i></a></div> -->
       </div>
     </div>
 			  @endif
