@@ -33,8 +33,8 @@ return array(
     'paths' => array(
         public_path('storage/posts'),
         public_path('storage'),
-        public_path('styles/images/art'),
-        public_path('styles/images'),
+        public_path('style/images/art'),
+        public_path('style/images'),
     ),
 
     /*

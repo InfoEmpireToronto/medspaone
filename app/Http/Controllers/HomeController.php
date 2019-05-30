@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
+
 use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
 
 use App\Article;
 use App\Post;
@@ -297,6 +300,25 @@ class HomeController extends Controller
     public function privacy()
     {
         return view('privacy');
+    }
+
+
+    public function getImage($width, $file)
+    {
+        // $file = public_path($file);
+        // dump($file);
+        // dump($width);
+        $img = Image::cache(function($image) use ($file, $width) {
+           $image->make($file)->resize($width, 200)->greyscale();
+        }, 10);
+
+        $response = Response::make($img, 200);
+
+        $response->header("Content-Type", 'jpeg');
+
+      
+
+        return $response;
     }
 
 

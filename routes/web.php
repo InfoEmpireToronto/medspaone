@@ -23,6 +23,7 @@ Route::group(['prefix' => 'admin'], function () {
 // Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/i/w{width}/{file}', 'HomeController@getImage')->where('file', '.*');
 
 Route::get('/ba/{name}', 'ArticleController@viewArticle')->name('viewBeforeAfter');
 Route::get('/video/{name}', 'ArticleController@viewArticle')->name('viewVideo');
