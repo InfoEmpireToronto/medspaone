@@ -35,10 +35,11 @@
     31 => 'TCG\\Voyager\\VoyagerServiceProvider',
     32 => 'TCG\\Voyager\\Providers\\VoyagerDummyServiceProvider',
     33 => 'Torann\\GeoIP\\GeoIPServiceProvider',
-    34 => 'App\\Providers\\AppServiceProvider',
-    35 => 'App\\Providers\\AuthServiceProvider',
-    36 => 'App\\Providers\\EventServiceProvider',
-    37 => 'App\\Providers\\RouteServiceProvider',
+    34 => 'Intervention\\Image\\ImageServiceProvider',
+    35 => 'App\\Providers\\AppServiceProvider',
+    36 => 'App\\Providers\\AuthServiceProvider',
+    37 => 'App\\Providers\\EventServiceProvider',
+    38 => 'App\\Providers\\RouteServiceProvider',
   ),
   'eager' => 
   array (
@@ -62,10 +63,11 @@
     17 => 'TCG\\Voyager\\VoyagerServiceProvider',
     18 => 'TCG\\Voyager\\Providers\\VoyagerDummyServiceProvider',
     19 => 'Torann\\GeoIP\\GeoIPServiceProvider',
-    20 => 'App\\Providers\\AppServiceProvider',
-    21 => 'App\\Providers\\AuthServiceProvider',
-    22 => 'App\\Providers\\EventServiceProvider',
-    23 => 'App\\Providers\\RouteServiceProvider',
+    20 => 'Intervention\\Image\\ImageServiceProvider',
+    21 => 'App\\Providers\\AppServiceProvider',
+    22 => 'App\\Providers\\AuthServiceProvider',
+    23 => 'App\\Providers\\EventServiceProvider',
+    24 => 'App\\Providers\\RouteServiceProvider',
   ),
   'deferred' => 
   array (
