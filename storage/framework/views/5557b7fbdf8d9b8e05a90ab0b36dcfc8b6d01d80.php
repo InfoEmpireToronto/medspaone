@@ -25,7 +25,8 @@
   <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
     <div class="box box-ba bg-white shadow p-20">
       <figure class="main mb-20 overlay overlay1 rounded"><a href="/profile/<?php echo e($article->user()->slug); ?>#BeforeAfter">
-        <img src="/storage/<?php echo e($article->before); ?>" alt="" /></a>
+        <img src="/imagecache/medium/<?php echo e($article->before); ?>" alt="" /></a>
+        <!-- <img src="/storage/<?php echo e($article->before); ?>" alt="" /></a> -->
         <figcaption>
           <h5 class="text-uppercase from-top mb-0"><a href="/profile/<?php echo e($article->user()->slug); ?>#BeforeAfter">View more</a></h5>
             <p></p>
@@ -59,7 +60,7 @@
   <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
     <div class="box bg-white shadow p-20">
       <figure class="main mb-20 overlay overlay1 rounded"><a href="/profile/<?php echo e($article->user()->slug); ?>#Articles">
-        <img src="/storage/<?php echo e($article->image); ?>" alt="" /></a>
+        <img src="/imagecache/medium/<?php echo e($article->image); ?>" alt="" /></a>
         <figcaption>
           <h5 class="text-uppercase from-top mb-0"><a href="/profile/<?php echo e($article->user()->slug); ?>#Articles">Read more</a></h5>
             <p></p>

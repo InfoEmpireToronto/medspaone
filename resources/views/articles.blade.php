@@ -17,7 +17,7 @@
            <div class="item grid-sizer col-md-3">
               <div class="box bg-white shadow p-20">
                 <figure class="main mb-20 overlay overlay1 rounded"><a href="/article/{{$article->slug}}">
-                  <img src="/storage/{{$article->image}}" alt="" /></a>
+                  <img src="/imagecache/medium/{{$article->image}}" alt="" /></a>
                   <figcaption>
                     <h5 class="text-uppercase from-top mb-0">Read more</h5>
             <p></p>
