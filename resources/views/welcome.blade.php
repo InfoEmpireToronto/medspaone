@@ -27,8 +27,7 @@
   <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
     <div class="box box-ba bg-white shadow p-20">
       <figure class="main mb-20 overlay overlay1 rounded"><a href="/profile/{{$article->user()->slug}}#BeforeAfter">
-        <img src="/imagecache/medium/{{$article->before}}" alt="" /></a>
-        <!-- <img src="/storage/{{$article->before}}" alt="" /></a> -->
+        <img src="/storage/{{$article->before}}" alt="" /></a>
         <figcaption>
           <h5 class="text-uppercase from-top mb-0"><a href="/profile/{{$article->user()->slug}}#BeforeAfter">View more</a></h5>
             <p></p>
@@ -62,7 +61,7 @@
   <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
     <div class="box bg-white shadow p-20">
       <figure class="main mb-20 overlay overlay1 rounded"><a href="/profile/{{$article->user()->slug}}#Articles">
-        <img src="/imagecache/medium/{{$article->image}}" alt="" /></a>
+        <img src="/storage/{{$article->image}}" alt="" /></a>
         <figcaption>
           <h5 class="text-uppercase from-top mb-0"><a href="/profile/{{$article->user()->slug}}#Articles">Read more</a></h5>
             <p></p>
