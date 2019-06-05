@@ -223,7 +223,7 @@
           <div class="col-lg-6">
     			  <div class="wrapper dark-wrapper inverse-text shadow rounded">
                 <div class="player" data-plyr-provider="youtube" data-plyr-embed-id="{{$video->link}}"></div>
-    			  <h6 class="mb-10 p-2 px-3">Video title</h6>
+    			  <h6 class="mb-10 p-2 px-3">{{ucwords(strtolower($video->title))}}</h6>
     			  </div>
           </div>
     			<!-- <div class="col-lg-6">
