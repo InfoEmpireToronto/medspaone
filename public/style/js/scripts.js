@@ -1416,9 +1416,9 @@ function startMyInstagram(target, userID)
     }
 
 
-$(".post-content * [style]").removeAttr("style");
-$(".tabs-wrapper * [style]").removeAttr("style");
-$(".sidebox * [style]").removeAttr("style");
+$(".post-content *").removeAttr("style");
+$(".tabs-wrapper *").removeAttr("style");
+$(".sidebox *").removeAttr("style");
 
 
 
