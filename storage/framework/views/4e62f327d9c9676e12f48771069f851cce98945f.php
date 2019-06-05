@@ -80,6 +80,7 @@
             </div>
 				  
 				  <!-- CTA FORM  END-->
+					<div class="space50"></div>
                  
                  <div class="sharethis-inline-share-buttons"></div>
 					

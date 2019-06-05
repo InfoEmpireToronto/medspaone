@@ -133,7 +133,7 @@
               </div>
               <!-- /.tab-content -->
             </div>
-			  
+      
 @if($user->articles(2))
         <a id="Articles" ></a>
         <h3>Articles</h3>
@@ -148,6 +148,45 @@
                   <img src="/storage/{{$article->image}}" alt="" /></a>
                   <figcaption>
                     <h5 class="text-uppercase from-top mb-0">Read more</h5>
+                     <p></p>
+                  </figcaption>
+          
+
+                  <div class="category">{{$article->getCategories()[0]->name}}</div>
+                </figure>
+          
+                <h6 class="mb-10">{{ucwords(strtolower($article->title))}}</h6>
+                <p class="mb-5">{!! substr(strip_tags($article->body),0,200) !!}</p>
+                <div class="arrow-link">
+                  <a href="/article/{{$article->slug}}" class="text-muted">
+                    Read article <i class="mi-arrow-right"></i>
+                  </a> 
+                </div>
+              </div>
+            </div>
+@endforeach
+           </div> <div class="col-lg-12 text-center"><div class="space20"></div>
+            <a href="/articles/{{$user->slug}}" class="btn">All Articles <i class="fa fa-caret-right"></i></a>
+            </div>
+          </div>
+         
+        </div>
+@endif
+		  
+@if($user->events(2))
+        <a id="Events" ></a>
+        <h3>Events</h3>
+        <div class="bg-white shadow mb-30 rounded">
+          <div class="container-fluid p-4">
+         <div class="items row isotope boxed grid-view">
+
+@foreach($user->events(2) as $article)
+            <div class="item grid-sizer col-md-6">
+              <div class="box bg-white shadow p-20">
+                <figure class="main mb-20 overlay overlay1 rounded"><a href="/event/{{$article->slug}}">
+                  <img src="/storage/{{$article->image}}" alt="" /></a>
+                  <figcaption>
+                    <h5 class="text-uppercase from-top mb-0">Read more</h5>
 					           <p></p>
                   </figcaption>
 					
@@ -158,15 +197,15 @@
                 <h6 class="mb-10">{{ucwords(strtolower($article->title))}}</h6>
       				  <p class="mb-5">{!! substr(strip_tags($article->body),0,200) !!}</p>
       				  <div class="arrow-link">
-                  <a href="/article/{{$article->slug}}" class="text-muted">
-                    Read article <i class="mi-arrow-right"></i>
+                  <a href="/event/{{$article->slug}}" class="text-muted">
+                    View event <i class="mi-arrow-right"></i>
                   </a> 
                 </div>
               </div>
             </div>
 @endforeach
            </div> <div class="col-lg-12 text-center"><div class="space20"></div>
-            <a href="/articles/{{$user->slug}}" class="btn">All Articles <i class="fa fa-caret-right"></i></a>
+            <a href="/events/{{$user->slug}}" class="btn">All Events <i class="fa fa-caret-right"></i></a>
             </div>
           </div>
          
