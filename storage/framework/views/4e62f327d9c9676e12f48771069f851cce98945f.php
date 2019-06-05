@@ -1,6 +1,6 @@
 <?php $__env->startSection('content'); ?>
 	<div class="wrapper light-wrapper">
-      <div class="container inner pt-60">
+      <div class="container inner pt-60 pt-sm-20">
         <div class="row">
           <div class="col-md-8">
             <div class="blog classic-view">
@@ -20,7 +20,7 @@
                     <span class="author">By <a href="/profile/<?php echo e($article->user()->slug); ?>"><?php echo e($article->user()->company); ?></a></span>
                     <!-- <span class="comments"><a href="#">2</a> </span> -->
                     <!-- <span><a href="#"><i class="fa fa-thumbs-up"></i> 10 </a></span> -->
-                    <span class="category"><a href="#"><?php echo e($article->getCategories()[0]->name); ?></a></span>
+                    <span class="category"><?php echo e($article->getCategories()[0]->name); ?></span>
 <!--
 					 <span class="social-color social-s">
 						<span>Share</span>

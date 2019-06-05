@@ -44,17 +44,18 @@ class ArticleController extends Voyager\VoyagerController
                 $pp = $article->user()->popularPosts(3);
                 return view('article',[ 
                     'article' => $article,
-                    'popularPosts' => $pp ? $pp : false
+                    'popularPosts' => $pp ? $pp : false,
+                    'title' => $article->seo_title,
+                    'description' => $article->meta_description,
+                    'keywords' => $article->meta_keywords,
+
 
                 ]);
                 
             }
         }
 
-        return view('article',[ 
-            'article' => Post::find($id)
-
-        ]);
+        return $this->articles();
 
     }
 

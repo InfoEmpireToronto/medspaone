@@ -1,8 +1,10 @@
 <?php
-$currentpage = "home";
-$title = "MedSpaOne";
-$description = "";
-$keywords = "";
+$currentpage = isset($currentpage) ? $currentpage : "home";
+$title =  isset($title) ? $title : "MedSpaOne";
+$description =  isset($description) ? $description : "";
+$keywords =  isset($keywords) ? $keywords : "";
+
+
 ?>
 
 <!doctype html>
