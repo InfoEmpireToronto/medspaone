@@ -3,7 +3,7 @@
 
 @section('content')
 	<div class="wrapper light-wrapper">
-      <div class="container inner pt-60">
+      <div class="container inner pt-60 pt-sm-20">
         <div class="row">
           <div class="col-md-8">
             <div class="blog classic-view">
