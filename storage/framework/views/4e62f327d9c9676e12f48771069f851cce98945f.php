@@ -17,7 +17,7 @@
                   <h1 class="post-title"><?php echo e(ucwords(strtolower($article->title))); ?></h1>
                   <div class="meta">
                     <span class="date"><?php echo e($article->created_at->diffForHumans()); ?></span>
-                    <span class="author">By <a href="/profile/<?php echo e($article->user()->id); ?>"><?php echo e($article->user()->company); ?></a></span>
+                    <span class="author">By <a href="/profile/<?php echo e($article->user()->slug); ?>"><?php echo e($article->user()->company); ?></a></span>
                     <!-- <span class="comments"><a href="#">2</a> </span> -->
                     <!-- <span><a href="#"><i class="fa fa-thumbs-up"></i> 10 </a></span> -->
                     <span class="category"><a href="#"><?php echo e($article->getCategories()[0]->name); ?></a></span>
