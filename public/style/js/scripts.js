@@ -1419,6 +1419,6 @@ function startMyInstagram(target, userID)
 $(".post-content *").removeAttr("style");
 $(".tabs-wrapper *").removeAttr("style");
 $(".sidebox *").removeAttr("style");
-
+$(".card *").removeAttr("style");
 
 

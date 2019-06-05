@@ -24,7 +24,7 @@
                   </figcaption>
           
 
-          <div class="category">{{$event->getCategories()[0]->name}}</div>
+          <div class="category event">{{$event->getCategories()[0]->name}}</div>
                 </figure>
           
                 <h6 class="mb-10">{{ucwords(strtolower($event->title))}}</h6>

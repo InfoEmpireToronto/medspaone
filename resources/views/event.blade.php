@@ -23,7 +23,7 @@
                     <span class="author">By <a href="/profile/{{$article->user()->id}}">{{$article->user()->company}}</a></span>
                     <!-- <span class="comments"><a href="#">2</a> </span> -->
                     <!-- <span><a href="#"><i class="fa fa-thumbs-up"></i> 10 </a></span> -->
-                    <span class="category"><a href="#">{{$article->getCategories()[0]->name}}</a></span>
+                    <span class="category event"><a href="#">{{$article->getCategories()[0]->name}}</a></span>
 <!--
 					 <span class="social-color social-s">
 						<span>Share</span>

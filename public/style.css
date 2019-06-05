@@ -3062,6 +3062,9 @@ figure.overlay img {
 /*	ADDITIONAL
 /*-----------------------------------------------------------------------------------*/
 .box .category {position:absolute; z-index: 72728; width: 100%; bottom: 0px; background: rgba(92, 167, 219, 0.8); padding:3px 20px 3px 20px;  text-align: left; }
+.box .category.event {background: rgba(183, 142, 39, 0.8);}
+.item  p:after {content:"…"}
+.box
 
 #find { min-height: 400px;  height: 100vh; }
 
@@ -3163,6 +3166,8 @@ figure.overlay img {
 .boxed-classic-view .post {
     margin-bottom: 50px;
 }
+
+.post img {width:100%; height:auto; max-width: 100%; margin-bottom: 30px;}
 /*-----------------------------------------------------------------------------------*/
 /*	25. TABS
 /*-----------------------------------------------------------------------------------*/

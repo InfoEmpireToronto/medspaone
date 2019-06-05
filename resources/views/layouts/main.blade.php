@@ -33,6 +33,15 @@ $keywords =  isset($keywords) ? $keywords : "";
         <link rel="stylesheet" type="text/css" href="/style/css/color/blue.css">
         @yield('css')
         <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5cb87a601e8a61001214aca8&product=inline-share-buttons' async='async'></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141510760-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141510760-1');
+</script>
   
     </head>
     <body>

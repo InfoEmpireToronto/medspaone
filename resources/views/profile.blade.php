@@ -191,7 +191,7 @@
                   </figcaption>
 					
 
-                  <div class="category">{{$article->getCategories()[0]->name}}</div>
+                  <div class="category event">{{$article->getCategories()[0]->name}}</div>
                 </figure>
 				  
                 <h6 class="mb-10">{{ucwords(strtolower($article->title))}}</h6>

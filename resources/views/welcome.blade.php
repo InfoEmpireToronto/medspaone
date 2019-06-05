@@ -66,7 +66,7 @@
           <h5 class="text-uppercase from-top mb-0"><a href="/profile/{{$article->user()->slug}}#Events">Read more</a></h5>
             <p></p>
         </figcaption>
-          <div class="category"><a href="/profile/{{$article->user()->slug}}#Events">{{$article->getCategories()[0]->name}}</a></div>
+          <div class="category event"><a href="/profile/{{$article->user()->slug}}#Events">{{$article->getCategories()[0]->name}}</a></div>
       </figure>
         
       <h6 class="mb-0"><a href="/profile/{{$article->user()->slug}}#Events">{{ucwords(strtolower($article->title))}}</a></h6>
