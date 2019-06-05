@@ -135,4 +135,27 @@ class ArticleController extends Voyager\VoyagerController
     }
 
 
+    public function events($name = false)
+    {
+
+        if($name)
+        {
+            $user = User::where('slug', $name)->first();
+            if($user)
+                return view('events',[ 
+                    'events' => Post::where('author_id', $user->id)->where('type','event')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get(),
+                    'user' => $user
+
+                ]);
+        }
+
+        return view('events',[ 
+            'events' => Post::where('type','event')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get(),
+            'user' => false
+
+        ]);
+
+    }
+
+
 }

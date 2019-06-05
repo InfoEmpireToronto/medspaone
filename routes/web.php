@@ -28,9 +28,12 @@ Route::get('/i/w{width}/{file}', 'HomeController@getImage')->where('file', '.*')
 Route::get('/ba/{name}', 'ArticleController@viewArticle')->name('viewBeforeAfter');
 Route::get('/video/{name}', 'ArticleController@viewArticle')->name('viewVideo');
 Route::get('/article/{name}', 'ArticleController@viewArticle')->name('viewArticle');
+Route::get('/event/{name}', 'ArticleController@viewArticle')->name('viewEvent');
 
 Route::get('/articles', 'ArticleController@articles')->name('articles');
 Route::get('/articles/{name}', 'ArticleController@articles')->name('articles');
+Route::get('/events', 'ArticleController@events')->name('articles');
+Route::get('/events/{name}', 'ArticleController@events')->name('articles');
 Route::get('/videos', 'ArticleController@videos')->name('videos');
 Route::get('/videos/{name}', 'ArticleController@videos')->name('videos');
 Route::get('/before-after', 'ArticleController@beforeAfter')->name('before-after');

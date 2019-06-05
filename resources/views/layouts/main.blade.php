@@ -63,6 +63,7 @@ $keywords = "";
                 </li>
           <li class="nav-item"><a class="dropdown-item" href="/before-after">Before &amp; after</a></li>
           <li class="nav-item"><a class="dropdown-item" href="/videos">Videos</a></li>
+          <li class="nav-item"><a class="dropdown-item" href="/events">Events</a></li>
           <li class="nav-item"><a class="dropdown-item" href="/faq">FAQ</a></li>
 
               </ul>
