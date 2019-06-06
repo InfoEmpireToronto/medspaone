@@ -198,7 +198,7 @@
           <aside class="col-md-4 sidebar">
             <div class="sidebox widget">
               <h3 class="widget-title">About author</h3>
-              <figure class="rounded mb-20"><img src="/storage/{{$article->user()->logo}}" alt="" /></figure>
+              <figure class="rounded mb-20"><a href=""><img src="/storage/{{$article->user()->logo}}" alt="" /></a></figure>
               {!!$article->user()->overview!!}
               <div class="clearfix"></div>
             </div>
