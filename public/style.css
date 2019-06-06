@@ -3063,7 +3063,7 @@ figure.overlay img {
 /*-----------------------------------------------------------------------------------*/
 .box .category {position:absolute; z-index: 72728; width: 100%; bottom: 0px; background: rgba(92, 167, 219, 0.8); padding:3px 20px 3px 20px;  text-align: left; }
 .box .category.event {background: rgba(183, 142, 39, 0.8);}
-.item  p:after {content:"…"}
+.item  p.mb-5:after {content:"…"}
 .box
 
 #find { min-height: 400px;  height: 100vh; }

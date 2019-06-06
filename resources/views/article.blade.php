@@ -112,6 +112,7 @@
               <figure class="rounded mb-20">
                 <a href="/profile/"><img src="/storage/{{$article->user()->logo}}" alt="" />
               </figure>
+
               {!!$article->user()->overview!!}
               <div class="clearfix"></div>
             </div>
