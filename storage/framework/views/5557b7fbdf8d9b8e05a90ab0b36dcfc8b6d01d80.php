@@ -64,7 +64,7 @@
           <h5 class="text-uppercase from-top mb-0"><a href="/profile/<?php echo e($article->user()->slug); ?>#Events">Read more</a></h5>
             <p></p>
         </figcaption>
-          <div class="category"><a href="/profile/<?php echo e($article->user()->slug); ?>#Events"><?php echo e($article->getCategories()[0]->name); ?></a></div>
+          <div class="category event"><a href="/profile/<?php echo e($article->user()->slug); ?>#Events"><?php echo e($article->getCategories()[0]->name); ?></a></div>
       </figure>
         
       <h6 class="mb-0"><a href="/profile/<?php echo e($article->user()->slug); ?>#Events"><?php echo e(ucwords(strtolower($article->title))); ?></a></h6>

@@ -32,7 +32,7 @@
             <div class="col-md-6 offset-md-3">
 			  <img src="http://newyou.events/img/banner.jpg" width="1200" height="628" alt="" class="img-fluid"/><br><br>
 
-                <form class="form-horizontal" method="POST" action="http://newyou.events/lib/contactFormSubmit.php" id="form">
+                <form class="form-horizontal" method="POST" action="." id="form">
 					<input type="hidden" name="form" value="normal">
 					 <div class="form-group">
                         <label class="custom-control-label">Gender</label>
@@ -114,4 +114,25 @@
       </div>
     </div>
   
+@endsection
+
+@section('js')
+<script type="text/javascript">
+    $('document').ready(function(){
+
+        $('form').submit(function(e){
+            e.preventDefault();
+            $.ajax({
+                data: $('form').serialize(),
+                type: 'POST',
+                url: "{{ route('rsvpSubmit') }}",
+              
+            })
+              .done(function( data ) {
+                $('form').html(data);
+          });
+        });
+    });
+
+</script>
 @endsection

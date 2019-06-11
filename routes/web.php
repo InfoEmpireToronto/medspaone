@@ -22,6 +22,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 // Auth::routes();
 
+Route::POST('/rsvpSubmit', 'AjaxController@rsvpSubmit')->name('rsvpSubmit');
 Route::get('/rsvp', function()
 {
     return View::make('rsvp');

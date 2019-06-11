@@ -9,7 +9,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 
 use App\Mail;
 
-class newContact extends Mailable
+class newRSVP extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -20,13 +20,13 @@ class newContact extends Mailable
      */
 
     public $to;
-    public $msg;
+    public $data;
 
-    public function __construct($msg)
+    public function __construct($data)
     {
         //
         // $this->to = $to;
-        $this->msg = $msg;
+        $this->data = $data;
     }
 
     /**
@@ -36,7 +36,7 @@ class newContact extends Mailable
      */
     public function build()
     {
-        return $this->from('medspatimes@gmail.com')->view('mail.newContact')->with([
+        return $this->from('medspatimes@gmail.com')->view('mail.newRSVP')->with([
             'data' => $this->data
         ]);
     }

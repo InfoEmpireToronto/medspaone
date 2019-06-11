@@ -73,7 +73,6 @@ class AjaxController extends Voyager\VoyagerController
     public function saveContactExpert(Request $request)
     {
 
-        $vars = $request->all();
 
 
         FormData::create([
@@ -83,6 +82,7 @@ class AjaxController extends Voyager\VoyagerController
             'data' => json_encode($request->all())
         ]);
 
+        $vars = $request->all();
         \Mail::to('thomas@infoempire.com')->send(new \App\Mail\newContact($vars));
         \Mail::to('ron@infoempire.com')->send(new \App\Mail\newContact($vars));
 
@@ -98,6 +98,28 @@ class AjaxController extends Voyager\VoyagerController
     }
 
    
+    public function rsvpSubmit(Request $request)
+    {
+
+        // dd($request);
+
+        FormData::create([
+            'name' => $request['fname'].' '.$request['lname'],
+            'phone' => $request['phone'],
+            'email' => $request['email'],
+            'data' => json_encode($request->all())
+        ]);
+
+        $vars = $request->all();
+        \Mail::to('thomas@infoempire.com')->send(new \App\Mail\newRSVP($vars));
+        \Mail::to('ron@newyou.one')->send(new \App\Mail\newRSVP($vars));
+        \Mail::to('rsvp@newyouspa.ca')->send(new \App\Mail\newRSVP($vars));
+
+
+
+        die('Thank you for registering!');
+
+    }
 
 
 }

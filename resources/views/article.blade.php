@@ -110,7 +110,7 @@
             <div class="sidebox widget">
               <h3 class="widget-title">About author</h3>
               <figure class="rounded mb-20">
-                <a href="/profile/"><img src="/storage/{{$article->user()->logo}}" alt="" />
+                <a href="/profile/{{$article->user()->slug}}"><img src="/storage/{{$article->user()->logo}}" alt="" /></a>
               </figure>
 
               {!!$article->user()->overview!!}
@@ -212,6 +212,8 @@
 @endsection
 
 @section('js')
+{!! $article->markup !!}
+
 <script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
 
   <script type="text/javascript">

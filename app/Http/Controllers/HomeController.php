@@ -264,6 +264,7 @@ class HomeController extends Controller
 
     }
 
+
     public function saveMembership(Request $request)
     {
 
