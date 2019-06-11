@@ -1,0 +1,156 @@
+/****** PLACE YOUR CUSTOM STYLES HERE ******/
+
+.bg-texture {background:url(../img/bg-dark.jpg) center center repeat !important;}
+.bg-gold, .button-tabs .active .tab-title { 
+	background:url(../img/bg-gold.jpg) center center repeat !important;
+/*
+	background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%) !important; 
+*/
+	color:#fff !important;}
+
+.button-tabs .active .tab-title span {color:#fff !important;}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #a6863f;
+}
+
+nav .btn, .nav-bar .btn {min-width:110px;}
+
+#_hj_feedback_container {opacity:0 !important;}
+
+.vid-bg {height:660px;}
+
+
+.select-option i {color:inherit !important;}
+.module {padding: 0px 18px;}
+.color-white, i.color-white {color:#fff !important;}
+.phone, .phone a {
+/*	height:auto !important;*/
+	line-height: 2;
+	color:#fff !important;
+}
+.phone h4 {color:#fff !important}
+	.wave-label span {color:#333;}
+.post-snippet, .post-snippet *, .countdown {color:#fff;}
+.post-snippet img {width:100%; height:auto; max-width: none; margin-bottom: 20px; margin-top:20px;}
+/*
+.outOfSight .phone h4, .outOfSight .phone a {color:#333 !important}
+
+.outOfSight .nav-bar {border-bottom:#ccc solid 1px !important;}
+*/
+
+.big {font-size:2em !important;}
+.btn-lg {font-size: 2em;}
+
+.countdown {font-weight:400; text-transform: none;}
+
+input[type="text"], textarea, input[type="date"], input[type="password"], select, input[type="submit"], body.btn-rounded .btn, input[type="submit"], button[type="submit"] {border-radius: 5px !important;}
+.nowrap {white-space:nowrap;}
+
+ul.lead li {
+    font-size: 16px;
+    line-height: normal;
+    margin-bottom: 16px;
+	position: relative;
+	padding-left: 33px;
+}
+
+ol li {margin-left: 15px;}
+
+ul[data-bullet] li i:first-child {
+   
+    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    display: inline;
+    position: absolute;
+    left: 5px;
+    top: 3px;
+}
+
+.post-snippet ul {list-style:disc !important; margin-left: 20px;}
+
+.floatleft {float:left;}
+.floatright {float:right;}
+/*
+
+ .foundry_modal .select-option   { position: inherit !important;}
+*/
+
+.foundry_modal {padding:49px;}
+
+
+.mobile-cta { position:fixed; width: 100%; height: 60px; bottom:0; background: rgba(0,0,0,0.8); color:#fff; padding:10px 0;     font-size: 14px; z-index: 773843; }
+.mobile-cta a {color:#fff;}
+.mobile-cta a i {font-size:1.6em; display: block;}
+
+@media (min-width: 990px) and (max-width: 1360px) {
+.menu > li {
+    margin-right: 5px;
+	
+}
+	.menu li a {font-size:9px;}
+/*
+	.module {
+    padding: 0px 8px;
+}
+
+	.nav-bar .module-group .module.phone h4 {font-size:16px;}*/
+}
+
+@media all and (max-width: 990px) {
+	.nav-bar { height:130px; overflow: visible;}
+	.nav-bar .module, .nav-bar .module-group {padding:0;}
+	.module.left, .module-group.left {float:none;}
+/*	.phone {position:absolute; top:0; right:50px; }*/
+	.phone {position:absolute; top:0; right:0px; }
+/*	.nav-bar .module-group .module.phone {width: 280px;}*/
+	.nav-bar .module-group .module.phone {width: 98%; margin-top: 40px;
+    }
+	.nav-bar .module-group .module.phone .btn {padding: 0 5px !important;}
+	.nav-bar .module-group .module.phone h4 {font-size:18px;}
+	.module.widget-handle {border-top:none;}
+/*
+	.phone  {  height: 55px !important}
+	 .phone a {  height: inherit; padding-top: 10px;}
+*/
+	
+	.nav-open .phone h4, .nav-open .phone a { color: #333 !important;}
+	
+}
+
+
+
+
+@media all and (max-width: 440px) {
+	
+	.nav-bar .module-group .module.phone .btn {width:32%;}
+	
+	.post-title {text-align:center;}
+	.post-title h2 {margin:0;}
+	
+	.post-title .label {margin-top:10px;}
+	
+	.vid-bg {height:560px;}
+	
+	.floatleft {float:none;}
+.floatright {float:none;}
+/*
+	.nav-bar .module-group .module.phone {width: 190px; height: 55px !important;}
+	.nav-bar .module-group .module.phone h4 {line-height:1.6; font-size:16px;}
+	.phone, .phone a { line-height: 1; height: inherit}
+	.phone a {  padding-top: 0px;}
+*/
+	.background-image-holder {
+		background-position: center center !important;
+	}
+	.foundry_modal {
+    padding: 49px 15px 15px 15px;
+}
+	.countdown {
+		font-size: 38px;}
+	.rotate-90-xs {transform: rotate(90deg); display: block;}
+	
+	.flex-control-nav {bottom:-10px !important;}
+}

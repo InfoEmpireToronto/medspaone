@@ -42,6 +42,25 @@ $keywords =  isset($keywords) ? $keywords : "";
 
   gtag('config', 'UA-141510760-1');
 </script>
+		<!-- Facebook Pixel Code -->
+<script>
+ !function(f,b,e,v,n,t,s)
+ {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+ n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+ if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+ n.queue=[];t=b.createElement(e);t.async=!0;
+ t.src=v;s=b.getElementsByTagName(e)[0];
+ s.parentNode.insertBefore(t,s)}(window, document,'script',
+ 'https://connect.facebook.net/en_US/fbevents.js');
+ fbq('init', '2258185191065080');
+ fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+ src="https://www.facebook.com/tr?id=2258185191065080&ev=PageView&noscript=1
+https://www.facebook.com/tr?id=2258185191065080&ev=PageView&noscript=1
+"
+/></noscript>
+<!-- End Facebook Pixel Code -->
   
     </head>
     <body>
@@ -195,7 +214,7 @@ $keywords =  isset($keywords) ? $keywords : "";
      <footer class="dark-wrapper inverse-text">
       <div class="container inner pt-sm-20">
         <div class="row d-md-flex align-items-md-center">
-			<div class="col-md-1 d-none d-sm-block">
+			<div class="col-md-2 d-none d-sm-block">
             <img src="#" srcset="/style/images/logo-light.png 1x, /style/images/logo-light@2x.png 2x" alt="" />
           </div>
           <div class="col-md-4 text-center text-md-left">
@@ -204,7 +223,7 @@ $keywords =  isset($keywords) ? $keywords : "";
 
 
 
-          <div class="col-md-5 text-center text-md-left">
+          <div class="col-md-4 text-center text-md-left">
 			 <a href="{{ route('privacy') }}" class="nocolor">Privacy Policy</a> &nbsp; &nbsp; <a href="{{ route('terms') }}" class="nocolor">Terms of Service</a>
           </div>
 

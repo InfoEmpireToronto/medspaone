@@ -2,74 +2,116 @@
 
 
 @section('content')
-	<div class="wrapper light-wrapper">
+<style>
+	.dark-form * {color:#fff;} 
+	.form-horizontal .form-control {
+    background: transparent !important;
+    border: 1px solid rgba(255,255,255,0.5) !important;
+    height: 44px !important;
+    line-height: 2 !important;
+    color: #fff !important;
+    padding: 10px 15px !important;
+    margin-bottom: 10px !important;
+}
+</style>
+<link href="https://medspa.one/style/css/event/form.css" rel="stylesheet" type="text/css" media="all">
+	<div class="wrapper dark-wrapper dark-form">
       <div class="container inner pt-60 pt-sm-20">
-        <div class="boxed">
-          <div class="bg-white shadow rounded">
-            <div class="image-block-wrapper">
-              <div class="image-block col-lg-6">
-                <div class="image-block-bg bg-image" data-image-src="style/images/art/me1.jpg"></div>
-              </div>
+        
               <!--/.image-block -->
-              <div class="container-fluid">
+              <div class="container">
                 <div class="row">
-                  <div class="col-lg-6 offset-lg-6">
-                    <div class="box d-flex">
-                      <div class="align-self-center">
-                        <h3 class="mb-20">Lets Get In Touch!</h3>
-						  <h5>If you have a question or comment then lets talk. Leave some information about yourself and we will get back to you as soon as we can.</h5>
+                  <div class="col-md-6 offset-md-3">
+                        <h3 class="mb-20">Upcoming  Event: June 15, 2019</h3>
+						  <h5>Online Event Registration</h5>
 						  <div class="space30"></div>
-						  <form action="{{ route('contactusThanks') }}" method="POST">
-                @csrf
-              <div class="form-group">
-                <input type="text" class="form-control" name="name" placeholder="Full Name *" required="required">
-              </div>
-			 <!-- <div class="form-group">
-                <input type="text" class="form-control" name="lname" placeholder="Last Name">
-              </div> -->
-              <div class="form-group">
-                <input type="text" class="form-control" name="phone" placeholder="Phone number">
-              </div>
-			        <div class="form-group">
-                <input type="email" class="form-control" name="email" placeholder="Email *" required="required">
-              </div>
-              <div class="form-group">
-                <textarea type="" class="form-control" name="comment" placeholder="Comment / Question"></textarea>
-              </div>
-              
-			
-		<!-- 	<div class="form-group">
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" name="customCheck1" required="required">
-                  <label class="custom-control-label" for="customCheck1">I hereby agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></label>
-                </div>
-              </div> -->
-            <div class="form-group mb-0">
-              <button type="submit" class="btn btn-red btn-block mx-0 mb-0">Submit</button>
-			</div>
-							  
-							<!--   <div class="form-group mb-0"><p class="text-center m-0">or</p>
-              <a href="" class="btn btn-blue btn-block mb-30 mx-0">Sign up with Facebook <i class="fa fa-facebook-square"></i></a>
-			</div> -->
-            </form>
-                      
-                      </div>
+					</div>
+		</div>
+		
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+			  <img src="http://newyou.events/img/banner.jpg" width="1200" height="628" alt="" class="img-fluid"/><br><br>
+
+                <form class="form-horizontal" method="POST" action="http://newyou.events/lib/contactFormSubmit.php" id="form">
+					<input type="hidden" name="form" value="normal">
+					 <div class="form-group">
+                        <label class="custom-control-label">Gender</label>
+							<fieldset id="group1">
+                            <input class="check" type="radio" name="gender" id="check1" value="male">
+                            <label for="check1"><i class="fa fa-male"></i> Male</label>
+                            <input class="check check2" type="radio" name="gender" id="check2" value="female">
+                            <label for="check2"><i class="fa fa-female"></i> Female</label>
+							</fieldset>
+                       
                     </div>
-                    <!-- /.box -->
-                  </div>
-                  <!--/column -->
-                </div>
-                <!--/.row -->
-              </div>
-              <!--/.container-fluid -->
+					
+                    <div class="form-group">
+                        <label class="custom-control-label" for="FirstName">First Name</label>
+                        <input type="text" class="form-control" id="FirstName" name='fname' required>
+                    </div>
+					
+					
+                    <div class="form-group">
+                        <label class="custom-control-label" for="LastName">Last Name</label>
+                        <input type="text" class="form-control" id="LastName" name='lname' required>
+                      
+                    </div>
+					
+					<div class="form-group">
+                       <label class="custom-control-label" for="phone">Cell number</label>
+                       <input type="text" class="form-control" id="phone" name='phone'>
+                      
+                    </div>
+					
+					<div class="form-group">
+                        <label class="custom-control-label" for="email">Email</label>
+                        <input type="email" class="form-control" id="Email" name='email' required>
+                       
+                    </div>
+					
+					<div class="form-group">
+                        <label class="custom-control-label">How many guests will be with you?</label>
+                            <select class="form-control mt24 mt-xs-0" name="guests" required>
+								<option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+                            </select>
+                    </div>
+					
+                   
+					
+					<div class="form-group">
+                        <label class="custom-control-label">Where did you hear about this event</label>
+							<fieldset id="group2">
+                            <input class="check" type="radio" name="source" value="Google" id="check3">
+                            <label for="check3"><i class="fa fa-globe"></i> Google</label>
+                            <input class="check check2" type="radio" name="source" value="Social" id="check4">
+                            <label for="check4"><i class="fa fa-facebook"></i> Social</label>
+							 <input class="check" type="radio" name="source" value="Friends" id="check5">
+                            <label for="check5"><i class="fa fa-users"></i> Friends</label>
+                            <input class="check check2" type="radio" name="source" value="Print" id="check6">
+                            <label for="check6"><i class="fa fa-file-o"></i> Print ad</label>
+							<input class="check" type="radio" name="source" value="Email" id="check7">
+                            <label for="check7"><i class="fa fa-envelope"></i> Email</label>
+							</fieldset>
+                    </div>
+					
+					<button type="submit" class="btn btn-red btn-block" style="font-size: 15px;">Submit registration</button>
+	
+                </form>
             </div>
-            <!--/.image-block-wrapper -->
-          </div>
-          <!-- /.bg -->
+</div>
+         
         </div>
-        <!-- /.boxed -->
       </div>
-      <!-- /.container -->
     </div>
   
 @endsection

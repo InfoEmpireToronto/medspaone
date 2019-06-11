@@ -22,6 +22,12 @@ Route::group(['prefix' => 'admin'], function () {
 
 // Auth::routes();
 
+Route::get('/rsvp', function()
+{
+    return View::make('rsvp');
+});
+
+
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/i/w{width}/{file}', 'HomeController@getImage')->where('file', '.*');
 

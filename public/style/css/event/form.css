@@ -1,0 +1,81 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.form-bg{
+    background: linear-gradient(to right,#000 10%,#a6863f);   
+    color: #fff;
+	font-family: "Raleway";
+}
+.form-horizontal .form-group{
+    margin-bottom: 10px;
+}
+.form-horizontal .form-control{
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.5);
+    height: 44px;
+    line-height: 2;
+    color: #fff;
+    padding: 10px 15px;
+	margin-bottom:10px;
+}
+.form-horizontal .form-control:focus{
+    border-color: #fff;
+    box-shadow:0 1px 3px rgba(255,255,255,0.5);
+    outline: 0 none;
+}
+.form-horizontal .form-control::-moz-placeholder{
+    color: #fff;
+    opacity: 0.5;
+}
+.form-horizontal .check{
+    display: none;
+}
+.form-horizontal .check + label{
+    display: inline-block;
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 5px;
+    padding: 10px 0;
+    color: #fff;
+    width: 47%;
+    text-align: center;
+    font-size: 15px;
+    margin-right: 10px;
+	position: relative;
+	text-transform: uppercase;
+}
+.form-horizontal .check2 + label{
+    margin-right: 0;
+	
+}
+
+.form-horizontal .check + label i {position:absolute; left:10px; top:10px; color:#ccc; background: rgba(0,0,0,0.4); border-radius: 50px; width: 30px; height: 30px; padding: 6px;}
+.form-horizontal .check:checked + label i {background:#a6863f; color:#fff;}
+.form-horizontal .check:checked + label{
+    background: #fff;
+    color: #a6863f;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {font-size: 18px;}
+
+.form-horizontal select {-webkit-appearance: menulist;}
+
+.form-horizontal select.form-control option{
+    color: #000;
+    background: #fff;
+}
+.form-horizontal .btn{
+    color: #fff;
+/*    background-color: rgba(255,255,255,0.4);*/
+    border: none;
+    font-weight: 600;
+    transition: all 0.2s ease 0s;
+}
+.form-horizontal .btn:hover{
+    color: #a6863f;
+    background: #fff;
+}
+@media only screen and (max-width: 479px){
+    .check + label{
+        width: 48%;
+    }
+}
