@@ -37,7 +37,7 @@ class newContact extends Mailable
     public function build()
     {
         return $this->from('medspatimes@gmail.com')->view('mail.newContact')->with([
-            'data' => $this->data
+            'msg' => $this->msg
         ]);
     }
 }

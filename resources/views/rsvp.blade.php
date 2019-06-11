@@ -123,6 +123,7 @@
         $('form').submit(function(e){
             e.preventDefault();
             $.ajax({
+                headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') }, 
                 data: $('form').serialize(),
                 type: 'POST',
                 url: "{{ route('rsvpSubmit') }}",
