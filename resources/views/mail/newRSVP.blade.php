@@ -1,6 +1,6 @@
-New RSVP Submitted at MedSpa.one\n
-Name: {{$data['fname']}} {{$data['lname']}}\n
-Email: {{$data['email']}}\n
-Phone: {{$data['phone']}}\n
-Source: {{$data['source']}}\n
-Guests: {{$data['guests']}}\n
+<p>New RSVP Submitted at MedSpa.one</p>
+<p>Name: {{$data['fname']}} {{$data['lname']}}</p>
+<p>Email: {{$data['email']}}</p>
+<p>Phone: {{$data['phone']}}</p>
+<p>Source: {{$data['source']}}</p>
+<p>Guests: {{$data['guests']}}</p>
