@@ -46,25 +46,25 @@
                     </div>
 					
                     <div class="form-group">
-                        <label class="custom-control-label" for="FirstName">First Name</label>
+                        <label class="custom-control-label" for="FirstName">First Name<sup>*</sup></label>
                         <input type="text" class="form-control" id="FirstName" name='fname' required>
                     </div>
 					
 					
                     <div class="form-group">
-                        <label class="custom-control-label" for="LastName">Last Name</label>
+                        <label class="custom-control-label" for="LastName">Last Name<sup>*</sup></label>
                         <input type="text" class="form-control" id="LastName" name='lname' required>
                       
                     </div>
 					
 					<div class="form-group">
-                       <label class="custom-control-label" for="phone">Cell number</label>
-                       <input type="text" class="form-control" id="phone" name='phone'>
+                       <label class="custom-control-label" for="phone">Cell number<sup>*</sup></label>
+                       <input type="text" class="form-control" id="phone" name='phone' required>
                       
                     </div>
 					
 					<div class="form-group">
-                        <label class="custom-control-label" for="email">Email</label>
+                        <label class="custom-control-label" for="email">Email<sup>*</sup></label>
                         <input type="email" class="form-control" id="Email" name='email' required>
                        
                     </div>
