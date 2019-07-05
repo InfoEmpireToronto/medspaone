@@ -60,17 +60,17 @@
                 <div class="row text-center" id="form-content">
                   <div class="col-lg-4">
                     <div class="form-group">
-                      <input type="text" class="form-control" name="name" placeholder="Your name" required="required">
+                      <input type="text" class="form-control" id="name" placeholder="Your name" required="required">
                     </div>
                   </div>
                   <div class="col-lg-4">
                     <div class="form-group">
-                      <input type="email" class="form-control" name="email" placeholder="Your e-mail" required="required">
+                      <input type="email" class="form-control" id="email" placeholder="Your e-mail" required="required">
                     </div>
                   </div>
                   <div class="col-lg-4">
                     <div class="form-group">
-                      <input type="tel" class="form-control" name="tel" placeholder="Phone">
+                      <input type="tel" class="form-control" id="phone" placeholder="Phone">
                     </div>
                   </div>
                   <div class="col-12">
