@@ -54,7 +54,8 @@
 				  
 				  <div class="space50"></div>
 				  <div class="form-container bg-white shadow box">
-					   <h3>Ask the expert</h3>
+					   <h3>Sign-up For The Event</h3>
+             <input type="hidden" name="event" id="event" value="{{$article->slug}}">
               <!-- <form action="{{ route('saveContact') }}" method="post" class="vanilla vanilla-form contactForm" > -->
                 <div class="row text-center" id="form-content">
                   <div class="col-lg-4">
@@ -321,7 +322,8 @@
             data: {
                 name: $('#name').val(),
                 email: $('#email').val(),
-                phone: $('#phone').val()
+                phone: $('#phone').val(),
+                event: $('#event').val()
             },
             success: function(result) { 
                 // console.log(result);
