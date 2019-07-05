@@ -59,6 +59,31 @@ class ArticleController extends Voyager\VoyagerController
 
     }
 
+    public function viewEvent($name)
+    {
+        if($name)
+        {
+            $article = Post::where('slug', $name)->first();
+            if($article)
+            {
+                $pp = $article->user()->popularPosts(3);
+                return view('event',[ 
+                    'article' => $article,
+                    'popularPosts' => $pp ? $pp : false,
+                    'title' => $article->seo_title,
+                    'description' => $article->meta_description,
+                    'keywords' => $article->meta_keywords,
+
+
+                ]);
+                
+            }
+        }
+
+        return $this->articles();
+
+    }
+
     public function articles($name = false)
     {
         if($name)
