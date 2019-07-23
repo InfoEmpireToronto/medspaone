@@ -38,7 +38,10 @@
                 <textarea type="" class="form-control" name="comment" placeholder="Comment / Question"></textarea>
               </div>
               
-			
+			         
+      <div class="form-group">
+        <div class="g-recaptcha" data-sitekey="6Ldoa5UUAAAAAK5z4ZpulN8ohV8uZ7aJEKybiOcX"></div>
+      </div>
 		<!-- 	<div class="form-group">
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input" name="customCheck1" required="required">

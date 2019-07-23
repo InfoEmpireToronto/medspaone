@@ -210,6 +210,11 @@ class HomeController extends Controller
     public function submitContactus(Request $request)
     {
         $vars = $request->all();
+
+        if($request['g-recaptcha-response'] == '')
+        {
+            return $this->contactus($request);
+        }
         FormData::create([
             'name' => $request['name'],
             'phone' => $request['phone'],

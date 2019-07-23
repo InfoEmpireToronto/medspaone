@@ -37,12 +37,13 @@
                 <textarea type="" class="form-control" name="comment" placeholder="Comment / Question"></textarea>
               </div>
               
-			
-		<!-- 	<div class="form-group">
+      <div class="form-group">
+        <div class="g-recaptcha" data-sitekey="6Ldoa5UUAAAAAK5z4ZpulN8ohV8uZ7aJEKybiOcX"></div>
+      </div>
+      <!-- 
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input" name="customCheck1" required="required">
                   <label class="custom-control-label" for="customCheck1">I hereby agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></label>
-                </div>
               </div> -->
             <div class="form-group mb-0">
               <button type="submit" class="btn btn-red btn-block mx-0 mb-0">Submit</button>

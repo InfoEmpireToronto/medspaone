@@ -63,6 +63,7 @@ https://www.facebook.com/tr?id=588533591676083&ev=PageView&noscript=1
 "
 /></noscript>
 <!-- End Facebook Pixel Code -->
+  <script src='https://www.google.com/recaptcha/api.js' async defer></script>
   
     </head>
     <body>
@@ -252,6 +253,7 @@ https://www.facebook.com/tr?id=588533591676083&ev=PageView&noscript=1
   <script src="/style/revolution/js/jquery.themepunch.tools.min.js"></script>
   <script src="/style/revolution/js/jquery.themepunch.revolution.min.js"></script>
 
+<!-- <script src="https://www.google.com/recaptcha/api.js?render=6Ldoa5UUAAAAAK5z4ZpulN8ohV8uZ7aJEKybiOcX"></script> -->
 
   <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems! The following part can be removed on Server for On Demand Loading) -->
   <!--<script src="/style/revolution/js/extensions/revolution.extension.actions.min.js"></script>
