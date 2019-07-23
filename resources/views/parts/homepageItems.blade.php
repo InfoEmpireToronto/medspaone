@@ -33,12 +33,7 @@
       </figure>
         
       <h6 class="mb-0"><a href="/profile/{{$article->user()->slug}}#Videos">{{ucwords(strtolower($article->title))}}</a></h6>
-      <p class="mb-5">{!! substr(strip_tags($article->body),0,200) !!}</p>
-      <div class="arrow-link">
-        <a href="/article/{{$article->slug}}" class="text-muted">
-          Read article <i class="mi-arrow-right"></i>
-        </a> 
-      </div>
+
     </div>
     <!-- /.box -->
   </div>
@@ -61,6 +56,12 @@
         
       <h6 class="mb-0"><a href="/profile/{{$article->user()->slug}}#Articles">{{ucwords(strtolower($article->title))}}</a></h6>
 
+      <p class="mb-5">{!! substr(strip_tags($article->body),0,200) !!}</p>
+      <div class="arrow-link">
+        <a href="/article/{{$article->slug}}" class="text-muted">
+          Read article <i class="mi-arrow-right"></i>
+        </a> 
+      </div>
     </div>
     <!-- /.box -->
   </div>
