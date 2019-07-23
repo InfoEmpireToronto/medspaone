@@ -46,7 +46,11 @@
         <figcaption>
           <h5 class="text-uppercase from-top mb-0"><a href="/profile/<?php echo e($article->user()->slug); ?>#Videos"><i class="fa fa-play"></i></a></h5>
         </figcaption>
-          <div class="category"><a href="/profile/<?php echo e($article->user()->slug); ?>#Videos"><?php echo e($article->getCategories()[0]->name); ?></a></div>
+          <div class="category">
+            <?php $__currentLoopData = $article->getCategories(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <a style='display: inline;' href="/profile/<?php echo e($article->user()->slug); ?>#Articles">#<?php echo e($cat->name); ?></a>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          </div>
       </figure>
         
       <h6 class="mb-0"><a href="/profile/<?php echo e($article->user()->slug); ?>#Videos"><?php echo e(ucwords(strtolower($article->title))); ?></a></h6>
@@ -64,7 +68,11 @@
           <h5 class="text-uppercase from-top mb-0"><a href="/profile/<?php echo e($article->user()->slug); ?>#Events">Read more</a></h5>
             <p></p>
         </figcaption>
-          <div class="category event"><a href="/profile/<?php echo e($article->user()->slug); ?>#Events"><?php echo e($article->getCategories()[0]->name); ?></a></div>
+          <div class="category">
+            <?php $__currentLoopData = $article->getCategories(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <a style='display: inline;' href="/profile/<?php echo e($article->user()->slug); ?>#Articles">#<?php echo e($cat->name); ?></a>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          </div>
       </figure>
         
       <h6 class="mb-0"><a href="/profile/<?php echo e($article->user()->slug); ?>#Events"><?php echo e(ucwords(strtolower($article->title))); ?></a></h6>
@@ -81,11 +89,21 @@
           <h5 class="text-uppercase from-top mb-0"><a href="/profile/<?php echo e($article->user()->slug); ?>#Articles">Read more</a></h5>
             <p></p>
         </figcaption>
-          <div class="category"><a href="/profile/<?php echo e($article->user()->slug); ?>#Articles"><?php echo e($article->getCategories()[0]->name); ?></a></div>
+          <div class="category">
+            <?php $__currentLoopData = $article->getCategories(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <a style='display: inline;' href="/profile/<?php echo e($article->user()->slug); ?>#Articles">#<?php echo e($cat->name); ?></a>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          </div>
       </figure>
         
       <h6 class="mb-0"><a href="/profile/<?php echo e($article->user()->slug); ?>#Articles"><?php echo e(ucwords(strtolower($article->title))); ?></a></h6>
 
+      <p class="mb-5"><?php echo substr(strip_tags($article->body),0,200); ?></p>
+      <div class="arrow-link">
+        <a href="/article/<?php echo e($article->slug); ?>" class="text-muted">
+          Read article <i class="mi-arrow-right"></i>
+        </a> 
+      </div>
     </div>
     <!-- /.box -->
   </div>

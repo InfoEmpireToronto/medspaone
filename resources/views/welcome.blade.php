@@ -48,7 +48,11 @@
         <figcaption>
           <h5 class="text-uppercase from-top mb-0"><a href="/profile/{{$article->user()->slug}}#Videos"><i class="fa fa-play"></i></a></h5>
         </figcaption>
-          <div class="category"><a href="/profile/{{$article->user()->slug}}#Videos">{{$article->getCategories()[0]->name}}</a></div>
+          <div class="category">
+            @foreach($article->getCategories() as $cat)
+              <a style='display: inline;' href="/profile/{{$article->user()->slug}}#Articles">#{{$cat->name}}</a>
+            @endforeach
+          </div>
       </figure>
         
       <h6 class="mb-0"><a href="/profile/{{$article->user()->slug}}#Videos">{{ucwords(strtolower($article->title))}}</a></h6>
@@ -66,7 +70,11 @@
           <h5 class="text-uppercase from-top mb-0"><a href="/profile/{{$article->user()->slug}}#Events">Read more</a></h5>
             <p></p>
         </figcaption>
-          <div class="category event"><a href="/profile/{{$article->user()->slug}}#Events">{{$article->getCategories()[0]->name}}</a></div>
+          <div class="category">
+            @foreach($article->getCategories() as $cat)
+              <a style='display: inline;' href="/profile/{{$article->user()->slug}}#Articles">#{{$cat->name}}</a>
+            @endforeach
+          </div>
       </figure>
         
       <h6 class="mb-0"><a href="/profile/{{$article->user()->slug}}#Events">{{ucwords(strtolower($article->title))}}</a></h6>
@@ -83,11 +91,21 @@
           <h5 class="text-uppercase from-top mb-0"><a href="/profile/{{$article->user()->slug}}#Articles">Read more</a></h5>
             <p></p>
         </figcaption>
-          <div class="category"><a href="/profile/{{$article->user()->slug}}#Articles">{{$article->getCategories()[0]->name}}</a></div>
+          <div class="category">
+            @foreach($article->getCategories() as $cat)
+              <a style='display: inline;' href="/profile/{{$article->user()->slug}}#Articles">#{{$cat->name}}</a>
+            @endforeach
+          </div>
       </figure>
         
       <h6 class="mb-0"><a href="/profile/{{$article->user()->slug}}#Articles">{{ucwords(strtolower($article->title))}}</a></h6>
 
+      <p class="mb-5">{!! substr(strip_tags($article->body),0,200) !!}</p>
+      <div class="arrow-link">
+        <a href="/article/{{$article->slug}}" class="text-muted">
+          Read article <i class="mi-arrow-right"></i>
+        </a> 
+      </div>
     </div>
     <!-- /.box -->
   </div>
