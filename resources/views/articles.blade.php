@@ -26,7 +26,11 @@
                   </figcaption>
           
 
-                  <div class="category">{{$article->getCategories()[0]->name}}</div>
+                  <div class="category">
+                    @foreach($article->getCategories() as $cat)
+                      <a style='display: inline;' href="/profile/{{$article->user()->slug}}#Articles">#{{$cat->name}}</a>
+                    @endforeach
+                  </div>
                 </figure>
           
                 <h6 class="mb-10">{{ucwords(strtolower($article->title))}}</h6>
