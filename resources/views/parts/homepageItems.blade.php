@@ -9,7 +9,7 @@
           <h5 class="text-uppercase from-top mb-0"><a href="/profile/{{$article->user()->slug}}#BeforeAfter">View more</a></h5>
             <p></p>
         </figcaption>
-          <div class="category"><a href="/profile/{{$article->user()->slug}}#BeforeAfter">{{$article->getCategories()[0]->name}} <span class="float-right"><i class="fa fa-address-book-o float-right"></i><i class="fa fa-address-book float-right"></i></span></a></div>
+          <div class="category"><a href="/profile/{{$article->user()->slug}}#BeforeAfter">#{{$article->getCategories()[0]->name}} <span class="float-right"><i class="fa fa-address-book-o float-right"></i><i class="fa fa-address-book float-right"></i></span></a></div>
       </figure>
         
       <h6 class="mb-0"><a href="/profile/{{$article->user()->slug}}#BeforeAfter">{{ucwords(strtolower($article->title))}}</a></h6>
@@ -25,7 +25,11 @@
         <figcaption>
           <h5 class="text-uppercase from-top mb-0"><a href="/profile/{{$article->user()->slug}}#Videos"><i class="fa fa-play"></i></a></h5>
         </figcaption>
-          <div class="category"><a href="/profile/{{$article->user()->slug}}#Videos">{{$article->getCategories()[0]->name}}</a></div>
+          <div class="category">
+            @foreach($article->getCategories() as $cat)
+              <a style='display: inline;' href="/profile/{{$article->user()->slug}}#Articles">#{{$cat->name}}</a>
+            @endforeach
+          </div>
       </figure>
         
       <h6 class="mb-0"><a href="/profile/{{$article->user()->slug}}#Videos">{{ucwords(strtolower($article->title))}}</a></h6>
@@ -43,7 +47,11 @@
           <h5 class="text-uppercase from-top mb-0"><a href="/profile/{{$article->user()->slug}}#Articles">Read more</a></h5>
             <p></p>
         </figcaption>
-          <div class="category"><a href="/profile/{{$article->user()->slug}}#Articles">{{$article->getCategories()[0]->name}}</a></div>
+          <div class="category">
+            @foreach($article->getCategories() as $cat)
+              <a style='display: inline;' href="/profile/{{$article->user()->slug}}#Articles">#{{$cat->name}}</a>
+            @endforeach
+          </div>
       </figure>
         
       <h6 class="mb-0"><a href="/profile/{{$article->user()->slug}}#Articles">{{ucwords(strtolower($article->title))}}</a></h6>
