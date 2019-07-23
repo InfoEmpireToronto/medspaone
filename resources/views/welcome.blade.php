@@ -32,7 +32,7 @@
           <h5 class="text-uppercase from-top mb-0"><a href="/profile/{{$article->user()->slug}}#BeforeAfter">View more</a></h5>
             <p></p>
         </figcaption>
-          <div class="category"><a href="/profile/{{$article->user()->slug}}#BeforeAfter">{{$article->getCategories()[0]->name}} <span class="float-right"><i class="fa fa-address-book-o float-right"></i><i class="fa fa-address-book float-right"></i></span></a></div>
+          <div class="category"><a href="/profile/{{$article->user()->slug}}#BeforeAfter">#{{$article->getCategories()[0]->name}} <span class="float-right"><i class="fa fa-address-book-o float-right"></i><i class="fa fa-address-book float-right"></i></span></a></div>
       </figure>
         
       <h6 class="mb-0"><a href="/profile/{{$article->user()->slug}}#BeforeAfter">{{ucwords(strtolower($article->title))}}</a></h6>
