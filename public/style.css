@@ -5736,6 +5736,14 @@ pre {
 
 .item .box.box-ba .overlay  i[class*="fa"] {font-size: 24px;}
 
+
+.item .box.box-faq .category {padding-right: 50px; background:rgba(0,130,130,0.5); border-radius: 4px 4px 0 0;}
+.item .box.box-faq .category span {position: absolute;
+    right: -50px;
+    bottom: 0px;}
+
+.item .box.box-faq .overlay  i[class*="fa"] {font-size: 24px; margin-right: 10px;}
+
 .item .box.box-video .overlay1 figcaption, .item .box.box-video .overlay1 .figcaption {
     opacity: 1;
 }
