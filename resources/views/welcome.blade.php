@@ -88,7 +88,11 @@
          <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
     <div class="box box-faq bg-white shadow p-20 mt-20">
       <figure class="main mb-20 overlay overlay1 rounded">
-      <div class="category"><a href="/profile/{{$article->user()->slug}}#faq">#{{$cat->name}} <span class="float-right"><i class="fa fa-comments"></i></span></a></div>
+      <div class="category">
+        @foreach($article->getCategories() as $cat)
+          <a href="/profile/{{$article->user()->slug}}#faq">#{{$cat->name}} <span class="float-right"><i class="fa fa-comments"></i></span></a>
+        @endforeach
+      </div>
       </figure>
         
       <h6><a href="/profile/{{$article->user()->slug}}#faq">{{ucwords(strtolower($article->title))}}</a></h6>
