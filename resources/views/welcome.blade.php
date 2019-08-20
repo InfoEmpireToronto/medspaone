@@ -97,7 +97,7 @@
         
       <h6><a href="/profile/{{$article->user()->slug}}#faq">{{ucwords(strtolower($article->title))}}</a></h6>
 
-      <p class="mb-5">{{$article->body }}</p>
+      <p class="mb-5">{!! substr(strip_tags($article->body),0,200) !!}</p>
       <div class="arrow-link">
         <a href="/profile/{{$article->user()->slug}}#faq" class="text-muted">
           Read more FAQ <i class="mi-arrow-right"></i>
