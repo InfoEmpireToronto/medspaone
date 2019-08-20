@@ -82,6 +82,46 @@
     </div>
     <!-- /.box -->
   </div>
+  <!-- https://youtu.be/IUY47HPTKi0 -->
+  @elseif($article->type == 'faq')
+  <!-- FAQ hardcoded -->
+         <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
+    <div class="box box-faq bg-white shadow p-20 mt-20">
+      <figure class="main mb-20 overlay overlay1 rounded">
+      <div class="category"><a href="/profile/{{$article->user()->slug}}#faq">#{{$cat->name}} <span class="float-right"><i class="fa fa-comments"></i></span></a></div>
+      </figure>
+        
+      <h6><a href="/profile/{{$article->user()->slug}}#faq">{{ucwords(strtolower($article->title))}}</a></h6>
+
+      <p class="mb-5">{{$article->body }}</p>
+      <div class="arrow-link">
+        <a href="/profile/{{$article->user()->slug}}#faq" class="text-muted">
+          Read more FAQ <i class="mi-arrow-right"></i>
+        </a> 
+      </div>
+    </div>
+  </div>
+<!-- FAQ hardcoded END -->  
+
+ <!--  <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
+    <div class="box bg-white shadow p-20">
+      <figure class="main mb-20 overlay overlay1 rounded"><a href="/profile/{{$article->user()->slug}}#Events">
+        <img src="/storage/{{$article->image}}" alt="" /></a>
+        <figcaption>
+          <h5 class="text-uppercase from-top mb-0"><a href="/profile/{{$article->user()->slug}}#Events">Read more</a></h5>
+            <p></p>
+        </figcaption>
+          <div class="category">
+            @foreach($article->getCategories() as $cat)
+              <a style='display: inline;' href="/profile/{{$article->user()->slug}}#Articles">#{{$cat->name}}</a>
+            @endforeach
+          </div>
+      </figure>
+        
+      <h6 class="mb-0"><a href="/profile/{{$article->user()->slug}}#Events">{{ucwords(strtolower($article->title))}}</a></h6>
+
+    </div>
+  </div> -->
   @else
   <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
     <div class="box bg-white shadow p-20">

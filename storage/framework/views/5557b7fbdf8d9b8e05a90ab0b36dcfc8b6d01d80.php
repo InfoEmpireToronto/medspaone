@@ -30,7 +30,7 @@
           <h5 class="text-uppercase from-top mb-0"><a href="/profile/<?php echo e($article->user()->slug); ?>#BeforeAfter">View more</a></h5>
             <p></p>
         </figcaption>
-          <div class="category"><a href="/profile/<?php echo e($article->user()->slug); ?>#BeforeAfter"><?php echo e($article->getCategories()[0]->name); ?> <span class="float-right"><i class="fa fa-address-book-o float-right"></i><i class="fa fa-address-book float-right"></i></span></a></div>
+          <div class="category"><a href="/profile/<?php echo e($article->user()->slug); ?>#BeforeAfter">#<?php echo e($article->getCategories()[0]->name); ?> <span class="float-right"><i class="fa fa-address-book-o float-right"></i><i class="fa fa-address-book float-right"></i></span></a></div>
       </figure>
         
       <h6 class="mb-0"><a href="/profile/<?php echo e($article->user()->slug); ?>#BeforeAfter"><?php echo e(ucwords(strtolower($article->title))); ?></a></h6>
@@ -80,6 +80,46 @@
     </div>
     <!-- /.box -->
   </div>
+  <!-- https://youtu.be/IUY47HPTKi0 -->
+  <?php elseif($article->type == 'faq'): ?>
+  <!-- FAQ hardcoded -->
+         <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
+    <div class="box box-faq bg-white shadow p-20 mt-20">
+      <figure class="main mb-20 overlay overlay1 rounded">
+      <div class="category"><a href="/profile/<?php echo e($article->user()->slug); ?>#faq">#<?php echo e($cat->name); ?> <span class="float-right"><i class="fa fa-comments"></i></span></a></div>
+      </figure>
+        
+      <h6><a href="/profile/<?php echo e($article->user()->slug); ?>#faq"><?php echo e(ucwords(strtolower($article->title))); ?></a></h6>
+
+      <p class="mb-5"><?php echo e($article->body); ?></p>
+      <div class="arrow-link">
+        <a href="/profile/<?php echo e($article->user()->slug); ?>#faq" class="text-muted">
+          Read more FAQ <i class="mi-arrow-right"></i>
+        </a> 
+      </div>
+    </div>
+  </div>
+<!-- FAQ hardcoded END -->  
+
+ <!--  <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
+    <div class="box bg-white shadow p-20">
+      <figure class="main mb-20 overlay overlay1 rounded"><a href="/profile/<?php echo e($article->user()->slug); ?>#Events">
+        <img src="/storage/<?php echo e($article->image); ?>" alt="" /></a>
+        <figcaption>
+          <h5 class="text-uppercase from-top mb-0"><a href="/profile/<?php echo e($article->user()->slug); ?>#Events">Read more</a></h5>
+            <p></p>
+        </figcaption>
+          <div class="category">
+            <?php $__currentLoopData = $article->getCategories(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <a style='display: inline;' href="/profile/<?php echo e($article->user()->slug); ?>#Articles">#<?php echo e($cat->name); ?></a>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          </div>
+      </figure>
+        
+      <h6 class="mb-0"><a href="/profile/<?php echo e($article->user()->slug); ?>#Events"><?php echo e(ucwords(strtolower($article->title))); ?></a></h6>
+
+    </div>
+  </div> -->
   <?php else: ?>
   <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
     <div class="box bg-white shadow p-20">
