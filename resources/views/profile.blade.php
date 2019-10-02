@@ -302,8 +302,58 @@
       </div>	   
 				   
 </div>
+			  
+			  
 
 @endif
+			  
+		  
+			  
+	@if($user->faq(2))
+        <a id="faq" ></a>
+        <h3>FAQ</h3>
+        <div class="bg-white shadow mb-30 rounded">
+          <div class="container-fluid p-4">
+         <div class="items row isotope boxed grid-view">
+
+@foreach($user->faq(2) as $faq)
+            <div class="item grid-sizer col-md-6">
+				
+				     <div class="box box-faq bg-white shadow p-20">
+      <figure class="main mb-20 overlay overlay1 rounded">
+      <div class="category">
+        @foreach($article->getCategories() as $cat)
+          <a href="/profile/{{$article->user()->slug}}#faq">#{{$cat->name}} <span class="float-right"><i class="fa fa-comments"></i></span></a>
+        @endforeach
+      </div>
+      </figure>
+        
+      <h6><a href="/profile/{{$article->user()->slug}}#faq">{{ucwords(strtolower($article->title))}}</a></h6>
+
+      <p class="mb-5">{!! substr(strip_tags($article->body),0,200) !!}</p>
+      <div class="arrow-link">
+        <a href="/faq/{{$user->slug}}" class="text-muted">
+          Read more FAQ <i class="mi-arrow-right"></i>
+        </a> 
+      </div>
+    </div>
+
+            </div>
+@endforeach
+           </div> <div class="col-lg-12 text-center"><div class="space20"></div>
+            <!-- <a href="/faq/{{$user->slug}}" class="btn">All FAQ <i class="fa fa-caret-right"></i></a> -->
+            </div>
+          </div>
+         
+        </div>
+@endif
+			  
+			  
+
+			
+			  
+			  
+			  
 			  
 			  @if($user->instagram)
 			  <h3>Instagram Feed?</h3>

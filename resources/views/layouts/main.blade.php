@@ -232,9 +232,13 @@ https://www.facebook.com/tr?id=466182244169613&ev=PageView&noscript=1
 
           <div class="col-md-2 text-center text-md-right">
             <ul class="social social-mute social-s">
-              <li><a href="https://www.facebook.com/infoempire" target="_blank"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="https://www.facebook.com/MedSpaOne " target="_blank"><i class="fa fa-facebook"></i></a></li>
+			 <li><a href="https://www.instagram.com/medspaone/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+				
+<!--
       				<li><a href="https://twitter.com/InfoEmpire_Inc" target="_blank"><i class="fa fa-twitter"></i></a></li>
       				<li><a href="http://www.youtube.com/user/GTAwebmastercom" target="_blank"><i class="fa fa-youtube"></i></a></li>
+-->
             </ul>
           </div>
           <!--/column -->
