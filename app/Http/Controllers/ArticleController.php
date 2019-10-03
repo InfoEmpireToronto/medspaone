@@ -91,24 +91,36 @@ class ArticleController extends Voyager\VoyagerController
             $user = User::where('slug', $name)->first();
             if($user)
             {
-                $articles = Post::where('author_id', $user->id)
+                $data = Post::where('author_id', $user->id)
                                 ->where('type','article')
                                 ->where('status', 'PUBLISHED')
                                 ->orderBy('created_at', 'desc')
                                 ->get();
+                $keywords = '';
+                foreach ($data as $event) 
+                {
+                    $keywords .= $event->meta_keywords.',';
+                }
                 return view('articles',[ 
-                    'articles' => $articles,
-                    'user' => $user
+                    'articles' => $data,
+                    'user' => $user,
+                    'keywords' => $keywords
 
                 ]);
                 
             }
         }
-
+        $data = Post::where('type','article')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get();
+        $keywords = '';
+        foreach ($data as $event) 
+        {
+            $keywords .= $event->meta_keywords.',';
+        }
         return view('articles',[ 
-            'articles' => Post::where('type','article')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get(),
+            'articles' => $data,
             'user' => false,
-            'title' => 'All Articles'
+            'title' => 'All Articles',
+            'keywords' => $keywords
 
         ]);
 
@@ -121,19 +133,34 @@ class ArticleController extends Voyager\VoyagerController
         if($name)
         {
             $user = User::where('slug', $name)->first();
-            if($user)
+            if($user){
+                $data = Post::where('author_id', $user->id)->where('type','video')->where('status', 'PUBLISHED')->get();
+                $keywords = '';
+                foreach ($data as $event) 
+                {
+                    $keywords .= $event->meta_keywords.',';
+                }
                 return view('videos',[ 
-                    'videos' => Post::where('author_id', $user->id)->where('type','video')->where('status', 'PUBLISHED')->get(),
+                    'videos' => $data,
                     'user' => $user,
-                    'title' => 'Videos'
+                    'title' => 'Videos',
+                    'keywords' => $keywords
 
                 ]);
+            }
         }
 
+        $data = Post::where('type','video')->where('status', 'PUBLISHED')->get();
+        $keywords = '';
+        foreach ($data as $event) 
+        {
+            $keywords .= $event->meta_keywords.',';
+        }
         return view('videos',[ 
-            'videos' => Post::where('type','video')->where('status', 'PUBLISHED')->get(),
+            'videos' => $data,
             'user' => false,
-            'title' => 'Videos'
+            'title' => 'Videos',
+            'keywords' => $keywords
 
         ]);
 
@@ -147,19 +174,35 @@ class ArticleController extends Voyager\VoyagerController
         if($name)
         {
             $user = User::where('slug', $name)->first();
-            if($user)
+            if($user){
+                $data = Post::where('author_id', $user->id)->where('type','ba')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get();
+                $keywords = '';
+                foreach ($data as $event) 
+                {
+                    $keywords .= $event->meta_keywords.',';
+                }
                 return view('beforeAfter',[ 
-                    'beforeAfters' => Post::where('author_id', $user->id)->where('type','ba')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get(),
+                    'beforeAfters' => $data,
                     'user' => $user,
-                    'title' => 'Before & After'
+                    'title' => 'Before & After',
+                    'keywords' => $keywords
 
                 ]);
+            }
+        }
+
+        $data = Post::where('type','ba')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get();
+        $keywords = '';
+        foreach ($data as $event) 
+        {
+            $keywords .= $event->meta_keywords.',';
         }
 
         return view('beforeAfter',[ 
-            'beforeAfters' => Post::where('type','ba')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get(),
+            'beforeAfters' => $data,
             'user' => false,
-            'title' => 'Before & After'
+            'title' => 'Before & After',
+            'keywords' => $keywords
 
         ]);
 
@@ -173,18 +216,36 @@ class ArticleController extends Voyager\VoyagerController
         {
             $user = User::where('slug', $name)->first();
             if($user)
+            {
+                $data = Post::where('author_id', $user->id)->where('type','event')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get();
+                $keywords = '';
+                foreach ($data as $event) 
+                {
+                    $keywords .= $event->meta_keywords.',';
+                }
                 return view('events',[ 
-                    'events' => Post::where('author_id', $user->id)->where('type','event')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get(),
+                    'events' => $data,
                     'user' => $user,
-                    'title' => 'Events'
+                    'title' => 'Events',
+                    'keywords' => $keywords
 
                 ]);
+
+            }
+        }
+
+        $data = Post::where('type','event')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get();
+        $keywords = '';
+        foreach ($data as $event) 
+        {
+            $keywords .= $event->meta_keywords.',';
         }
 
         return view('events',[ 
-            'events' => Post::where('type','event')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get(),
+            'events' => $data,
             'user' => false,
-            'title' => 'Events'
+            'title' => 'Events',
+            'keywords' => $keywords
 
         ]);
 
