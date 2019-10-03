@@ -86,6 +86,7 @@ class ArticleController extends Voyager\VoyagerController
 
     public function articles($name = false)
     {
+        $description = "View latest articles that talk about a wide range of topics";
         if($name)
         {
             $user = User::where('slug', $name)->first();
@@ -104,7 +105,8 @@ class ArticleController extends Voyager\VoyagerController
                 return view('articles',[ 
                     'articles' => $data,
                     'user' => $user,
-                    'keywords' => $keywords
+                    'keywords' => $keywords,
+                    'description' => $description
 
                 ]);
                 
@@ -120,7 +122,8 @@ class ArticleController extends Voyager\VoyagerController
             'articles' => $data,
             'user' => false,
             'title' => 'All Articles',
-            'keywords' => $keywords
+            'keywords' => $keywords,
+            'description' => $description
 
         ]);
 
@@ -130,6 +133,7 @@ class ArticleController extends Voyager\VoyagerController
 
     public function videos($name = false)
     {
+        $description = "Videos to showcase new technology and raise awarness";
         if($name)
         {
             $user = User::where('slug', $name)->first();
@@ -144,7 +148,8 @@ class ArticleController extends Voyager\VoyagerController
                     'videos' => $data,
                     'user' => $user,
                     'title' => 'Videos',
-                    'keywords' => $keywords
+                    'keywords' => $keywords,
+                    'description' => $description
 
                 ]);
             }
@@ -160,7 +165,8 @@ class ArticleController extends Voyager\VoyagerController
             'videos' => $data,
             'user' => false,
             'title' => 'Videos',
-            'keywords' => $keywords
+            'keywords' => $keywords,
+            'description' => $description
 
         ]);
 
@@ -170,7 +176,7 @@ class ArticleController extends Voyager\VoyagerController
 
     public function beforeAfter($name = false)
     {
-
+        $description = "View images of the amazing results!";
         if($name)
         {
             $user = User::where('slug', $name)->first();
@@ -185,7 +191,8 @@ class ArticleController extends Voyager\VoyagerController
                     'beforeAfters' => $data,
                     'user' => $user,
                     'title' => 'Before & After',
-                    'keywords' => $keywords
+                    'keywords' => $keywords,
+                    'description' => $description
 
                 ]);
             }
@@ -202,7 +209,8 @@ class ArticleController extends Voyager\VoyagerController
             'beforeAfters' => $data,
             'user' => false,
             'title' => 'Before & After',
-            'keywords' => $keywords
+            'keywords' => $keywords,
+            'description' => $description
 
         ]);
 
@@ -211,7 +219,7 @@ class ArticleController extends Voyager\VoyagerController
 
     public function events($name = false)
     {
-
+        $description = "View upcoming and past events from MedSpaOne";
         if($name)
         {
             $user = User::where('slug', $name)->first();
@@ -227,7 +235,8 @@ class ArticleController extends Voyager\VoyagerController
                     'events' => $data,
                     'user' => $user,
                     'title' => 'Events',
-                    'keywords' => $keywords
+                    'keywords' => $keywords,
+                    'description' => $description
 
                 ]);
 
@@ -245,7 +254,8 @@ class ArticleController extends Voyager\VoyagerController
             'events' => $data,
             'user' => false,
             'title' => 'Events',
-            'keywords' => $keywords
+            'keywords' => $keywords,
+            'description' => $description
 
         ]);
 
