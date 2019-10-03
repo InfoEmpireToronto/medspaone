@@ -45,7 +45,7 @@ class ArticleController extends Voyager\VoyagerController
                 return view('article',[ 
                     'article' => $article,
                     'popularPosts' => $pp ? $pp : false,
-                    'title' => $article->seo_title,
+                    'title' => $article->seo_title ? $article->seo_title : $article->title,
                     'description' => $article->meta_description,
                     'keywords' => $article->meta_keywords,
 
@@ -70,7 +70,7 @@ class ArticleController extends Voyager\VoyagerController
                 return view('event',[ 
                     'article' => $article,
                     'popularPosts' => $pp ? $pp : false,
-                    'title' => $article->seo_title,
+                    'title' => $article->seo_title ? $article->seo_title : $article->title,
                     'description' => $article->meta_description,
                     'keywords' => $article->meta_keywords,
 
