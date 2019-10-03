@@ -107,7 +107,8 @@ class ArticleController extends Voyager\VoyagerController
 
         return view('articles',[ 
             'articles' => Post::where('type','article')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get(),
-            'user' => false
+            'user' => false,
+            'title' => 'All Articles'
 
         ]);
 
@@ -123,14 +124,16 @@ class ArticleController extends Voyager\VoyagerController
             if($user)
                 return view('videos',[ 
                     'videos' => Post::where('author_id', $user->id)->where('type','video')->where('status', 'PUBLISHED')->get(),
-                    'user' => $user
+                    'user' => $user,
+                    'title' => 'Videos'
 
                 ]);
         }
 
         return view('videos',[ 
             'videos' => Post::where('type','video')->where('status', 'PUBLISHED')->get(),
-            'user' => false
+            'user' => false,
+            'title' => 'Videos'
 
         ]);
 
@@ -147,14 +150,16 @@ class ArticleController extends Voyager\VoyagerController
             if($user)
                 return view('beforeAfter',[ 
                     'beforeAfters' => Post::where('author_id', $user->id)->where('type','ba')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get(),
-                    'user' => $user
+                    'user' => $user,
+                    'title' => 'Before & After'
 
                 ]);
         }
 
         return view('beforeAfter',[ 
             'beforeAfters' => Post::where('type','ba')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get(),
-            'user' => false
+            'user' => false,
+            'title' => 'Before & After'
 
         ]);
 
@@ -170,14 +175,16 @@ class ArticleController extends Voyager\VoyagerController
             if($user)
                 return view('events',[ 
                     'events' => Post::where('author_id', $user->id)->where('type','event')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get(),
-                    'user' => $user
+                    'user' => $user,
+                    'title' => 'Events'
 
                 ]);
         }
 
         return view('events',[ 
             'events' => Post::where('type','event')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get(),
-            'user' => false
+            'user' => false,
+            'title' => 'Events'
 
         ]);
 

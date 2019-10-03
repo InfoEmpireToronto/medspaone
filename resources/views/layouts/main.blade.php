@@ -1,7 +1,7 @@
 <?php
 
-$title =  isset($title) ? $title : "MedSpaOne";
-$description =  isset($description) ? $description : "";
+$title =  isset($title) ? $title : "Online MedSpa Resource";
+$description =  isset($description) ? $description : "An active network featuring events & articles from Medical Spas";
 $keywords =  isset($keywords) ? $keywords : "";
 
 
@@ -14,7 +14,7 @@ $keywords =  isset($keywords) ? $keywords : "";
         <link rel="shortcut icon" href="/style/images/favicon.png">
         <meta name="robots" content="index, follow" />
         <meta name="keywords" content="{{ $keywords }}" />
-        <meta name="title" content="{{ $title }}" />
+        <meta name="title" content="MedSpaOne - {{ $title }}" />
         <meta name="description" content="{{ $description }}" />
         <meta name="author" content="416-769-5250, www.infoempire.com" />
         <meta name="copyright" content="&copy;{{ date('Y') }}, MedSpa.us" />

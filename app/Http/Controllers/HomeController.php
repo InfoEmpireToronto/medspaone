@@ -61,7 +61,7 @@ class HomeController extends Controller
     {
 
         return view('article',[ 
-            
+            'title' => 'Articles'
 
         ]);
 
@@ -94,6 +94,7 @@ class HomeController extends Controller
             'locations' => $locations,
             'featuredLocations' => $featuredLocations,
             'geoLocation' => $geoLocation,
+            'title' => 'Find An Expert'
 
         ]);
 
@@ -140,7 +141,8 @@ class HomeController extends Controller
 
 
         return view('search',[ 
-            'results' => $results
+            'results' => $results,
+            'title' => 'Search Results'
 
         ]);
 
@@ -158,7 +160,8 @@ class HomeController extends Controller
         // dump($faqs);
 
         return view('faq',[ 
-            'faqs' => $faqs
+            'faqs' => $faqs,
+            'title' => 'FAQs'
 
         ]);
 
@@ -169,7 +172,8 @@ class HomeController extends Controller
         if(!$slug) return view('profile-tmpl');
 
         return view('profile',[ 
-            'user'=>User::where('slug', $slug)->first()
+            'user'=>User::where('slug', $slug)->first(),
+            'title' => 'Profile'
 
         ]);
 
@@ -179,6 +183,7 @@ class HomeController extends Controller
     {
 
         return view('membership',[ 
+            'title' => 'Membership'
             
 
         ]);
@@ -191,6 +196,7 @@ class HomeController extends Controller
 
         return view('giftReward',[ 
             
+            'title' => 'Gift Rewards'
 
         ]);
 
@@ -203,6 +209,7 @@ class HomeController extends Controller
     {
         return view('contactus',[ 
             
+            'title' => 'Contact Us'
 
         ]);
     }
@@ -253,7 +260,8 @@ class HomeController extends Controller
 
         return view('about',[ 
             'members' => Location::count(),
-            'articles' => Post::count()
+            'articles' => Post::count(),
+            'title' => 'About Us'
 
         ]);
 
@@ -263,6 +271,7 @@ class HomeController extends Controller
 
 
         return view('askExpert',[ 
+            'title' => 'Ask An Expert'
             
 
         ]);
@@ -293,6 +302,7 @@ class HomeController extends Controller
         // echo '<pre>';print_r($vars);
 
         return view('membershipThanks',[ 
+            'title' => 'Thank You!'
             
 
         ]);
@@ -301,11 +311,19 @@ class HomeController extends Controller
 
     public function terms()
     {
-        return view('terms');
+        return view('terms',[ 
+            'title' => 'Terms & Conditions'
+            
+
+        ]);
     }
     public function privacy()
     {
-        return view('privacy');
+        return view('privacy',[ 
+            'title' => 'Privacy Policy'
+            
+
+        ]);
     }
 
 
