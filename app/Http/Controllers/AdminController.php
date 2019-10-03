@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use Jenssegers\Agent\Agent;
 
+use Spatie\Sitemap\SitemapGenerator;
+
 
 class AdminController extends Voyager\VoyagerController
 {
@@ -62,7 +64,11 @@ class AdminController extends Voyager\VoyagerController
     }
 
    
+    public function genSitemap()
+    {
+        SitemapGenerator::create('https://medspa.one')->writeToFile('sitemap.xml');
 
+    }
 
 
 }

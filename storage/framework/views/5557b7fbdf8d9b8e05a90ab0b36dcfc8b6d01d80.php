@@ -22,7 +22,7 @@
           <div class="items row isotope boxed grid-view" >
             <?php $__currentLoopData = $articles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $article): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
   <?php if($article->type == 'ba'): ?>
-  <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
+  <div class="item grid-sizer col-sm-6 col-md-4 col-lg-3">
     <div class="box box-ba bg-white shadow p-20">
       <figure class="main mb-20 overlay overlay1 rounded"><a href="/profile/<?php echo e($article->user()->slug); ?>#BeforeAfter">
         <img src="/storage/<?php echo e($article->before); ?>" alt="" /></a>
@@ -39,7 +39,7 @@
     <!-- /.box -->
   </div>
   <?php elseif($article->type == 'video'): ?>
-  <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
+  <div class="item grid-sizer col-sm-6 col-md-4 col-lg-3">
     <div class="box box-video bg-white shadow p-20">
       <figure class="main mb-20 overlay overlay1 rounded"><a href="/profile/<?php echo e($article->user()->slug); ?>#Videos">
         <img src="https://img.youtube.com/vi/<?php echo e($article->link); ?>/0.jpg" alt="" /></a>
@@ -60,7 +60,7 @@
   </div>
   <!-- https://youtu.be/IUY47HPTKi0 -->
   <?php elseif($article->type == 'event'): ?>
-  <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
+  <div class="item grid-sizer col-sm-6 col-md-4 col-lg-3">
     <div class="box bg-white shadow p-20">
       <figure class="main mb-20 overlay overlay1 rounded"><a href="/profile/<?php echo e($article->user()->slug); ?>#Events">
         <img src="/storage/<?php echo e($article->image); ?>" alt="" /></a>
@@ -83,15 +83,19 @@
   <!-- https://youtu.be/IUY47HPTKi0 -->
   <?php elseif($article->type == 'faq'): ?>
   <!-- FAQ hardcoded -->
-         <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
-    <div class="box box-faq bg-white shadow p-20 mt-20">
+         <div class="item grid-sizer col-sm-6 col-md-4 col-lg-3">
+    <div class="box box-faq bg-white shadow p-20">
       <figure class="main mb-20 overlay overlay1 rounded">
-      <div class="category"><a href="/profile/<?php echo e($article->user()->slug); ?>#faq">#<?php echo e($cat->name); ?> <span class="float-right"><i class="fa fa-comments"></i></span></a></div>
+      <div class="category">
+        <?php $__currentLoopData = $article->getCategories(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+          <a href="/profile/<?php echo e($article->user()->slug); ?>#faq">#<?php echo e($cat->name); ?> <span class="float-right"><i class="fa fa-comments"></i></span></a>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+      </div>
       </figure>
         
       <h6><a href="/profile/<?php echo e($article->user()->slug); ?>#faq"><?php echo e(ucwords(strtolower($article->title))); ?></a></h6>
 
-      <p class="mb-5"><?php echo e($article->body); ?></p>
+      <p class="mb-5"><?php echo substr(strip_tags($article->body),0,200); ?></p>
       <div class="arrow-link">
         <a href="/profile/<?php echo e($article->user()->slug); ?>#faq" class="text-muted">
           Read more FAQ <i class="mi-arrow-right"></i>
@@ -101,7 +105,7 @@
   </div>
 <!-- FAQ hardcoded END -->  
 
- <!--  <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
+ <!--  <div class="item grid-sizer col-sm-6 col-md-4 col-lg-3">
     <div class="box bg-white shadow p-20">
       <figure class="main mb-20 overlay overlay1 rounded"><a href="/profile/<?php echo e($article->user()->slug); ?>#Events">
         <img src="/storage/<?php echo e($article->image); ?>" alt="" /></a>
@@ -121,7 +125,7 @@
     </div>
   </div> -->
   <?php else: ?>
-  <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
+  <div class="item grid-sizer col-sm-6 col-md-4 col-lg-3">
     <div class="box bg-white shadow p-20">
       <figure class="main mb-20 overlay overlay1 rounded"><a href="/profile/<?php echo e($article->user()->slug); ?>#Articles">
         <img src="/storage/<?php echo e($article->image); ?>" alt="" /></a>

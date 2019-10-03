@@ -1,12 +1,11 @@
 <?php
-$currentpage = isset($currentpage) ? $currentpage : "home";
+
 $title =  isset($title) ? $title : "MedSpaOne";
 $description =  isset($description) ? $description : "";
 $keywords =  isset($keywords) ? $keywords : "";
 
 
 ?>
-
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -14,15 +13,15 @@ $keywords =  isset($keywords) ? $keywords : "";
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/style/images/favicon.png">
         <meta name="robots" content="index, follow" />
-        <meta name="keywords" content="<?=$keywords?>" />
-        <meta name="title" content="<?=$title?>" />
-        <meta name="description" content="<?=$description?>" />
+        <meta name="keywords" content="{{ $keywords }}" />
+        <meta name="title" content="{{ $title }}" />
+        <meta name="description" content="{{ $description }}" />
         <meta name="author" content="416-769-5250, www.infoempire.com" />
-        <meta name="copyright" content="&copy;<?=date('Y');?>, MedSpa.us" />
+        <meta name="copyright" content="&copy;{{ date('Y') }}, MedSpa.us" />
         <meta name="csrf-token" content="{{ csrf_token() }}" />
         <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
 
-        <title><?=$title?></title>
+        <title>{{ $title }}</title>
         <link rel="stylesheet" type="text/css" href="/style/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/style/css/plugins.css">
         <link rel="stylesheet" type="text/css" href="/style/revolution/css/settings.css">
