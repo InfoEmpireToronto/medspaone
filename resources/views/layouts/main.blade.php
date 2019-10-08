@@ -43,6 +43,15 @@ $keywords =  isset($keywords) ? $keywords : "MedSpaOne, Online, Resource, MedSpa
   gtag('config', 'UA-141510760-1');
 </script>
 
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "medspa.one",
+    "alternateName": "MedSPaOne",
+    "url": "{{ route('home') }}"
+}
+</script>
 		
 <!-- Facebook Pixel Code -->
 <script>
