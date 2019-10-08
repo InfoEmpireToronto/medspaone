@@ -22,14 +22,14 @@ $keywords =  isset($keywords) ? $keywords : "";
         <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
 
         <title>{{ $title }}</title>
-        <link rel="stylesheet" type="text/css" href="/style/css/bootstrap.min.css">
+<!--         <link rel="stylesheet" type="text/css" href="/style/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/style/css/plugins.css">
         <link rel="stylesheet" type="text/css" href="/style/revolution/css/settings.css">
         <link rel="stylesheet" type="text/css" href="/style/revolution/css/layers.css">
         <link rel="stylesheet" type="text/css" href="/style/revolution/css/navigation.css">
         <link rel="stylesheet" type="text/css" href="/style/type/icons.css">
-        <link rel="stylesheet" type="text/css" href="/style.css">
-        <link rel="stylesheet" type="text/css" href="/style/css/color/blue.css">
+        <link rel="stylesheet" type="text/css" href="/style/css/color/blue.css"> -->
+        <link rel="stylesheet" type="text/css" href="/css/all.css">
         @yield('css')
         <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5cb87a601e8a61001214aca8&product=inline-share-buttons' async='async'></script>
 		<!-- Global site tag (gtag.js) - Google Analytics -->

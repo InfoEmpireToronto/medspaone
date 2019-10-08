@@ -15,7 +15,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
 
  let configWebPack = {
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json', '.css'],
     alias: {
       '@': __dirname + '/resources'
     },
@@ -38,7 +38,7 @@ if(mix.inProduction()) {
       filename: "[path].gz[query]",
       algorithm: "gzip",
       test: /\.js$|\.css$|\.html$|\.svg$/,
-      threshold: 10240,
+      threshold: 1240,
       minRatio: 0.8
     })
   ]
@@ -57,3 +57,16 @@ mix.scripts([
     'resources/js/plugins.js',
     'resources/js/scripts.js'
 ], 'public/js/all.js');
+
+mix.styles([
+    'public/style/css/bootstrap.min.css',
+    'public/style/css/plugins.css',
+    'public/style/revolution/css/settings.css',
+    'public/style/revolution/css/layers.css',
+    'public/style/revolution/css/navigation.css',
+    'public/style/type/icons.css',
+    'public/style/style.css',
+    'public/style/css/color/blue.css'
+], 'public/css/all.css');
+
+mix.minify('public/css/all.css');
