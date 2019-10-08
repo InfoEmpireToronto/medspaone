@@ -29,7 +29,7 @@ $keywords =  isset($keywords) ? $keywords : "";
         <link rel="stylesheet" type="text/css" href="/style/revolution/css/navigation.css">
         <link rel="stylesheet" type="text/css" href="/style/type/icons.css">
         <link rel="stylesheet" type="text/css" href="/style/css/color/blue.css"> -->
-        <link rel="stylesheet" type="text/css" href="/css/all.css">
+        <link rel="stylesheet" type="text/css" href="/css/all.min.css">
         @yield('css')
         <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5cb87a601e8a61001214aca8&product=inline-share-buttons' async='async'></script>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
