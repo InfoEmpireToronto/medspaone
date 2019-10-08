@@ -248,7 +248,7 @@ https://www.facebook.com/tr?id=466182244169613&ev=PageView&noscript=1
     </footer>
   </div>
   <!-- /.content-wrapper -->
-  <script src="{{ asset('js/app.js') }}"></script>
+  <script src="{{ asset('js/app.js.gz') }}"></script>
   <script src="{{ asset('js/all.js') }}"></script>
   <!-- <script src="/style/js/jquery.min.js"></script> -->
   <!-- <script src="/style/js/popper.min.js"></script> -->
@@ -270,8 +270,8 @@ https://www.facebook.com/tr?id=466182244169613&ev=PageView&noscript=1
 <script src="/style/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
 <script src="/style/revolution/js/extensions/revolution.extension.video.min.js"></script>-->
 
-  <script src="/style/js/plugins.js"></script>
-  <script src="/style/js/scripts.js"></script>
+  <!-- <script src="/style/js/plugins.js"></script> -->
+  <!-- <script src="/style/js/scripts.js"></script> -->
   <script type="text/javascript">
         $.ajaxSetup({ headers: { 'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content') } });
   </script>
