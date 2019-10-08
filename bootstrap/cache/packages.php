@@ -47,6 +47,13 @@
       'Image' => 'Intervention\\Image\\Facades\\Image',
     ),
   ),
+  'larapack/doctrine-support' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Larapack\\DoctrineSupport\\DoctrineSupportServiceProvider',
+    ),
+  ),
   'larapack/voyager-hooks' => 
   array (
     'providers' => 
@@ -73,6 +80,13 @@
     'providers' => 
     array (
       0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
+    ),
+  ),
+  'spatie/laravel-sitemap' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Spatie\\Sitemap\\SitemapServiceProvider',
     ),
   ),
   'tcg/voyager' => 

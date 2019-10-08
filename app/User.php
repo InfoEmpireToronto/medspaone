@@ -101,6 +101,18 @@ class User extends \TCG\Voyager\Models\User
             return false;
     }
 
+    public function faq($limit = false)
+    {
+        $ret = Post::where('author_id', $this->id)->where('type', 'faq');
+        if($limit)
+            $ret->limit($limit);
+
+        if($ret->exists())
+            return $ret->get();
+        else
+            return false;
+    }
+
     public function locations()
     {
         return Location::where('user_id', $this->id)->get();

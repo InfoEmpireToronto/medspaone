@@ -55,6 +55,7 @@ Route::get('/about', 'HomeController@about')->name('about');
 Route::get('/faq', 'HomeController@faq')->name('faq');
 
 
+Route::GET('/admin/genSitemap', 'AdminController@genSitemap')->name('genSitemap');
 Route::POST('/admin/location/save', 'AdminController@saveLocation')->name('saveLocation');
 Route::GET('/admin/chat', 'AdminController@startChat')->name('startChat');
 Route::GET('/phys/chat', 'HomeController@physChat')->name('Phys-Chat');

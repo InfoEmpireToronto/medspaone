@@ -45,7 +45,7 @@ class ArticleController extends Voyager\VoyagerController
                 return view('article',[ 
                     'article' => $article,
                     'popularPosts' => $pp ? $pp : false,
-                    'title' => $article->seo_title,
+                    'title' => $article->seo_title ? $article->seo_title : $article->title,
                     'description' => $article->meta_description,
                     'keywords' => $article->meta_keywords,
 
@@ -70,7 +70,7 @@ class ArticleController extends Voyager\VoyagerController
                 return view('event',[ 
                     'article' => $article,
                     'popularPosts' => $pp ? $pp : false,
-                    'title' => $article->seo_title,
+                    'title' => $article->seo_title ? $article->seo_title : $article->title,
                     'description' => $article->meta_description,
                     'keywords' => $article->meta_keywords,
 
@@ -86,28 +86,44 @@ class ArticleController extends Voyager\VoyagerController
 
     public function articles($name = false)
     {
+        $description = "View latest articles that talk about a wide range of topics";
         if($name)
         {
             $user = User::where('slug', $name)->first();
             if($user)
             {
-                $articles = Post::where('author_id', $user->id)
+                $data = Post::where('author_id', $user->id)
                                 ->where('type','article')
                                 ->where('status', 'PUBLISHED')
                                 ->orderBy('created_at', 'desc')
                                 ->get();
+                $keywords = '';
+                foreach ($data as $event) 
+                {
+                    $keywords .= $event->meta_keywords.',';
+                }
                 return view('articles',[ 
-                    'articles' => $articles,
-                    'user' => $user
+                    'articles' => $data,
+                    'user' => $user,
+                    'keywords' => $keywords,
+                    'description' => $description
 
                 ]);
                 
             }
         }
-
+        $data = Post::where('type','article')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get();
+        $keywords = '';
+        foreach ($data as $event) 
+        {
+            $keywords .= $event->meta_keywords.',';
+        }
         return view('articles',[ 
-            'articles' => Post::where('type','article')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get(),
-            'user' => false
+            'articles' => $data,
+            'user' => false,
+            'title' => 'All Articles',
+            'keywords' => $keywords,
+            'description' => $description
 
         ]);
 
@@ -117,20 +133,40 @@ class ArticleController extends Voyager\VoyagerController
 
     public function videos($name = false)
     {
+        $description = "Videos to showcase new technology and raise awarness";
         if($name)
         {
             $user = User::where('slug', $name)->first();
-            if($user)
+            if($user){
+                $data = Post::where('author_id', $user->id)->where('type','video')->where('status', 'PUBLISHED')->get();
+                $keywords = '';
+                foreach ($data as $event) 
+                {
+                    $keywords .= $event->meta_keywords.',';
+                }
                 return view('videos',[ 
-                    'videos' => Post::where('author_id', $user->id)->where('type','video')->where('status', 'PUBLISHED')->get(),
-                    'user' => $user
+                    'videos' => $data,
+                    'user' => $user,
+                    'title' => 'Videos',
+                    'keywords' => $keywords,
+                    'description' => $description
 
                 ]);
+            }
         }
 
+        $data = Post::where('type','video')->where('status', 'PUBLISHED')->get();
+        $keywords = '';
+        foreach ($data as $event) 
+        {
+            $keywords .= $event->meta_keywords.',';
+        }
         return view('videos',[ 
-            'videos' => Post::where('type','video')->where('status', 'PUBLISHED')->get(),
-            'user' => false
+            'videos' => $data,
+            'user' => false,
+            'title' => 'Videos',
+            'keywords' => $keywords,
+            'description' => $description
 
         ]);
 
@@ -140,21 +176,41 @@ class ArticleController extends Voyager\VoyagerController
 
     public function beforeAfter($name = false)
     {
-
+        $description = "View images of the amazing results!";
         if($name)
         {
             $user = User::where('slug', $name)->first();
-            if($user)
+            if($user){
+                $data = Post::where('author_id', $user->id)->where('type','ba')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get();
+                $keywords = '';
+                foreach ($data as $event) 
+                {
+                    $keywords .= $event->meta_keywords.',';
+                }
                 return view('beforeAfter',[ 
-                    'beforeAfters' => Post::where('author_id', $user->id)->where('type','ba')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get(),
-                    'user' => $user
+                    'beforeAfters' => $data,
+                    'user' => $user,
+                    'title' => 'Before & After',
+                    'keywords' => $keywords,
+                    'description' => $description
 
                 ]);
+            }
+        }
+
+        $data = Post::where('type','ba')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get();
+        $keywords = '';
+        foreach ($data as $event) 
+        {
+            $keywords .= $event->meta_keywords.',';
         }
 
         return view('beforeAfter',[ 
-            'beforeAfters' => Post::where('type','ba')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get(),
-            'user' => false
+            'beforeAfters' => $data,
+            'user' => false,
+            'title' => 'Before & After',
+            'keywords' => $keywords,
+            'description' => $description
 
         ]);
 
@@ -163,21 +219,43 @@ class ArticleController extends Voyager\VoyagerController
 
     public function events($name = false)
     {
-
+        $description = "View upcoming and past events from MedSpaOne";
         if($name)
         {
             $user = User::where('slug', $name)->first();
             if($user)
+            {
+                $data = Post::where('author_id', $user->id)->where('type','event')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get();
+                $keywords = '';
+                foreach ($data as $event) 
+                {
+                    $keywords .= $event->meta_keywords.',';
+                }
                 return view('events',[ 
-                    'events' => Post::where('author_id', $user->id)->where('type','event')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get(),
-                    'user' => $user
+                    'events' => $data,
+                    'user' => $user,
+                    'title' => 'Events',
+                    'keywords' => $keywords,
+                    'description' => $description
 
                 ]);
+
+            }
+        }
+
+        $data = Post::where('type','event')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get();
+        $keywords = '';
+        foreach ($data as $event) 
+        {
+            $keywords .= $event->meta_keywords.',';
         }
 
         return view('events',[ 
-            'events' => Post::where('type','event')->orderBy('created_at', 'desc')->where('status', 'PUBLISHED')->get(),
-            'user' => false
+            'events' => $data,
+            'user' => false,
+            'title' => 'Events',
+            'keywords' => $keywords,
+            'description' => $description
 
         ]);
 

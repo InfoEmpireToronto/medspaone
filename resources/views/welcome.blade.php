@@ -24,7 +24,7 @@
           <div class="items row isotope boxed grid-view" >
             @foreach($articles as $article)
   @if($article->type == 'ba')
-  <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
+  <div class="item grid-sizer col-sm-6 col-md-4 col-lg-3">
     <div class="box box-ba bg-white shadow p-20">
       <figure class="main mb-20 overlay overlay1 rounded"><a href="/profile/{{$article->user()->slug}}#BeforeAfter">
         <img src="/storage/{{$article->before}}" alt="" /></a>
@@ -41,7 +41,7 @@
     <!-- /.box -->
   </div>
   @elseif($article->type == 'video')
-  <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
+  <div class="item grid-sizer col-sm-6 col-md-4 col-lg-3">
     <div class="box box-video bg-white shadow p-20">
       <figure class="main mb-20 overlay overlay1 rounded"><a href="/profile/{{$article->user()->slug}}#Videos">
         <img src="https://img.youtube.com/vi/{{$article->link}}/0.jpg" alt="" /></a>
@@ -62,7 +62,7 @@
   </div>
   <!-- https://youtu.be/IUY47HPTKi0 -->
   @elseif($article->type == 'event')
-  <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
+  <div class="item grid-sizer col-sm-6 col-md-4 col-lg-3">
     <div class="box bg-white shadow p-20">
       <figure class="main mb-20 overlay overlay1 rounded"><a href="/profile/{{$article->user()->slug}}#Events">
         <img src="/storage/{{$article->image}}" alt="" /></a>
@@ -85,8 +85,8 @@
   <!-- https://youtu.be/IUY47HPTKi0 -->
   @elseif($article->type == 'faq')
   <!-- FAQ hardcoded -->
-         <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
-    <div class="box box-faq bg-white shadow p-20 mt-20">
+         <div class="item grid-sizer col-sm-6 col-md-4 col-lg-3">
+    <div class="box box-faq bg-white shadow p-20">
       <figure class="main mb-20 overlay overlay1 rounded">
       <div class="category">
         @foreach($article->getCategories() as $cat)
@@ -107,7 +107,7 @@
   </div>
 <!-- FAQ hardcoded END -->  
 
- <!--  <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
+ <!--  <div class="item grid-sizer col-sm-6 col-md-4 col-lg-3">
     <div class="box bg-white shadow p-20">
       <figure class="main mb-20 overlay overlay1 rounded"><a href="/profile/{{$article->user()->slug}}#Events">
         <img src="/storage/{{$article->image}}" alt="" /></a>
@@ -127,7 +127,7 @@
     </div>
   </div> -->
   @else
-  <div class="item grid-sizer col-6 col-sm-6 col-md-4 col-lg-3">
+  <div class="item grid-sizer col-sm-6 col-md-4 col-lg-3">
     <div class="box bg-white shadow p-20">
       <figure class="main mb-20 overlay overlay1 rounded"><a href="/profile/{{$article->user()->slug}}#Articles">
         <img src="/storage/{{$article->image}}" alt="" /></a>
