@@ -246,9 +246,10 @@ https://www.facebook.com/tr?id=466182244169613&ev=PageView&noscript=1
   </div>
   <!-- /.content-wrapper -->
   <script src="{{ asset('js/app.js') }}"></script>
-  <script src="/style/js/jquery.min.js"></script>
-  <script src="/style/js/popper.min.js"></script>
-  <script src="/style/js/bootstrap.min.js"></script>
+  <script src="{{ asset('js/all.js') }}"></script>
+  <!-- <script src="/style/js/jquery.min.js"></script> -->
+  <!-- <script src="/style/js/popper.min.js"></script> -->
+  <!-- <script src="/style/js/bootstrap.min.js"></script> -->
 
   <script src="/style/revolution/js/jquery.themepunch.tools.min.js"></script>
   <script src="/style/revolution/js/jquery.themepunch.revolution.min.js"></script>
