@@ -1,7 +1,7 @@
 <?php
 $currentpage = isset($currentpage) ? $currentpage : "home";
 $title =  isset($title) ? $title : "MedSpaOne Online Resource";
-$description =  isset($description) ? $description : "Your Online resource for latest news and events";
+$description =  isset($description) ? $description : "Your Online resource for latest news and events, Your Online resource for latest news and events";
 $keywords =  isset($keywords) ? $keywords : "MedSpaOne, Online, Resource, MedSpaOne, Online, Resource";
 
 
