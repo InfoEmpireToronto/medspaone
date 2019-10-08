@@ -22,7 +22,15 @@ $keywords =  isset($keywords) ? $keywords : "MedSpaOne, Online, Resource, MedSpa
         <meta name="csrf-token" content="{{ csrf_token() }}" />
         <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
 
-        <title><?=$title?></title>
+<meta property="og:title" content="{{$title}}">
+<meta property="og:type" content="myType">
+<meta property="og:url" content="{{ route('home') }}">
+<meta property="og:image" content="yes">
+<meta property="fb:admins" content="all">
+<meta property="og:site_name" content="MedSpaOne">
+<meta property="og:description" content="{{$description}}">
+
+        <title>{{$title}}</title>
         <link rel="stylesheet" type="text/css" href="/style/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/style/css/plugins.min.css">
         <link rel="stylesheet" type="text/css" href="/style/revolution/css/settings.min.css">
