@@ -58,15 +58,24 @@ mix.scripts([
     'resources/js/scripts.js'
 ], 'public/js/all.js');
 
-mix.styles([
-    'public/style/css/bootstrap.min.css',
-    'public/style/css/plugins.css',
-    'public/style/revolution/css/settings.css',
-    'public/style/revolution/css/layers.css',
-    'public/style/revolution/css/navigation.css',
-    'public/style/type/icons.css',
-    'public/style/style.css',
-    'public/style/css/color/blue.css'
-], 'public/css/all.css');
+// mix.styles([
+//     'public/style/style.css',
+//     'public/style/css/plugins.css',
+//     'public/style/revolution/css/settings.css',
+//     'public/style/revolution/css/layers.css',
+//     'public/style/revolution/css/navigation.css',
+//     'public/style/type/icons.css',
+//     'public/style/css/color/blue.css',
+//     'public/style/css/bootstrap.min.css',
+// ], 'public/css/all.css');
 
+// mix.minify('public/css/all.css');
 mix.minify('public/css/all.css');
+mix.minify('public/style.css');
+    mix.minify('public/style/css/plugins.css');
+    mix.minify('public/style/revolution/css/settings.css');
+    mix.minify('public/style/revolution/css/layers.css');
+    mix.minify('public/style/revolution/css/navigation.css');
+    mix.minify('public/style/type/icons.css');
+    mix.minify('public/style/css/color/blue.css');
+    mix.minify('public/style/css/bootstrap.min.css');

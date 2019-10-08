@@ -1,7 +1,14 @@
 {
-    "/js/app.js": "/js/app.js?id=6ed0a958194b22411675",
+    "/js/app.js": "/js/app.js?id=13e80a8167035306e8b3",
     "/css/app.css": "/css/app.css?id=df8fd0c9746c71f43178",
     "/js/all.js": "/js/all.js?id=19e88b5e50ea3fa09c60",
-    "/css/all.css": "/css/all.css?id=026f0b185d105e55c264",
-    "/css/all.min.css": "/css/all.min.css?id=026f0b185d105e55c264"
+    "/css/all.min.css": "/css/all.min.css?id=f5f3d3afea998e520fd5",
+    "/style.min.css": "/style.min.css?id=c83e5d25439a116a2329",
+    "/style/css/plugins.min.css": "/style/css/plugins.min.css?id=78dd041a42a3e582b65f",
+    "/style/revolution/css/settings.min.css": "/style/revolution/css/settings.min.css?id=06db730f5e294c72b7aa",
+    "/style/revolution/css/layers.min.css": "/style/revolution/css/layers.min.css?id=d23ad01d0aafab0d4dbd",
+    "/style/revolution/css/navigation.min.css": "/style/revolution/css/navigation.min.css?id=c8f8666090883e07c43c",
+    "/style/type/icons.min.css": "/style/type/icons.min.css?id=7d8c9330921ed63f15f8",
+    "/style/css/color/blue.min.css": "/style/css/color/blue.min.css?id=254cbef61739aeee444e",
+    "/style/css/bootstrap.min.min.css": "/style/css/bootstrap.min.min.css?id=3a51f5c12f2277eab53b"
 }
