@@ -82,6 +82,17 @@
       0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
     ),
   ),
+  'shweshi/opengraph' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'shweshi\\OpenGraph\\Providers\\OpenGraphProvider',
+    ),
+    'aliases' => 
+    array (
+      'OpenGraph' => 'shweshi\\OpenGraph\\Facades\\OpenGraphFacade',
+    ),
+  ),
   'spatie/laravel-sitemap' => 
   array (
     'providers' => 

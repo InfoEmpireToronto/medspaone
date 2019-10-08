@@ -15,6 +15,9 @@
 //     return view('welcome');
 // });
 
+Route::get('/fetch', function(){
+	return OpenGraph::fetch("http://ogp.me");
+});
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
