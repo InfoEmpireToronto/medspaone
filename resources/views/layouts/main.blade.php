@@ -248,7 +248,7 @@ https://www.facebook.com/tr?id=466182244169613&ev=PageView&noscript=1
     </footer>
   </div>
   <!-- /.content-wrapper -->
-  <script src="{{ asset('js/app.js.gz') }}"></script>
+  <script src="{{ asset('js/app.js') }}"></script>
   <script src="{{ asset('js/all.js') }}"></script>
   <!-- <script src="/style/js/jquery.min.js"></script> -->
   <!-- <script src="/style/js/popper.min.js"></script> -->
