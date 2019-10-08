@@ -25,7 +25,7 @@ $keywords =  isset($keywords) ? $keywords : "MedSpaOne, Online, Resource, MedSpa
 <meta property="og:title" content="{{$title}}">
 <meta property="og:type" content="myType">
 <meta property="og:url" content="{{ route('home') }}">
-<meta property="og:image" content="yes">
+<meta property="og:image" content="https://medspa.one/style/images/logo2@2x.png">
 <meta property="fb:admins" content="all">
 <meta property="og:site_name" content="MedSpaOne">
 <meta property="og:description" content="{{$description}}">
