@@ -50,13 +50,15 @@ mix.webpackConfig(configWebPack)
 
 
 
-mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+// mix.js('resources/js/app.js', 'public/js')
+   // .sass('resources/sass/app.scss', 'public/css')
+   // .version();
 
 mix.scripts([
     'resources/js/plugins.js',
     'resources/js/scripts.js'
-], 'public/js/all.js');
+], 'public/js/all.js')
+	.version();
 
 // mix.styles([
 //     'public/style/style.css',
