@@ -41,6 +41,13 @@ $keywords =  isset($keywords) ? $keywords : "MedSpaOne, Online, Resource, MedSpa
         <link rel="stylesheet" type="text/css" href="/style/css/color/blue.min.css">
         @yield('css')
         <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5cb87a601e8a61001214aca8&product=inline-share-buttons' async='async'></script>
+
+        <script src="/style/js/jquery.min.js"></script>
+  <script src="/style/js/popper.min.js"></script>
+  <script src="/style/js/bootstrap.min.js"></script>
+
+
+
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141510760-1"></script>
 <script>
@@ -263,10 +270,12 @@ https://www.facebook.com/tr?id=466182244169613&ev=PageView&noscript=1
   </div>
   <!-- /.content-wrapper -->
   <script src="{{ asset('js/app.js') }}"></script>
-  <script src="{{ asset('js/all.js') }}"></script>
-  <!-- <script src="/style/js/jquery.min.js"></script> -->
-  <!-- <script src="/style/js/popper.min.js"></script> -->
-  <!-- <script src="/style/js/bootstrap.min.js"></script> -->
+  <!-- <script src="{{ asset('js/all.js') }}"></script> -->
+  <script src="/style/js/jquery.min.js"></script>
+  <script src="/style/js/popper.min.js"></script>
+  <script src="/style/js/bootstrap.min.js"></script>
+  <script src="/style/js/plugins.js"></script>
+  <script src="/style/js/scripts.js"></script>
 
   <script src="/style/revolution/js/jquery.themepunch.tools.min.js"></script>
   <script src="/style/revolution/js/jquery.themepunch.revolution.min.js"></script>

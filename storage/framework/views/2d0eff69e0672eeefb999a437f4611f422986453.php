@@ -1,8 +1,8 @@
 <?php
 $currentpage = isset($currentpage) ? $currentpage : "home";
-$title =  isset($title) ? $title : "MedSpaOne";
-$description =  isset($description) ? $description : "";
-$keywords =  isset($keywords) ? $keywords : "";
+$title =  isset($title) ? $title : "MedSpaOne Online Resource";
+$description =  isset($description) ? $description : "Your Online resource for latest news and events, Your Online resource for latest news and events";
+$keywords =  isset($keywords) ? $keywords : "MedSpaOne, Online, Resource, MedSpaOne, Online, Resource";
 
 
 ?>
@@ -22,17 +22,32 @@ $keywords =  isset($keywords) ? $keywords : "";
         <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>" />
         <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
 
-        <title><?=$title?></title>
+<meta property="og:title" content="<?php echo e($title); ?>">
+<meta property="og:type" content="myType">
+<meta property="og:url" content="<?php echo e(route('home')); ?>">
+<meta property="og:image" content="https://medspa.one/style/images/logo2@2x.png">
+<meta property="fb:admins" content="all">
+<meta property="og:site_name" content="MedSpaOne">
+<meta property="og:description" content="<?php echo e($description); ?>">
+
+        <title><?php echo e($title); ?></title>
         <link rel="stylesheet" type="text/css" href="/style/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="/style/css/plugins.css">
-        <link rel="stylesheet" type="text/css" href="/style/revolution/css/settings.css">
-        <link rel="stylesheet" type="text/css" href="/style/revolution/css/layers.css">
-        <link rel="stylesheet" type="text/css" href="/style/revolution/css/navigation.css">
-        <link rel="stylesheet" type="text/css" href="/style/type/icons.css">
-        <link rel="stylesheet" type="text/css" href="/style.css">
-        <link rel="stylesheet" type="text/css" href="/style/css/color/blue.css">
+        <link rel="stylesheet" type="text/css" href="/style/css/plugins.min.css">
+        <link rel="stylesheet" type="text/css" href="/style/revolution/css/settings.min.css">
+        <link rel="stylesheet" type="text/css" href="/style/revolution/css/layers.min.css">
+        <link rel="stylesheet" type="text/css" href="/style/revolution/css/navigation.min.css">
+        <link rel="stylesheet" type="text/css" href="/style/type/icons.min.css">
+        <link rel="stylesheet" type="text/css" href="/style.min.css">
+        <link rel="stylesheet" type="text/css" href="/style/css/color/blue.min.css">
         <?php echo $__env->yieldContent('css'); ?>
         <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5cb87a601e8a61001214aca8&product=inline-share-buttons' async='async'></script>
+
+        <script src="/style/js/jquery.min.js"></script>
+  <script src="/style/js/popper.min.js"></script>
+  <script src="/style/js/bootstrap.min.js"></script>
+
+
+
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141510760-1"></script>
 <script>
@@ -43,6 +58,15 @@ $keywords =  isset($keywords) ? $keywords : "";
   gtag('config', 'UA-141510760-1');
 </script>
 
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "medspa.one",
+    "alternateName": "MedSPaOne",
+    "url": "<?php echo e(route('home')); ?>"
+}
+</script>
 		
 <!-- Facebook Pixel Code -->
 <script>
@@ -232,13 +256,9 @@ https://www.facebook.com/tr?id=466182244169613&ev=PageView&noscript=1
 
           <div class="col-md-2 text-center text-md-right">
             <ul class="social social-mute social-s">
-              <li><a href="https://www.facebook.com/MedSpaOne " target="_blank"><i class="fa fa-facebook"></i></a></li>
-			 <li><a href="https://www.instagram.com/medspaone/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-				
-<!--
+              <li><a href="https://www.facebook.com/infoempire" target="_blank"><i class="fa fa-facebook"></i></a></li>
       				<li><a href="https://twitter.com/InfoEmpire_Inc" target="_blank"><i class="fa fa-twitter"></i></a></li>
       				<li><a href="http://www.youtube.com/user/GTAwebmastercom" target="_blank"><i class="fa fa-youtube"></i></a></li>
--->
             </ul>
           </div>
           <!--/column -->
@@ -250,9 +270,12 @@ https://www.facebook.com/tr?id=466182244169613&ev=PageView&noscript=1
   </div>
   <!-- /.content-wrapper -->
   <script src="<?php echo e(asset('js/app.js')); ?>"></script>
+  <!-- <script src="<?php echo e(asset('js/all.js')); ?>"></script> -->
   <script src="/style/js/jquery.min.js"></script>
   <script src="/style/js/popper.min.js"></script>
   <script src="/style/js/bootstrap.min.js"></script>
+  <script src="/style/js/plugins.js"></script>
+  <script src="/style/js/scripts.js"></script>
 
   <script src="/style/revolution/js/jquery.themepunch.tools.min.js"></script>
   <script src="/style/revolution/js/jquery.themepunch.revolution.min.js"></script>
@@ -270,8 +293,8 @@ https://www.facebook.com/tr?id=466182244169613&ev=PageView&noscript=1
 <script src="/style/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
 <script src="/style/revolution/js/extensions/revolution.extension.video.min.js"></script>-->
 
-  <script src="/style/js/plugins.js"></script>
-  <script src="/style/js/scripts.js"></script>
+  <!-- <script src="/style/js/plugins.js"></script> -->
+  <!-- <script src="/style/js/scripts.js"></script> -->
   <script type="text/javascript">
         $.ajaxSetup({ headers: { 'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content') } });
   </script>

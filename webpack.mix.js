@@ -54,11 +54,11 @@ mix.webpackConfig(configWebPack)
    // .sass('resources/sass/app.scss', 'public/css')
    // .version();
 
-mix.scripts([
-    'resources/js/plugins.js',
-    'resources/js/scripts.js'
-], 'public/js/all.js')
-	.version();
+// mix.scripts([
+//     'resources/js/plugins.js',
+//     'resources/js/scripts.js'
+// ], 'public/js/all.js')
+// 	.version();
 
 // mix.styles([
 //     'public/style/style.css',
@@ -72,12 +72,12 @@ mix.scripts([
 // ], 'public/css/all.css');
 
 // mix.minify('public/css/all.css');
-mix.minify('public/css/all.css');
-mix.minify('public/style.css');
-    mix.minify('public/style/css/plugins.css');
-    mix.minify('public/style/revolution/css/settings.css');
-    mix.minify('public/style/revolution/css/layers.css');
-    mix.minify('public/style/revolution/css/navigation.css');
-    mix.minify('public/style/type/icons.css');
-    mix.minify('public/style/css/color/blue.css');
-    mix.minify('public/style/css/bootstrap.min.css');
+// mix.minify('public/css/all.css');
+// mix.minify('public/style.css');
+//     mix.minify('public/style/css/plugins.css');
+//     mix.minify('public/style/revolution/css/settings.css');
+//     mix.minify('public/style/revolution/css/layers.css');
+//     mix.minify('public/style/revolution/css/navigation.css');
+//     mix.minify('public/style/type/icons.css');
+//     mix.minify('public/style/css/color/blue.css');
+//     mix.minify('public/style/css/bootstrap.min.css');
