@@ -46,7 +46,7 @@
     "simplemde": "^1.11.2",
     "tempusdominus-bootstrap-4": "^5.1.2",
     "tempusdominus-core": "^5.0.3",
-    "tinymce": "^4.9.2",
+    "tinymce": "^4.9.7",
     "toastr": "^2.1.2",
     "vue": "^2.3.4",
     "webrtc-adapter": "^7.2.3"
