@@ -38,7 +38,7 @@
     "jquery-match-height": "^0.7.2",
     "moment-timezone": "^0.5.26",
     "nestable2": "^1.6.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "perfect-scrollbar": "^0.7.1",
     "popper.js": "^1.15.0",
     "sass": "^1.20.1",
